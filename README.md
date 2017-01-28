@@ -21,7 +21,7 @@ Comment utiliser ce projet Github pour stoquer un nouveau projet Eclipse
 - Dans Eclipse, revenir en perspective Java
 - Créer le nouveau projet
   - A la place de la "default location", choisir un sous sous répertoire du
-dépot Git local, par exemple C:\Users\mic\git\touslesprojets2017\bob\java_test
+dépot Git local, par exemple C:\Users\bob\git\touslesprojets2017\bob\java_test
 (le nom du projet sera donné en salle)
 
 Le projet est désormais dans Eclipse et pret à être envoyé : créer des fichiers,
