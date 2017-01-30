@@ -1,6 +1,3 @@
-/**
- * 
- */
 package fr.ib.myriam.travel;
 
 /**
@@ -10,9 +7,6 @@ package fr.ib.myriam.travel;
 
 public class Main {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
 
