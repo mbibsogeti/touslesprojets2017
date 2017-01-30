@@ -6,6 +6,7 @@ public class Main {
 			System.out.println("Une petite expérience");
 			// Un peu réduit comme texte, tu px faire mieux !!
 			// Laurent ! C'était donc toi !!//
-			// Zut ! //
+			// Zut ! // 
+			// eh ben ?//
 	}
 }
