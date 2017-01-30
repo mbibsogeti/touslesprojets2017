@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to our travel agency");
-		System.out.println("Bienvenue dans notre agence de voyage");
+		System.out.println("Bienvenue");
 	}
 
 }
