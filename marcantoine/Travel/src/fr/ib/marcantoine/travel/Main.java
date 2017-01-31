@@ -3,6 +3,7 @@ package fr.ib.marcantoine.travel;
 import java.util.Scanner;
 
 public class Main {
+<<<<<<< HEAD
 
 	public static void main (String[] args) {
 
@@ -53,7 +54,6 @@ public class Main {
 
 			}
 		}
-		
 		
 	}
 }
