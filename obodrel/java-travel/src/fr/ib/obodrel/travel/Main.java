@@ -17,7 +17,9 @@ public class Main {
 		while (daysOfStaying < 0) {
 			try {
 				line = cin.nextLine();
-				line = (String) line.subSequence(0,line.indexOf(" "));
+				if(line.indexOf(" ") != -1 ) {
+					line = (String) line.subSequence(0,line.indexOf(" "));
+				}
 				try {
 					numberEntered = Integer.parseInt(line);
 					if (numberEntered > 0) {
