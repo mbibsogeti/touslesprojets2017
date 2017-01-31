@@ -104,8 +104,8 @@ public class Main {
 				Prix=785;
 				
 				System.out.println("Voici nos offres :");
-				for(byte i=0;i<Jours.length;i++){
-					System.out.println(Jours[i]+" : "+(Jours[i]*PrixParJour+Prix));
+				for(short i:Jours){
+					System.out.println(i+" : "+(i*PrixParJour+Prix));
 				}
 				break;
 				
