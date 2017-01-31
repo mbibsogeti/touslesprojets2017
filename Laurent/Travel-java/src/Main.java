@@ -18,7 +18,7 @@ public class Main {
 		String TextPromo="Promo : "+Promo+" % sur "+Prix+"\u20ac d'avion et "+Sejour+" jours à "+PrixParJour+"\u20ac la nuit !!\nSoit "+(Sejour*PrixParJour)+"\u20ac le séjour !!!!!";
 		
 		System.out.println(TextPromo);
-		System.out.println("Le tout vous reviendrait à "+((Prix-(Prix*20)/100)+(Sejour*PrixParJour))+"\u20ac !!!!!!!!!!!! \nAvec une économie de "+((Prix*20)/100)+"€");
+		System.out.println("Le tout vous reviendrait à "+((Prix-(Prix*20)/100)+(Sejour*PrixParJour))+"\u20ac !!!!!!!!!!!! \nAvec une économie de "+((Prix*20)/100)+"€ sur le billet d'avion");
 
 	}
 
