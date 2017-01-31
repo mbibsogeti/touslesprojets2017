@@ -75,6 +75,17 @@ public class Main {
 
 		System.out.println("Regarding how long you will stay we recommend you to take " + flyCompany
 				+ " planes to travel back and forth!");
+		
+		System.out.println("Here you will find the schedule of your staying :\n");
+		for(int i=0;i<daysOfStaying;i++) {
+			if(i== 0 || i == daysOfStaying-1) {
+				System.out.println("Day "+ (i+1) +" Plane");
+			} else if(i%4==0) {
+				System.out.println("Day "+ (i+1) +" Royal Crab");
+			}else {
+				System.out.println("Day "+ (i+1) +" Fishing");
+			}
+		}
 	}
 	
 	public static void ComputeAndDisplayTravelCostAndInforamtions(float paymentReductionPercent, int planeTicketPrice, int daysOfStaying, int pricePerDay) {
@@ -82,7 +93,7 @@ public class Main {
 		String outputMessage;
 
 		totalPriceSpent = (1 - paymentReductionPercent) * (planeTicketPrice + pricePerDay * daysOfStaying);
-		outputMessage = "Your journey in Alaska will cost you ";
+		outputMessage = "\nYour journey in Alaska will cost you ";
 		outputMessage += totalPriceSpent + "\u20ac calculated as follow : \n";
 		outputMessage += -100 * paymentReductionPercent + "% of a " + planeTicketPrice + "\u20ac plane ticket, ";
 		outputMessage += "and also the " + daysOfStaying + " days at " + pricePerDay + "\u20ac each.\n";
@@ -102,5 +113,6 @@ public class Main {
 		AnalyzeDaysOfStaying(daysOfStaying);
 		
 		ComputeAndDisplayTravelCostAndInforamtions(paymentReductionPercent, planeTicketPrice, daysOfStaying, pricePerDay);
+
 	}
 }

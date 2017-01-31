@@ -49,6 +49,16 @@ public class Main {
 				+ "\u20ac par nuit soit un prix de : " + total + "\u20ac. Après réduction de " + reduction
 				+ "%, le prix total est de :" + result + "\u20ac";
 		System.out.println(str);
+		
+		//TEST boucles
+		for (int i=1; i<=nbDays;i++){
+			if (i == 1 | i== nbDays)
+			System.out.println("Jour "+i+ ": Avion");
+			else if(i % 4 == 1)
+				System.out.println("Jour "+i+ ": Crabe Royal");
+			else 
+				System.out.println("Jour "+i+ ": Peche");
+		}
 
 		// FIN de l'entrée
 		sc.close();
