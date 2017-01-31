@@ -77,12 +77,10 @@ public class Main {
 				pbillet = 785;
 				pnuit = 45;
 				int [] voyages = {7,9,13,16,18};
-				int cpt = 0;
-				do {
-					ptotal = (pbillet + voyages[cpt] * pnuit);
-					System.out.println (voyages[cpt]+" : "+ptotal+"\u20ac.");
-					cpt++;
-				} while (cpt < voyages.length);
+				for (int j : voyages) {
+					ptotal =(pbillet + j * pnuit);
+					System.out.println ("Voyage de "+ j+" jours : "+ptotal+"\u20ac.");
+				}
 			} else {
 				System.out.println("WTF ?!!!");
 			}
@@ -93,7 +91,7 @@ public class Main {
 
 		// Emploi du temps avec ce qu'on a comme outils : solution alternative +
 		// courte, demande + mémoire, nomme mieux.
-		// for (int cpt = 1 ; cpt <= duration ; cpt ++){
+		// for (int cpt = 1 ; cpt <= duration ; cpt ++)
 		// String activite = "Peche";
 		// if (cpt==1 || cpt ==duration) {
 		// activite = "Avion";
