@@ -57,8 +57,7 @@ public class Main {
 		System.out.println("vous voyagez avec Air france");
 		break;
 	case 5:
-		System.out.println("vous voyagez avec Air france");
-		break;
+	
 	case 6:
 		System.out.println("vous voyagez avec Air france");
 		break;
