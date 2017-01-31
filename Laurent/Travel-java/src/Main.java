@@ -118,6 +118,7 @@ public class Main {
 				System.out.println("Veuillez rentrer un chiffre svp !");
 			}
 		} while (ConditionBoucle1);
+		
 
 
 	}
