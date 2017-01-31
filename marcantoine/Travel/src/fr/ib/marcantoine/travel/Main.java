@@ -3,8 +3,8 @@ package fr.ib.marcantoine.travel;
 import java.util.Scanner;
 
 public class Main {
-<<<<<<< HEAD
-	public static void main(String[] a) {
+
+	public static void main (String[] args) {
 
 		// Défintion de l'objet scanner :
 		Scanner sc = new Scanner(System.in);
@@ -55,11 +55,5 @@ public class Main {
 		}
 		
 		
-		sc.close();
-=======
-	public static void main (String[] a){
-			System.out.println("Commençons");
-			// Un peu réduit comme texte, tu px faire mieux !!
->>>>>>> branch 'master' of https://github.com/mbibsogeti/touslesprojets2017.git
 	}
 }
