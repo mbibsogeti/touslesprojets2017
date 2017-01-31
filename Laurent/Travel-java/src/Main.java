@@ -14,11 +14,12 @@ public class Main {
 		float Prix = 860;
 		byte Sejour=7;
 		float PrixParJour=48;
+		float PrixTotal= Prix + PrixParJour*Sejour;
 		
 		String TextPromo="Promo : "+Promo+" % sur "+Prix+"\u20ac d'avion et "+Sejour+" jours à "+PrixParJour+"\u20ac la nuit !!\nSoit "+(Sejour*PrixParJour)+"\u20ac le séjour !!!!!";
 		
 		System.out.println(TextPromo);
-		System.out.println("Le tout vous reviendrait à "+((Prix-(Prix*20)/100)+(Sejour*PrixParJour))+"\u20ac !!!!!!!!!!!! \nAvec une économie de "+((Prix*20)/100)+"€ sur le billet d'avion");
+		System.out.println("Le tout vous reviendrait à "+(PrixTotal-((PrixTotal*20)/100))+"\u20ac !!!!!!!!!!!! \nAvec une économie de "+((PrixTotal*20)/100)+"€ sur le billet d'avion. °_°");
 
 	}
 
