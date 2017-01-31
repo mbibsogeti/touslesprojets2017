@@ -89,6 +89,7 @@ public class Main {
 		System.out.println(outputMessage);
 	}
 	
+	
 	public static void main(String[] arg) {
 		float paymentReductionPercent = 0.2f;
 		int planeTicketPrice = 860;
