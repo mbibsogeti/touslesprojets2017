@@ -71,8 +71,24 @@ public class Main {
 				}
 			}
 		}
+		/*-------choix CANADA----------*/
 		if (menu.equals("c")) {
-			System.out.println("Canada");
+			int []table={7,9,13,16,18};
+			int hotel=45;
+			int avion=785;
+			System.out.print("donnez la durée du séjour: ");
+			int duree = sc.nextInt();
+			for (int i:table){
+				if (i==duree){
+					int total=avion +hotel*duree;
+					System.out.println("Le prix de votre séjour au Canada est:"+total);
+					break;
+				}
+				else {
+					continue;
+				
+				}
+			}
 		}
 		sc.close();
 	}
