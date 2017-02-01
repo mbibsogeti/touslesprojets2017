@@ -13,6 +13,7 @@ public class NevadaTravelDestination extends UnitedStatesTravelDestination {
 	
 	public NevadaTravelDestination(int travelDuration, String locationName, String destinationName) {
 		super();
+		_DestinationId ="n";
 		_DestinationId =locationName;
 		_travelDuration = travelDuration;
 		_DestinationName = destinationName;
