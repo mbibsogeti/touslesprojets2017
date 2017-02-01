@@ -10,10 +10,9 @@ public class USA {
 	}
 	
 	static void doNevada(){
-		Destination dNev = new Destination();
-		dNev.name="LasVegas";
-		dNev.state="Nevada";
-		dNev.extendDays(7);;
+		Destination dNev = new Destination("Reno","Nevada",1);
+		
+		dNev.extendDays(7);
 		System.out.println(dNev.toString());
 	}
 }
