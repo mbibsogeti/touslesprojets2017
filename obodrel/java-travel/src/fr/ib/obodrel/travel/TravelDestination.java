@@ -8,6 +8,7 @@ public abstract class TravelDestination {
 	protected String _DestinationName;
 	protected String _LocationName;
 	protected int _travelDuration;
+	public static final int BASE_TRAVEL_DURATION = 7;
 	protected boolean _hasExecutedOnce;
 	protected DestinationMeanOfTransport _meanOfTransport;
 

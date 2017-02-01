@@ -7,7 +7,7 @@ public class NevadaTravelDestination extends UnitedStatesTravelDestination {
 	public NevadaTravelDestination() {
 		super();
 		_DestinationId = "n";
-		_travelDuration = 10;
+		_travelDuration = BASE_TRAVEL_DURATION;
 		_DestinationName = "Nevada";
 	}
 
