@@ -107,6 +107,10 @@ public class Main {
 					} else {
 						if (menu.equals("n")) {
 							America.doNevada();
+						} else {
+							if (menu.equals("t")) {
+								America.doTexas();
+							}
 						}
 					}
 				}
