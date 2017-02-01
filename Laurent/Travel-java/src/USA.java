@@ -2,7 +2,6 @@
 public class USA {
 
 	public USA() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public static void doWashington(){
@@ -19,7 +18,6 @@ public class USA {
 	public static void doTexas() {
 		CostalDestination cdTex = new CostalDestination(null,"Texas",1);
 		cdTex.setName("PadreIsland");
-		System.out.println(cdTex.toString());
 		cdTex.setBoat("Queen-Mary II");
 		System.out.println(cdTex.toString());
 		
