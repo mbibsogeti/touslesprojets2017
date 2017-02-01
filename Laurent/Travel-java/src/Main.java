@@ -18,32 +18,42 @@ public class Main {
 		float Prix = 860;
 		byte Sejour = 0;
 		float PrixParJour = 48;
-		boolean ConditionBoucle2 = true;
+		
 		String Option;
 		// Acquisition de l'intension de l'utilisateur
 		
 		do {
-			System.out.println("\nQue souhaitez-vous faire aujourd'hui :\n a : Alaska \n c : Canada \n s : Saskakchewan \n q : Quitter");
+			System.out.println("\nQue souhaitez-vous faire aujourd'hui :\n a : Alaska \n c : Canada \n n : Nevada \n s : Saskakchewan \n w : Washington \n q : Quitter");
 			Option = sc.nextLine();
 			//sc.close();
 			switch (Option) {
 			case "a":
 				
-				doAlaska(sc, ConditionBoucle2, Sejour, Prix, PrixParJour,Promo);
+				doAlaska(sc, Sejour, Prix, PrixParJour,Promo);
 				break;
 				
 			case "c":
 				short[] j={7,9,13,16,18};
 				doCanada(sc,Sejour,785,45,j);
 				break;
+				
 			case "s":
 				short[] j1={7,9,13,16,18};
 				doCanada(sc,Sejour,795,45,j1);
 				break;
 				
+			case "w":
+				USA.doWashington();
+				break;
+				
+			case "n":
+				USA.doNevada();
+				break;
+				
 			case "q":
 				Quit(sc);
 				break;
+				
 			default:
 				System.out.println("Veuillez rentrer la lettre correspondant aux différentes options énoncées svp !");
 			}
@@ -51,7 +61,8 @@ public class Main {
 		
 	}
 	
-	static void doAlaska(Scanner sc, boolean ConditionBoucle2,byte Sejour, float Prix, float PrixParJour, byte Promo){
+	static void doAlaska(Scanner sc, byte Sejour, float Prix, float PrixParJour, byte Promo){
+		boolean ConditionBoucle2 = true;
 		System.out.println("Veuillez entrer le nombre de jour désirés au niv de votre de votre séjour, svp");
 		do {
 			try {
@@ -124,12 +135,24 @@ public class Main {
 			
 			System.out.println("Voici nos offres :");
 			for(short i:Jours){
-				System.out.println(i+" : "+(i*PrixParJour+Prix));
+				System.out.println(i+" : "+getCanadaPrice(Prix,PrixParJour,i));
 			}
 	}
 
 	static void Quit(Scanner sc){
-		System.out.println("Au plaisir de vous revoir");
+		System.out.println("\nAu plaisir de vous revoir.\n");
 		ConditionBoucle1 = false;
 	}
+	
+	static float getCanadaPrice(float Prix, float PrixParJour, short NbJrs){
+		return NbJrs*PrixParJour+Prix;
+	}
+	
+	static float getCanadaPrice(short NbJrs){
+		float PPJ= 45;
+		float P = 795;
+		return getCanadaPrice(P,PPJ,NbJrs);
+	}
+	
+	
 }
