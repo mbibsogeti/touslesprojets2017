@@ -12,7 +12,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		while (continuation){
-			System.out.println("Choisir entre les destinations suivante: CANADA --> c; ALASKA-->a ; Quitter-->q");
+			System.out.println("Choice a final destination: CANADA --> c; ALASKA-->a ; Quitter-->q");
 			String menu = sc.next();
 	
 			// TEST du Menu + entree dans le choix ALASKA ou CANADA
@@ -25,12 +25,12 @@ public class Main {
 			} else if (menu.equals("q")){
 				continuation = false;
 			}else {
-				System.out.println("Veuillez choisir entre les proposition a ou c\n");
+				System.out.println("Choice between Alaska: a , Canada : c\n");
 			}
 				
 		}
 		
-		System.out.println("AUREVOIR");
+		System.out.println("Goodbye");
 		// FIN de l'entrée
 		sc.close();
 	}
@@ -39,7 +39,7 @@ public class Main {
 	public static void doAlaska() {
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("VIVE l'ALASKA!");
+		System.out.println("Let's go to ALASKA!");
 		int reduction = 20;
 		int pricePlane = 860;
 		int nbDays = sc.nextInt();
@@ -95,7 +95,7 @@ public class Main {
 	// Fonction pour le CANADA
 	public static void doCanada() {
 
-		System.out.println("VIVE LE CANADA");
+		System.out.println("Let's go to CANADA");
 
 		int pricePlaneCanada = 785;
 		int priceHotelCanada = 45;
