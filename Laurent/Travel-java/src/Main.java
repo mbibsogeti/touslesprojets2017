@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class Main {
+	
+	public static boolean ConditionBoucle1 = true; 
 
 	public static void main(String[] args) {
 
@@ -16,13 +18,12 @@ public class Main {
 		float Prix = 860;
 		byte Sejour = 0;
 		float PrixParJour = 48;
-		boolean ConditionBoucle1 = true;
 		boolean ConditionBoucle2 = true;
 		String Option;
 		// Acquisition de l'intension de l'utilisateur
 		
 		do {
-			System.out.println("\nQue souhaitez-vous faire aujourd'hui :\n a : Alaska \n c : Canada \n q : Quitter");
+			System.out.println("\nQue souhaitez-vous faire aujourd'hui :\n a : Alaska \n c : Canada \n s : Saskakchewan \n q : Quitter");
 			Option = sc.nextLine();
 			//sc.close();
 			switch (Option) {
@@ -32,19 +33,22 @@ public class Main {
 				break;
 				
 			case "c":
-				doCanada(sc,Sejour,Prix,PrixParJour);
+				short[] j={7,9,13,16,18};
+				doCanada(sc,Sejour,785,45,j);
+				break;
+			case "s":
+				short[] j1={7,9,13,16,18};
+				doCanada(sc,Sejour,795,45,j1);
 				break;
 				
 			case "q":
-				Quit(sc,ConditionBoucle1);
+				Quit(sc);
 				break;
 			default:
-				//System.out.println("Veuillez rentrer un chiffre svp !");
+				System.out.println("Veuillez rentrer la lettre correspondant aux différentes options énoncées svp !");
 			}
 		} while (ConditionBoucle1);
 		
-
-
 	}
 	
 	static void doAlaska(Scanner sc, boolean ConditionBoucle2,byte Sejour, float Prix, float PrixParJour, byte Promo){
@@ -114,14 +118,9 @@ public class Main {
 		if (Sejour < 6)
 			System.out.println(
 					"\nMalheureusement avec ce nombre de jours pour votre séjour, vous ne pourrez pas déguster notre merveilleux crabe royal.");
-		//ConditionBoucle = false;
 	}
 
-	static void doCanada(Scanner sc,byte Sejour, float Prix, float PrixParJour){
-		
-			short[] Jours= {7,9,13,16,18};
-			PrixParJour=45;
-			Prix=785;
+	static void doCanada(Scanner sc,byte Sejour, float Prix, float PrixParJour, short[] Jours){
 			
 			System.out.println("Voici nos offres :");
 			for(short i:Jours){
@@ -129,9 +128,8 @@ public class Main {
 			}
 	}
 
-	static void Quit(Scanner sc, boolean ConditionBoucle1){
+	static void Quit(Scanner sc){
 		System.out.println("Au plaisir de vous revoir");
 		ConditionBoucle1 = false;
-		sc.close();
 	}
 }
