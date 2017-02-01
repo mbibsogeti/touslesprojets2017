@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 public class Main {
-	public static void doAlaska() {
+	// scanner sc est en paramètre de la fonction doAlaska
+	public static void doAlaska(Scanner sc) {
 		int offre = -20;
 		long avion = 860;
 		System.out.println("Rentrez le nombre de jours de vacances");
-		Scanner sc = new Scanner(System.in);
 		int duree = sc.nextInt();
 		long pension = 48;
 		double total;
@@ -36,8 +36,6 @@ public class Main {
 			System.out.println("vous voyagez avec Condor");
 			break;
 		case 21:
-			System.out.println("vous voyagez avec Condor");
-			break;
 		case 28:
 			System.out.println("vous voyagez avec Condor");
 			break;
@@ -64,11 +62,9 @@ public class Main {
 		}
 	}
 
-	public static void doCanada() {
+	public static void doCanada(int billet, int nuit) {
 		System.out.println("Vous irez au Canada");
 		int tab[] = { 7, 9, 13, 16, 18 };
-		int billet = 795;
-		int nuit = 45;
 		int tot = 0;
 		int k = 0;
 		// (Voyage Canada, Avion=785e, hotel=45e, afficher les prix pour
@@ -92,13 +88,20 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		String menu = sc.next();
 		if (menu.equals("A")) {
-			doAlaska();
+			doAlaska(sc);
 		}
 		;
 		// si vous tapez C, vous irez au Canada//
 		if (menu.equals("C")) {
-			doCanada();
+			int billet = 795;
+			int nuit = 45;
+			doCanada(billet, nuit);
 		}
+		if (menu.equals("K")) {
+				int billet = 830;
+				int nuit = 50;
+				doCanada(billet, nuit);
+			}
 
 		sc.close();
 	}
