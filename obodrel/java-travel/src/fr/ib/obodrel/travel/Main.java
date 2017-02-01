@@ -3,36 +3,56 @@ package fr.ib.obodrel.travel;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Main {
-	private static String _travelDestination;
-	private static HashMap<String, String> _travelOption;
-	private static Scanner _cin;
+	private static TravelDestination _travelDestination;
+	private static HashMap<String, Object> _travelOption;
 
-	public static void InitializeTravelOptions() {
-		_cin = new Scanner(System.in);
-		_travelOption = new HashMap<String, String>();
-		_travelOption.put("a", "Alaska");
-		_travelOption.put("q", "Quit");
-		_travelOption.put("c", "Canada");
+	public static void initializeTravelOptions() {
+		AlaskaTravelDestination Alaska = new AlaskaTravelDestination();
+		CanadaTravelDestination Canada = new CanadaTravelDestination();
+		SaskatchewanTravelDestination Saskatchewan = new SaskatchewanTravelDestination();
+		WashingtonTravelDestination Washington = new WashingtonTravelDestination();
+		NevadaTravelDestination Nevada = new NevadaTravelDestination();
+		UnitedStatesTravelDestination UnitedStates = new UnitedStatesTravelDestination();
+
+		_travelOption = new HashMap<String, Object>();
+		_travelOption.put(Alaska.getDestinationID(), Alaska);
+		_travelOption.put(Canada.getDestinationID(), Canada);
+		_travelOption.put(UnitedStates.getDestinationID(), UnitedStates);
+		_travelOption.put(Saskatchewan.getDestinationID(), Saskatchewan);
+		_travelOption.put(Washington.getDestinationID(), Washington);
+		_travelOption.put(Nevada.getDestinationID(), Nevada);
+		_travelOption.put("q", null);
 	}
 
-	public static void ChooseADestionation() {
+	public static void chooseADestination(Scanner cin) {
 		boolean hasChosenDestination = false;
 		String line = null;
 
 		System.out.println("Hi! Welcome to our reservation page, please chose where you will go to  :");
-		System.out.println("Type a for Alaska, c for Canada or q to quit.");
+		line = "Type ";
+		for (int i = 0; i < _travelOption.size(); i++) {
+			if (_travelOption.keySet().toArray()[i].equals("q")) {
+				continue;
+			}
+			line += "\"" + _travelOption.keySet().toArray()[i];
+			line += "\" for ";
+			line += ((TravelDestination) _travelOption.values().toArray()[i])._DestinationName;
+			line += ", ";
+		}
+		line += " or q to quit.";
+		System.out.println(line);
+		line = null;
 
 		while (!hasChosenDestination) {
 			try {
-				line = _cin.nextLine();
+				line = cin.nextLine();
 				if (line.indexOf(" ") != -1) {
 					line = (String) line.subSequence(0, line.indexOf(" "));
 				}
 				if (_travelOption.containsKey(line)) {
-					_travelDestination = _travelOption.get(line);
+					_travelDestination = (TravelDestination) _travelOption.get(line);
 					hasChosenDestination = true;
 				} else {
 					System.out.println("The Choice you made doesn't exist, please retry!\nEnter now :");
@@ -45,30 +65,80 @@ public class Main {
 		}
 	}
 
-	public static int FindAlaskaDaysOfStaying() {
-		int daysOfStaying = -1;
-		int numberEntered = 0;
+	public static void main(String[] arg) {
+		boolean wantToQuit = false;
 		String line = null;
+		Scanner cin = new Scanner(System.in);
+		int numberEntered = -1;
 
-		System.out.println("Hi! Welcome to our reservation page, please enter how many days you will stay in "
-				+ _travelDestination + " :");
+		initializeTravelOptions();
+		chooseADestination(cin);
 
-		while (daysOfStaying < 0) {
+		if (_travelDestination != null) {
+			_travelDestination.execute(cin);
+		} else {
+			System.out.println("You chose to quit our software, thank you for trying us.");
+		}
+
+		while (!wantToQuit) {
+			System.out.println(
+					"What will you do next ?\n" + "Type \"l\" to change your location, \"d\" to change the duration"
+							+ ", \"p\" to print your choice, \"e\" to display informations and \"q\" to quit.");
 			try {
-				line = _cin.nextLine();
-				if (line.indexOf(" ") != -1) {
-					line = (String) line.subSequence(0, line.indexOf(" "));
-				}
-				try {
-					numberEntered = Integer.parseInt(line);
-					if (numberEntered > 0) {
-						daysOfStaying = numberEntered;
-					} else {
-						System.out.println("You made a mistake you should provide a nuber higher than zero,"
-								+ " please retry!\nEnter now :");
+				line = cin.nextLine();
+				switch (line) {
+				case "l":
+					System.out.println("Please type the location you want to go to :");
+					try {
+						line = cin.nextLine();
+						_travelDestination.setLocationName(line);
+					} catch (NoSuchElementException inputException) {
+						System.out.println("You made a mistake there was nothing entered, please retry!\nEnter now :");
+					} catch (IllegalStateException inputException) {
+						System.out.println(
+								"You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
 					}
-				} catch (NumberFormatException inputException) {
-					System.out.println("You made a mistake this was not an Integer, please retry!\nEnter now :");
+					break;
+				case "d":
+					numberEntered = -1;
+					System.out.println("Please type the duration you want to stay :");
+					while (numberEntered < 0) {
+						try {
+							line = cin.nextLine();
+							if (line.indexOf(" ") != -1) {
+								line = (String) line.subSequence(0, line.indexOf(" "));
+							}
+							try {
+								numberEntered = Integer.parseInt(line);
+								if (numberEntered > 0) {
+									_travelDestination.setTravelDuration(numberEntered);
+								} else {
+									System.out.println("You made a mistake you should provide a nuber higher than zero,"
+											+ " please retry!\nEnter now :");
+								}
+							} catch (NumberFormatException inputException) {
+								System.out.println(
+										"You made a mistake this was not an Integer, please retry!\nEnter now :");
+							}
+						} catch (NoSuchElementException inputException) {
+							System.out.println(
+									"You made a mistake there was nothing entered, please retry!\nEnter now :");
+						} catch (IllegalStateException inputException) {
+							System.out.println(
+									"You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
+						}
+					}
+					break;
+				case "p":
+					System.out.println(_travelDestination.toString());
+					break;
+				case "e":
+					_travelDestination.execute(cin);
+					break;
+				case "q":
+					wantToQuit = true;
+					System.out.println("You chose to quit our software, thank you for trying us.");
+					break;
 				}
 			} catch (NoSuchElementException inputException) {
 				System.out.println("You made a mistake there was nothing entered, please retry!\nEnter now :");
@@ -77,112 +147,6 @@ public class Main {
 			}
 		}
 
-		return daysOfStaying;
-	}
-
-	public static void AnalyzeAlaskaDaysOfStaying(int daysOfStaying) {
-		String flyCompany = null;
-
-		if (daysOfStaying < 8) {
-			System.out.println("Sadly you will not visit us long");
-		} else if (daysOfStaying < 15) {
-			System.out.println(
-					"That is a nice stay, we hope you wil enjoy it and we will give you a key toy as a present!");
-		} else {
-			System.out.println(
-					"You will stay with us very long! We hope you wil enjoy it and we will give you a gold nugget as a present!");
-		}
-
-		switch (daysOfStaying % 7) {
-		case 0:
-			if (daysOfStaying / 7 < 5) {
-				flyCompany = "Condor";
-			} else {
-				flyCompany = _travelDestination + " Airlines";
-			}
-			break;
-		default:
-			if (daysOfStaying < 8) {
-				flyCompany = "Air France";
-			} else {
-				flyCompany = _travelDestination + " Airlines";
-			}
-		}
-
-		System.out.println("Regarding how long you will stay we recommend you to take " + flyCompany
-				+ " planes to travel back and forth!");
-
-		System.out.println("Here you will find the schedule of your staying :\n");
-		for (int i = 0; i < daysOfStaying; i++) {
-			if (i == 0 || i == daysOfStaying - 1) {
-				System.out.println("Day " + (i + 1) + " Plane");
-			} else if (i % 4 == 0) {
-				System.out.println("Day " + (i + 1) + " Royal Crab");
-			} else {
-				System.out.println("Day " + (i + 1) + " Fishing");
-			}
-		}
-	}
-
-	public static void ComputeAndDisplayAlaskaTravelCostAndInforamtions(float paymentReductionPercent,
-			int planeTicketPrice, int daysOfStaying, int pricePerDay) {
-		float totalPriceSpent;
-		String outputMessage;
-
-		totalPriceSpent = (1 - paymentReductionPercent) * (planeTicketPrice + pricePerDay * daysOfStaying);
-		outputMessage = "\nYour journey in " + _travelDestination + " will cost you ";
-		outputMessage += totalPriceSpent + "\u20ac calculated as follow : \n";
-		outputMessage += -100 * paymentReductionPercent + "% of a " + planeTicketPrice + "\u20ac plane ticket, ";
-		outputMessage += "and also the " + daysOfStaying + " days at " + pricePerDay + "\u20ac each.\n";
-		outputMessage += "We hope you will have a nice staying!";
-
-		System.out.println(outputMessage);
-	}
-
-	public static void DisplayCanadaTravelInformation() {
-		ArrayList<Integer> CanadaTravelOptions;
-		int canadaPricePerDay = 45;
-		int canadaPlaneTicketPrice = 785;
-
-		CanadaTravelOptions = new ArrayList<Integer>();
-
-		CanadaTravelOptions.add(7);
-		CanadaTravelOptions.add(9);
-		CanadaTravelOptions.add(13);
-		CanadaTravelOptions.add(16);
-		CanadaTravelOptions.add(18);
-		
-		System.out.println("Available options to travel to " + _travelDestination + " are following :");
-
-		for (int days : CanadaTravelOptions) {
-			int canadaStayingCost;
-			canadaStayingCost = days * canadaPricePerDay + canadaPlaneTicketPrice;
-			System.out.println("Staying " + days + " days will cost you " + canadaStayingCost + "\u20ac!");
-		}
-
-		System.out.println("We hope you will find the option that suits you!");
-	}
-
-	public static void main(String[] arg) {
-		float paymentReductionPercent = 0.2f;
-		int planeTicketPrice = 860;
-		int daysOfStaying = -1;
-		int pricePerDay = 48;
-
-		InitializeTravelOptions();
-		ChooseADestionation();
-		if (_travelDestination.equals("Alaska")) {
-			daysOfStaying = FindAlaskaDaysOfStaying();
-
-			AnalyzeAlaskaDaysOfStaying(daysOfStaying);
-
-			ComputeAndDisplayAlaskaTravelCostAndInforamtions(paymentReductionPercent, planeTicketPrice, daysOfStaying,
-					pricePerDay);
-		} else if (_travelDestination.equals("Canada")) {
-			DisplayCanadaTravelInformation();
-		} else {
-			System.out.println("You chose to quit our software, thank you for trying us.");
-		}
-		_cin.close();
+		cin.close();
 	}
 }
