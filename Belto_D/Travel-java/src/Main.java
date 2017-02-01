@@ -111,7 +111,10 @@ public class Main {
 				int billet = 830;
 				int nuit = 50;
 				doCanada(billet, nuit);
-			}
+		}
+		if (menu.equals("A")){
+			America.doWashington();
+		};
 
 		sc.close();
 	}

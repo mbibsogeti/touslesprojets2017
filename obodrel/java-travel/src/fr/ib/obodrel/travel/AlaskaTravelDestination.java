@@ -3,25 +3,29 @@ package fr.ib.obodrel.travel;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class AlaskaTravelDestination extends TravelDestination {
-	
+public class AlaskaTravelDestination extends UnitedStatesTravelDestination {
+	private float _paymentReductionPercent;
+	private int _planeTicketPrice;
+	private int _pricePerDay;
+
 	public AlaskaTravelDestination() {
 		super();
+		_DestinationId = "a";
+		_travelDuration = 11;
 		_DestinationName = "Alaska";
+		_paymentReductionPercent = 0.2f;
+		_planeTicketPrice = 860;
+		_pricePerDay = 48;
 	}
-	
-	private int findAlaskaDaysOfStaying(Scanner cin) {
+
+	private int getUserNumberOnKeyboard(Scanner cin) {
 		int daysOfStaying = -1;
 		int numberEntered = 0;
 		String line = null;
 
-		System.out.println("Hi! Welcome to our reservation page, please enter how many days you will stay in "
-				+ _DestinationName + " :");
-
 		while (daysOfStaying < 0) {
 			try {
 				line = cin.nextLine();
-				//line = "13";
 				if (line.indexOf(" ") != -1) {
 					line = (String) line.subSequence(0, line.indexOf(" "));
 				}
@@ -46,12 +50,12 @@ public class AlaskaTravelDestination extends TravelDestination {
 		return daysOfStaying;
 	}
 
-	private void analyzeAlaskaDaysOfStaying(int daysOfStaying) {
+	private void analyzeTravelDuration() {
 		String flyCompany = null;
 
-		if (daysOfStaying < 8) {
+		if (_travelDuration < 8) {
 			System.out.println("Sadly you will not visit us long");
-		} else if (daysOfStaying < 15) {
+		} else if (_travelDuration < 15) {
 			System.out.println(
 					"That is a nice stay, we hope you wil enjoy it and we will give you a key toy as a present!");
 		} else {
@@ -59,16 +63,16 @@ public class AlaskaTravelDestination extends TravelDestination {
 					"You will stay with us very long! We hope you wil enjoy it and we will give you a gold nugget as a present!");
 		}
 
-		switch (daysOfStaying % 7) {
+		switch (_travelDuration % 7) {
 		case 0:
-			if (daysOfStaying / 7 < 5) {
+			if (_travelDuration / 7 < 5) {
 				flyCompany = "Condor";
 			} else {
 				flyCompany = _DestinationName + " Airlines";
 			}
 			break;
 		default:
-			if (daysOfStaying < 8) {
+			if (_travelDuration < 8) {
 				flyCompany = "Air France";
 			} else {
 				flyCompany = _DestinationName + " Airlines";
@@ -79,8 +83,8 @@ public class AlaskaTravelDestination extends TravelDestination {
 				+ " planes to travel back and forth!");
 
 		System.out.println("Here you will find the schedule of your staying :\n");
-		for (int i = 0; i < daysOfStaying; i++) {
-			if (i == 0 || i == daysOfStaying - 1) {
+		for (int i = 0; i < _travelDuration; i++) {
+			if (i == 0 || i == _travelDuration - 1) {
 				System.out.println("Day " + (i + 1) + " Plane");
 			} else if (i % 4 == 0) {
 				System.out.println("Day " + (i + 1) + " Royal Crab");
@@ -90,33 +94,32 @@ public class AlaskaTravelDestination extends TravelDestination {
 		}
 	}
 
-	private void computeAndDisplayAlaskaTravelCostAndInformations(float paymentReductionPercent,
-			int planeTicketPrice, int daysOfStaying, int pricePerDay) {
+	private void computeAndDisplayTravelCostAndInformations() {
 		float totalPriceSpent;
 		String outputMessage;
 
-		totalPriceSpent = (1 - paymentReductionPercent) * (planeTicketPrice + pricePerDay * daysOfStaying);
+		totalPriceSpent = (1 - _paymentReductionPercent) * (_planeTicketPrice + _pricePerDay * _travelDuration);
 		outputMessage = "\nYour journey in " + _DestinationName + " will cost you ";
 		outputMessage += totalPriceSpent + "\u20ac calculated as follow : \n";
-		outputMessage += -100 * paymentReductionPercent + "% of a " + planeTicketPrice + "\u20ac plane ticket, ";
-		outputMessage += "and also the " + daysOfStaying + " days at " + pricePerDay + "\u20ac each.\n";
+		outputMessage += -100 * _paymentReductionPercent + "% of a " + _planeTicketPrice + "\u20ac plane ticket, ";
+		outputMessage += "and also the " + _travelDuration + " days at " + _pricePerDay + "\u20ac each.\n";
 		outputMessage += "We hope you will have a nice staying!";
 
 		System.out.println(outputMessage);
 	}
-	
+
+	@Override
 	protected void execute(Scanner cin) {
-		float paymentReductionPercent = 0.2f;
-		int planeTicketPrice = 860;
-		int pricePerDay = 48;
-		int daysOfStaying;
+		if (!_hasExecutedOnce) {
+			super.execute(cin);
+			System.out.println("Hi! Welcome to our reservation page, please enter how many days you will stay in "
+					+ _DestinationName + " :");
+			_travelDuration = getUserNumberOnKeyboard(cin);
+		}
 
-		daysOfStaying = findAlaskaDaysOfStaying(cin);
+		analyzeTravelDuration();
 
-		analyzeAlaskaDaysOfStaying(daysOfStaying);
-
-		computeAndDisplayAlaskaTravelCostAndInformations(paymentReductionPercent, planeTicketPrice, daysOfStaying,
-				pricePerDay);
+		computeAndDisplayTravelCostAndInformations();
 	}
 
 }
