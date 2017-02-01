@@ -2,7 +2,17 @@
 public class Destination {
 
 	String name,state;
-	int days=0;
+	int days;
+	
+	Destination(){
+		this(null,null,0);
+	}
+	
+	Destination(String n, String s, int d){
+		name=n;
+		state=s;
+		days=d;
+	}
 	
 	void extendDays(int d){
 		days+=d;
