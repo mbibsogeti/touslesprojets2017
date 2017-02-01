@@ -85,12 +85,11 @@ public class Main {
 
 		// Menu :
 		if (menu.equals("a")) {
-			do Alaska();
+			Alaska();
 		} else {
 			if (menu.equals("c")) {
-				do Canada();
-				}
-			} else {
+				Canada();
+				} else {
 				System.out.println("WTF ?!!!");
 				}
 	}
