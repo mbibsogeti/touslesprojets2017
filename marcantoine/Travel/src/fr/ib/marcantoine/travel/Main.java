@@ -77,8 +77,7 @@ public class Main {
 		int pnuit = 50;
 		return getCanadaPrice(pbillet, pnuit, jour);
 	}
-	
-
+		
 	// MAIN
 	public static void main(String[] args) {
 
@@ -105,6 +104,14 @@ public class Main {
 				} else {
 					if (menu.equals("w")) {
 						America.doWashington();
+					} else {
+						if (menu.equals("n")) {
+							America.doNevada();
+						} else {
+							if (menu.equals("t")) {
+								America.doTexas();
+							}
+						}
 					}
 				}
 			}
