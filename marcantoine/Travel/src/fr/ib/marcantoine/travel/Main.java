@@ -5,17 +5,18 @@ import java.util.Scanner;
 public class Main {
 
 	// ALASKA
-	static void Alaska() {
+	static void doAlaska(Scanner sc) {
 		int promo = 20;
 		int pbillet = 860;
 		int pnuit = 48;
 		float ptotal;
-		// Définition de l'objet scanner :
-		Scanner sc = new Scanner(System.in);
+
+		// Entrée nombre de jours de voyage :
 		System.out.println("Combien de jours voulez-vous partir ?");
 		int duration = sc.nextInt();
-		ptotal = (1 - promo / 100f) * (pbillet + duration * pnuit);
 
+		// Calcul et affichage du prix total :
+		ptotal = (1 - promo / 100f) * (pbillet + duration * pnuit);
 		System.out.println("Alaska : -" + promo + "% sur " + pbillet + "\u20ac d'avion et " + duration + "j à " + pnuit
 				+ "\u20ac pour un total de " + ptotal + ".");
 
@@ -59,10 +60,7 @@ public class Main {
 	}
 
 	// CANADA
-	static void Canada() {
-
-		int pbillet = 785;
-		int pnuit = 45;
+	static void doCanada(int pbillet, int pnuit) {
 		int[] voyages = { 7, 9, 13, 16, 18 };
 		for (int j : voyages) {
 			float ptotal = (pbillet + j * pnuit);
@@ -85,35 +83,38 @@ public class Main {
 
 		// Menu :
 		if (menu.equals("a")) {
-			Alaska();
+			doAlaska(sc);
 		} else {
 			if (menu.equals("c")) {
-				Canada();
-				} else {
-				System.out.println("WTF ?!!!");
+				doCanada(785, 45);
+			} else {
+				if (menu.equals("s")) {
+					doCanada(805, 45);
 				}
+			}
+		}
+		sc.close();
+
+		// XP
+		// int[]ti = {5,4,0,0};
+
+		// Emploi du temps avec ce qu'on a comme outils : solution alternative +
+		// courte, demande + mémoire, nomme mieux.s
+		// for (int cpt = 1 ; cpt <= duration ; cpt ++)
+		// String activite = "Peche";
+		// if (cpt==1 || cpt ==duration) {
+		// activite = "Avion";
+		// } else {
+		// if ((cpt-1)%4==0) {
+		// activite = "Crabe royal";
+		// }
+		// }
+		// System.out.println("jour "+cpt+" : "+activite);
+		// }
+
+		// Expérience
+		// for (int g = 0, j = 0 ; j < 20 ; j+=g, g++) {
+		// System.out.println (g+"/"+j);
+		// }
 	}
-
-	// XP
-	// int[]ti = {5,4,0,0};
-
-	// Emploi du temps avec ce qu'on a comme outils : solution alternative +
-	// courte, demande + mémoire, nomme mieux.s
-	// for (int cpt = 1 ; cpt <= duration ; cpt ++)
-	// String activite = "Peche";
-	// if (cpt==1 || cpt ==duration) {
-	// activite = "Avion";
-	// } else {
-	// if ((cpt-1)%4==0) {
-	// activite = "Crabe royal";
-	// }
-	// }
-	// System.out.println("jour "+cpt+" : "+activite);
-	// }
-
-	// Expérience
-	// for (int g = 0, j = 0 ; j < 20 ; j+=g, g++) {
-	// System.out.println (g+"/"+j);
-	// }
-
-}}
+}
