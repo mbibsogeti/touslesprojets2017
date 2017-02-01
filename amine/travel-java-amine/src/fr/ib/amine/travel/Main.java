@@ -116,8 +116,11 @@ public class Main {
 		if (menu.equals("w")) {
 			Amerique.doWashington(sc);
 		}
-		if (menu.equals("n")){
+		if (menu.equals("n")) {
 			Amerique.doNevada(sc);
+		}
+		if (menu.equals("t")) {
+			Amerique.doTexas(sc);
 		}
 		sc.close();
 	}

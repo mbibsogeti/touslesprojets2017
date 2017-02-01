@@ -23,7 +23,7 @@ public class Main {
 		// Acquisition de l'intension de l'utilisateur
 		
 		do {
-			System.out.println("\nQue souhaitez-vous faire aujourd'hui :\n a : Alaska \n c : Canada \n n : Nevada \n s : Saskakchewan \n w : Washington \n q : Quitter");
+			System.out.println("\nQue souhaitez-vous faire aujourd'hui :\n a : Alaska\n c : Canada\n n : Nevada\n s : Saskakchewan\n t : Texas\n w : Washington\n q : Quitter");
 			Option = sc.nextLine();
 			//sc.close();
 			switch (Option) {
@@ -44,6 +44,10 @@ public class Main {
 				
 			case "w":
 				USA.doWashington();
+				break;
+				
+			case "t":
+				USA.doTexas();
 				break;
 				
 			case "n":
