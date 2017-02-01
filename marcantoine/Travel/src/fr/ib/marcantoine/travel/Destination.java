@@ -5,6 +5,7 @@ public class Destination {
 	// ATTRIBUTS
 	private String name, state;
 	private int days;
+	public static final int FIXED_DAYS = 7;
 
 	// METHODES
 	

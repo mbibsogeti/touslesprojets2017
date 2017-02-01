@@ -5,10 +5,12 @@ public class CoastalDestination extends Destination {
 	private String boat;
 	
 	public CoastalDestination() {
+		this (null, null, 0, null);
 	}
-
-	public CoastalDestination(String name, String state, int days) {
+	// APPEL DE CONSTRUCTEUR DE LA CLASSE MERE
+	public CoastalDestination(String name, String state, int days, String boat) {
 		super(name, state, days);
+		this.boat = boat;
 	}
 
 	public String getBoat() {
