@@ -63,10 +63,21 @@ public class Main {
 	static void doCanada(int pbillet, int pnuit) {
 		int[] voyages = { 7, 9, 13, 16, 18 };
 		for (int j : voyages) {
-			float ptotal = (pbillet + j * pnuit);
+			float ptotal = getCanadaPrice(pbillet, pnuit, j);
 			System.out.println("Voyage de " + j + " jours : " + ptotal + "\u20ac.");
 		}
 	}
+
+	// GETCANADAPRICE et tests surcharge
+	static float getCanadaPrice(int pbillet, int pnuit, int jour) {
+		return (pbillet + jour * pnuit);
+	}
+	static float getCanadaPrice (int jour) {
+		int pbillet = 1000;
+		int pnuit = 50;
+		return getCanadaPrice(pbillet, pnuit, jour);
+	}
+	
 
 	// MAIN
 	public static void main(String[] args) {
@@ -78,7 +89,8 @@ public class Main {
 		System.out.println("Bienvenue dans notre agence de voyages Dégage.");
 
 		// Choix de la destination :
-		System.out.println("Où voulez-vous aller (c pour Canada ou a pour Alaska) ?");
+		System.out.println("Où voulez-vous aller (c pour Canada, a pour Alaska, "
+				+ "s pour Saskakchewa, w pour Washington) ?");
 		String menu = sc.next();
 
 		// Menu :
@@ -89,7 +101,11 @@ public class Main {
 				doCanada(785, 45);
 			} else {
 				if (menu.equals("s")) {
-					doCanada(805, 45);
+					doCanada(2000, 45);
+				} else {
+					if (menu.equals("w")) {
+						America.doWashington();
+					}
 				}
 			}
 		}
