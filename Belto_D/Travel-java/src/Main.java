@@ -1,11 +1,24 @@
 import java.util.Scanner;
 
 public class Main {
-	public static void doAlaska() {
+	// fonction CanadaPrice, tous les calculs dans Canada
+	public static int getCanadaPrice(int billet, int nuit, int jours){
+		int tot = 0;
+		// (Voyage Canada, Avion=785e, hotel=45e, afficher les prix pour
+		// 7j,9j,13j,16j,18,//
+		// surcharge de la fonction getCanadaprice
+		// La fonction getCanadaPrice (int, int, int) fait appelle à la fonction getCanadaprice(int)
+		tot = billet + (nuit * getCanadaPrice(jours));
+		return tot;
+	};
+	public static int getCanadaPrice (int jours){
+		return jours;
+	};
+	// scanner sc est en paramètre de la fonction doAlaska
+	public static void doAlaska(Scanner sc) {
 		int offre = -20;
 		long avion = 860;
 		System.out.println("Rentrez le nombre de jours de vacances");
-		Scanner sc = new Scanner(System.in);
 		int duree = sc.nextInt();
 		long pension = 48;
 		double total;
@@ -13,7 +26,7 @@ public class Main {
 		total = ((100 + offre) * total) / 100;
 		String i;
 		i = "\u20ac";
-		/*
+		/* Demarrage Java avec Mr Blanchard (30-01-2017)
 		 * System.out.println("Hello "); System.out.println("Word");
 		 * System.out.println(i); System.out.println("Hello \"Bob\"!");
 		 */
@@ -36,8 +49,6 @@ public class Main {
 			System.out.println("vous voyagez avec Condor");
 			break;
 		case 21:
-			System.out.println("vous voyagez avec Condor");
-			break;
 		case 28:
 			System.out.println("vous voyagez avec Condor");
 			break;
@@ -64,17 +75,12 @@ public class Main {
 		}
 	}
 
-	public static void doCanada() {
+	public static void doCanada(int billet, int nuit) {
 		System.out.println("Vous irez au Canada");
 		int tab[] = { 7, 9, 13, 16, 18 };
-		int billet = 795;
-		int nuit = 45;
-		int tot = 0;
 		int k = 0;
-		// (Voyage Canada, Avion=785e, hotel=45e, afficher les prix pour
-		// 7j,9j,13j,16j,18,//
 		while (k < 5) {
-			tot = billet + (nuit * tab[k]);
+			int tot=getCanadaPrice(billet, nuit, tab[k]);
 			System.out.println("Voyage " + (k + 1) + ",donc " + tab[k] + "jours" + "=" + tot + "e");
 			k++;
 		}
@@ -92,13 +98,20 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		String menu = sc.next();
 		if (menu.equals("A")) {
-			doAlaska();
+			doAlaska(sc);
 		}
 		;
 		// si vous tapez C, vous irez au Canada//
 		if (menu.equals("C")) {
-			doCanada();
+			int billet = 795;
+			int nuit = 45;
+			doCanada(billet, nuit);
 		}
+		if (menu.equals("K")) {
+				int billet = 830;
+				int nuit = 50;
+				doCanada(billet, nuit);
+			}
 
 		sc.close();
 	}
