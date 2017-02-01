@@ -15,6 +15,7 @@ public class Main {
 		WashingtonTravelDestination Washington = new WashingtonTravelDestination();
 		NevadaTravelDestination Nevada = new NevadaTravelDestination();
 		UnitedStatesTravelDestination UnitedStates = new UnitedStatesTravelDestination();
+		TexasTravelDestination Texas = new TexasTravelDestination();
 
 		_travelOption = new HashMap<String, Object>();
 		_travelOption.put(Alaska.getDestinationID(), Alaska);
@@ -23,6 +24,7 @@ public class Main {
 		_travelOption.put(Saskatchewan.getDestinationID(), Saskatchewan);
 		_travelOption.put(Washington.getDestinationID(), Washington);
 		_travelOption.put(Nevada.getDestinationID(), Nevada);
+		_travelOption.put(Texas.getDestinationID(), Texas);
 		_travelOption.put("q", null);
 	}
 
@@ -83,7 +85,8 @@ public class Main {
 		while (!wantToQuit) {
 			System.out.println(
 					"What will you do next ?\n" + "Type \"l\" to change your location, \"d\" to change the duration"
-							+ ", \"p\" to print your choice, \"e\" to display informations and \"q\" to quit.");
+							+ ", \"p\" to print your choice, \"e\" to display informations,"
+							+ " \"t\" to change mean of transport and \"q\" to quit.");
 			try {
 				line = cin.nextLine();
 				switch (line) {
@@ -134,6 +137,10 @@ public class Main {
 					break;
 				case "e":
 					_travelDestination.execute(cin);
+					break;
+				case "t":
+					System.out.println("Please choose a new mean of transport!");
+					_travelDestination.chooseMeanOfTransportation(cin);
 					break;
 				case "q":
 					wantToQuit = true;
