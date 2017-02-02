@@ -64,7 +64,7 @@ public class Main {
 			}
 		}
 		sc.close();
-	}
+	} 
 
 	static void doCanada(float _PrixVol, float _PrixSejour) {
 		int[] Jour = { 7, 9, 13, 16, 18 };
