@@ -14,7 +14,7 @@ public class Main {
 		float PrixTot = (PrixVol + Duree * PrixSejour) * (1 - (reduction / 100.0f));
 
 		if (Duree > 0 & Duree <= 7) {
-
+ 
 			System.out.println("Alaska: -" + reduction + "% sur " + PrixVol + " € d\'avion et " + Duree + " jours à "
 					+ PrixSejour + " €/jour. Prix total: " + PrixTot + " €");
 		}
