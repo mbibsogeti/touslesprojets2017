@@ -1,10 +1,11 @@
 
+//Class permettant de définir une destination maritime au sein des offres de notre agence de voyage
 public class CostalDestination extends Destination {
 
+	// ATTRIBUTS
 	private String boat;
 	
-	
-
+	// CONSTRUCTEURS
 	public CostalDestination(String b) {
 		super();
 		boat=b;
@@ -20,6 +21,7 @@ public class CostalDestination extends Destination {
 		boat=b;
 	}
 
+	// ACCESSEURS
 	public String getBoat() {
 		return boat;
 	}
@@ -28,6 +30,7 @@ public class CostalDestination extends Destination {
 		this.boat = boat;
 	}
 	
+	// METHODES
 	public String toString(){
 		
 		if(boat!=null && !boat.equals("")){
