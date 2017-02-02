@@ -10,13 +10,13 @@
 public class Destination {
 	// Declaration d'une constante dans Java (le jour fixé à 15 par
 	// exemple)-permet d'éviter des valeurs en dur
-	public static final int Default_days = 15;
+	public static final int DEFAULT_DAYS = 15;
 	private String name, state;
 	private int days;
 	// declaration du constructeur Destination vide, sans variable
 	public Destination() {
 	// apel a l'autre constructeur avec 3 paramètres
-		this(null, null, Default_days);
+		this(null, null, DEFAULT_DAYS);
 	/*
 	 * String Name = null; String State = null; int days = 0;
 	*/
