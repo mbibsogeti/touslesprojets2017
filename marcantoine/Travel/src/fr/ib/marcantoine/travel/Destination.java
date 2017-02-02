@@ -1,4 +1,7 @@
 package fr.ib.marcantoine.travel;
+
+import java.util.Scanner;
+
 /**
  * A travel destination in the USA
  * @author Marc-Antoine
@@ -21,15 +24,18 @@ public class Destination {
 	}
 	/**
 	 * 
-	 * @param name is the name of <u> the DESTINATION </u> which...
-	 * @param state
-	 * @param days
+	 * @param name is the name of <u> the DESTINATION </u> chosen by the user.
+	 * @param state is the name of <u> the DESTINATION </u> chosen by the user.
+	 * @param days is the length of the trip in days.
 	 */
 	public Destination(String name, String state, int days) {
 		this.name = name;
 		this.state = state;
 		this.days = days;
 	}
+	
+	// Défintion de l'objet scanner :
+	Scanner sc = new Scanner(System.in);
 	
 	// effacer le nom de la destination
 	public void emptyName() {
