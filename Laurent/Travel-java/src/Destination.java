@@ -1,12 +1,16 @@
 
+//Class permettant de définir une destination au sein des offres de notre agence de voyage
 public class Destination {
 
+	// ATTRIBUTS
+	public static final int DEFAULT_DAYS=7;
 	private String name,state;
 	private int days;
 	
+	// CONSTRUCTEURS
 	public Destination(){
 		
-		this(null,null,0);
+		this(null,null,DEFAULT_DAYS);
 	}
 	
 	public Destination(String n, String s, int d){
@@ -16,6 +20,7 @@ public class Destination {
 		days=d;
 	}
 	
+	// ACCESSEURS
 	public String getName() {
 		return name;
 	}
@@ -41,9 +46,10 @@ public class Destination {
 	}
 
 	public int getWeeks(){
-		return days/7;
+		return days/DEFAULT_DAYS;
 	}
 
+	// METHODES
 	public void extendDays(int d){
 		
 		days+=d;
