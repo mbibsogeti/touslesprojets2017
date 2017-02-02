@@ -18,6 +18,7 @@ public class Destination {
 		this.days = d;
 	}
 	
+	//Accesseurs
 	public String getName() {
 		return name;
 	}

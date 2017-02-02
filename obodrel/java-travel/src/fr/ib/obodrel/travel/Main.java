@@ -8,7 +8,7 @@ public class Main {
 	private static TravelDestination _travelDestination;
 	private static HashMap<String, Object> _travelOption;
 
-	public static void initializeTravelOptions() {
+	private static void initializeTravelOptions() {
 		AlaskaTravelDestination Alaska = new AlaskaTravelDestination();
 		CanadaTravelDestination Canada = new CanadaTravelDestination();
 		SaskatchewanTravelDestination Saskatchewan = new SaskatchewanTravelDestination();
@@ -28,7 +28,7 @@ public class Main {
 		_travelOption.put("q", null);
 	}
 
-	public static void chooseADestination(Scanner cin) {
+	private static void chooseADestination(Scanner cin) {
 		boolean hasChosenDestination = false;
 		String line = null;
 
@@ -83,10 +83,10 @@ public class Main {
 		}
 
 		while (!wantToQuit) {
-			System.out.println(
-					"What will you do next ?\n" + "Type \"l\" to change your location, \"d\" to change the duration"
-							+ ", \"p\" to print your choice, \"e\" to display informations,"
-							+ " \"t\" to change mean of transport and \"q\" to quit.");
+			System.out.println("What will you do next ?\n" + "Type \"l\" to change your location,"
+					+ " \"a\" to add duration, \"d\" to change the duration"
+					+ ", \"p\" to print your choice, \"e\" to display informations,"
+					+ " \"t\" to change mean of transport and \"q\" to quit.");
 			try {
 				line = cin.nextLine();
 				switch (line) {
@@ -100,6 +100,36 @@ public class Main {
 					} catch (IllegalStateException inputException) {
 						System.out.println(
 								"You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
+					}
+					break;
+				case "a":
+					numberEntered = -1;
+					System.out.println("Please type the duration you want to add :");
+					while (numberEntered < 0) {
+						try {
+							line = cin.nextLine();
+							if (line.indexOf(" ") != -1) {
+								line = (String) line.subSequence(0, line.indexOf(" "));
+							}
+							try {
+								numberEntered = Integer.parseInt(line);
+								if (numberEntered > 0) {
+									_travelDestination.addTravelDuration(numberEntered);
+								} else {
+									System.out.println("You made a mistake you should provide a nuber higher than zero,"
+											+ " please retry!\nEnter now :");
+								}
+							} catch (NumberFormatException inputException) {
+								System.out.println(
+										"You made a mistake this was not an Integer, please retry!\nEnter now :");
+							}
+						} catch (NoSuchElementException inputException) {
+							System.out.println(
+									"You made a mistake there was nothing entered, please retry!\nEnter now :");
+						} catch (IllegalStateException inputException) {
+							System.out.println(
+									"You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
+						}
 					}
 					break;
 				case "d":
