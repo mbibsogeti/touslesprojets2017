@@ -4,6 +4,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public abstract class TravelDestination {
+	public static final int BASE_TRAVEL_DURATION = 7;
 	protected String _DestinationId;
 	protected String _DestinationName;
 	protected String _LocationName;
@@ -54,8 +55,18 @@ public abstract class TravelDestination {
 		_travelDuration = travelDuration;
 	}
 
+	public void addTravelDuration(int travelDurationAdded) {
+		_travelDuration += travelDurationAdded;
+	}
+
 	public float getTravelDurationWeeks() {
 		return _travelDuration / 7f;
+	}
+
+	@Override
+	public String toString() {
+		return "You set to go to " + _DestinationName + " in " + _LocationName + " for " + _travelDuration
+				+ " days using a " + _meanOfTransport.getMeanOfTransport() + "to travel around.";
 	}
 
 	protected void chooseLocation(Scanner cin) {
@@ -90,12 +101,6 @@ public abstract class TravelDestination {
 				System.out.println("You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
 			}
 		}
-	}
-
-	@Override
-	public String toString() {
-		return "You set to go to " + _DestinationName + " in " + _LocationName + " for " + _travelDuration
-				+ " days using a " + _meanOfTransport.getMeanOfTransport() + "to travel around.";
 	}
 
 	protected void execute(Scanner cin) {

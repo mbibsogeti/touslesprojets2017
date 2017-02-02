@@ -7,7 +7,7 @@ public class CanadaTravelDestination extends TravelDestination {
 
 	protected int _canadaPricePerDay;
 	protected int _canadaPlaneTicketPrice;
-	ArrayList<Integer> _canadaTravelOptions;
+	protected ArrayList<Integer> _canadaTravelOptions;
 	
 	public CanadaTravelDestination() {
 		super();

@@ -11,8 +11,7 @@ public class America {
 	static void doNevada() {
 		Destination d1 = new Destination();
 //		d1.name = "Las Vegas";
-//		d1.days = 10;
-		d1.setDays(8);
+		d1.setDays(Destination.FIXED_DAYS);
 		System.out.println(d1.getName()+" pendant "+ d1.getDays() +" jours");
 		System.out.println(d1.toString());
 		System.out.println(d1.getWeeks());
@@ -21,11 +20,11 @@ public class America {
 	// FONCTION TEXAS
 	static void doTexas() {
 		CoastalDestination d1 = new CoastalDestination ();
-		d1.setName("Florabama");
-		d1.setState("Alabama");
-		d1.setDays(12);
-		System.out.println (d1.toString());
-		d1.setBoat("Hollandais Volant");
+//		d1.setName("Florabama");
+//		d1.setState("Alabama");
+//		d1.setDays(12);
+//		System.out.println (d1.toString());
+//		d1.setBoat("Hollandais Volant");
 		System.out.println (d1.toString());
 	}
 }
