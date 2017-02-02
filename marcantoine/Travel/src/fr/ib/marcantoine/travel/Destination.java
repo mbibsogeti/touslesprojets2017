@@ -3,6 +3,7 @@ package fr.ib.marcantoine.travel;
 public class Destination {
 
 	// ATTRIBUTS
+	public static final int FIXED_DAYS = 7;
 	private String name, state;
 	private int days;
 
