@@ -11,7 +11,6 @@ public class TexasTravelDestination extends UnitedStatesTravelDestination {
 		_DestinationId ="t";
 	}
 	
-	@Override
 	protected void execute(Scanner cin) {
 		super.execute(cin);
 	}
