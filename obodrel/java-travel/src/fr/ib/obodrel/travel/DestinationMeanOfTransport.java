@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class DestinationMeanOfTransport {
 	private String _meanOfTransport;
 	private String _meanName;
-	private HashMap<String, String> _typesAllowed;
+	private HashMap <String, String> _typesAllowed;
 
 	public DestinationMeanOfTransport() {
 		_typesAllowed = new HashMap<String, String>();

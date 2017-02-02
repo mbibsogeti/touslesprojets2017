@@ -19,28 +19,25 @@ public class Main {
 		String menu = sc.next();
 
 		// Menu :
-		if (menu.equals("a")) {
+		switch (menu) {
+		case "a": 
 			doAlaska(sc);
-		} else {
-			if (menu.equals("c")) {
-				doCanada(785, 45);
-			} else {
-				if (menu.equals("s")) {
-					doCanada(2000, 45);
-				} else {
-					if (menu.equals("w")) {
-						America.doWashington();
-					} else {
-						if (menu.equals("n")) {
-							America.doNevada();
-						} else {
-							if (menu.equals("t")) {
-								America.doTexas();
-							}
-						}
-					}
-				}
-			}
+			break;
+		case "c": 
+			doCanada(785, 45);
+			break;
+		case "s": 
+			doCanada(2000, 45);
+			break;
+		case "w": 
+			America.doWashington();
+			break;
+		case "n": 
+			America.doNevada();
+			break;
+		case "t": 
+			America.doTexas();
+			break;
 		}
 		sc.close();
 

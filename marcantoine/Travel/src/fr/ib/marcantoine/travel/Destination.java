@@ -1,5 +1,10 @@
 package fr.ib.marcantoine.travel;
-
+/**
+ * A travel destination in the USA
+ * @author Marc-Antoine
+ * @since 2017-01-31
+ *
+ */
 public class Destination {
 
 	// ATTRIBUTS
@@ -8,11 +13,18 @@ public class Destination {
 	private int days;
 
 	// METHODES
-	
-	// CONSTRUCTEURS
+	/**
+	 * @ param ~ Name od the new Destination. With uppercases.
+	 */
 	public Destination() {
 		this (null, null, 0);
 	}
+	/**
+	 * 
+	 * @param name is the name of <u> the DESTINATION </u> which...
+	 * @param state
+	 * @param days
+	 */
 	public Destination(String name, String state, int days) {
 		this.name = name;
 		this.state = state;
