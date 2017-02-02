@@ -1,9 +1,12 @@
 package fr.ib.elodie.travel;
 
 public class CostalDestination extends Destination {
+	
+	//Attributs
 	private String boatName;
 	
 
+	//Constructeurs
 	public CostalDestination (String n, String s, int d, String bN){
 		super(n, s, d);
 		this.boatName = bN;
@@ -12,7 +15,7 @@ public class CostalDestination extends Destination {
 		this(null, null, 0, null);
 	}
 	
-
+	//Accesseurs
 	public String getBoatName() {
 		return boatName;
 	}
