@@ -4,15 +4,14 @@ public class Destination {
 	public static final int DAYS = 21;// Constante
 	private String name, state;
 	private int days;
-	
 
 	public Destination() { // Constructeur 1
 		this(null, null, DAYS);// constructeur 1 fait appel au constructeur 2
 								// ci-dessous
 	}
 
-	public Destination(String n, String s, int d) { // Constructeur 2
-        days = d;
+	public Destination(String n, String s, int d) { 
+		days = d;
 		name = n;
 		state = s;
 
