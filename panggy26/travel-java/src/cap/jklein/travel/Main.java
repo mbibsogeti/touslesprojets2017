@@ -14,15 +14,16 @@ public class Main {
 		short vol = 860;
 		byte prix = 48;
 
-		// Phrase d'accueil - la promo s'applique au tout
+		// La promo s'applique au tout
 		System.out.println("Alaska : " + promo + "% sur " + vol + "\u20ac d'avion et " + jours + "j à " + prix + "\u20ac.");
 
 		// Calcul coût total - On rajoute 100f pour faire une division réelle.
 		// la division entière ne convient pas ici
 		float total = ((100 + promo) / 100f) * (vol + jours * prix);
-		System.out.println("Le prix total à payer est : " + total + "\u20ac.");
 
-		// Structure if
+		// Méthode format de la classe String pour afficher les centimes du prix
+		System.out.println("Le prix total à payer est : " + String.format("%.2f", total) + "\u20ac.");
+
 		if (jours < 8)
 			System.out.println("Pas de cadeau");
 		else if (jours < 15)
@@ -30,7 +31,6 @@ public class Main {
 		else
 			System.out.println("Vous remportez une pépite d'or !");
 
-		// Structure switch
 		switch (jours % 7) {
 		// Si le nombre de jours est un multiple de 7 :
 		case 0:
@@ -80,8 +80,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Veuillez taper A (Alaska), C (Canada), S (Saskatchewan), W (Washington), N (Nevada), T (Texas) ou Q (Quitter) : ");
-		String menu = sc.next();
+		System.out.println(
+				"Veuillez taper A (Alaska), C (Canada), S (Saskatchewan), W (Washington), N (Nevada), T (Texas), L (Louisiane) ou Q (Quitter) : ");
+		String menu = sc.nextLine();
 
 		if (menu.equals("A")) {
 			doAlaska(sc);
@@ -100,6 +101,9 @@ public class Main {
 		}
 		if (menu.equals("T")) {
 			Usa.doTexas();
+		}
+		if (menu.equals("L")) {
+			Usa.doLouisiane(sc);
 		}
 	}
 }
