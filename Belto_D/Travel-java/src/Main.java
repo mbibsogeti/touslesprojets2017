@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Main {
 	// fonction CanadaPrice, tous les calculs dans Canada
 	public static int getCanadaPrice(int billet, int nuit, int jours) {
@@ -36,7 +35,10 @@ public class Main {
 		 */
 		System.out.println("Alaska :" + offre + "%" + " sur " + avion + i + " d'avion et " + duree + "j"
 				+ " de séjour à " + pension + i + ".");
-		System.out.println("Le total est : " + total + i + ".");
+		// formatage du total avec 2 chiffre après la virgule (f=flottant et valable pour les doubles
+		// Et d=digit que pour les entier
+		       String S=String.format("%.2f",total);
+		System.out.println("Le total est : " + S + i + ".");
 		if (duree < 7) {
 			System.out.println("Vous n'avez pas de prime");
 		} else if (duree >= 8 && duree < 14) {
@@ -100,7 +102,7 @@ public class Main {
 		// Voyage en Alaska
 		System.out.println("Bienvenue, où voulez-vous alllez");
 		Scanner sc = new Scanner(System.in);
-		String menu = sc.next();
+		String menu = sc.nextLine();
 		if (menu.equals("A")) {
 			doAlaska(sc);
 		}
@@ -129,7 +131,9 @@ public class Main {
 		if (menu.equals("T")) {
 			America.doTexas();
 		}
-
+		if (menu.equals("L")) {
+			America.doLuisianne();
+		}
 		sc.close();
 	}
 

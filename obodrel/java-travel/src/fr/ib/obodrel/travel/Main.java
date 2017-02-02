@@ -16,6 +16,7 @@ public class Main {
 		NevadaTravelDestination Nevada = new NevadaTravelDestination();
 		UnitedStatesTravelDestination UnitedStates = new UnitedStatesTravelDestination();
 		TexasTravelDestination Texas = new TexasTravelDestination();
+		LousianaTravelDestination Lousiana = new LousianaTravelDestination();
 
 		_travelOption = new HashMap<String, Object>();
 		_travelOption.put(Alaska.getDestinationID(), Alaska);
@@ -25,6 +26,7 @@ public class Main {
 		_travelOption.put(Washington.getDestinationID(), Washington);
 		_travelOption.put(Nevada.getDestinationID(), Nevada);
 		_travelOption.put(Texas.getDestinationID(), Texas);
+		_travelOption.put(Lousiana.getDestinationID(), Lousiana);
 		_travelOption.put("q", null);
 	}
 
@@ -42,6 +44,9 @@ public class Main {
 			line += "\" for ";
 			line += ((TravelDestination) _travelOption.values().toArray()[i])._DestinationName;
 			line += ", ";
+			if (i % 4 == 0 && i > 0) {
+				line += "\n";
+			}
 		}
 		line += " or q to quit.";
 		System.out.println(line);
@@ -84,23 +89,17 @@ public class Main {
 
 		while (!wantToQuit) {
 			System.out.println("What will you do next ?\n" + "Type \"l\" to change your location,"
-					+ " \"a\" to add duration, \"d\" to change the duration"
-					+ ", \"p\" to print your choice, \"e\" to display informations,"
+					+ " \"a\" to add duration, \"d\" to change the duration, \"u\" to change your username, "
+					+ ", \"p\" to print your choice\n, \"e\" to display informations, \"v\" to validate your command"
 					+ " \"t\" to change mean of transport and \"q\" to quit.");
 			try {
 				line = cin.nextLine();
 				switch (line) {
 				case "l":
-					System.out.println("Please type the location you want to go to :");
-					try {
-						line = cin.nextLine();
-						_travelDestination.setLocationName(line);
-					} catch (NoSuchElementException inputException) {
-						System.out.println("You made a mistake there was nothing entered, please retry!\nEnter now :");
-					} catch (IllegalStateException inputException) {
-						System.out.println(
-								"You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
-					}
+					_travelDestination.chooseLocation(cin);
+					break;
+				case "u":
+					_travelDestination.chooseUsername(cin);
 					break;
 				case "a":
 					numberEntered = -1;
@@ -172,6 +171,19 @@ public class Main {
 					System.out.println("Please choose a new mean of transport!");
 					_travelDestination.chooseMeanOfTransportation(cin);
 					break;
+				case "v":
+					wantToQuit = true;
+					System.out.println("Your choice is made!");
+					String tmpLine = "";
+					tmpLine += _travelDestination.getUserName() + " has bought a ";
+					tmpLine += _travelDestination.getMeanOfTransport() + "ticket to ";
+					tmpLine += _travelDestination.getDestinationName() + "in order to visit ";
+					tmpLine += _travelDestination.getLocationName() + " for ";
+					tmpLine += _travelDestination.getTravelDuration() + " days.\n";
+					tmpLine += "Please choose a payment option on the website you will be redirected to!\n";
+					tmpLine += "We hope you will have a nice journey there! Thanks you for using us!";
+					System.out.println(tmpLine);
+					break;
 				case "q":
 					wantToQuit = true;
 					System.out.println("You chose to quit our software, thank you for trying us.");
@@ -183,7 +195,6 @@ public class Main {
 				System.out.println("You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
 			}
 		}
-
 		cin.close();
 	}
 }

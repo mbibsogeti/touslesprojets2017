@@ -28,6 +28,5 @@ public class CoastalDestination extends Destination {
 	public String toString() {
 		// Appel à toString() de la classe mère
 		return super.toString() + " à bord de " + _boat;
-
 	}
 }

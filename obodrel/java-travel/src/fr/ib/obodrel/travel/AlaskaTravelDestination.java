@@ -100,7 +100,7 @@ public class AlaskaTravelDestination extends UnitedStatesTravelDestination {
 
 		totalPriceSpent = (1 - _paymentReductionPercent) * (_planeTicketPrice + _pricePerDay * _travelDuration);
 		outputMessage = "\nYour journey in " + _DestinationName + " will cost you ";
-		outputMessage += totalPriceSpent + "\u20ac calculated as follow : \n";
+		outputMessage += String.format("%.2f", totalPriceSpent) + "\u20ac calculated as follow : \n";
 		outputMessage += -100 * _paymentReductionPercent + "% of a " + _planeTicketPrice + "\u20ac plane ticket, ";
 		outputMessage += "and also the " + _travelDuration + " days at " + _pricePerDay + "\u20ac each.\n";
 		outputMessage += "We hope you will have a nice staying!";
@@ -108,7 +108,6 @@ public class AlaskaTravelDestination extends UnitedStatesTravelDestination {
 		System.out.println(outputMessage);
 	}
 
-	@Override
 	protected void execute(Scanner cin) {
 		if (!_hasExecutedOnce) {
 			super.execute(cin);
