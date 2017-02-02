@@ -6,7 +6,11 @@
  * @author ib
  *
  */
-
+/**
+ * A travel destination for the USA
+ * @author Belto Dieudonné
+ *@since 2017-31-01
+ */
 public class Destination {
 	// Declaration d'une constante dans Java (le jour fixé à 15 par
 	// exemple)-permet d'éviter des valeurs en dur
@@ -23,6 +27,12 @@ public class Destination {
 	};
 
 	// nouvelle declaration du destructeur, cette fois-ci avec des variables
+	/**
+	 * Constuctor with<u> all fields</u>.
+	 * @param n Name of the new destination with uppercases
+	 * @param s State of the new destination
+	 * @param da Nombre de jours de vacances
+	 */
 	public Destination(String n, String s, int da) {
 		name = n;
 		state = s;
