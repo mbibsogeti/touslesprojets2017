@@ -11,6 +11,9 @@ public class Amerique {
 		System.out.println(d1.toString());
 	}
 
+	public static void main(String[] args) {
+
+	}
 	static void donevada() {
 		System.out.println("neuneu");
 		Destination d1 = new Destination("to", "ta", 0);
@@ -31,8 +34,6 @@ public class Amerique {
 
 	}
 
-	public static void main(String[] args) {
-
-	}
+	
 
 }
