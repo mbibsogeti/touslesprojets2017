@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
 	private static TravelDestination _travelDestination;
-	private static HashMap <String, Object> _travelOption;
+	private static HashMap<String, Object> _travelOption;
 
 	private static void initializeTravelOptions() {
 		AlaskaTravelDestination Alaska = new AlaskaTravelDestination();
@@ -44,7 +44,7 @@ public class Main {
 			line += "\" for ";
 			line += ((TravelDestination) _travelOption.values().toArray()[i])._DestinationName;
 			line += ", ";
-			if(i%4 == 0 && i > 0) {
+			if (i % 4 == 0 && i > 0) {
 				line += "\n";
 			}
 		}
@@ -175,11 +175,11 @@ public class Main {
 					wantToQuit = true;
 					System.out.println("Your choice is made!");
 					String tmpLine = "";
-					tmpLine += _travelDestination.getUserName()+" has bought a ";
-					tmpLine += _travelDestination.getMeanOfTransport()+"ticket to ";
-					tmpLine += _travelDestination.getDestinationName()+"in order to visit ";
-					tmpLine += _travelDestination.getLocationName()+" for ";
-					tmpLine += _travelDestination.getTravelDuration()+" days.\n";
+					tmpLine += _travelDestination.getUserName() + " has bought a ";
+					tmpLine += _travelDestination.getMeanOfTransport() + "ticket to ";
+					tmpLine += _travelDestination.getDestinationName() + "in order to visit ";
+					tmpLine += _travelDestination.getLocationName() + " for ";
+					tmpLine += _travelDestination.getTravelDuration() + " days.\n";
 					tmpLine += "Please choose a payment option on the website you will be redirected to!\n";
 					tmpLine += "We hope you will have a nice journey there! Thanks you for using us!";
 					System.out.println(tmpLine);
@@ -195,7 +195,6 @@ public class Main {
 				System.out.println("You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
 			}
 		}
-
 		cin.close();
 	}
 }
