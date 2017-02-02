@@ -3,7 +3,7 @@ package fr.ib.nicolas.travel;
 public class Amerique {
 
 	static void dotexas() {
-		Destinationmaritime d1 = new Destinationmaritime();
+		DestinationMaritime d1 = new DestinationMaritime();
 		d1.setName("toto");
 		d1.setDays(1);
 		d1.setState("toto");

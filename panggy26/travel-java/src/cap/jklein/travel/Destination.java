@@ -2,17 +2,16 @@ package cap.jklein.travel;
 
 public class Destination {
 
-	// Attributs
+	// ATTRIBUTS //
+	public static final int DEFAULT_DAYS = 5;
 	private String _name;
 	private String _state;
 	private int _days;
 
-	// Constante
-	public static final int DEFAULT_DAYS = 5;
-	
-	// Méthodes constructeurs
+	// CONSTRUCTEURS //
 	public Destination() {
-		this(null, null, DEFAULT_DAYS); // Syntaxe seulement autorisée à la 1ère ligne
+		// Syntaxe seulement autorisée à la 1ère ligne
+		this(null, null, DEFAULT_DAYS);
 	}
 
 	public Destination(String nom, String etat, int jours) {
@@ -21,7 +20,7 @@ public class Destination {
 		_days = jours;
 	}
 
-	// Méthodes accesseurs
+	// MÉTHODES //
 	public String getName() {
 		return _name;
 	}
@@ -46,17 +45,16 @@ public class Destination {
 		_days = days;
 	}
 
-	// Autres méthodes
 	public int getWeeks() {
 		return _days / 7;
 	}
 
-	public void extend(int d) { // Ajoute d jour(s) au voyage
+	public void extend(int d) {
+		// Ajoute d jour(s) au voyage
 		_days += d;
 	}
 
 	public String toString() {
 		return "Voyage de " + _days + " jours à destination de " + _name + " dans l'état du " + _state;
 	}
-
 }

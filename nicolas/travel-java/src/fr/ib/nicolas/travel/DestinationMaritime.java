@@ -1,14 +1,14 @@
 package fr.ib.nicolas.travel;
 
-public class Destinationmaritime extends Destination { // sous classe de la
+public class DestinationMaritime extends Destination { // sous classe de la
 														// classe dedstinatio,
 
 	private String boat;
 	
-	public Destinationmaritime() {
+	public DestinationMaritime() {
 		
 	}
-	public Destinationmaritime(String n, String m, int d, String b) {
+	public DestinationMaritime(String n, String m, int d, String b) {
 		super(n, m, d);
 		boat = b;
 	}
