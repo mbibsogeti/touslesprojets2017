@@ -76,7 +76,7 @@ public class Main {
 			System.out.println("Partir " + Jour[i] + " jours: Prix total " + PrixTot[i] + " €");
 		}
 	}
-
+ 
 	static float getCanadaPrice(float _PrixVol, float _PrixSejour, int _Jour) {
 		float PrixTot = (_PrixVol + _Jour * _PrixSejour);
 		return PrixTot;
