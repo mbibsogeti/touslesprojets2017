@@ -4,89 +4,129 @@ import java.util.Scanner;
 
 public class Main {
 
+	static void doAlaska(Scanner sc) {
+
+		System.out.println("Indiquez le nombre de jours que vous désirez partir: ");
+		int Duree = sc.nextInt();
+		float PrixVol = 860;
+		int reduction = 20;
+		float PrixSejour = 48;
+		float PrixTot = (PrixVol + Duree * PrixSejour) * (1 - (reduction / 100.0f));
+
+		if (Duree > 0 & Duree <= 7) {
+
+			System.out.println("Alaska: -" + reduction + "% sur " + PrixVol + " € d\'avion et " + Duree + " jours à "
+					+ PrixSejour + " €/jour. Prix total: " + PrixTot + " €");
+		}
+
+		else {
+			if (Duree <= 15) {
+				System.out.println("Alaska: -" + reduction + "% sur " + PrixVol + " € d\'avion et " + Duree
+						+ " jours à " + PrixSejour + " €/jour. Prix total: " + PrixTot
+						+ " €. Vous avez en plus un porte-clé de l'Alaska");
+			} else {
+				System.out.println("Alaska: -" + reduction + "% sur " + PrixVol + " € d\'avion et " + Duree
+						+ " jours à " + PrixSejour + " €/jour. Prix total: " + PrixTot
+						+ " €. Vous avez en plus une pépite d'or!!");
+			}
+		}
+
+		switch (Duree) {
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+			System.out.println("Vous parterez avec Air France");
+			break;
+		case 7:
+		case 14:
+		case 21:
+		case 28:
+			System.out.println("Vous parterez avec Condor");
+			break;
+		default:
+			System.out.println("Vous parterez avec Alaska Airlines");
+			break;
+		}
+
+		for (int i = 1; i <= Duree; i++) {
+
+			if (i == 1 | i == Duree) {
+				System.out.println("jour" + i + ": Avion");
+			} else {
+				if (i % 4 == 1) {
+					System.out.println("jour" + i + ": Crabe royal");
+				} else {
+					System.out.println("jour" + i + ": Pêche");
+				}
+			}
+		}
+		sc.close();
+	} 
+
+	static void doCanada(float _PrixVol, float _PrixSejour) {
+		int[] Jour = { 7, 9, 13, 16, 18 };
+		float[] PrixTot = new float[Jour.length];
+		float[] PrixTot1 = new float[Jour.length];
+		for (int i = 0; i <= 4; i++) {
+			PrixTot[i] = getCanadaPrice(_PrixVol, _PrixSejour, Jour[i]);
+			PrixTot1[i] = getCanadaPrice(Jour[i]);
+			System.out.println("Partir " + Jour[i] + " jours: Prix total " + PrixTot[i] + " €");
+		}
+	}
+ 
+	static float getCanadaPrice(float _PrixVol, float _PrixSejour, int _Jour) {
+		float PrixTot = (_PrixVol + _Jour * _PrixSejour);
+		return PrixTot;
+	}
+
+	static float getCanadaPrice(int _Jour) {
+		return getCanadaPrice(1000, 100, _Jour);
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		System.out.println("Bienvenu(e) à notre agence de voyage");
-		System.out.println("Souhaitez-vous partir en Alaska (option a) ou en Canada (option b)?");
+		System.out.println(
+				"Choisisez votre destination: Alaska (option a), Canada (option c), Saskakchewan (option s), Washington (option w), Nevada (option n), Texas (option t)");
 		Scanner sc = new Scanner(System.in);
 		String menu = sc.next();
-		if (menu.equals("a")) {
-			System.out.println("Indiquez le nombre de jours que vous désirez partir: ");
-			int Duree = sc.nextInt();
-			float PrixVol = 860;
-			int reduction = 20;
-			float PrixSejour = 48;
-			float PrixTot = (PrixVol + Duree * PrixSejour) * (1 - (reduction / 100.0f));
-			// Duree=sc.nextInt();
 
-			if (Duree > 0 & Duree <= 7) {
-
-				System.out.println("Alaska: -" + reduction + "% sur " + PrixVol + " € d\'avion et " + Duree
-						+ " jours à " + PrixSejour + " €. Prix total: " + PrixTot + " €");
-			}
-
-			else {
-				if (Duree <= 15) {
-					System.out.println("Alaska: -" + reduction + "% sur " + PrixVol + " € d\'avion et " + Duree
-							+ " jours à " + PrixSejour + " €. Prix total: " + PrixTot
-							+ " €. Vous avez en plus un porte-clé de l'Alaska");
-				} else {
-					System.out.println("Alaska: -" + reduction + "% sur " + PrixVol + " € d\'avion et " + Duree
-							+ " jours à " + PrixSejour + " €. Prix total: " + PrixTot
-							+ " €. Vous avez en plus une pépite d'or!!");
-				}
-			}
-
-			switch (Duree) {
-			case 1:
-			case 2:
-			case 3:
-			case 4:
-			case 5:
-			case 6:
-				System.out.println("Vous parterez avec Air France");
-				break;
-			case 7:
-			case 14:
-			case 21:
-			case 28:
-				System.out.println("Vous parterez avec Condor");
-				break;
-			default:
-				System.out.println("Vous parterez avec Alaska Airlines");
-				break;
-			}
-
-			for (int i = 1; i <= Duree; i++) {
-
-				if (i == 1 | i == Duree) {
-					System.out.println("jour" + i + ": Avion");
-				} else {
-					if (i % 4 == 1) {
-						System.out.println("jour" + i + ": Crabe royal");
-					} else {
-						System.out.println("jour" + i + ": Pêche");
-					}
-				}
-			}
+		switch (menu) {
+		case "a":
+			doAlaska(sc); break;
+		case "c":
+			doCanada(785, 45); break;
+		case "s":
+			doCanada(100, 70); break;
+		case "w":
+			USA.doWashington(); break;
+		case "n":
+			USA.doNevada(); break;
+		case"t":
+			USA.doTexas(); break;
 		}
 
-		else {
-			if (menu.equals("b")) {
-				int[] Jour = { 7, 9, 13, 16, 18 };
-				float PrixVol = 785;
-				float PrixSejour = 45;
-				float[] PrixTot = new float[Jour.length];
-				for (int i = 0; i <= 4; i++) {
-					PrixTot[i] = (PrixVol + Jour[i] * PrixSejour);
-					System.out.println(PrixTot[i]);
-				}
-			}
-		}
-
+		// if (menu.equals("a")) {
+		// doAlaska(sc);
+		// }
+		//
+		// else {
+		// if (menu.equals("c")) {
+		// doCanada(785, 45);
+		// } else {
+		// if (menu.equals("s")) {
+		// doCanada(1000, 70);
+		// } else {
+		// if (menu.equals("w")) {
+		// USA.doWashington();
+		// }
+		// }
+		// }
 		sc.close();
-
 		// for(int i=0,j=0;j<20;j+=i,i++){
 		// System.out.println("i="+i);
 		// System.out.println("j="+j);
