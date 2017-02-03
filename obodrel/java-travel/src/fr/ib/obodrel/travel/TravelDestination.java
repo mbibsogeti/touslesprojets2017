@@ -25,6 +25,7 @@ public abstract class TravelDestination {
 	protected boolean _hasExecutedOnce;
 	protected DestinationMeanOfTransport _meanOfTransport;
 	protected String _userName;
+	protected String _userEmail;
 
 	/**
 	 * Constructor to Travel Destination, allows people to create a destination
@@ -144,6 +145,31 @@ public abstract class TravelDestination {
 	 */
 	public void setUserName(String userName) {
 		_userName = userName;
+	}
+
+	/**
+	 * Getter to userEmail
+	 * 
+	 * @return returns _userEmail
+	 * @author Obodrel
+	 * @since 03-02-2017
+	 * @version 1.0.0
+	 */
+	public String getUserEmail() {
+		return _userEmail;
+	}
+
+	/**
+	 * Setter to userEmail
+	 * 
+	 * @param userEmail
+	 *            name of the user to change
+	 * @author Obodrel
+	 * @since 03-02-2017
+	 * @version 1.0.0
+	 */
+	public void setUserEmail(String userEmail) {
+		_userEmail = userEmail;
 	}
 
 	/**
@@ -279,6 +305,33 @@ public abstract class TravelDestination {
 		}
 	}
 
+	/**
+	 * Function which allow the user to register his email
+	 * 
+	 * @param cin
+	 *            Scanner which will register what the user types
+	 * @author Obodrel
+	 * @since 02-02-2017
+	 * @version 1.0.0
+	 */
+	protected void chooseUserEmail(Scanner cin) {
+		String line = "";
+		System.out.println("Please type your email!");
+		try {
+			line = cin.nextLine();
+			if (line.length() <= 0) {
+				System.out.println("You made a mistake there was nothing entered, please retry!");
+				chooseUserEmail(cin);
+				return;
+			}
+			setUserEmail(line.trim());
+			System.out.println("You succefully registered your email as " + _userEmail);
+		} catch (NoSuchElementException inputException) {
+			System.out.println("You made a mistake there was nothing entered, please retry!\nEnter now :");
+		} catch (IllegalStateException inputException) {
+			System.out.println("You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
+		}
+	}
 	/**
 	 * Function which allows the user to choose between several means of
 	 * transportation to reach the destination

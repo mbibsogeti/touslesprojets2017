@@ -1,12 +1,9 @@
 package fr.ib.obodrel.travel;
 
 import java.io.BufferedReader;
-import java.io.FileFilter;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
@@ -25,6 +22,8 @@ public class Main {
 		UnitedStatesTravelDestination UnitedStates = new UnitedStatesTravelDestination();
 		TexasTravelDestination Texas = new TexasTravelDestination();
 		LousianaTravelDestination Lousiana = new LousianaTravelDestination();
+		FloridaTravelDestination Florida = new FloridaTravelDestination();
+		NewYorkTravelDestination NewYork = new NewYorkTravelDestination();
 
 		_travelOption = new HashMap<String, Object>();
 		_travelOption.put(Alaska.getDestinationID(), Alaska);
@@ -35,6 +34,8 @@ public class Main {
 		_travelOption.put(Nevada.getDestinationID(), Nevada);
 		_travelOption.put(Texas.getDestinationID(), Texas);
 		_travelOption.put(Lousiana.getDestinationID(), Lousiana);
+		_travelOption.put(Florida.getDestinationID(), Florida);
+		_travelOption.put(NewYork.getDestinationID(), NewYork);
 		_travelOption.put("q", null);
 	}
 
@@ -78,6 +79,12 @@ public class Main {
 				System.out.println("You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
 			}
 		}
+	}
+	
+	public static void exitSoftware(Scanner cin) {
+		cin.close();
+		System.out.println("Quitting");
+		System.exit(0);
 	}
 
 	public static void main(String[] arg) {
@@ -192,7 +199,7 @@ public class Main {
 					tmpLine += "Please choose a payment option on the website you will be redirected to!\n";
 					tmpLine += "We hope you will have a nice journey there! Thanks you for using us!";
 					try {
-						csvCommandOutput = new FileOutputStream("./command.csv");
+						csvCommandOutput = new FileOutputStream("./ressources/command.csv");
 						try {
 							csvCommandOutput.write(tmpLine.getBytes());
 						} catch (IOException e) {
@@ -216,7 +223,7 @@ public class Main {
 
 					FileReader csvCommandCheck = null;
 					try {
-						csvCommandCheck = new FileReader("./command.csv");
+						csvCommandCheck = new FileReader("./ressources/command.csv");
 					} catch (FileNotFoundException e) {
 						e.printStackTrace();
 						System.out.println("The file could not be read!");
@@ -235,10 +242,12 @@ public class Main {
 						}
 					}
 					System.out.println(tmpLine);
+					exitSoftware(cin);
 					break;
 				case "q":
 					wantToQuit = true;
 					System.out.println("You chose to quit our software, thank you for trying us.");
+					exitSoftware(cin);
 					break;
 				}
 			} catch (NoSuchElementException inputException) {
@@ -247,6 +256,5 @@ public class Main {
 				System.out.println("You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
 			}
 		}
-		cin.close();
 	}
 }
