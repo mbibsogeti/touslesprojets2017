@@ -8,7 +8,7 @@ public class Main {
 	// MAIN
 	public static void main(String[] args) {
 
-		// Défintion de l'objet scanner :
+		// Définition de l'objet scanner :
 		Scanner sc = new Scanner(System.in);
 
 		// Affichage de l'accueil :
@@ -19,11 +19,11 @@ public class Main {
 		pouf.add(2, 8);
 		System.out.println (pouf);
 		
-		System.out.println("Bienvenue dans notre agence de voyages Dégage.");
+		System.out.println("Bienvenue dans notre agence de voyages Degage.");
 
 		// Choix de la destination :
 		System.out.println(
-				"Où voulez-vous aller (c pour Canada, a pour Alaska, " + "s pour Saskakchewa, w pour Washington) ?");
+				"Ou voulez-vous aller (c pour Canada, a pour Alaska, " + "s pour Saskakchewa, w pour Washington) ?");
 		String menu = sc.nextLine();
 
 		// Menu :
@@ -48,6 +48,12 @@ public class Main {
 			break;
 		case "l":
 			America.doLouisiana(sc);
+			break;
+		case "f":
+			America.doFlorida(sc);
+			break;
+		case "y":
+			America.doNewYork(sc);
 		}
 		sc.close();
 	}
