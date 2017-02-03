@@ -1,5 +1,6 @@
 package fr.ib.marcantoine.travel;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -11,12 +12,19 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		// Affichage de l'accueil :
+		ArrayList <Integer> pouf = new ArrayList<>();
+		pouf.add(10);
+		pouf.add(8);
+		pouf.add(2);
+		pouf.add(2, 8);
+		System.out.println (pouf);
+		
 		System.out.println("Bienvenue dans notre agence de voyages Dégage.");
 
 		// Choix de la destination :
 		System.out.println(
 				"Où voulez-vous aller (c pour Canada, a pour Alaska, " + "s pour Saskakchewa, w pour Washington) ?");
-		String menu = sc.next();
+		String menu = sc.nextLine();
 
 		// Menu :
 		switch (menu) {
@@ -38,30 +46,10 @@ public class Main {
 		case "t": 
 			America.doTexas();
 			break;
+		case "l":
+			America.doLouisiana(sc);
 		}
 		sc.close();
-
-		// XP
-		// int[]ti = {5,4,0,0};
-
-		// Emploi du temps avec ce qu'on a comme outils : solution alternative +
-		// courte, demande + mémoire, nomme mieux.s
-		// for (int cpt = 1 ; cpt <= duration ; cpt ++)
-		// String activite = "Peche";
-		// if (cpt==1 || cpt ==duration) {
-		// activite = "Avion";
-		// } else {
-		// if ((cpt-1)%4==0) {
-		// activite = "Crabe royal";
-		// }
-		// }
-		// System.out.println("jour "+cpt+" : "+activite);
-		// }
-
-		// Expérience
-		// for (int g = 0, j = 0 ; j < 20 ; j+=g, g++) {
-		// System.out.println (g+"/"+j);
-		// }
 	}
 	
 	// ALASKA
@@ -78,7 +66,7 @@ public class Main {
 		// Calcul et affichage du prix total :
 		ptotal = (1 - promo / 100f) * (pbillet + duration * pnuit);
 		System.out.println("Alaska : -" + promo + "% sur " + pbillet + "\u20ac d'avion et " + duration + "j à " + pnuit
-				+ "\u20ac pour un total de " + ptotal + ".");
+				+ "\u20ac pour un total de " + String.format("%.2f",ptotal) + ".");
 
 		// Affichage des goodies avec des conditions
 		if (duration > 15) {

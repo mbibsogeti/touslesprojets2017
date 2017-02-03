@@ -11,23 +11,26 @@ public class Main {
 		float PrixVol = 860;
 		int reduction = 20;
 		float PrixSejour = 48;
-		float PrixTot = (PrixVol + Duree * PrixSejour) * (1 - (reduction / 100.0f));
+		float PrixTot = (PrixVol + Duree * PrixSejour) * (1 - (reduction / 100f));
 
 		if (Duree > 0 & Duree <= 7) {
- 
-			System.out.println("Alaska: -" + reduction + "% sur " + PrixVol + " € d\'avion et " + Duree + " jours à "
-					+ PrixSejour + " €/jour. Prix total: " + PrixTot + " €");
+
+			System.out.println("Alaska: -" + reduction + "% sur " + String.format("%.2f", PrixVol) + " € d\'avion et "
+					+ Duree + " jours à " + String.format("%.2f", PrixSejour) + " €/jour. Prix total: "
+					+ String.format("%.2f", PrixTot) + " €");
 		}
 
 		else {
 			if (Duree <= 15) {
-				System.out.println("Alaska: -" + reduction + "% sur " + PrixVol + " € d\'avion et " + Duree
-						+ " jours à " + PrixSejour + " €/jour. Prix total: " + PrixTot
-						+ " €. Vous avez en plus un porte-clé de l'Alaska");
+				System.out
+						.println("Alaska: -" + reduction + "% sur " + String.format("%.2f", PrixVol) + " € d\'avion et "
+								+ Duree + " jours à " + String.format("%.2f", PrixSejour) + " €/jour. Prix total: "
+								+ String.format("%.2f", PrixTot) + " €. Vous avez en plus un porte-clé de l'Alaska");
 			} else {
-				System.out.println("Alaska: -" + reduction + "% sur " + PrixVol + " € d\'avion et " + Duree
-						+ " jours à " + PrixSejour + " €/jour. Prix total: " + PrixTot
-						+ " €. Vous avez en plus une pépite d'or!!");
+				System.out
+						.println("Alaska: -" + reduction + "% sur " + String.format("%.2f", PrixVol) + " € d\'avion et "
+								+ Duree + " jours à " + String.format("%.2f", PrixSejour) + " €/jour. Prix total: "
+								+ String.format("%.2f", PrixTot) + " €. Vous avez en plus une pépite d'or!!");
 			}
 		}
 
@@ -64,7 +67,7 @@ public class Main {
 			}
 		}
 		sc.close();
-	} 
+	}
 
 	static void doCanada(float _PrixVol, float _PrixSejour) {
 		int[] Jour = { 7, 9, 13, 16, 18 };
@@ -76,7 +79,7 @@ public class Main {
 			System.out.println("Partir " + Jour[i] + " jours: Prix total " + PrixTot[i] + " €");
 		}
 	}
- 
+
 	static float getCanadaPrice(float _PrixVol, float _PrixSejour, int _Jour) {
 		float PrixTot = (_PrixVol + _Jour * _PrixSejour);
 		return PrixTot;
@@ -93,21 +96,30 @@ public class Main {
 		System.out.println(
 				"Choisisez votre destination: Alaska (option a), Canada (option c), Saskakchewan (option s), Washington (option w), Nevada (option n), Texas (option t)");
 		Scanner sc = new Scanner(System.in);
-		String menu = sc.next();
+		String menu = sc.nextLine();
 
 		switch (menu) {
 		case "a":
-			doAlaska(sc); break;
+			doAlaska(sc);
+			break;
 		case "c":
-			doCanada(785, 45); break;
+			doCanada(785, 45);
+			break;
 		case "s":
-			doCanada(100, 70); break;
+			doCanada(100, 70);
+			break;
 		case "w":
-			USA.doWashington(); break;
+			USA.doWashington();
+			break;
 		case "n":
-			USA.doNevada(); break;
-		case"t":
-			USA.doTexas(); break;
+			USA.doNevada();
+			break;
+		case "t":
+			USA.doTexas();
+			break;
+		case "l":
+			USA.doLouisiane(sc);
+			break;
 		}
 
 		// if (menu.equals("a")) {
