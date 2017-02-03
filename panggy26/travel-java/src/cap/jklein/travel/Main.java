@@ -103,7 +103,14 @@ public class Main {
 			Usa.doTexas();
 		}
 		if (menu.equals("L")) {
-			Usa.doLouisiane(sc);
+			try {
+				Usa.doLouisiane(sc);
+			} catch(Exception e) {}
 		}
+		
+		if (menu.equals("F")) {
+			Usa.doFloride(sc);
+		}
+		
 	}
 }
