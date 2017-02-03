@@ -2,6 +2,7 @@ package cap.jklein.travel;
 
 /**
  * A travel destination for the United States of America
+ * 
  * @author panggy26
  * @since 2017-01-31
  */
@@ -20,9 +21,12 @@ public class Destination {
 	}
 
 	/**
-	 * @param nom Name of the new Destination.
-	 * @param etat Name of the state.
-	 * @param jours Numbers of days
+	 * @param nom
+	 *            Name of the new Destination.
+	 * @param etat
+	 *            Name of the state.
+	 * @param jours
+	 *            Numbers of days
 	 */
 	public Destination(String nom, String etat, int jours) {
 		_name = nom;

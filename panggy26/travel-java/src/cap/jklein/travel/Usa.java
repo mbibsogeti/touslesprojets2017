@@ -2,9 +2,16 @@ package cap.jklein.travel;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
+
+import javax.swing.JFrame;
 
 public class Usa {
 
@@ -28,9 +35,7 @@ public class Usa {
 	}
 
 	// throws : cette méthode est susceptible de provoquer des IOException.
-	// Cette syntaxe permet de les laisser remonter.
-	// Il faut alors que l'on ait un bloc try catch plus haut pour traiter ce
-	// cas
+	// Cette syntaxe permet de les laisser remonter. Il faut alors que l'on ait un bloc try catch plus haut pour traiter ce cas.
 	public static void doLouisiane(Scanner sc) throws IOException {
 		System.out.println("Où souhaitez-vous voyager en Louisiane ?");
 		// Demande à l'utilisateur de rentrer un lieu
@@ -86,13 +91,57 @@ public class Usa {
 	public static void doFloride(Scanner sc) {
 		try {
 			System.out.println("Vous avez demandé un voyage en Floride. Quel est votre nom ?");
-			String name = sc.next();
+			String name = sc.nextLine();
 			System.out.println("Vous avez demandé un voyage en Floride. Quel est votre e-mail ?");
-			String email = sc.next();
-			System.out.println("Demande enregistrée pour " + name + " pour un voyage en Floride");
+			String email = sc.nextLine();
+
+			// Signale au pilote que l'on va utiliser la classe JDBC dans le DriverManager
+			Class.forName("org.sqlite.JDBC");
+			// .getConnection : où est le serveur, type de connexion etc.
+			// Ici, on se connecte au fichier florida.sqlite
+			Connection conn = DriverManager.getConnection("jdbc:sqlite:florida.sqlite");
+
+			// Création de la table demande
+			Statement st = conn.createStatement();
+			st.executeUpdate("CREATE TABLE IF NOT EXISTS demande(id INTEGER PRIMARY KEY, name TEXT, email TEXT);");
+
+			// Insertion des valeurs
+
+			// // Façon pas très commode, voire l'autre
+			// Statement st2 = conn.createStatement();
+			// st2.executeUpdate("INSERT INTO demande(name, email) VALUES (\"" + name + "\",\"" + email + "\")");
+
+			// Utilisation d'un PreparedStatement
+			PreparedStatement st2 = conn.prepareStatement("INSERT INTO demande(name, email) VALUES (?, ?)");
+			// On remplace les ? (attention Java commence exceptionnellement à compter à 1)
+			st2.setString(1, name);
+			st2.setString(2, email);
+			st2.executeUpdate();
+
+			// Requête
+			PreparedStatement st3 = conn.prepareStatement("SELECT name FROM demande WHERE email = ?");
+			st3.setString(1, email);
+			// Pour pouvoir accéder au résultat, on utilise un objet ResultSet qui sert à le lire
+			ResultSet rs = st3.executeQuery();
+
+			// On parcourt le ResultSet, et on affiche les noms correspondants à cette requête
+			String names = "";
+			while (rs.next())
+				names += rs.getString("name") + ", ";
+			rs.close();
+
+			// Fermeture de la connexion
+			conn.close();
+
+			System.out.println("Demande de " + name + " enregistrée - " + names);
+
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 	}
 
+	public static void doNewYork() {
+		// Création d'une fenêtre frame de type NewYorkFrame
+		NewYorkFrame frame = new NewYorkFrame();	
+	}
 }
