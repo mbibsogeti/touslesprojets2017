@@ -1,12 +1,9 @@
 package fr.ib.obodrel.travel;
 
 import java.io.BufferedReader;
-import java.io.FileFilter;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
@@ -192,7 +189,7 @@ public class Main {
 					tmpLine += "Please choose a payment option on the website you will be redirected to!\n";
 					tmpLine += "We hope you will have a nice journey there! Thanks you for using us!";
 					try {
-						csvCommandOutput = new FileOutputStream("./command.csv");
+						csvCommandOutput = new FileOutputStream("./ressources/command.csv");
 						try {
 							csvCommandOutput.write(tmpLine.getBytes());
 						} catch (IOException e) {
@@ -216,7 +213,7 @@ public class Main {
 
 					FileReader csvCommandCheck = null;
 					try {
-						csvCommandCheck = new FileReader("./command.csv");
+						csvCommandCheck = new FileReader("./ressources/command.csv");
 					} catch (FileNotFoundException e) {
 						e.printStackTrace();
 						System.out.println("The file could not be read!");
