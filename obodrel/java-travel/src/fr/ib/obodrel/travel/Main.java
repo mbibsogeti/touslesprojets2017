@@ -22,6 +22,8 @@ public class Main {
 		UnitedStatesTravelDestination UnitedStates = new UnitedStatesTravelDestination();
 		TexasTravelDestination Texas = new TexasTravelDestination();
 		LousianaTravelDestination Lousiana = new LousianaTravelDestination();
+		FloridaTravelDestination Florida = new FloridaTravelDestination();
+		NewYorkTravelDestination NewYork = new NewYorkTravelDestination();
 
 		_travelOption = new HashMap<String, Object>();
 		_travelOption.put(Alaska.getDestinationID(), Alaska);
@@ -32,6 +34,8 @@ public class Main {
 		_travelOption.put(Nevada.getDestinationID(), Nevada);
 		_travelOption.put(Texas.getDestinationID(), Texas);
 		_travelOption.put(Lousiana.getDestinationID(), Lousiana);
+		_travelOption.put(Florida.getDestinationID(), Florida);
+		_travelOption.put(NewYork.getDestinationID(), NewYork);
 		_travelOption.put("q", null);
 	}
 
@@ -75,6 +79,12 @@ public class Main {
 				System.out.println("You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
 			}
 		}
+	}
+	
+	public static void exitSoftware(Scanner cin) {
+		cin.close();
+		System.out.println("Quitting");
+		System.exit(0);
 	}
 
 	public static void main(String[] arg) {
@@ -232,10 +242,12 @@ public class Main {
 						}
 					}
 					System.out.println(tmpLine);
+					exitSoftware(cin);
 					break;
 				case "q":
 					wantToQuit = true;
 					System.out.println("You chose to quit our software, thank you for trying us.");
+					exitSoftware(cin);
 					break;
 				}
 			} catch (NoSuchElementException inputException) {
@@ -244,6 +256,5 @@ public class Main {
 				System.out.println("You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
 			}
 		}
-		cin.close();
 	}
 }
