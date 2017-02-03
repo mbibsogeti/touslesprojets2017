@@ -25,6 +25,7 @@ public abstract class TravelDestination {
 	protected boolean _hasExecutedOnce;
 	protected DestinationMeanOfTransport _meanOfTransport;
 	protected String _userName;
+	protected String _userEmail;
 
 	/**
 	 * Constructor to Travel Destination, allows people to create a destination
@@ -147,6 +148,31 @@ public abstract class TravelDestination {
 	}
 
 	/**
+	 * Getter to userEmail
+	 * 
+	 * @return returns _userEmail
+	 * @author Obodrel
+	 * @since 03-02-2017
+	 * @version 1.0.0
+	 */
+	public String getUserEmail() {
+		return _userEmail;
+	}
+
+	/**
+	 * Setter to userEmail
+	 * 
+	 * @param userEmail
+	 *            name of the user to change
+	 * @author Obodrel
+	 * @since 03-02-2017
+	 * @version 1.0.0
+	 */
+	public void setUserEmail(String userEmail) {
+		_userEmail = userEmail;
+	}
+
+	/**
 	 * Getter to travel duration
 	 * 
 	 * @return returns _travelDuration
@@ -218,7 +244,7 @@ public abstract class TravelDestination {
 	 */
 	public String toString() {
 		return "You, " + _userName + ", set to go to " + _DestinationName + " in " + _LocationName + " for "
-				+ _travelDuration + " days using a " + _meanOfTransport.getMeanOfTransport() + "to travel around.";
+				+ _travelDuration + " days using a " + _meanOfTransport.getMeanOfTransport() + " to travel around.";
 	}
 
 	/**
@@ -234,15 +260,15 @@ public abstract class TravelDestination {
 		String line = "";
 		System.out.println("Please type the city/location you want to visit!");
 		try {
-			int i = 0;
 			line = cin.nextLine();
-			while (line.startsWith(" ", i++)) {
+			line = line.trim();
+			try {
+				line = line.substring(0, 1).toUpperCase() + line.substring(1);
+			} catch (IndexOutOfBoundsException inputException) {
+				System.out.println("You made a mistake please retry!\nEnter now :");
+				chooseLocation(cin);
+				return;
 			}
-			int j = 1;
-			while (line.charAt(line.length() - j++) == ' ') {
-			}
-			line = line.substring(i - 1, line.length() - j + 2);
-			line = line.substring(0, 1).toUpperCase() + line.substring(1);
 			setLocationName(line);
 		} catch (NoSuchElementException inputException) {
 			System.out.println("You made a mistake there was nothing entered, please retry!\nEnter now :");
@@ -265,6 +291,11 @@ public abstract class TravelDestination {
 		System.out.println("Please type your name!");
 		try {
 			line = cin.nextLine();
+			if (line.length() <= 0) {
+				System.out.println("You made a mistake there was nothing entered, please retry!");
+				chooseUsername(cin);
+				return;
+			}
 			setUserName(line.trim());
 			System.out.println("You succefully registered as " + _userName);
 		} catch (NoSuchElementException inputException) {
@@ -274,6 +305,33 @@ public abstract class TravelDestination {
 		}
 	}
 
+	/**
+	 * Function which allow the user to register his email
+	 * 
+	 * @param cin
+	 *            Scanner which will register what the user types
+	 * @author Obodrel
+	 * @since 02-02-2017
+	 * @version 1.0.0
+	 */
+	protected void chooseUserEmail(Scanner cin) {
+		String line = "";
+		System.out.println("Please type your email!");
+		try {
+			line = cin.nextLine();
+			if (line.length() <= 0) {
+				System.out.println("You made a mistake there was nothing entered, please retry!");
+				chooseUserEmail(cin);
+				return;
+			}
+			setUserEmail(line.trim());
+			System.out.println("You succefully registered your email as " + _userEmail);
+		} catch (NoSuchElementException inputException) {
+			System.out.println("You made a mistake there was nothing entered, please retry!\nEnter now :");
+		} catch (IllegalStateException inputException) {
+			System.out.println("You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
+		}
+	}
 	/**
 	 * Function which allows the user to choose between several means of
 	 * transportation to reach the destination

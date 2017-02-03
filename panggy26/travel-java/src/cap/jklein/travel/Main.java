@@ -71,7 +71,8 @@ public class Main {
 
 	public static void doCanada(int vol, int hotel) {
 		int[] tabJours = { 7, 9, 13, 16, 18 };
-		for (int i : tabJours) { // Syntaxe pour parcourir le tableau i
+		for (int i : tabJours) { 
+			// Syntaxe pour parcourir le tableau i
 			int total = getCanadaPrice(vol, hotel, i);
 			System.out.println(i + " jours : " + total + "\u20ac");
 		}
@@ -80,10 +81,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println(
-				"Veuillez taper A (Alaska), C (Canada), S (Saskatchewan), W (Washington), N (Nevada), T (Texas), L (Louisiane) ou Q (Quitter) : ");
+		System.out.println("Veuillez taper A (Alaska), C (Canada), S (Saskatchewan), W (Washington), N (Nevada), (Texas), L (Louisiane), "
+				+ "F (Floride), Y (New York) ou Q (Quitter) : ");
 		String menu = sc.nextLine();
-
 		if (menu.equals("A")) {
 			doAlaska(sc);
 		}
@@ -103,7 +103,16 @@ public class Main {
 			Usa.doTexas();
 		}
 		if (menu.equals("L")) {
-			Usa.doLouisiane(sc);
+			try {
+				Usa.doLouisiane(sc);
+			} catch (Exception e) {
+			}
+		}
+		if (menu.equals("F")) {
+			Usa.doFloride(sc);
+		}
+		if (menu.equals("Y")) {
+			Usa.doNewYork();		
 		}
 	}
 }
