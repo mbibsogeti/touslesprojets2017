@@ -13,7 +13,7 @@ public class Main {
 
 		while (continuation) {
 			System.out.println(
-					"Choice a final destination: CANADA --> c; ALASKA-->a ; SASKAKCHEWAN --> s; WASHINGTOWN --> w; NEVADA --> n; TEXAS --> t; Quitter-->q");
+					"Choice a final destination: CANADA --> c; ALASKA-->a ; SASKAKCHEWAN --> s; WASHINGTOWN --> w; NEVADA --> n; TEXAS --> t; LOUISIANE --> l; FLORIDE --> f; NEW YORK --> n; Quitter-->q");
 			String menu = sc.next();
 
 			// TEST du Menu + entree dans le choix ALASKA ou CANADA
@@ -35,6 +35,15 @@ public class Main {
 				continuation = false;
 			} else if (menu.equals("t")) {
 				America.doTexas();
+				continuation = false;
+			} else if (menu.equals("l")) {
+				America.doLouisiane();
+				continuation = false;
+			} else if (menu.equals("f")) {
+				America.doFloride();
+				continuation = false;
+			} else if (menu.equals("y")) {
+				America.doNewYork();
 				continuation = false;
 			} else if (menu.equals("s")) {
 				int pricePlaneS = 1000;
@@ -65,6 +74,8 @@ public class Main {
 		double total;
 		total = (nbDays * priceHotel) + pricePlane;
 		result = total - ((total * reduction) / 100);
+		String s = String.format("%.2f", result);
+		
 
 		// TEST de souvenir
 		if (nbDays < 8)
@@ -93,7 +104,7 @@ public class Main {
 		// AFFICHAGE
 		String str = "Alaska trip " + nbDays + " days --> Return airfare : " + pricePlane + "\u20ac and " + priceHotel
 				+ "\u20ac per night. So, the price is equal to " + total + "\u20ac. After recuction of " + reduction
-				+ "%, the final price : " + result + "\u20ac\n";
+				+ "%, the final price : " + s + "\u20ac\n";
 		System.out.println(str);
 
 		// TEST boucles
