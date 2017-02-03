@@ -125,6 +125,12 @@ public class Main {
 		if (menu.equals("nv")) {
 			Amerique.doLouisiane(sc);
 		}
+		if(menu.equals("f")){
+			Amerique.doFloride(sc);
+		}
+		if(menu.equals("ny")){
+			Amerique.doNewYork(sc);
+		}
 		sc.close();
 	}
 
