@@ -6,6 +6,10 @@ import javax.swing.*;
 
 public class NewYorkFrame extends JFrame implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JLabel lb2;
 	private JTextField tf1;
 	public NewYorkFrame() throws HeadlessException {
