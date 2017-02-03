@@ -1,5 +1,13 @@
 package fr.ib.obodrel.travel;
 
+import java.io.BufferedReader;
+import java.io.FileFilter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FilenameFilter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -44,7 +52,7 @@ public class Main {
 			line += "\" for ";
 			line += ((TravelDestination) _travelOption.values().toArray()[i])._DestinationName;
 			line += ", ";
-			if (i % 4 == 0 && i > 0) {
+			if (i % 6 == 0 && i > 0) {
 				line += "\n";
 			}
 		}
@@ -85,6 +93,7 @@ public class Main {
 			_travelDestination.execute(cin);
 		} else {
 			System.out.println("You chose to quit our software, thank you for trying us.");
+			wantToQuit = true;
 		}
 
 		while (!wantToQuit) {
@@ -173,15 +182,58 @@ public class Main {
 					break;
 				case "v":
 					wantToQuit = true;
-					System.out.println("Your choice is made!");
-					String tmpLine = "";
+					FileOutputStream csvCommandOutput = null;
+					String tmpLine = "Your choice is made!\n";
 					tmpLine += _travelDestination.getUserName() + " has bought a ";
-					tmpLine += _travelDestination.getMeanOfTransport() + "ticket to ";
-					tmpLine += _travelDestination.getDestinationName() + "in order to visit ";
+					tmpLine += _travelDestination.getMeanOfTransport() + " ticket to ";
+					tmpLine += _travelDestination.getDestinationName() + " in order to visit ";
 					tmpLine += _travelDestination.getLocationName() + " for ";
 					tmpLine += _travelDestination.getTravelDuration() + " days.\n";
 					tmpLine += "Please choose a payment option on the website you will be redirected to!\n";
 					tmpLine += "We hope you will have a nice journey there! Thanks you for using us!";
+					try {
+						csvCommandOutput = new FileOutputStream("./command.csv");
+						try {
+							csvCommandOutput.write(tmpLine.getBytes());
+						} catch (IOException e) {
+							e.printStackTrace();
+							System.out.println("You couldn't write in the file !");
+						}
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+						System.out.println("The file has bugged out!");
+					} finally {
+						if (csvCommandOutput != null) {
+							try {
+								csvCommandOutput.close();
+							} catch (IOException e) {
+								e.printStackTrace();
+								System.out.println("The could not be closed!");
+							}
+						}
+					}
+					System.out.println("Checking if the file has been correctly written! Output :");
+
+					FileReader csvCommandCheck = null;
+					try {
+						csvCommandCheck = new FileReader("./command.csv");
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+						System.out.println("The file could not be read!");
+					}
+					if (csvCommandCheck != null) {
+						BufferedReader csvBuffer = new BufferedReader(csvCommandCheck);
+						tmpLine = "";
+						String readLine = "";
+						try {
+							while ((readLine = csvBuffer.readLine() ) != null) {
+								tmpLine += readLine+"\n";
+							}
+						} catch (IOException e) {
+							e.printStackTrace();
+							 System.out.println("could not read a line");
+						}
+					}
 					System.out.println(tmpLine);
 					break;
 				case "q":
