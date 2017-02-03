@@ -24,7 +24,6 @@ public class CanadaTravelDestination extends TravelDestination {
 		_canadaTravelOptions.add(13);
 		_canadaTravelOptions.add(16);
 		_canadaTravelOptions.add(18);
-
 	}
 	
 	private int getJourneyPrice(int days, int pricePerDay, int planeTicketPrice) {
@@ -41,13 +40,11 @@ public class CanadaTravelDestination extends TravelDestination {
 		for (int days : _canadaTravelOptions) {
 			int canadaStayingCost;
 			canadaStayingCost = getJourneyPrice(days);
-			System.out.println("Staying " + days + " days will cost you " + canadaStayingCost + "\u20ac!");
+			System.out.println("Staying " + days + " days will cost you " + String.format("%.2f", (float)canadaStayingCost)  + "\u20ac!");
 		}
-
 		System.out.println("We hope you will find the option that suits you!");
 	}
 	
-	@Override
 	protected void execute(Scanner cin) {
 		super.execute(cin);
 		displayTravelInformation();

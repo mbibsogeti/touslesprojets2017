@@ -92,16 +92,16 @@ public class voyage2 {
 		if (menu.equalsIgnoreCase("ne")) { // permet de tester une chaine de
 			// caractère
 
-				Amerique.donevada();
+			Amerique.donevada();
 
-				System.out.println("balèse ");
+			System.out.println("balèse ");
 		}
 		if (menu.equalsIgnoreCase("init")) { // permet de tester une chaine de
 			// caractère
 
-				Amerique.donevada();
+			Amerique.donevada();
 
-				System.out.println("balèse ");
+			System.out.println("balèse ");
 		}
 	}
 }

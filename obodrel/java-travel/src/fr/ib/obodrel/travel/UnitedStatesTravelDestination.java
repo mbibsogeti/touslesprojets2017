@@ -11,7 +11,6 @@ public class UnitedStatesTravelDestination extends TravelDestination {
 		_DestinationName = "The United States";
 	}
 
-	@Override
 	protected void execute(Scanner cin) {
 		super.execute(cin);
 	}

@@ -19,7 +19,6 @@ public class NevadaTravelDestination extends UnitedStatesTravelDestination {
 		_DestinationName = destinationName;
 	}
 
-	@Override
 	protected void execute(Scanner cin) {
 		super.execute(cin);
 		System.out.println("Your travel is set to last " + Math.round(getTravelDurationWeeks()) + " weeks and "
