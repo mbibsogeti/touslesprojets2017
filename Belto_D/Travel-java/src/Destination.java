@@ -6,56 +6,70 @@
  * @author ib
  *
  */
-
+/**
+ * A travel destination for the USA
+ * @author Belto Dieudonné
+ *@since 2017-31-01
+ */
 public class Destination {
-	// Declaration d'une constante dans Java (le jour fixé à 15 par exemple)-permet d'éviter des valeurs en dur
-	public static final int Default_days=15;
+	// Declaration d'une constante dans Java (le jour fixé à 15 par
+	// exemple)-permet d'éviter des valeurs en dur
+	public static final int DEFAULT_DAYS = 15;
+	private String name, state;
+	private int days;
 	// declaration du constructeur Destination vide, sans variable
-	Destination() {
+	public Destination() {
 	// apel a l'autre constructeur avec 3 paramètres
-		this(null,null,Default_days);
-	/*	String Name = null;
-		String State = null;
-		int days = 0;*/
+		this(null, null, DEFAULT_DAYS);
+	/*
+	 * String Name = null; String State = null; int days = 0;
+	*/
 	};
 
 	// nouvelle declaration du destructeur, cette fois-ci avec des variables
-	Destination(String n, String s, int da) {
-		Name = n;
-		State = s;
+	/**
+	 * Constuctor with<u> all fields</u>.
+	 * @param n Name of the new destination with uppercases
+	 * @param s State of the new destination
+	 * @param da Nombre de jours de vacances
+	 */
+	public Destination(String n, String s, int da) {
+		name = n;
+		state = s;
 		days = da;
 	};
 
-	 private String Name, State;
-	 private int days;
-// fonction supprimer la fonction
+	// fonction supprimer la fonction
 	public void emptyName() {
-		Name = "";
+		name = "";
 	};
+
 	// ajoute une fonction Augementer de "extend" exemple extend (6)=augementer
 	// de 6 jours
 	public void extend(int d) {
 		days += d;
 	};
+
 	// Affichage du résultat apres extend
 	public String toString() {
-		return days + " " + State + " " + Name;
+		return days + " " + state + " " + name;
 	}
 
+	// getters and setters(Les accesseurs)
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public String getState() {
-		return State;
+		return state;
 	}
 
 	public void setState(String state) {
-		State = state;
+		this.state = state;
 	}
 
 	public int getDays() {
@@ -65,7 +79,9 @@ public class Destination {
 	public void setDays(int days) {
 		this.days = days;
 	};
-	public int getWeeks(){
-	return days/7;	
+
+	// getters qui fait le calcul directement sans declaration au préalable
+	public int getWeeks() {
+		return days / 7;
 	};
 }

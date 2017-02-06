@@ -1,5 +1,10 @@
 package fr.ib.obodrel.travel;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -16,6 +21,9 @@ public class Main {
 		NevadaTravelDestination Nevada = new NevadaTravelDestination();
 		UnitedStatesTravelDestination UnitedStates = new UnitedStatesTravelDestination();
 		TexasTravelDestination Texas = new TexasTravelDestination();
+		LousianaTravelDestination Lousiana = new LousianaTravelDestination();
+		FloridaTravelDestination Florida = new FloridaTravelDestination();
+		NewYorkTravelDestination NewYork = new NewYorkTravelDestination();
 
 		_travelOption = new HashMap<String, Object>();
 		_travelOption.put(Alaska.getDestinationID(), Alaska);
@@ -25,6 +33,9 @@ public class Main {
 		_travelOption.put(Washington.getDestinationID(), Washington);
 		_travelOption.put(Nevada.getDestinationID(), Nevada);
 		_travelOption.put(Texas.getDestinationID(), Texas);
+		_travelOption.put(Lousiana.getDestinationID(), Lousiana);
+		_travelOption.put(Florida.getDestinationID(), Florida);
+		_travelOption.put(NewYork.getDestinationID(), NewYork);
 		_travelOption.put("q", null);
 	}
 
@@ -42,6 +53,9 @@ public class Main {
 			line += "\" for ";
 			line += ((TravelDestination) _travelOption.values().toArray()[i])._DestinationName;
 			line += ", ";
+			if (i % 6 == 0 && i > 0) {
+				line += "\n";
+			}
 		}
 		line += " or q to quit.";
 		System.out.println(line);
@@ -66,6 +80,12 @@ public class Main {
 			}
 		}
 	}
+	
+	public static void exitSoftware(Scanner cin) {
+		cin.close();
+		System.out.println("Quitting");
+		System.exit(0);
+	}
 
 	public static void main(String[] arg) {
 		boolean wantToQuit = false;
@@ -80,27 +100,22 @@ public class Main {
 			_travelDestination.execute(cin);
 		} else {
 			System.out.println("You chose to quit our software, thank you for trying us.");
+			wantToQuit = true;
 		}
 
 		while (!wantToQuit) {
 			System.out.println("What will you do next ?\n" + "Type \"l\" to change your location,"
-					+ " \"a\" to add duration, \"d\" to change the duration"
-					+ ", \"p\" to print your choice, \"e\" to display informations,"
+					+ " \"a\" to add duration, \"d\" to change the duration, \"u\" to change your username, "
+					+ ", \"p\" to print your choice\n, \"e\" to display informations, \"v\" to validate your command"
 					+ " \"t\" to change mean of transport and \"q\" to quit.");
 			try {
 				line = cin.nextLine();
 				switch (line) {
 				case "l":
-					System.out.println("Please type the location you want to go to :");
-					try {
-						line = cin.nextLine();
-						_travelDestination.setLocationName(line);
-					} catch (NoSuchElementException inputException) {
-						System.out.println("You made a mistake there was nothing entered, please retry!\nEnter now :");
-					} catch (IllegalStateException inputException) {
-						System.out.println(
-								"You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
-					}
+					_travelDestination.chooseLocation(cin);
+					break;
+				case "u":
+					_travelDestination.chooseUsername(cin);
 					break;
 				case "a":
 					numberEntered = -1;
@@ -172,9 +187,67 @@ public class Main {
 					System.out.println("Please choose a new mean of transport!");
 					_travelDestination.chooseMeanOfTransportation(cin);
 					break;
+				case "v":
+					wantToQuit = true;
+					FileOutputStream csvCommandOutput = null;
+					String tmpLine = "Your choice is made!\n";
+					tmpLine += _travelDestination.getUserName() + " has bought a ";
+					tmpLine += _travelDestination.getMeanOfTransport() + " ticket to ";
+					tmpLine += _travelDestination.getDestinationName() + " in order to visit ";
+					tmpLine += _travelDestination.getLocationName() + " for ";
+					tmpLine += _travelDestination.getTravelDuration() + " days.\n";
+					tmpLine += "Please choose a payment option on the website you will be redirected to!\n";
+					tmpLine += "We hope you will have a nice journey there! Thanks you for using us!";
+					try {
+						csvCommandOutput = new FileOutputStream("./ressources/command.csv");
+						try {
+							csvCommandOutput.write(tmpLine.getBytes());
+						} catch (IOException e) {
+							e.printStackTrace();
+							System.out.println("You couldn't write in the file !");
+						}
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+						System.out.println("The file has bugged out!");
+					} finally {
+						if (csvCommandOutput != null) {
+							try {
+								csvCommandOutput.close();
+							} catch (IOException e) {
+								e.printStackTrace();
+								System.out.println("The could not be closed!");
+							}
+						}
+					}
+					System.out.println("Checking if the file has been correctly written! Output :");
+
+					FileReader csvCommandCheck = null;
+					try {
+						csvCommandCheck = new FileReader("./ressources/command.csv");
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+						System.out.println("The file could not be read!");
+					}
+					if (csvCommandCheck != null) {
+						BufferedReader csvBuffer = new BufferedReader(csvCommandCheck);
+						tmpLine = "";
+						String readLine = "";
+						try {
+							while ((readLine = csvBuffer.readLine() ) != null) {
+								tmpLine += readLine+"\n";
+							}
+						} catch (IOException e) {
+							e.printStackTrace();
+							 System.out.println("could not read a line");
+						}
+					}
+					System.out.println(tmpLine);
+					exitSoftware(cin);
+					break;
 				case "q":
 					wantToQuit = true;
 					System.out.println("You chose to quit our software, thank you for trying us.");
+					exitSoftware(cin);
 					break;
 				}
 			} catch (NoSuchElementException inputException) {
@@ -183,7 +256,5 @@ public class Main {
 				System.out.println("You made a mistake you couldn't enter anything yet, please retry!\nEnter now :");
 			}
 		}
-
-		cin.close();
 	}
 }
