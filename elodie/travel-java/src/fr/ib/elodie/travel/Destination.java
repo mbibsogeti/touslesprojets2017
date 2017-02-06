@@ -1,5 +1,10 @@
 package fr.ib.elodie.travel;
 
+/**
+ * A travel destination for the USA
+ * @author Elodie
+ * @since 2017-02-02
+ */
 public class Destination {
 	public static final int DEFAULT_DAYS = 7;
 	
@@ -12,6 +17,12 @@ public class Destination {
 		this(null, null, DEFAULT_DAYS);
 	}
 	
+	/**
+	 * Constructor with<u> all fields</u>
+	 * @param n Name of the new Destination
+	 * @param s State of the new Destination
+	 * @param d Number of days during the new Destination
+	 */
 	public Destination(String n, String s, int d) {
 		this.name = n;
 		this.state = s;

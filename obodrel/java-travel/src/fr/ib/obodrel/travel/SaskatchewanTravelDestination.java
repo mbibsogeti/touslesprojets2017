@@ -13,7 +13,6 @@ public class SaskatchewanTravelDestination extends CanadaTravelDestination {
 		_canadaPlaneTicketPrice = 815;
 	}
 	
-	@Override
 	protected void execute(Scanner cin) {
 		super.execute(cin);
 	}
