@@ -23,7 +23,7 @@ public class CoastalDestination extends Destination {
 		this.boat = boat;
 	}
 
-	// renvoyer les caractéristiques de la destination
+	// renvoyer les caracteristiques de la destination
 	public String toString() {
 		return super.toString() + " sur le bateau : " + getBoat();
 	}
