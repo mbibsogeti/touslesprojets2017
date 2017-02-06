@@ -1,5 +1,12 @@
 package fr.ib.amine.travel;
 
+/**
+ * A travel destination for the USA
+ * 
+ * @author Amine BENSALEM
+ * @since 2017-01-31
+ * @version Java 1.8
+ */
 class Destination {
 	public static final int DEFAULT_DAYS = 16;
 	private String name, state;
@@ -15,7 +22,16 @@ class Destination {
 	/*
 	 * Destination() { this(null, null, 5); }
 	 */
-
+	/**
+	 * Ctor with <u> all fields </u>.
+	 * 
+	 * @param n
+	 *            name of the new Destination with uppercases
+	 * @param s
+	 *            name of State
+	 * @param d
+	 *            name of During
+	 */
 	Destination(String n, String s, int d) {
 
 		name = n;

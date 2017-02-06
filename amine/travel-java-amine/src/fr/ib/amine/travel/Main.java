@@ -15,9 +15,9 @@ public class Main {
 		float prix_nuit = 48.00f;
 
 		float voyage = (prix_avion + prix_nuit * duree) - reduction * (prix_avion + prix_nuit * duree) / 100;
-
+		String v = String.format("%.2f", voyage);
 		System.out.println("Le prix du séjour en Alaska: réduction de " + reduction + "% sur " + prix_avion
-				+ "\u20ac d'avion et " + duree + "jours à " + prix_nuit + "\u20ac soit " + voyage + "\u20ac");
+				+ "\u20ac d'avion et " + duree + "jours à " + prix_nuit + "\u20ac soit " + v + "\u20ac");
 
 		/*-----------souvenir à ramener par le client --------------------------*/
 		if (duree < 8) {
@@ -96,11 +96,11 @@ public class Main {
 	/*-----------Programme principale-----*/
 	public static void main(String[] args) {
 		System.out.println("Bienvenu à vous dans notre Agence de Voyage");
-
+		System.out.println("Où voulez vous partir ?");
 		/*---------Choisir votre destination------*/
 		/*-------Entrer des données par console--------------*/
 		Scanner sc = new Scanner(System.in);
-		String menu = sc.next();
+		String menu = sc.nextLine();
 
 		/*-------------si le client choisi Alaska------------*/
 		if (menu.equals("a")) {
@@ -121,6 +121,15 @@ public class Main {
 		}
 		if (menu.equals("t")) {
 			Amerique.doTexas(sc);
+		}
+		if (menu.equals("nv")) {
+			Amerique.doLouisiane(sc);
+		}
+		if(menu.equals("f")){
+			Amerique.doFloride(sc);
+		}
+		if(menu.equals("ny")){
+			Amerique.doNewYork(sc);
 		}
 		sc.close();
 	}

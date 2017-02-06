@@ -94,7 +94,7 @@ public class Main {
 
 		System.out.println("Bienvenu(e) à notre agence de voyage");
 		System.out.println(
-				"Choisisez votre destination: Alaska (option a), Canada (option c), Saskakchewan (option s), Washington (option w), Nevada (option n), Texas (option t)");
+				"Choisisez votre destination: Alaska (option a), Canada (option c), Saskakchewan (option s), Washington (option w), Nevada (option n), Texas (option t), Louisiane (option l), Florida (option f)");
 		Scanner sc = new Scanner(System.in);
 		String menu = sc.nextLine();
 
@@ -120,6 +120,11 @@ public class Main {
 		case "l":
 			USA.doLouisiane(sc);
 			break;
+		case "f":
+			USA.doFlorida(sc);
+			break;
+		case "y":
+			USA.doNewYork();
 		}
 
 		// if (menu.equals("a")) {
