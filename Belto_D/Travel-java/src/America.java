@@ -1,11 +1,17 @@
-import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.Scanner;
-import java.io.File;
+
 /**
  * 
  */
 import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.util.Scanner;
+import javax.swing.JFrame;
 
 /**
  * @author ib
@@ -16,6 +22,52 @@ public class America {
 	// Voyage à washington
 	public static void doWashington() {
 		System.out.println("Pas de voyage pour cet état de Washington");
+	};
+	// Destination New york
+	public static void doNewyork() {
+		new NewyorkFrame();
+		//System.out.println("Pas de voyage pour cet état de Washington");
+	}; 
+	// Nouvelle destination, Floride
+	public static void doFloride() {
+		try{
+		System.out.println("Rentrer votre Nom svp");
+		Scanner sc= new Scanner(System.in);
+		String Name = sc.nextLine();
+		System.out.println("Rentrer votre email svp");
+		String email = sc.nextLine();
+		// connection avec la base Sqlite, fichier placé à la racine
+		Class.forName("org.sqlite.JDBC");
+		Connection conn= DriverManager.getConnection(
+				"jdbc:sqlite:Floride"
+				);
+		// enrregister le nom et l'adresse email
+		Statement st = conn.createStatement();
+		st.executeUpdate("CREATE TABLE IF NOT EXISTS demande (Fid INTEGER PRIMARY KEY, name Text, email text);");
+		// enrregister le nom et l'adresse avec un bon format
+		PreparedStatement st2=conn.prepareStatement(
+				"INSERT INTO demande(Name, email)VALUES(?,?)"
+				);
+		 st2.setString(1,  Name);
+		 st2.setString(2, email);
+		 st2.executeUpdate();
+		 // recherche dans la base 
+		 PreparedStatement st3=conn.prepareStatement(
+					"SELECT NAME FROM demande WHERE email =?"
+					);
+		 st3.setString(1,email);
+		 // resultset sert à lire et renvoyer l'info
+		 ResultSet rs = st3.executeQuery();
+		 String Names="";
+		 while (rs.next())
+		 Names +=rs.getString("Name")+",";
+		 rs.close();
+		conn.close();
+		
+		System.out.println("Demande de "+ Name+ " dont l'adresse mail est: "+ email+" enregistré");
+	}catch (Exception ex){
+		System.out.println(ex);
+	}
 	};
 
 	// Voyage au Nevada
@@ -43,7 +95,7 @@ public class America {
 	};
 
 	// voyage en Luisiane
-	public static void doLuisianne() /*throws IOException*/ {
+	public static void doLuisianne() /* throws IOException */ {
 		System.out.println("Dans quelle ville voulez-vous aller?");
 		Scanner sc = new Scanner(System.in);
 		String Lieu = sc.nextLine();
@@ -57,11 +109,12 @@ public class America {
 			Lieu = Lieu.trim();
 			Lieu = Lieu.substring(0, 1).toUpperCase() + Lieu.substring(1);
 			String Name = "Julian";
-		   // enregistrer les infos dans un fichier csv, Ecrire Louisiane.csv et ajouter si ça existe deja
+			// enregistrer les infos dans un fichier csv, Ecrire Louisiane.csv
+			// et ajouter si ça existe deja
 			FileWriter f1 = new FileWriter("ecrire_Louisianne.csv", true);
-			// avec un retour 
-			f1.write(Lieu +"\n ");
-			f1.write(Name+"\n");
+			// avec un retour
+			f1.write(Lieu + "\n ");
+			f1.write(Name + "\n");
 			f1.close();
 			System.out.println(Name + " ira en " + Lieu);
 			// utilistation de LocalDateTime
@@ -78,12 +131,12 @@ public class America {
 			// recuperer une exception IO
 		} catch (IOException ex) {
 			System.out.println("Ereu IO: " + ex.getMessage());
-		    // recuperer une exception quelconque
-		} catch (Exception ex){
-			System.out.println("Erreur : "+ex.getMessage());
+			// recuperer une exception quelconque
+		} catch (Exception ex) {
+			System.out.println("Erreur : " + ex.getMessage());
 			ex.printStackTrace();
 			// le bloc s'executera dans tous les cas, toujours appeler
-		}finally{
+		} finally {
 			System.out.println("Fin de Louisiane");
 		}
 	};
