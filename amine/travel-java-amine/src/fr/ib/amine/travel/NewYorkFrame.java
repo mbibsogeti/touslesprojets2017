@@ -25,7 +25,7 @@ public class NewYorkFrame extends JFrame implements ActionListener {
 		// bt1.setBounds(10,200,60,25);// gauche, haut, largeur, hauteur
 		
 		JLabel lb1 = new JLabel("Inscrire");// écrire un mot ou phrase sur
-											// l'inter
+											// l'interface
 		getContentPane().add(lb1);
 		lb1.setBounds(10, 10, 100, 15);
 
