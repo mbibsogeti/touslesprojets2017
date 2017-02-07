@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class voyage2 {
 
-	// public static int prixt; moche il vaut mieux les déclarer dans chaque
+	// public static int prixt; moche il vaut mieux les dï¿½clarer dans chaque
 	// fonction
 
 	public static int getCalaskaprice(int prixav, int prixho) {
@@ -36,6 +36,8 @@ public class voyage2 {
 		System.out.println("bienvenue");
 		int prixt = 0;
 		int prixhotel = 45;
+		
+		//String.format("%.1f", prixhotel);
 		int prixavion = 785;
 		// int duree = 18;
 		// int[]tb=new int[4]; tableau sans valeurs
@@ -44,13 +46,13 @@ public class voyage2 {
 		/*
 		 * for (int i=0; i<ti.length;i++){
 		 * 
-		 * int prix=785+45*ti[i]; System.out.println(ti[i]+"jour:"+prix+"€"); }
+		 * int prix=785+45*ti[i]; System.out.println(ti[i]+"jour:"+prix+"ï¿½"); }
 		 */
 		Scanner sc = new Scanner(System.in);
 
 		/*
 		 * for (int j : ti) { int prix = 785 + 45 * j; System.out.println(j +
-		 * "jour:" + prix + "€"); // inconvénien pas de // retour en arrière //
+		 * "jour:" + prix + "ï¿½"); // inconvï¿½nien pas de // retour en arriï¿½re //
 		 * , pas de saut // deux par deux , // pas d'index mais // que la valeur
 		 * 
 		 * }
@@ -58,7 +60,7 @@ public class voyage2 {
 		System.out.println("menu:......");
 		String menu = sc.next();
 		if (menu.equalsIgnoreCase("a")) { // permet de tester une chaine de
-											// caractère
+											// caractï¿½re
 
 			do_alaska(745, 45);
 
@@ -70,38 +72,51 @@ public class voyage2 {
 			do_canada(sc);
 		}
 		if (menu.equalsIgnoreCase("Sask")) { // permet de tester une chaine de
-												// caractère
+												// caractï¿½re
 
 			do_alaska(72, 45);
 
 		}
 		if (menu.equalsIgnoreCase("prix")) { // permet de tester une chaine de
-												// caractère
+												// caractï¿½re
 
 			prixt = getCalaskaprice(prixavion, prixhotel);
 			System.out.println("prixtot " + prixt);
 
 		}
 		if (menu.equalsIgnoreCase("w")) { // permet de tester une chaine de
-											// caractère
+											// caractï¿½re
 
 			Amerique.dowashingtown();
 
 			System.out.println("pas de voyage ");
 		}
 		if (menu.equalsIgnoreCase("ne")) { // permet de tester une chaine de
-			// caractère
+			// caractï¿½re
 
 			Amerique.donevada();
 
-			System.out.println("balèse ");
+			System.out.println("balï¿½se ");
 		}
 		if (menu.equalsIgnoreCase("init")) { // permet de tester une chaine de
-			// caractère
+			// caractï¿½re
 
 			Amerique.donevada();
 
-			System.out.println("balèse ");
+			System.out.println("balï¿½se ");
 		}
-	}
+		if (menu.equalsIgnoreCase("l")){
+			Amerique.do_louisiane();
+			}
+		
+	
+	
+	
+	if (menu.equalsIgnoreCase("f")){
+		Amerique.do_floride();
+		}
+	if (menu.equalsIgnoreCase("ny")){
+		Amerique.do_ny();
+		}
+}
 }

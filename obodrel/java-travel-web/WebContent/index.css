@@ -5,19 +5,45 @@ table#firstTable tbody th {
     text-align: right; 
 }
 table#firstTable {
-    background-color: #080;
+    background-color: #000;
     border-spacing: 1px;
 }
-table#firstTable thead th, table#firstTable thead td {
+table#firstTable thead th, table#firstTable tbody th {
     background-color: #9f9;
     padding: 5px;
     margin: 1px;
 }
-table#firstTable tbody th, table#firstTable tbody td {
+table#firstTable tbody td {
     background-color: #fff;
     padding: 2px;
 }
 a.normalLinks {
     color: #e9a3cc;
     text-decoration: none;
+}
+a.bottomLinks {
+    padding: 5px;
+    background-color: #cf0000;
+    color: #000000;
+    text-decoration: none;
+}
+#linkBack {
+    float: right;
+}
+div.centeredImg {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+div.centeredImg img {
+    width: 250px;
+}
+div.textUnderImg {
+    text-align: center;
+}
+#formRight{
+    float: left;
+}
+figcaption#fig1, div.textUnderImg {
+    margin-left: 200px;
 }
