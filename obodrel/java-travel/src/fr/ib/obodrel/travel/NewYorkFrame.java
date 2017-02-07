@@ -1,8 +1,5 @@
 package fr.ib.obodrel.travel;
 
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;

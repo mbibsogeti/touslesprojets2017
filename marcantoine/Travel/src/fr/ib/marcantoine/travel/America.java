@@ -1,7 +1,14 @@
 package fr.ib.marcantoine.travel;
 
+import java.io.FileWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.util.Scanner;
+import javax.swing.JFrame;
 
 public class America {
 
@@ -33,14 +40,69 @@ public class America {
 
 	// FONCTION LOUSISIANA
 	static void doLouisiana(Scanner sc) {
+
 		System.out.println("Dans quelle ville voulez-vous allez ?");
 		String place = sc.nextLine();
+
 		place = place.trim();
-		place = place.substring(0, 1).toUpperCase() + place.substring(1);
-		System.out.println("Comment vous appelez-vous ?");
-		String client = sc.nextLine();
-		LocalDateTime takeoffdate = LocalDateTime.now().plusDays(54);
-		System.out.println("Demande pour " + place + " enregistrée, " + "départ au mieux le "
-				+ String.format("%02d / %02d", takeoffdate.getDayOfMonth(), takeoffdate.getMonthValue()));
+		try {
+			place = place.substring(0, 1).toUpperCase() + place.substring(1);
+			System.out.println("Comment vous appelez-vous ?");
+			String client = sc.nextLine();
+			LocalDateTime takeoffdate = LocalDateTime.now().plusDays(54);
+			System.out.println("Demande pour " + place + " enregistrée, " + "départ au mieux le "
+					+ String.format("%02d / %02d", takeoffdate.getDayOfMonth(), takeoffdate.getMonthValue()));
+			// �crire Louisiana.csv
+			FileWriter w = new FileWriter("Louisiana.csv", true);
+			w.write(place + ";" + client + "\n");
+			w.close();
+		} catch (Exception ex) {
+			System.out.println("Erreur IO : " + ex.getMessage());
+			ex.printStackTrace();
+		} finally {
+			System.out.println("Yo mama");
+		}
 	}
+
+	// FONCTION FLORIDA
+	public static void doFlorida(Scanner sc) {
+		try {
+			System.out.println("Comment vous appelez-vous ?");
+			String client = sc.nextLine();
+			System.out.println("Quel est votre e-mail ?");
+			String mail = sc.nextLine();
+
+			Class.forName("org.sqlite.JDBC");
+			Connection conn = DriverManager.getConnection("jdbc:sqlite:florida.sqlite");
+
+			Statement st = conn.createStatement();
+			st.executeUpdate(
+					"CREATE TABLE IF NOT EXISTS demande " + "(id INTEGER PRIMARY KEY, client TEXT, mail TEXT);");
+
+			PreparedStatement st2 = conn.prepareStatement("INSERT INTO demande(client, mail) VALUES (?,?)");
+			st2.setString(1, client);
+			st2.setString(2, mail);
+			st2.executeUpdate();
+
+			PreparedStatement st3 = conn.prepareStatement("SELECT client FROM demande WHERE mail = ?");
+			st3.setString(1, mail);
+			ResultSet rs = st3.executeQuery();
+			String clients = "";
+			while (rs.next())
+				clients += rs.getString("client") + ",";
+			rs.close();
+
+			conn.close();
+			System.out.println("Demande de " + client + "\n" + mail + "\n" + clients + "enregistr�e.");
+		} catch (Exception e) {
+			System.out.println(e);
+			;
+		}
+	}
+
+	// FONCTION NEW YORK
+	public static void doNewYork(Scanner sc) {
+		new NewYorkFrame();
+	}
+
 }

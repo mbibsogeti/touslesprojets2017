@@ -134,6 +134,13 @@ public class Main {
 		if (menu.equals("L")) {
 			America.doLuisianne();
 		}
+		if (menu.equals("F")) {
+			America.doFloride();
+		}
+		if (menu.equals("Y")) {
+		   America.doNewyork();
+		}
+
 		sc.close();
 	}
 

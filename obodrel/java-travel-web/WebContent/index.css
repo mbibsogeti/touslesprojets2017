@@ -1,0 +1,23 @@
+table#firstTable td  {
+    text-align: center; 
+}
+table#firstTable tbody th {
+    text-align: right; 
+}
+table#firstTable {
+    background-color: #080;
+    border-spacing: 1px;
+}
+table#firstTable thead th, table#firstTable thead td {
+    background-color: #9f9;
+    padding: 5px;
+    margin: 1px;
+}
+table#firstTable tbody th, table#firstTable tbody td {
+    background-color: #fff;
+    padding: 2px;
+}
+a.normalLinks {
+    color: #e9a3cc;
+    text-decoration: none;
+}
