@@ -1,0 +1,39 @@
+body{
+	background:white;
+	color:deepblue;
+}
+
+h1.SetFront{
+	color:#a0e040;
+	text-align:center;
+	font-weight:bold;
+	font-family:"Copperplate gothic bold";
+}
+h2.Description{
+		background:white;
+		text-align:left;
+		text-decoration:underline;
+		font-family:"Copperplate gothic light";
+	}
+h3.Return{
+	text-align:center;
+}	
+a.Return{
+	color:#9e0e40;
+	text-decoration:none;
+}
+
+table.SetFront{
+	border:#a3e40a;
+	border-color:#c0c0c0;
+}
+
+th.SetFront{
+	background:aqua;
+}
+
+td.SetFront{
+	background:#0000ff;
+	color:#ffffff;
+	text-align:center;
+}
