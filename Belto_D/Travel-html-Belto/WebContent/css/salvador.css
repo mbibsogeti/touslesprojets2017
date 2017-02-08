@@ -1,0 +1,79 @@
+@CHARSET "ISO-8859-1";
+section{
+	margin:20px;
+	border: 5px dotted black;
+	padding:10px;
+	border-radiux:10px;
+}
+
+h1{
+	color:black;
+	text-align:center;
+	background:blue;
+	backgroun-position:center;
+	border:inset #0040808px;
+	padding: 15px;
+	width:50%;
+	margin-left:auto; margin-right:auto;
+}
+
+h2#countryTitle{
+text-align:center;
+
+/*position: relative;
+left:10px;
+top: 40px;	*/
+}
+h2:hover{
+	color:pink;/* en passant la souris sur le h2, elle change de couleur*/
+}
+a: visited{...} /*si un lien visité change de color*/
+
+section:hover:last-of-type{
+	box-shadow:0 0 5px black;
+}
+
+#capitalSection{
+	background:#eed;
+	position:absolute;/*absolute c'est-à-dire qu'il n'occupe plus l'espace, les autres ne le voient pas
+	, on ajoute encore des infos pour le positionner par rapport au contenner(écran),
+	 les % sur la largeur marche mais pas sur la hauteur, position absolue se fait generalement 
+	 sur les pop-ups.index permet de chosir la position dessus ou dessous*/
+	width:500px;
+	top:400px;
+	right:0;
+	z-index:100;
+}
+#capitalSection>p {
+	/* modifier le paragraphe contenu dans la seciton capital,
+	le signe > veut dire enfant direct, heritage*/
+	font-family:Arial
+}
+#Pays{
+	background:#8080c0;
+}
+
+
+#offerSection{
+	width:50%;
+	float:right;
+	background:#0000ff;
+}
+section>h2{
+	color:#662;
+}
+section strong{
+	font-family:Arial;
+}
+strong{
+	transition:font-size 5s;
+}
+strong:hover{
+	font-size:24pt;
+}
+/*media queries*/
+@media (max-width:500px){
+	h1{background:red;}
+	#capitalSection{
+	display:none;}
+}

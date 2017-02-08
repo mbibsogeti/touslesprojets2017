@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mexico-Cancun</title>
+</head>
+<body>
+	<!-- Lien permettant de revenir à l'acceuil de notre site -->
+	<a href="index.html"> pour revenir à l'acceuil</a>
+	<h1 contenteditable=true>Une de nos belles plages à Cancun</h1>
+	<br>
+	<!-- Un lien vers une image -->
+	<figure>
+		<img alt="" src="img/Cancun.jpg">
+		<figcaption>Hotel et plage au bord de la mer</figcaption>
+	</figure>
+	<!-- On a droit à 4 format d'image (jpg/jpeg gif png svg(vectoriel) -->
+	<!-- figcaption permet de commenter l'image (avant l'image, il se place au dessus
+et après l'image il se place en dessous -->
+	<!-- ALt"pour commenter l'image, optionelle mais pratique pour 
+les non-voyants" et src "le lien en relatif" -->
+	<!-- Par defaut l'image se met là ou on le place, pour le modifier il faut travailler avec CSS -->
+	<form action="mexico.html">
+		<p>
+			<label> Nom:<input type="text" name=name></label>
+		</p>
+		<p>
+			<label> Email:<input type="email" name=email required></label>
+		</p>
+		<p>
+			<label>J'y suis déjà allé<input type="checkbox"></label>
+		</p>
+		<p>
+			<!-- Case Nationnalité avec les différents options( Francaise, UE, hors UE -->
+			<label> Nationalite<select name=nationality>
+					<option>Francaise</option>
+					<option>UE</option>
+					<option>hors UE</option>
+			</select></label>
+		</p>
+		<p>
+			<label> Message<textarea title="Votre message"></textarea></label>
+		</p>
+		<p>
+			<!-- pour creer le bouton envoyer -->
+			<label> Envoi<input type="submit"></label>
+		</p>
+	</form>
+</body>
+</html>
