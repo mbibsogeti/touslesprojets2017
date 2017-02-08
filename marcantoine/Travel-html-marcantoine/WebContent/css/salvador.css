@@ -10,7 +10,7 @@ section {
 }
 
 body {
-	background: black;
+	background: white;
 }
 
 h1, h2 {
@@ -56,4 +56,52 @@ section>h2 {
 section strong {
 	font-family: Arial;
 	color: red
+}
+
+h2:hover {
+	color: pink;
+}
+
+a:visited {
+	color: red;
+}
+
+section:hover:last-of-type {
+	box-shadow: 40px -40px 5px black;
+}
+
+strong:hover {
+	font-size: 24pt;
+}
+
+strong {
+	transition: font-size 1s;
+}
+
+section:hover {
+	background: black;
+}
+
+section {
+	transition: box-shadow 1s, background 1s;
+}
+
+@media ( min-width :500px) and ( max-width :1000px) {
+	section {
+		background: #0080ff;
+		transition: background 1s;
+	}
+	#capitalSection {
+		display: none;
+	}
+}
+
+@media ( max-width :500px) {
+	section {
+		background: #860000;
+		transition: background 1s;
+	}
+	#capitalSection {
+		display: none;
+	}
 }
