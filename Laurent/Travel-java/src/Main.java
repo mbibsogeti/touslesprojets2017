@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
 	
 	public static boolean ConditionBoucle1 = true; 
-
+	
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
@@ -23,7 +23,7 @@ public class Main {
 		// Acquisition de l'intension de l'utilisateur
 		
 		do {
-			System.out.println("\nQue souhaitez-vous faire aujourd'hui :\n a : Alaska\n c : Canada\n n : Nevada\n s : Saskakchewan\n t : Texas\n w : Washington\n q : Quitter");
+			System.out.println("\nQue souhaitez-vous faire aujourd'hui :\n a : Alaska\n c : Canada\n f : Floride\n l : Louisiane\n n : Nevada\n ny : New York\n s : Saskakchewan\n t : Texas\n w : Washington\n q : Quitter");
 			Option = sc.nextLine();
 			//sc.close();
 			switch (Option) {
@@ -54,6 +54,21 @@ public class Main {
 				USA.doNevada();
 				break;
 				
+			case "l":
+				Destination Louisiane = null;
+				USA.doLouisiane(sc,Louisiane);
+				break;
+				
+			case "f":
+				Destination floride = null;
+				USA.doFloride(sc,floride);
+				break;
+			
+			case "ny":
+				Destination newyork = null;
+				USA.doNewYork(sc,newyork);
+				break;	
+			
 			case "q":
 				Quit(sc);
 				break;
