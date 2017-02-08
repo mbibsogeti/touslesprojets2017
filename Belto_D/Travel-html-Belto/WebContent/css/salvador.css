@@ -5,7 +5,9 @@ section{
 	padding:10px;
 	border-radiux:10px;
 }
-
+body {
+   background-image:url(../img/salvador.jpg);
+}
 h1{
 	color:black;
 	text-align:center;
