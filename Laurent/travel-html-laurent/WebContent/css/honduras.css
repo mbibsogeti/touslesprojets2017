@@ -4,10 +4,15 @@ body{
 }
 
 h1.SetFront{
-	color:#a0e040;
+	color:#fff;
 	text-align:center;
-	font-weight:bold;
 	font-family:"Copperplate gothic bold";
+	font-weight:900;
+	font-size:54pt;
+	background:url(../img/fotolia_21517398_subscription_monthly_xl.jpg) no-repeat center;
+	border: outset grey 8px;
+	padding:10px 0px 10px 0px;
+	margin:30px 100px 30px 100px;
 }
 h2.Description{
 		background:white;
@@ -23,17 +28,35 @@ a.Return{
 	text-decoration:none;
 }
 
+section.SetFront{
+	width:100%;
+}
+
 table.SetFront{
 	border:#a3e40a;
 	border-color:#c0c0c0;
+	width:50%;
+	margin-left:25%;
+	border-collapse:collapse;
 }
 
 th.SetFront{
 	background:aqua;
 }
 
-td.SetFront{
+#monthHeader{
+	width:35%;
+}
+
+td.SetFrontH{
 	background:#0000ff;
 	color:#ffffff;
 	text-align:center;
+}
+
+td.SetFront{
+	background:#fff;
+	color:#000;
+	text-align:center;
+	border:2px solid black;
 }
