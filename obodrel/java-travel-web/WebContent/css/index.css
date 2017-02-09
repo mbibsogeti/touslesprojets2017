@@ -28,10 +28,15 @@ a.bottomLinks {
     text-decoration: none;
     border: 2px dotted #9E0E40;
 }
-a.bottomLinks:hover {
+a.bottomLinks:hover, a.bottomLinks:visited:hover {
     background-color: #9E0E40;
     color: #ffffff;
     border: 2px dotted #ffffff;
+}
+a.bottomLinks:visited {
+    background-color: #e9e004;
+    color: #000000;
+    border: 2px dotted #000000;
 }
 .linkBack {
     width: 20%;
@@ -70,7 +75,7 @@ h1 {
     padding-bottom: 10px;
     margin-top: 40px;
 }
-h2#guatTitle, h2#hondTitle, h2#salTitle {    
+h2#guatTitle, h2#hondTitle, h2#salTitle, h2#nicaTitle {    
     text-align: center;
     position: static;
     font-family: Arial;
@@ -138,6 +143,14 @@ table#hondPrice tbody td {
 }
 body#snowBG {
     background-color: #fffafa;
-    background-image: url("http://madartlab.com/files/2011/02/sparkle-unicorn-smaller.gif");
-    background-repeat: round;
+    /*background-image: url("http://madartlab.com/files/2011/02/sparkle-unicorn-smaller.gif");
+    background-repeat: round;*/
+}
+div#formNicaDiv{
+    line-height: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    border: 1px solid #000000;
+    margin-bottom: 25px;
+    padding-top: 25px;
 }
