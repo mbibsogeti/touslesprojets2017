@@ -28,15 +28,20 @@ a.bottomLinks {
     text-decoration: none;
     border: 2px dotted #9E0E40;
 }
-a.bottomLinks:hover {
+a.bottomLinks:hover, a.bottomLinks:visited:hover {
     background-color: #9E0E40;
     color: #ffffff;
     border: 2px dotted #ffffff;
 }
+a.bottomLinks:visited {
+    background-color: #e9e004;
+    color: #000000;
+    border: 2px dotted #000000;
+}
 .linkBack {
     width: 20%;
     padding-left: 45%;
-    margin-top: 150%;
+    margin-top: 1200px;
 }
 div.centeredImg {
     display: block;
@@ -70,7 +75,7 @@ h1 {
     padding-bottom: 10px;
     margin-top: 40px;
 }
-h2#guatTitle, h2#hondTitle {    
+h2#guatTitle, h2#hondTitle, h2#salTitle, h2#nicaTitle {    
     text-align: center;
     position: static;
     font-family: Arial;
@@ -109,16 +114,23 @@ section.textBlock, header.headerTextBlock {
 table#hondPrice td  {
     text-align: center; 
 }
-table#hondPrice td, table#hondPrice th  {
-    border : 1px solid #000000; 
+table#hondPrice thead tr th, table#hondPrice tbody tr td, table#hondPrice tbody tr th {
+    border-bottom: 1px solid #000000; 
+    border-right: 1px solid #000000; 
+}
+table#hondPrice thead th {
+    border-top: 1px solid #000000; 
+}
+table#hondPrice tbody tr th:first-child, table#hondPrice thead tr th:first-child {
+    border-left: 1px solid #000000; 
 }
 table#hondPrice tbody th, table#hondPrice thead tr > th {
     text-align: right; 
 }
 table#hondPrice {
-    border-spacing: 1px;
-    width: 30%;
-    padding-left: 37.5%;
+    border-spacing: 0px;
+    width: 25%;
+    margin-left: 37.5%;
 }
 table#hondPrice thead th, table#hondPrice tbody th {
     background-color: #a0e040   ;
@@ -131,6 +143,14 @@ table#hondPrice tbody td {
 }
 body#snowBG {
     background-color: #fffafa;
-    background-image: url("http://madartlab.com/files/2011/02/sparkle-unicorn-smaller.gif");
-    background-repeat: round;
+    /*background-image: url("http://madartlab.com/files/2011/02/sparkle-unicorn-smaller.gif");
+    background-repeat: round;*/
+}
+div#formNicaDiv{
+    line-height: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    border: 1px solid #000000;
+    margin-bottom: 25px;
+    padding-top: 25px;
 }
