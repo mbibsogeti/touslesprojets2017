@@ -1,0 +1,79 @@
+@import url("./index.css");
+
+section.textBlock, header.headerTextBlock {
+    margin: 20px;
+    border: 1px solid #008000;
+    width: auto;
+    text-align: justify;
+    padding: 10px;
+    border-radius: 10px;
+}
+section.textBlock, header.headerTextBlock {
+    width: auto;
+}
+.headerTextBlock, .textBlock {
+    float: none;
+    border-top : 1px solid #000000;
+}
+/*
+header.headerTextBlock h3 {
+    color: #000000;
+    font-family: Arial;
+}
+header.headerTextBlock div {
+    line-height: 100%;
+    background-color: #fffff0;
+    width: auto;
+    margin-left: auto;
+    text-align: auto;
+}
+*/
+header.headerTextBlock div {
+	position: relative;
+	left: -300px;
+	top: 10px;
+}
+section#headSalvador {
+	background-color: #eeeedd;
+	position: absolute;
+	width: 500px;
+	right: 0;
+	top: 800px;
+	z-index: 100;
+}
+section#offerSalvador {
+	width: 50%;
+	float: right;
+}
+section, header {
+	font-family: none;	
+}
+section strong, header strong {
+	font-family: Arial;
+	transition: font-size 0.1s;
+}
+h2,strong {
+	color: #eeeeaa;
+}
+section.textBlock h3, header.headerTextBlock h3 {
+    color: #eeeeaa;
+    font-family: none;
+}
+section#headSalvador p {
+	text-transform: capitalize;
+	font-family: Arial;
+}
+section.textBlock h3:hover, header.headerTextBlock h3:hover {
+	color: #a2e5ff;
+}
+section:last-of-type:hover {
+	box-shadow: 0 0 25px #000000;
+}
+section strong:hover, header strong:hover {
+	font-size: 24pt;
+}
+@media (max-width: 500px) {
+	section#headSalvador {
+		display: none;
+	}
+}

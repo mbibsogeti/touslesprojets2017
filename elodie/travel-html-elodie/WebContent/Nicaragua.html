@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/nicaragua.css">
+<meta charset="UTF-8">
+<title>Nicaragua</title>
+</head>
+<body onload="startup()">
+	<h1>NICARAGUA</h1>
+	<section>
+		<h2>Le Pays</h2>
+		<p onclick="alert('Téléphonez pour plus d\'infos')">Le Nicaragua,
+			en forme longue la République du Nicaragua, en espagnol República de
+			Nicaragua, est un pays d'Amérique centrale. Il est limitrophe du
+			Costa Rica au sud et du Honduras au nord. Il est aussi entouré par
+			l'océan Pacifique et la mer des Caraïbes. Sa capitale et plus grande
+			ville est Managua. Le Nicaragua est membre de l'Alliance bolivarienne
+			pour les Amériques (Alba) depuis 2007.</p>
+	</section>
+	<section id="inscript">
+		<h2>Inscription</h2>
+		<form id="nbSent">
+			<p>
+				<label> Nom: <input type="text" name="name">
+				</label>
+			</p>
+			<p>
+				<label> Email: <input type="email" name="mail">
+				</label>
+			</p>
+			<p>
+				<label> Voyageurs: <input type="number" name="numver"
+					id="nbTravellersClicked">
+				</label>
+			</p>
+			<p>
+				<input type="submit" name="send">
+			</p>
+		</form>
+	</section>
+	<script type="text/javascript">
+		console.log('début')
+		function startup() {
+			console.log('loaded');
+		}
+		function nbTravellersClicked() {
+			console.log('Nombre de voyageurs');
+		}
+		document.getElementById("nbTravellersClicked").addEventListener(
+				"click", nbTravellersClicked);
+		function nbSent(e) {
+			console.log('Nombre d\'envoi');
+			return e.preventDefault();
+		}
+		document.getElementById("nbSent").addEventListener(
+				"submit", nbSent);
+	</script>
+</body>
+</html>
