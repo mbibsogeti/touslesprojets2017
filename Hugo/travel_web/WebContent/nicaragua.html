@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nicaragua destino turistico</title>
+</head>
+<body onload='startup()'>
+	<div>
+		<h1>Viaje a Nicaragua</h1>
+	</div>
+	<section>
+		<h2>Nicaragua: el pais</h2>
+		<p onclick="alert('Téléphonez pour + d\'infos')">Nicaragua,
+			oficialmente República de Nicaragua, es un país de América ubicado en
+			el istmo centroamericano. Su capital es Managua, políticamente es una
+			República presidencialista y unitaria compuesta por 15 departamentos
+			y 2 regiones autónomas. Son órganos de Gobierno el Poder Legislativo,
+			el Poder Ejecutivo, el Poder Judicial y el Poder Electoral, existe
+			autonomía en cada uno de estos.</p>
+	</section>
+	<div>
+		<h2>Inscription</h2>
+		<form action='nicaragua.html' id='envoieForm'>
+			<p>
+				<label> Nom: <input type='text' name='Nom'>
+				</label>
+			</p>
+			<p>
+				<label> e-mail: <input type='text' name='e-mail'>
+				</label>
+			</p>
+			<p>
+				<label> N° Voyageurs: <input type='number' name='n°voy'
+					min='0' id='nbTravellers'>
+				</label>
+			</p>
+			<p>
+				<input type='submit'>
+			</p>
+		</form>
+	</div>
+	<div>
+		<a href='index.html'>Retour à l'accueil</a>
+	</div>
+	<script type="text/javascript">
+		function startup() {
+			console.log('loaded')
+		}
+
+		function nbTravellersClicked() {
+			console.log('nbTravellersClicked');
+		}
+
+		function formSent(e) {
+			console.log('Formulaires envoyés');
+			e.preventDefault();
+		}
+
+		console.log('début');
+		document.getElementById('nbTravellers').addEventListener('click',
+				nbTravellersClicked);
+		document.getElementById('envoieForm').addEventListener('submit',
+				formSent);
+	</script>
+</body>
+</html>

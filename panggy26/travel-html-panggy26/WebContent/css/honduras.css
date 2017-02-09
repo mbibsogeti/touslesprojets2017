@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+
+body {
+	background: snow;
+	/* Format RVB abrégé correspondant à #004040 */
+	color: #044;
+}
+
+h1 {
+	/* Titre en vert pomme */
+	color: #A0E040;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 42pt;
+	text-decoration: blink;
+	text-align: center;
+	font-family: Times New Roman, monospaced;
+	/* Plutôt que de réécrire background: truc; background: machin; à chaque fois, on peut adopter cette syntaxe */
+	background: #b50000 url("../images/tikal.jpg") repeat-y center;
+	border: inset purple 18px;
+	/* padding : intérieur de la bordure, margin : extérieur de la bordure */
+	padding: 15px;
+	margin: 100px 0px 5px 10px;
+	font-family: Times New Roman, monospaced;
+	/* padding : haut droite bas gauche */
+}
+
+/* Pour centrer le texte, il faut utiliser la balise p */
+a {
+	color: purple;
+	text-decoration: none;
+}
+
+p {
+	text-align: center;
+}
+
+table {
+	/*  Toutes les "table" du fichier prennent 100% de la place du conteneur (ici "body") */
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+	
+	/* Centrer la table */
+	width: 50%;
+	margin-left: 25%;
+	/* margin-right: 25%; est inutile, car le navigateur déduit cette valeur des 2 autres */
+	
+	/* Autre solution avec auto : il prend le reste et le divise équitablement */
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	/* Centrer en hauteur avec height: 100% ne change rien car la hauteur de la page, déjà fixée, dépend de la hauteur du contenu */
+}
+
+#monthHeader {
+	/* Cette colonne fait 50% de la largeur du conteneur : la table */
+	width: 50%;
+}
+
+th {
+	border: 4px solid black;
+}
+
+td {
+	border: 2px solid black;
+}
