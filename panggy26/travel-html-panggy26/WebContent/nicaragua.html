@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<!--Appel à la fonction définie dans <script>-->
+<body onload="startup()">
+	<h1>Nicaragua</h1>
+	<section>
+		<h2>El país</h2>
+		<!--Les valeurs des attributs en HTML utilisent des guillemets, on doit donc utiliser ' pour saisir des caractères. Échappement avec \-->
+		<p onclick="alert('Téléphonez pour plus d\'infos')">Nicaragua es un país de América ubicado en el istmo centroamericano. Su capital es
+			Managua, políticamente es una República presidencialista y unitaria compuesta por 15 departamentos y 2 regiones autónomas. Son órganos de
+			Gobierno el Poder Legislativo, el Poder Ejecutivo, el Poder Judicial y el Poder Electoral, existe autonomía en cada uno de estos. El
+			Territorio de Nicaragua tiene una superficie de 130 370 km², 2 limita al norte con Honduras, al sur con Costa Rica, al oeste con el
+			océano Pacífico y al este con el mar Caribe. En cuanto a límites marítimos, en el océano Pacífico colinda con El Salvador, Honduras y
+			Costa Rica; mientras que en el mar Caribe colinda con Honduras, Colombia y Costa Rica. Habitado por pueblos precolombinos, el actual
+			territorio de Nicaragua fue conquistado por España en el siglo XVI. Nicaragua, luego de haber pertenecido al Imperio español (1502-1821),
+			al Primer Imperio Mexicano (1821-1823), a las Provincias Unidas del Centro de América (1823-1824), y a la República Federal de
+			Centroamérica (1824–1838), emerge como país independiente en 1838, bajo el nombre de Estado de Nicaragua y se empieza a llamar República
+			de Nicaragua, desde 1854. Nicaragua es un país volcánico y tropical, en su interior alberga también dos grandes lagos: el lago Managua
+			(conocido por los nicaragüenses con el nombre aborigen Xolotlán) y el Gran lago de Nicaragua (conocido también como Cocibolca o lago de
+			Nicaragua).</p>
+	</section>
+	<section>
+		<h2>Inscripción</h2>
+		<form action="./nicaragua.html" id="register">
+			<p>
+				<label>Nom : <input type="text" name="nom" id="nomInscrit"></label>
+			</p>
+			<p>
+				<label>Email : <input type="email" name="email" id="mailInscrit"></label>
+			</p>
+			<p>
+				<label>Nombre de voyageur(s) : <input type="number" min="0" name="nb" id="nbTravellers"></label>
+			</p>
+			<p>
+				<input type="submit">
+			</p>
+			<!--Input : le client rentre les données, Output : afficher un message au client-->
+			<!--On place cette balise à l'endroit où on souhaite que s'affiche le message-->
+			<output id="message"> </output>
+		</form>
+	</section>
+	<!--Balise pour le code JavaScript-->
+	<script>
+		/* Le message s'affiche dans le journal du navigateur */
+		console.log('Début');
+		/* Définition de la fonction startup(), de nom arbitraire */
+		function startup() {
+			console.log('Loaded');
+		}
+		function nbTravellersClicked() {
+			console.log('Nombre de voyageur(s) ayant cliqué');
+		}
+		function registered(e) {
+			console.log('Registered !');
+			/* Annuler le comportement par défaut */
+			e.preventDefault();
+			/* Afficher quelque chose lorsque le formulaire est envoyé */
+			var n = document.getElementById("nomInscrit");
+			var a = document.getElementById("mailInscrit");
+			var m = document.getElementById("message");
+			m.value = "Inscription enregistrée pour " + n.value + " à l'adresse " + a.value;
+			var t = document.getElementById("nbTravellers");
+			t.value = 0;
+		}
+		/* page.getElementById("id").addEventListener("click", function) */
+		document.getElementById("nbTravellers").addEventListener("click",
+				nbTravellersClicked);
+		/* Id de ce qu'on veut récupérer */
+		var r = document.getElementById("register");
+		r.addEventListener("submit", registered);
+	</script>
+</body>
+</html>
