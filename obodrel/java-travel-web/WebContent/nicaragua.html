@@ -3,23 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/index.css">
+<script type="text/javascript" src="./js/nicaragua.js"></script>
 <title>Obodrel's Travel, make your travel come true !</title>
 </head>
 <body id="snowBG">
-	<audio autoplay="true" loop="true">
-	  <source src="./res/unicorn_song.mp3" type="audio/mpeg">
-	Your browser does not support the audio element.
-	</audio>
 	<div id="welcome-txt">
 		<h1 contenteditable="false">Obodrel's Travel</h1>
 	</div>
-	<h2 id="hondTitle">Honduras</h2>
+	<h2 id="nicaTitle">Nicaragua</h2>
 	<header class="headerTextBlock">
-		<div><h3>About</h3></div>
+		<div><h3>About the country</h3></div>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo massa, scelerisque eget nulla ac, semper vulputate tortor. Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare pretium. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at aliquet risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.
 		</p>
 	</header>
+	<section class="textBlock">
+		<div><h3>Inscriptions</h3></div>
+		<div id="formNicaDiv">
+			<form id="formNica" ">
+				<label>Name : <input type="text" name="formName"></label><br><br>
+				<label>Email : <input type="email" name="formEmail"></label><br><br>
+				<label>Travellers Number : <input type="number" name="formNb"></label><br><br>
+				<input type="submit" id="formSubmit" value="Submit"><br><br>
+			</form>
+		</div>
+	</section>
 	<section class="textBlock">
 		<div><h3>Touritical locations</h3></div>
 		<p>
@@ -35,83 +43,6 @@
 			<br><br>
 			Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue. Integer nunc sem, bibendum eu vulputate ut, ullamcorper sit amet metus. Mauris quis ante nisl. Ut et justo massa. Aenean id nisl sed turpis ultrices semper. Fusce pellentesque augue eget est porta feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis finibus leo quis nisi ullamcorper sodales. Praesent malesuada pharetra nulla, nec iaculis ipsum rutrum ac. Integer finibus placerat neque in cursus. Proin eu arcu lorem.
 		</p>
-	</section>
-	<section class="textBlock">
-		<div><h3>Our prices</h3></div>
-		<p>
-			Please find below our travels costs!
-		</p>
-		<table id="hondPrice">
-			<thead>
-				<tr>
-					<th>Months</th>
-					<th>Departure</th>
-					<th>Price</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th>January</th>
-					<td>18</td>
-					<td>970€</td>
-				</tr>
-				<tr>
-					<th>February</th>
-					<td>18</td>
-					<td>970€</td>
-				</tr>
-				<tr>
-					<th>March</th>
-					<td>18</td>
-					<td>970€</td>
-				</tr>
-				<tr>
-					<th>April</th>
-					<td>18</td>
-					<td>970€</td>
-				</tr>
-				<tr>
-					<th>May</th>
-					<td>18</td>
-					<td>970€</td>
-				</tr>
-				<tr>
-					<th>June</th>
-					<td>18</td>
-					<td>970€</td>
-				</tr>
-				<tr>
-					<th>July</th>
-					<td>18</td>
-					<td>970€</td>
-				</tr>
-				<tr>
-					<th>August</th>
-					<td>18</td>
-					<td>970€</td>
-				</tr>
-				<tr>
-					<th>September</th>
-					<td>18</td>
-					<td>970€</td>
-				</tr>
-				<tr>
-					<th>October</th>
-					<td>18</td>
-					<td>970€</td>
-				</tr>
-				<tr>
-					<th>November</th>
-					<td>18</td>
-					<td>970€</td>
-				</tr>
-				<tr>
-					<th>December</th>
-					<td>18</td>
-					<td>970€</td>
-				</tr>
-			</tbody>
-		</table>
 	</section>
 	<footer class="linkBack">
 		<a href="./index.html" class="bottomLinks">HOME PAGE</a>
