@@ -1,0 +1,107 @@
+@CHARSET "UTF-8";
+
+section {
+	margin: 20px;
+	padding: 10px;
+	border: 1px solid green;
+	border-radius: 10px;
+	background: green;
+	color: white;
+}
+
+body {
+	background: white;
+}
+
+h1, h2 {
+	text-align: center;
+	z-index: 200;
+	position: relative;
+	color: blue;
+}
+
+.link {
+	text-align: center;
+}
+
+#countryTitle {
+	position: relative;
+	z-index: 200;
+	color: red;
+}
+
+#capitalSection {
+	background: #eed;
+	color: black;
+	width: 50%;
+	right: 0;
+	z-index: 100;
+	position: relative;
+}
+
+#capitalSection p {
+	font-family: Arial;
+}
+
+#offerSection {
+	width: 50%;
+	float: right;
+	background: #8080ff;
+}
+
+section>h2 {
+	color: #662;
+}
+
+section strong {
+	font-family: Arial;
+	color: red
+}
+
+h2:hover {
+	color: pink;
+}
+
+a:visited {
+	color: red;
+}
+
+section:hover:last-of-type {
+	box-shadow: 40px -40px 5px black;
+}
+
+strong:hover {
+	font-size: 24pt;
+}
+
+strong {
+	transition: font-size 1s;
+}
+
+section:hover {
+	background: black;
+}
+
+section {
+	transition: box-shadow 1s, background 1s;
+}
+
+@media ( min-width :500px) and ( max-width :1000px) {
+	section {
+		background: #0080ff;
+		transition: background 1s;
+	}
+	#capitalSection {
+		display: none;
+	}
+}
+
+@media ( max-width :500px) {
+	section {
+		background: #860000;
+		transition: background 1s;
+	}
+	#capitalSection {
+		display: none;
+	}
+}
