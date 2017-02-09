@@ -2,4 +2,17 @@
 
 body{ background:snow; color :slategray }
 a{color:#80;text-decoration:none;}
-p{text-align:center}
+p{text-align:center; border:inset gray 8px; padding: 15px; margin: 30px}
+
+h1{background : blue url("../img/282px-El_Castillo_Stitch_2008_Edit_1.jpg") repeat-y  right}
+table{
+	text-align :center;
+	border-collapse:collapse;
+	width: 50%;
+	margin: 0% 25% 0% 25%.
+	
+	
+}
+#montheader{width:25%}
+td{border:1px solid black}
+th{border:1px solid black}
