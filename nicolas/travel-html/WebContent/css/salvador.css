@@ -1,0 +1,49 @@
+@CHARSET "ISO-8859-1";
+
+
+a{color:#80;text-decoration:none;}
+
+
+Section{
+	margin:20px;
+	border:1px solid green;
+	padding:10px;
+	border-radius:10px;	
+}
+
+Section:last-of-type{
+	box-shadow: 0 0 500px black;
+}
+
+#pays{position: relative;left:10px;}
+#capital{background:#eed;
+float:right}
+
+strong{transition: font-size 5s;}
+
+strong:hover{font-size:24pt;}
+
+h2#CountryTitle{}
+section>h2{
+	color:red;
+}
+section strong{
+	font-family:Arial;
+}
+h1,strong{
+	background:#EEA;
+}
+#CapitalSection>p{
+	
+	
+	
+
+	font-family:Arial;
+}
+
+@media(max-width:500px){
+#pays{display:none}}
+
+
+
+}
