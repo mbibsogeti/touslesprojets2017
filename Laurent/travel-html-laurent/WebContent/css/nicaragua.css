@@ -1,0 +1,16 @@
+section{
+	border:1px solid green;
+	border-radius:10px;
+	padding:10px;
+}
+
+section#paysSection{
+	border:none;
+}
+strong{
+	transition:font-size 5s;
+}
+
+section:hover{
+	box-shadow:0 0 5px black;
+}

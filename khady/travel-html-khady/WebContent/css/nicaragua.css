@@ -1,0 +1,17 @@
+@CHARSET "utf-8";
+
+label{
+	color: red;
+	font-weight: b;
+}
+
+p strong{
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+
+p input{
+	background:snow;
+	
+}
