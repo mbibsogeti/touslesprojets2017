@@ -7,6 +7,7 @@ section{
 }
 body {
    background-image:url(../img/salvador.jpg);
+   background-size: cover;
 }
 h1{
 	color:black;
@@ -59,7 +60,7 @@ section:hover:last-of-type{
 #offerSection{
 	width:50%;
 	float:right;
-	background:#0000ff;
+	background:#8080ff;
 }
 section>h2{
 	color:#662;

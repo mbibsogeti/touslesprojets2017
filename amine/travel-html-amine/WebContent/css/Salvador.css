@@ -1,40 +1,73 @@
 @CHARSET "UTF-8";
-section{
-	margin:20px;
-	border:1px solid green;
-	padding:10px;
-	border-radius:10px;
+
+section {
+	margin: 20px;
+	border: 1px solid green;
+	padding: 10px;
+	border-radius: 10px;
 }
-#CountryTitle{
+
+#CountryTitle {
 	/*position:relative;
 	left:10px*/
-	position:relative;
-	left:10px;
-	top:20px;
+	position: relative;
+	left: 10px;
+	top: 20px;
 }
-#CapitalSection{
-	background:#EED;
+
+#CapitalSection {
+	background: #EED;
 	/*position:fixed;*/
-	position:absolute;
-	width:500px;
-	right:0;
-	top:800px;
-	z-index:100;
+	position: absolute;
+	width: 500px;
+	right: 0;
+	top: 800px;
+	z-index: 100;
 }
-#OfferSection{
-	width:50%;
-	float:right;
+
+#OfferSection {
+	width: 50%;
+	float: right;
 }
-h2#CountryTitle{}
-section>h2{
-	color:red;
+
+h2#CountryTitle {
+	
 }
-section strong{
-	font-family:Arial;
+
+section>h2 {
+	color: red;
 }
-h1,strong{
-	background:#EEA;
+
+section strong {
+	font-family: Arial;
 }
-#CapitalSection>p{
-	font-family:Arial;
+
+h1, strong {
+	background: #EEA;
+}
+
+#CapitalSection>p {
+	font-family: Arial;
+}
+
+h2:hover {
+	color: pink;
+}
+
+section:last-of-type {
+	box-shadow: 0 0 5px black;
+}
+
+strong {
+	transition: font-size 5s;
+}
+
+strong:hover {
+	font-size: 24pt;
+}
+
+@media ( max-width :500px) {
+	#CapitalSection {
+		display: none;
+	}
 }

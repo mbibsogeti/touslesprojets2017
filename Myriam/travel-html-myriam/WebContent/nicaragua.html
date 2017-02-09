@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nicaragua</title>
+<link rel="stylesheet" href="salvador.css">
+</head>
+<body onload="startup()">
+
+
+	<div>
+		<h1>Bienvenido a Nicaragua !</h1>
+		
+		<section>
+			<h2>Le Pays</h2>
+			<p onclick="alert('telephoner pour plus d\'infos')">Le Nicaragua est un pays d'Amérique centrale, frontalier du
+				Honduras (au nord) et du Costa Rica (au sud). Il possède deux
+				façades océaniques, tournées vers le Pacifique (à l'ouest) et vers
+				l'Atlantique (à l'est). Son climat est tropical, son régime est
+				démocratique et la langue nationale est l'espagnol.</p>
+
+		</section>
+
+		<section>
+		<h2>Inscription</h2>
+			<form action="nicaragua.html" id="register">
+
+				<p>
+					<label>Nom : </label> <input type="text" name="nom" id="nom" />
+				</p>
+				<p>
+					<label>email : </label> <input type="email" name="email" id="email" />
+				</p>
+				<p>
+					<label>Nombre de voyageurs : </label> <input type="number"
+						name="nb_v" id="nb_v" />
+				</p>
+
+				<p >
+					<input type="submit" name="envoyer" id="button" onclick="alert('Inscription enregistrée')"/>
+				</p>
+			</form>
+			
+			<p><output id="message"></output></p>
+
+		</section>
+
+		<p class="retour">
+			<a class="retour" href="index.html">Retour à l'accueil</a>
+		</p>
+	</div>
+
+<script>
+console.log('début')
+function startup(){
+	console.log('loaded')
+}
+function nbTravellersClicked(){
+	console.log('nbTravellersClicked')
+}
+document.getElementById("nb_v").addEventListener("click",nbTravellersClicked)
+
+function buttonClicked(){
+	console.log('buttonClicked')
+}
+document.getElementById("button").addEventListener("click",buttonClicked)
+
+function registered(e){
+	console.log("registered !")
+	e.preventDefault()
+	var nom =document.getElementById("nom")
+	var email =document.getElementById("email")
+	var m=document.getElementById("message")
+	m.value="Inscription envoyée pour "+nom.value +" à l'adresse suivante : "+ email.value
+	var m=document.getElementById("nb_v")
+	m.value="0"
+}
+document.getElementById("register").addEventListener("submit",registered)
+
+
+</script>
+
+</body>
+</html>
