@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Excursion nicaragua</title>
+<link rel="stylesheet" href="css/nicaragua.css">
+</head>
+<body onload="startup()">
+	<h1>Nicaragua</h1>
+	<h2>Le Pays</h2>
+	<p onclick="alert('Téléphonez pour plus d\'infos')">
+		L’image d’un pays en ruines, ravagé par la guerre, a longtemps tenu
+		les visiteurs éloignés du Nicaragua - à l’exception des
+		internacionalistas, les volontaires au <br> feu sacré des années
+		sandinistes. Les plus jeunes, l’esprit vierge de ces clichés, ont été
+		les premiers à entrouvrir la porte, cahotant dans des bus bondés sur
+		les <br>routes balafrées, campant sur les plages vierges du
+		Pacifique, avec leur planche de surf. Le Nicaragua est bel et bien un
+		pays d’une grande <br> richesse. Affirmant sa révolution par des
+		fresques vibrantes de symboles, il vit au pied d’une cohorte de
+		volcans et chérit les ruines de cités ravagées par des séismes. Bien
+		peu s’y attendent, <br>mais beaucoup repartent avec le sentiment
+		d’avoir rencontré le plus attachant des pays d’Amérique centrale.
+	</p>
+
+	<p>
+		<strong>Inscription</strong>
+	</p>
+	<form id = "register" action="nicaragua.html">
+
+		<p>
+			<label>Nom:<input type="text"></label>
+		</p>
+		<p>
+			<label>Email:<input type="text"></label>
+		</p>
+		<p>
+	<label>Voyageurs:<input id="nbTravellers" type="number" ></label>
+		</p>
+		<p>
+		<input type="submit">
+		</p>
+
+		</form>
+	<script>
+		console.log('début')
+		function startup() {
+			console.log('loaded')
+		}
+		
+		function nbTravellersClicked() {
+			console.log('nbTravellersClicked')
+		}
+		document.getElementById("nbTravellers").addEventListener("click", nbTravellersClicked)
+		
+			function registered(e) {
+			console.log("Registered !")
+			e.preventDefault()
+		}
+		document.getElementById("register").addEventListener("submit", registered)
+		
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Voyage au Mexique</title>
+</head>
+<body>
+	<!--contenteditable : le texte est modifiable-->
+	<h1 contenteditable="true">Mexique</h1>
+	<!--Lien vers un fichier .html (mexico)-->
+	<p>
+		<a href="./index.html"> Retour à l'accueil </a>
+	</p>
+
+	<!--IMAGE-->
+	<figure>
+		<!--Alt : alternatif, ce texte est lu pour les mal-voyants-->
+		<img src="./images/kukulcán.jpg" alt="Pyramide maya">
+		<!--Légende de l'image-->
+		<figcaption>Les Mayas vécurent de -2600 à 1520</figcaption>
+	</figure>
+
+	<!--FORMULAIRE-->
+	<!--action : destination de l'envoi du formulaire-->
+	<form action="./mexico.html">
+		<p>
+			<label>Nom : <input type="text" name="nom"></label>
+		</p>
+		<p>
+			<label>Email : <input type="email" name="email"></label>
+		</p>
+		<p>
+			<label>J'y suis déjà allé(e) : <input type="checkbox" name="deja"></label>
+		</p>
+		<p>
+			<label>Nationalité : <select name="nationalite">
+					<option>française</option>
+					<option>UE</option>
+					<option>hors UE</option>
+			</select>
+			</label>
+		</p>
+		<p>
+			<label>Message : <textarea name="message" title="Voici un message en infobulle !">
+				</textarea>
+			</label>
+		</p>
+		<p>
+			<input type="submit">
+		</p>
+	</form>
+</body>
+</html>
