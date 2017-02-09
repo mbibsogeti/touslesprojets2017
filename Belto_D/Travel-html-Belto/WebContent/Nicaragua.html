@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Nicaragua</title>
 </head>
-<body onload="startup()">
+<body style="background-color: gray;" onload="startup()">
 	<h1>Le pays</h1>
 	<form id="fComplete">
 		<p onclick="alert ('Telephone pour+d\'infos')"><!-- un première façon d'utiliser Javascript -->
@@ -16,15 +16,24 @@
 			l'Alliance bolivarienne pour les Amériques (Alba) depuis 2007.</p>
 		<p>
 		<h2>Inscription</h2>
-		<label> Nom:<input type="text" name=name></label>
-		<label> Email:<input type="email" name=email required></label>
+		<label> Nom:<input id="Nom" type="text" name=name></label>
+		<label> Email:<input id="email" type="email" name=email required></label>
 		<label> Voyageurs:<input id="nbTravellers" type="number" name=number></label>
 		</p>
+		
 		<p>
 		<label> Votre message<textarea title="Votre message"></textarea></label>
 		</p>
+		<p>
 		<!-- pour creer le bouton envoyer -->
 		<label> Envoyer<input type="submit"></label>
+		</p>
+		<p>
+		<output id="message"> 
+		
+		</output>
+		
+		</p>
 	</form>
 
 <script>
@@ -40,8 +49,13 @@ addEventListener("click", nbTravellersClicked)
 
 function fCompleted(e){
 	console.log('form registerd!')
-	alert('Thank you')
 	e.preventDefault()
+	var e=document.getElementById("email")
+	var n=document.getElementById("Nom")
+	var m=document.getElementById("message")
+	m.value="Inscription envoyée " + " "+ n.value+" " +  e.value // rajouter Nom+ plus email à message envoyé//
+	var y=document.getElementById("nbTravellers") // remise à zéro du nombre de voyageurs//
+	y.value="0"
 }
 document.getElementById("fComplete").addEventListener("submit",fCompleted)
 </script>
