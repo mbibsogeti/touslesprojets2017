@@ -22,11 +22,11 @@
 		<h2>Inscription</h2>
 		<form action='nicaragua.html' id='envoieForm'>
 			<p>
-				<label> Nom: <input type='text' name='Nom'>
+				<label> Nom: <input type='text' name='Nom' id='nom'>
 				</label>
 			</p>
 			<p>
-				<label> e-mail: <input type='text' name='e-mail'>
+				<label> e-mail: <input type='text' name='e-mail' id='mail'>
 				</label>
 			</p>
 			<p>
@@ -36,6 +36,9 @@
 			</p>
 			<p>
 				<input type='submit'>
+			</p>
+			<p>
+				<output id='message'></output>
 			</p>
 		</form>
 	</div>
@@ -54,13 +57,20 @@
 		function formSent(e) {
 			console.log('Formulaires envoyés');
 			e.preventDefault();
+			var nom = document.getElementById('nom');
+			var mail = document.getElementById('mail');
+			var m = document.getElementById('message');
+			m.value = "Inscription envoyée par " + nom.value + ' ('
+					+ mail.value + ')';
+			var nbT = document.getElementById('nbTravellers');
+			nbT.value = '0';
 		}
 
 		console.log('début');
-		document.getElementById('nbTravellers').addEventListener('click',
-				nbTravellersClicked);
-		document.getElementById('envoieForm').addEventListener('submit',
-				formSent);
+		var nbT = document.getElementById('nbTravellers');
+		nbT.addEventListener('click', nbTravellersClicked);
+		var r = document.getElementById('envoieForm');
+		r.addEventListener('submit', formSent);
 	</script>
 </body>
 </html>
