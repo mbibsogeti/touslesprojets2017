@@ -6,7 +6,9 @@
 <link rel="stylesheet" href="css/nicaragua.css">
 </head>
 <body onload="startup()">
-<h1>Nicaragua</h1>
+<header id="headerSection">
+	<h1>Nicaragua</h1>
+</header>
 <section id="paysSection">
 	<h2>Le pays</h2>
 	<p style="text-align: justify;" onclick="alert('Téléphonez pour plus d\'infos')">Le Nicaragua, en forme longue la République du Nicaragua, en espagnol República de Nicaragua, est un pays d'Amérique centrale. Il est limitrophe du Costa Rica au sud et du Honduras au nord. Il est aussi entouré par l'océan Pacifique et la mer des Caraïbes. Sa capitale et plus grande ville est Managua.
@@ -15,12 +17,13 @@
 <section id="inscriptSection">
 	<h2>Inscription</h2>
 	<form action="./nicaragua.html" id="Submit">
-		<p><label>Nom : <input type="text" name="Nom"></label>
-		<p><label>Email : <input type="text" name ="Email"></label>
+		<p><label>Nom : <input type="text" name="Nom" id="name"></label>
+		<p><label>Email : <input type="text" name ="Email" id="email"></label>
 		<p><label>Voyageurs <input type="number" min="0" max="20" id="nbTravellers">
 		<p><label><input type="submit"></label>
 	</form>
 </section>
+<p><output id="message"> </output>
 <h3>
 	<a href="../WebContent/index.html">Retour à l'accueil</a>
 </h3>	
@@ -36,6 +39,13 @@ function nbTravellersClicked(){
 function submitActivated(e){
 	console.log('formulaire has been submitted !')
 	e.preventDefault() //Empecher l'envoi du formulaire
+	var m=document.getElementById("message")//
+	var nbT=document.getElementById("nbTravellers")
+	var name=document.getElementById("name")
+	var email=document.getElementById("email")
+	nbT.value="0"
+	m.value="Inscription enregistrée pour "+name.value+" ( "+email.value+" )"
+	name.value=""
 }
 document.getElementById("nbTravellers").addEventListener("click",nbTravellersClicked)
 document.getElementById("Submit").addEventListener("submit",submitActivated)
