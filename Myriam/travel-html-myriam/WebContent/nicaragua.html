@@ -26,10 +26,10 @@
 			<form action="nicaragua.html" id="register">
 
 				<p>
-					<label>Nom : </label> <input type="text" name="nom" />
+					<label>Nom : </label> <input type="text" name="nom" id="nom" />
 				</p>
 				<p>
-					<label>email : </label> <input type="email" name="email" />
+					<label>email : </label> <input type="email" name="email" id="email" />
 				</p>
 				<p>
 					<label>Nombre de voyageurs : </label> <input type="number"
@@ -40,6 +40,8 @@
 					<input type="submit" name="envoyer" id="button" onclick="alert('Inscription enregistrée')"/>
 				</p>
 			</form>
+			
+			<p><output id="message"></output></p>
 
 		</section>
 
@@ -66,8 +68,16 @@ document.getElementById("button").addEventListener("click",buttonClicked)
 function registered(e){
 	console.log("registered !")
 	e.preventDefault()
+	var nom =document.getElementById("nom")
+	var email =document.getElementById("email")
+	var m=document.getElementById("message")
+	m.value="Inscription envoyée pour "+nom.value +" à l'adresse suivante : "+ email.value
+	var m=document.getElementById("nb_v")
+	m.value="0"
 }
 document.getElementById("register").addEventListener("submit",registered)
+
+
 </script>
 
 </body>
