@@ -30,12 +30,20 @@ function buttonClicked() {
 	for (var i = 0; i < s; i++)
 		total += t[i] + 40;
 	m.value += " Un trajet de " + total + " min"
-	//utilisation d'un objet, d'une Bibliotèque//
-	var o={ChMitoyennes: 3, Croisiere:5, Spectacle:3, Souvenirs:4}
-	m.value+=" .Les options disponibles pour vous "
-	for (var k in o)
-		if(o[k]<=n)
-			m.value+=k+" "
-		
+	// utilisation d'un objet, d'une Bibliotèque//
+	var o = {
+		"ChMitoyennes," : 3,
+		" Croisiere," : 5,
+		"Spectacle," : 3,
+		" et Souvenirs." : 4,
+		"option" : function() {
+			m.value += " .Les options disponibles pour vous sont: "
+			for ( var k in o)
+				if (o[k] <= n)
+					m.value += k + " ";
+			return (m.value)
+		}
+	}
+	o.option();
 }
 document.getElementById("button").addEventListener("click", buttonClicked)
