@@ -35,14 +35,22 @@ function sendForm() {
 	m.value += " Length of the trip: " + parseInt(time / 60) + " hours and "
 			+ time % 60 + " minutes.";
 	
-	var o = {"Ch. mitoyennes":3, "Croisière":5, "Spectacle":3, "Souvenirs":4};
-	m.value += " Options: "
-	for (var k in o) {
-		if (o[k] <= n) {
-			m.value += k+", ";
+	var o = {
+		"Ch. mitoyennes":3, 
+		"Croisière":5, 
+		"Spectacle":3, 
+		"Souvenirs":4,
+		"options":function() {
+			var opts ="";
+			for (var k in this) {
+				if (this[k] <= n) {
+					opts += k+", ";
+				}
+			}
+			return opts;
 		}
 	}
-	m.value += " c'est super.";
+	m.value += " Options: "+ o.options() +" c'est super.";
 }
 
 var b = document.getElementById("send")
