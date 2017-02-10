@@ -64,9 +64,6 @@ h1 {
     color: #557f2f;
     text-align: center;
     position: static;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #707070;
     margin-left: 25%;
     margin-right: 25%;
     padding-left: 10%;
@@ -75,7 +72,7 @@ h1 {
     padding-bottom: 10px;
     margin-top: 40px;
 }
-h2#guatTitle, h2#hondTitle, h2#salTitle, h2#nicaTitle {    
+h2#guatTitle, h2#hondTitle, h2#salTitle, h2#nicaTitle, h2#coriTitle, h2#panamaTitle {    
     text-align: center;
     position: static;
     font-family: Arial;
@@ -92,7 +89,8 @@ h2#hondTitle {
 }
 body {
     font-family: Tahoma;
-    background-color: #fffff0;
+    background-image: url("../img/obodrel_image_diana_blood_moon_riot_games.jpg");
+    background-size: cover; 
 }
 section.textBlock h3, header.headerTextBlock h3 {
     color: #ffffff;
@@ -141,16 +139,92 @@ table#hondPrice tbody td {
     background-color: #ffffff;
     padding: 2px;
 }
-body#snowBG {
-    background-color: #fffafa;
-    /*background-image: url("http://madartlab.com/files/2011/02/sparkle-unicorn-smaller.gif");
-    background-repeat: round;*/
-}
-div#formNicaDiv{
+div#formNicaDiv, div#estimateCoRi{
     line-height: 100%;
     background-color: #ffffff;
     text-align: center;
     border: 1px solid #000000;
     margin-bottom: 25px;
     padding-top: 25px;
+}
+span#chooseCoRi {
+    color: #000000;
+    font-style: italic;
+}
+div#panamaContent h3 {
+    cursor: pointer;
+    margin: 0;
+}
+div#panamaContent h3.active, div#panamaContent h3:hover {
+    background-color: #bbeebb   ;
+}
+div#panamaContent p, div#panamaContent p {
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    transition: max-height 0.2s ease-out;
+    transition: margin 0.2s ease-out; 
+    text-align: justify;
+}
+div.countryContent {
+    background-color: hsla(0, 0%, 100%, 0.56);
+    width: 100%;
+    box-shadow: 0 0 5px #000000;
+}
+div#panamaContent section.textBlock div, div#panamaContent header.headerTextBlock div {
+    line-height: 200%;
+    background-color: #bbee99;
+    width: 100%;
+    margin-left: 0%;
+    text-align: center;
+}
+div#panamaContent section, div#panamaContent header {
+    border: none;
+    margin: 0 3% 0 3%;
+    width: 94%;
+}
+div#panamaContent h3.plus:after {
+    content: '\2795';
+    font-size: 13px;
+    color: #555555;
+    float: right;
+    margin-right: 15px;
+}
+div#panamaContent h3.minus:after {
+    content: '\2796';
+    font-size: 13px;
+    color: #555555;
+    float: right;
+    margin-right: 15px;
+}
+div.countryContent {
+    display: none;
+}
+div#menuTravel table td { 
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #000000;
+    /*border-right: 1px dotted black;*/
+    /*border-top: 1px solid black;
+    border-bottom: 1px solid black;*/
+}
+div#menuTravel table td:hover {
+    background-color: #E07400;
+}
+div#menuTravel table td:first-child { 
+    /*border-left: 1px dotted black;*/
+}
+div#menuTravel table {
+    border-spacing: 0px;
+    width: 100%;
+    text-align: center;
+}
+div.abosluteMenu {
+    position: absolute;
+}
+div.fixedMenu {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
 }

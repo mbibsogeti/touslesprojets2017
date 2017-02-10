@@ -11,7 +11,7 @@
 	<div id="welcome-txt">
 		<h1 contenteditable="false">Obodrel's Travel</h1>
 	</div>
-	<h2 id="nicaTitle">Nicaragua</h2>
+	<h2 id="coriTitle">Costa Rica</h2>
 	<header class="headerTextBlock">
 		<div><h3>About the country</h3></div>
 		<p>
@@ -19,17 +19,16 @@
 		</p>
 	</header>
 	<section class="textBlock">
-		<div><h3>Inscriptions</h3></div>
-		<div id="formNicaDiv">
-			<form id="formNica" ">
-				<label>Name : <input type="text" name="formName" required="required" ></label><br><br>
-				<label>Email : <input type="email" name="formEmail" required="required" ></label><br><br>
-				<label>Travellers Number : <input type="number" name="formNb" required="required" ></label><br><br>
-				<input type="submit" id="formSubmit" value="Submit"><br><br>
-			</form>
+		<div><h3>Estimate your travel</h3></div>
+		<div id="estimateCoRi">
+			<label>Travellers Number : <input type="number" name="formNb" id="estimateNb" min="1" max="50"></label><br><br>
+			<input type="button" id="estimateBtn" value="Your Estimate"><br><br>
+			<p>
+				<span id="chooseCoRi">Choose Now</span>
+			</p>
 		</div>
 		<p>
-			<span id="formRes"></span>
+			<span id="outputCoRi"></span>
 		</p>
 	</section>
 	<section class="textBlock">
