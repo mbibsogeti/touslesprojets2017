@@ -61,21 +61,83 @@ function sent() {
 	var minute = tot % 60;
 	m.value += " Temps total de voyage : " + heure + " heure(s) et " + minute
 			+ " minute(s)";
+	// // DICTIONNAIRE //
+	// var cadeaux = {
+	// "Chambres mitoyennes" : 3,
+	// "Croisière" : 5,
+	// "Spectacle" : 3,
+	// "Souvenirs" : 4
+	// }
+	// // Les boucles dans les dictionnaires parcourent les clefs
+	// for ( var i in cadeaux) {
+	// if (n >= cadeaux[i]) {
+	// m.value += " Bravo ! Vous avez gagné : " + i;
+	// }
+	// }
 
-	// DICTIONNAIRE //
+	// OBJET (ma version) //
 	var cadeaux = {
 		"Chambres mitoyennes" : 3,
 		"Croisière" : 5,
 		"Spectacle" : 3,
-		"Souvenirs" : 4
-	}
-	// Les boucles dans les dictionnaires parcourent les clefs
-	for ( var i in cadeaux) {
-		if (n >= cadeaux[i]) {
-			m.value += " Bravo ! Vous avez gagné : " + i;
+		"Souvenirs" : 4,
+		"afficher" : function() {	
+			var s = "";
+			// Les boucles dans les dictionnaires parcourent les clefs
+			for ( var i in cadeaux) {
+				if (typeof cadeaux[i] == "number" && n >= cadeaux[i]) {
+					s += " Bravo ! Vous avez gagné : " + i;
+				}			
+			}
+			return s
 		}
 	}
-
+	m.value += cadeaux.afficher();
 }
 
+//// OBJET (version prof) //
+//	var cadeaux = {
+//		"Chambres mitoyennes" : 3,
+//		"Croisière" : 5,
+//		"Spectacle" : 3,
+//		"Souvenirs" : 4,
+//		"afficher" : function(n) {	
+//			var txt = "";
+//			for ( var k in this) {
+//				if (n >= this[k])
+//					txt += k + ", ";		
+//			}
+//			return txt;
+//		}
+//	}
+//	m.value += cadeaux.afficher(n);
+//}
+
 document.getElementById("send").addEventListener("click", sent);
+
+
+
+// LA BIZARRERIE DE JAVASCRIPT !!!
+//	var x = 2;
+//	function f1(){
+//		x = 5;
+//	}
+//	
+//	f1() attribut 5 à x
+//	console.log() donne 5
+//
+//	
+//	var x = 2;
+//	function f1(){
+//		var x;
+//		x = 5;
+//	}
+//	console.log() donne 2
+//	
+//	var x = 2;
+//	function f1(){
+//		x = 5;
+//		var x;
+//	}
+//	console.log() donne 2
+
