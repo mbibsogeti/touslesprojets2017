@@ -1,0 +1,39 @@
+@CHARSET "ISO-8859-1";
+/* faire un accordéon, et utilisation de javascript  */
+body{
+	margin:0;
+	padding:0;
+	background: #efc; 
+}
+h1
+{text-align:center;
+color: blue;
+background: gray;
+box-shadow: 5px 5px 5px black;
+width:30%;
+margin-left:auto; margin-right:auto;
+}
+#container{
+	width:1100px;
+	margin:0 auto 0 auto;
+	padding: 40px;
+	background: white;
+	box-shadow:0 0 5px black;
+}
+section{
+	background:#efc;
+	margin:0;
+	padding:0;
+}
+
+h2,p{
+	margin:0;padding: 10px;
+}
+
+h2{
+	background:#be9;
+	cursor:pointer; /*cela veut dire que je peux clické ici */
+}
+p {
+	display:none;
+}
