@@ -96,6 +96,7 @@ function showTps() {
 	// blue augmente de 5 en 5 mais le modulo instaure un cycle
 	blue += 5;
 }
+
 // On appelle la fonction showTps toutes les 100 ms
 setInterval(showTps, 100);
 
