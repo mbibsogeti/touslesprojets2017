@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #efc;
+}
+
+#container {
+	/* Cette façon de faire permet d'avoir 2 bandes libres sur le côté (par exemple pour la pub). L'embêtant est que l'ensemble est rigide */
+	width: 1100px;
+	/* auto : autant à droite qu'à gauche */
+	margin: 0 auto 0 auto;
+	padding: 40px;
+	background: white;
+	box-shadow: 0 0 5px black;
+}
+
+section {
+	background: #efc;
+	margin: 0;
+	padding: 0;
+}
+
+h2, p {
+	margin: 0;
+	padding: 10px;
+}
+
+h2 {
+	background: #be9;
+	cursor: pointer;
+}
+
+p {
+	/* On n'affiche pas les paragraphes. Pour les faire apparaitre, on utilise JavaScript */
+	display: none;
+}

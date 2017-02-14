@@ -44,20 +44,39 @@ function sentQuote() {
 	}
 
 	mess.value += '. Le temps total du voyage sera de ' + tTot + ' minutes ou '
-			+ parseInt(tTot / 60) + ' heures et ' + tTot % 60 + ' minutes.';
+			+ parseInt(tTot / 60) + ' heures et ' + tTot % 60 + ' minutes. ';
 
+	mess.value += "Options: "
 	var o = {
-		"chambre mitoyenne" : 3,
-		croisière : 5,
-		spectable : 3,
-		souvenirs : 4
-	}
-	
-	mess.value+='Options: '
-		for(var opt in o){
-			if(o[opt]<=nbT){
-				mess.value+=opt+", "}
+		"Chambre mitoyenne" : 3,
+		"Croisière" : 5,
+		"Spectable" : 3,
+		"Souvenirs" : 4,
+		"afficher" : function() {
+			affiche = "";
+			for ( var opt in o) {
+				if (o[opt] <= nbT) {
+					affiche += opt + ", "
+				}
+			}
+			return affiche
 		}
+	}
+
+	mess.value += o.afficher();
+
+	// function afficher(){
+	// for ( var opt in o) {
+	// if (o[opt] <= nbT) {
+	// return mess.value+=opt+","
+	// }
+
+	// mess.value += 'Options: '
+	// for ( var opt in o) {
+	// if (o[opt] <= nbT) {
+	// mess.value += opt + ", "
+	// }
+	// }
 
 }
 
