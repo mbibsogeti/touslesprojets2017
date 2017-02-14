@@ -1,6 +1,6 @@
 window.onload = onLoadInit;
 var body;
-var CURRENT_CONTENT_NEEDED = "panama";
+var CURRENT_CONTENT_NEEDED = "haiti";
 var indexRule = null;
 var currentSection = null;
 
