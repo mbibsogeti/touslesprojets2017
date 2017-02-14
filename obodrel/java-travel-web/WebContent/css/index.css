@@ -156,7 +156,7 @@ div#panamaContent h3 {
     margin: 0;
 }
 div#panamaContent h3.active, div#panamaContent h3:hover {
-    background-color: #bbeebb   ;
+    background-color: #E07400   ;
 }
 div#panamaContent p, div#panamaContent p {
     max-height: 0;
@@ -167,13 +167,13 @@ div#panamaContent p, div#panamaContent p {
     text-align: justify;
 }
 div.countryContent {
-    background-color: hsla(0, 0%, 100%, 0.56);
+   /* background-color: hsla(0, 0%, 100%, 0.56);
     width: 100%;
-    box-shadow: 0 0 5px #000000;
+    box-shadow: 0 0 5px #000000;*/
 }
 div#panamaContent section.textBlock div, div#panamaContent header.headerTextBlock div {
     line-height: 200%;
-    background-color: #bbee99;
+    background-color: #000000;
     width: 100%;
     margin-left: 0%;
     text-align: center;
@@ -186,21 +186,24 @@ div#panamaContent section, div#panamaContent header {
 div#panamaContent h3.plus:after {
     content: '\2795';
     font-size: 13px;
-    color: #555555;
+    color: #ffffff;
     float: right;
     margin-right: 15px;
 }
 div#panamaContent h3.minus:after {
     content: '\2796';
     font-size: 13px;
-    color: #555555;
+    color: #ffffff;
     float: right;
     margin-right: 15px;
 }
 div.countryContent {
     display: none;
 }
-div#menuTravel table td { 
+div#menuTravel {
+    z-index: 100;
+}
+div#menuTravel table td, div#menuTravel ul li, div#menuTravel div#countryLiRoller { 
     cursor: pointer;
     color: #ffffff;
     background-color: #000000;
@@ -208,12 +211,24 @@ div#menuTravel table td {
     /*border-top: 1px solid black;
     border-bottom: 1px solid black;*/
 }
-div#menuTravel table td:hover {
+div#menuTravel table td:hover, div#menuTravel ul li:hover,div#menuTravel div#countryLiRoller:hover {
     background-color: #E07400;
 }
 div#menuTravel table td:first-child { 
     /*border-left: 1px dotted black;*/
 }
+div#menuTravel ul{
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    max-height: 0px;
+}
+div#menuTravel ul li {
+    width: 100px;
+}
+div#menuTravel div#countryLiRoller {
+    width: 15px;
+}
+
 div#menuTravel table {
     border-spacing: 0px;
     width: 100%;
@@ -228,8 +243,36 @@ div.fixedMenu {
     left: 0px;
     width: 100%;
 }
-div#haitiContent {
+div#guadeloupeContent {
     background-color: inherit;
     width: 100%;
     box-shadow: none;
+}  
+img#imgGuadeloupe {
+    max-width: 100%;
+}
+div.goUpBtn {
+    position: fixed;
+    top: 600px;
+    font-size: 300%;
+    color: #000000;
+    cursor: pointer;
+    display: none;
+}
+div.goUpBtn:hover {
+    color: #E07400;
+}
+aside#searchPanel {
+    display: none;
+}
+
+div.progress-bar {
+    width: 50%;
+}
+div.progress-bar-danger {
+    width: 30%;
+}
+div.progress {
+    width: 50%;
+    margin-left: 25%;
 }

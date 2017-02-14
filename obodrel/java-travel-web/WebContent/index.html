@@ -11,10 +11,10 @@
 <title>Obodrel's Travel, make your travel come true !</title>
 </head>
 <body id="body">
-	<div class="container">
+	<div class="container-fluid">
 		<h1>Obodrel's Travel</h1>
-		<div class="absoluteMenu" id="menuTravel">
-			<table>
+		<div class="absoluteMenu row" id="menuTravel">
+			<table class="hidden-xs">
 				<tr>
 					<td class="countryBtn" id="btnHome">Home</td>
 					<td class="countryBtn" id="btnMexico">Mexico</td>
@@ -25,8 +25,26 @@
 					<td class="countryBtn" id="btnCostaRica">Costa Rica</td>
 					<td class="countryBtn" id="btnPanama">Panama</td>
 					<td class="countryBtn" id="btnHaiti">Haiti</td>
+					<td class="countryBtn" id="btnGuadeloupe">Guadeloupe</td>
+					<td class="countryBtn" id="btnMartinique">Martinique</td>
+					<td class="countryBtn" id="btnBarbade">Barbade</td>		
 				</tr>
 			</table>
+			<div class="visible-xs" id="countryLiRoller">►</div>
+			<ul class="nav visible-xs list-unstyled">
+				<li class="countryBtn" id="uliHome">Home</li>
+				<li class="countryBtn" id="uliMexico">Mexico</li>
+				<li class="countryBtn" id="uliGuatemala">Guatemala</li>
+				<li class="countryBtn" id="uliHonduras">Honduras</li>
+				<li class="countryBtn" id="uliSalvador">Salvador</li>
+				<li class="countryBtn" id="uliNicaragua">Nicaragua</li>
+				<li class="countryBtn" id="uliCostaRica">Costa Rica</li>
+				<li class="countryBtn" id="uliPanama">Panama</li>
+				<li class="countryBtn" id="uliHaiti">Haiti</li>
+				<li class="countryBtn" id="uliGuadeloupe">Guadeloupe</li>
+				<li class="countryBtn" id="uliMartinique">Martinique</li>
+				<li class="countryBtn" id="uliBarbade">Barbade</li>
+			</ul>
 		</div>
 		<div class="countryContent" id="homeContent">
 			<div id="welcome-txt">
@@ -79,17 +97,6 @@
 			<p>
 				Visit our partner website : <a href="https://embamex2.sre.gob.mx/francia/index.php/fr/" class="normalLinks">Mexico embassy</a>, or our devoted <a href="./mexico.html" class="normalLinks">page</a>!
 			</p>
-			<!--<p>
-				Check out live :
-				<iframe 
-			        src="http://player.twitch.tv/?channel=lck1" 
-			        height="200" 
-			        width="340" 
-			        frameborder="0" 
-			        scrolling="no"
-			        allowfullscreen="true">
-			    </iframe>
-			</p>-->
 		</div>
 		<div class="countryContent" id="mexicoContent">
 			<div id="welcome-txt">
@@ -123,9 +130,6 @@
 					</div>
 				</p>
 			</div>
-			<footer class="linkBack">
-				<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-			</footer>
 		</div>
 		<div class="countryContent" id="guatemalaContent">
 			<h2 id="guatTitle">Guatemala</h2>
@@ -151,9 +155,6 @@
 					Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue. Integer nunc sem, bibendum eu vulputate ut, ullamcorper sit amet metus. Mauris quis ante nisl. Ut et justo massa. Aenean id nisl sed turpis ultrices semper. Fusce pellentesque augue eget est porta feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis finibus leo quis nisi ullamcorper sodales. Praesent malesuada pharetra nulla, nec iaculis ipsum rutrum ac. Integer finibus placerat neque in cursus. Proin eu arcu lorem.
 				</p>
 			</section>
-			<footer class="linkBack">
-				<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-			</footer>
 		</div>
 		<div class="countryContent" id="hondurasContent">
 			<h2 id="hondTitle">Honduras</h2>
@@ -256,9 +257,6 @@
 					</tbody>
 				</table>
 			</section>
-			<footer class="linkBack">
-				<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-			</footer>
 		</div>
 		<div class="countryContent" id="salvadorContent">
 			<h2 id="salTitle">Salvador</h2>
@@ -280,9 +278,6 @@
 					Praesent pulvinar diam at sapien aliquam suscipit. Sed efficitur leo at est aliquam, et scelerisque metus sollicitudin. Duis nec tortor neque. Pellentesque eget maximus tellus. Mauris nisi ante, blandit lobortis sapien ac, sagittis porttitor augue. In bibendum quis ipsum at posuere. Suspendisse sit amet erat accumsan, <strong>pretium</strong> lorem sed, gravida nisl. Etiam nec orci erat. Integer varius euismod efficitur. Curabitur viverra dolor vel odio tincidunt, vel posuere mauris porta. Vivamus et dapibus justo. <br><br>Cras at dignissim felis, at condimentum quam. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis. Proin id dolor blandit, ultrices turpis id, sodales ex. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem.
 				</p>
 			</section>
-			<footer class="linkBack">
-				<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-			</footer>
 		</div>
 		<div class="countryContent" id="nicaraguaContent">
 			<h2 id="nicaTitle">Nicaragua</h2>
@@ -322,9 +317,6 @@
 					Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue. Integer nunc sem, bibendum eu vulputate ut, ullamcorper sit amet metus. Mauris quis ante nisl. Ut et justo massa. Aenean id nisl sed turpis ultrices semper. Fusce pellentesque augue eget est porta feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis finibus leo quis nisi ullamcorper sodales. Praesent malesuada pharetra nulla, nec iaculis ipsum rutrum ac. Integer finibus placerat neque in cursus. Proin eu arcu lorem.
 				</p>
 			</section>
-			<footer class="linkBack">
-				<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-			</footer>
 		</div>
 		<div class="countryContent" id="costaricaContent">
 			<h2 id="coriTitle">Costa Rica</h2>
@@ -363,9 +355,6 @@
 					Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue. Integer nunc sem, bibendum eu vulputate ut, ullamcorper sit amet metus. Mauris quis ante nisl. Ut et justo massa. Aenean id nisl sed turpis ultrices semper. Fusce pellentesque augue eget est porta feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis finibus leo quis nisi ullamcorper sodales. Praesent malesuada pharetra nulla, nec iaculis ipsum rutrum ac. Integer finibus placerat neque in cursus. Proin eu arcu lorem.
 				</p>
 			</section>
-			<footer class="linkBack">
-				<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-			</footer>
 		</div>
 		<div class="countryContent" id="panamaContent">
 			<h2 id="panamaTitle">Panama</h2>
@@ -390,9 +379,6 @@
 					<canvas width="500" height="500" id="costaRicaCanvas"></canvas>
 				</p>
 			</section>
-			<footer class="linkBack">
-				<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-			</footer>
 		</div>
 		<div class="countryContent" id="haitiContent">
 			<div class="row">
@@ -475,6 +461,233 @@
 					</section>
 				</section>
 			</div>
+		</div>
+		<div class="countryContent" id="guadeloupeContent">
+			<div class="row">
+				<h2 class="col-sm-12 col-xs-offset-5" id="guadeloupeTitle">Guadeloupe</h2>
+			</div>
+			<div class="row">
+				<section class="col-sm-6 col-xs-12">
+					<div><h3>The Island</h3></div>
+					<p class="text-justify text-capitalize">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit ex nulla, non cursus nulla ornare ut. Donec feugiat nulla nec massa blandit, varius pulvinar lacus gravida. Vestibulum blandit lobortis sem a lobortis. Morbi sed leo nisl. Quisque ac tincidunt quam. Phasellus vel tristique sem, id viverra nisl. Phasellus condimentum felis pharetra faucibus gravida. Fusce id nunc est.<br><br>Pellentesque libero ligula, cursus eu vehicula quis, feugiat vel orci. Vivamus a magna velit. Phasellus malesuada, orci id semper gravida, velit ipsum elementum purus, nec porttitor leo nisl at justo. Vivamus eu ex vitae purus imperdiet venenatis non eu justo. Maecenas ultricies lectus ut leo volutpat placerat eget nec dui. Proin a rutrum eros, sit amet interdum odio. Sed eget diam ornare, eleifend sapien in, feugiat libero. Mauris sit amet dapibus erat. Nulla vel hendrerit dui. Vestibulum in finibus massa. Nullam id turpis non sapien luctus porta at ac libero.
+					</p>
+				</section>
+				<section class="col-sm-6 col-xs-12">
+					<div><h3>Towns</h3></div>
+					<p>
+						Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut ante eget tortor pretium blandit.
+					</p>
+					<ul>
+						<li>Lorem</li>
+						<li>Ipsum</li>
+						<li>Sed Etiam</li>
+						<li>Non Solum</li>
+						<li>Potens</li>
+						<li class="visible-lg-inline-block">Quo Voce</li>
+						<li class="hidden-xs">Ave Caesar</li>
+						<li class="hidden-xs">Qui Morituri</li>
+						<li class="hidden-xs">Te Salutant</li>
+					</ul>
+				</section>
+			</div>
+			<div class="row">
+				<figure class="col-sm-6 col-xs-12" >
+					<img class="img-thumbnail" id="imgGuadeloupe" src="./img/obodrel_image_guadeloupe_landscape.jpg">
+    				<figcaption id="figGuadeloupe">Fusce ligula orci, congue quis odio eget, rhoncus pharetra nunc. Maecenas eu eros sed nulla viverra condimentum.</figcaption>
+				</figure>
+				<section class="col-sm-6 col-xs-12">
+					<div><h3>Beaches</h3></div>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Beaches Name</th>
+								<th>Desccription</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Proin</td>
+								<td>Etiam vel mi in orci efficitur hendrerit.</td>
+							</tr>
+							<tr>
+								<td>Quisque</td>
+								<td>Phasellus id lacinia ante.</td>
+							</tr>
+							<tr>
+								<td>Maecenas</td>
+								<td>Duis sem magna, sagittis ac velit vel.</td>
+							</tr>
+							<tr>
+								<td>Aliquam</td>
+								<td>Sed laoreet, mauris ac varius molestie.</td>
+							</tr>
+							<tr>
+								<td>Cras</td>
+								<td>Nam lacus justo, porta ullamcorper iaculis.</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</div>
+			<div class="row">
+				<section class="col-sm-6 col-xs-12">
+					<div><h3>Hotels</h3></div>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Hotel Name</th>
+								<th>Desccription</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><del>Huinean</del>Aenean</td>
+								<td>Fusce convallis est sed justo egestas elementum.</td>
+							</tr>
+							<tr>
+								<td>Curabitur</td>
+								<td>Curabitur nec turpis eu urna vestibulum rhoncus.</td>
+							</tr>
+							<tr>
+								<td>Vestibulum</td>
+								<td>Proin bibendum tellus a nibh dictum.</td>
+							</tr>
+							<tr>
+								<td>Phasellus</td>
+								<td>Donec ultrices, nulla vel vulputate faucibus.</td>
+							</tr>
+							<tr>
+								<td>Donec</td>
+								<td>Ut dolor sapien, rutrum nec elit at.</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section class="col-sm-6 col-xs-12 table-responsive">
+					<div><h3>Prices</h3></div>
+					<table class="table table-striped table-bordered table-condensed">
+						<thead>
+							<tr class="danger">
+								<th>Prices for activities</th>
+								<th>New Activities (contains previouses)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="warning">
+								<td>100€</td>
+								<td>Quisque ac ornare nulla.</td>
+							</tr>
+							<tr class="info">
+								<td>200€</td>
+								<td>Fusce lacinia, dolor ut dictum.</td>
+							</tr>
+							<tr class="success">
+								<td>300€</td>
+								<td>Cras quis placerat tellus.</td>
+							</tr>
+							<tr class="info">
+								<td>400€</td>
+								<td>Praesent eget elit eu ex.</td>
+							</tr>
+							<tr class="warning">
+								<td>500€</td>
+								<td>Duis nisl libero, porta quis.</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</div>
+		</div>
+		<div class="countryContent" id="martiniqueContent">
+			<div class="row">
+				<h2 class="col-sm-12 col-xs-offset-5" id="martiniqueTitle">Martinique</h2>
+			</div>
+			<div class="row">
+				<section class="col-sm-12 col-xs-12">
+					<div><h3>Look for a city</h3></div>
+					<form class="form-inline">
+						<section class="form-group">
+							<label for="searchMartinique">Search :</label><input id="searchMartinique" class="form-control" type="text" name="destinationFormMartinique">
+						</section>
+						<input id="submitMartinique" class="btn btn-default" type="button" value="Submit">
+					</form>
+					<br>
+					<aside id="searchPanel" class="panel panel-warning">
+						<section class="panel-footer">
+							Searchs...
+						</section>
+						<section class="panel-body">
+							Search...
+						</section>
+						<section class="panel-heading">
+							Searchf...
+						</section>
+					</aside>
+					<aside class="panel panel-danger">
+						<section class="panel-heading">
+							Searchs...
+						</section>
+						<section class="panel-body">
+							Search...
+						</section>
+						<section class="panel-footer">
+							Searchf...
+						</section>
+					</aside>
+				</section>
+			</div>
+			<div class="row">
+				<section class="col-sm-12 col-xs-12">
+					<div><h3>Make a request to travel</h3></div>
+					<form>
+						<section class="form-group">
+							<label for="nameMartinique">Name : </label><input id="nameMartinique" type="text" class="form-control" name="nameFormMartinique">
+							<label for="emailMartinique">Email : </label><input id="emailMartinique" type="email" class="form-control" name="emailFormMartinique">
+							<label for="nbTravellersMartinique">Travellers : </label><input id="nbTravellersMartinique" type="number" class="form-control" name="nbTravellersFormMartinique" min="0" max="5">
+							<label>Departure :</label>
+								<label class="radio-inline"><input type="radio" name="departureFormMartinique" value="Paris" checked>Paris</label>	
+								<label class="radio-inline"><input type="radio" name="departureFormMartinique" value="Bordeaux">Bordeaux</label>	
+								<label class="radio-inline"><input type="radio" name="departureFormMartinique" value="Marseille">Marseille</label>	
+							</label>
+						</section>
+						<input class="btn btn-primary" type="button" value="Request">
+						<input class="btn btn-link" type="button" value="Inscription">
+					</form>
+				</section>
+			</div>
+		</div>
+		<div class="countryContent" id="barbadeContent">
+			<nav>
+				<ul class="nav nav-pills nav-justified">
+					<li><a href="https://fr.wikipedia.org/wiki/Barbade">Wikipedia</a></li>
+					<li><a href="http://www.routard.com/guide/code_dest/barbade.htm">Routard</a></li>
+					<li><a href="http://www.easyvoyage.com/barbade">Easy Voyage</a></li>
+					<li class="active"><a href="#"><span class="glyphicon glyphicon-list"></span> Barbade</a></li>
+				</ul>
+			</nav>
+			<div class="row">
+				<h2 class="col-sm-12 col-xs-offset-5" id="barbardeTitle">La Babarde</h2>
+			</div>
+			<div class="row">
+				<p>
+					<button class="btn btn-warning">
+						Warning<span class="badge">3</span>
+					</button>
+				</p>
+			</div>
+			<div class="row">
+				<div><h3>Filling In</h3></div>
+				<div class="progress">
+					<div class="progress-bar">50%</div>
+					<div class="progress-bar progress-bar-danger">80%</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<footer class="col-sm-12 col-xs-offset-11">
+				<div id="lastOfPage" class="goUpBtn">&uarr;</a>
+			</footer>
 		</div>
 	</div>
 </body>
