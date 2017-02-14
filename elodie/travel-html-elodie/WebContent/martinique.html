@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="viewport"
+	content="width =device-width, initial-scale = 1, minimum-scale = 0.5">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<title>Martinique</title>
+</head>
+<body>
+	<div class="container">
+
+
+		<div class="row">
+			<section class="col-sm-12"
+				style="background-color: rgb(201, 235, 243)">
+				<h1>Martinique</h1>
+			</section>
+		</div>
+
+
+		<div class="row">
+			<section class="col-sm-12 form-group">
+				<form action="martinique.html" class="form-inline">
+					<section class="form-group">
+						<label for="search">Recherche</label><input type="text"
+							id="search" class="form-control">
+					</section>
+					<input type="submit" value="Envoi" class="btn"
+						onclick="document.getElementById('searchPanel').style.display='block'; return false;">
+				</form>
+				<aside class="panel panel-primary" id="searchPanel"
+					style="display: none">
+					<section class="panel-body">Recherche</section>
+					<section class="panel-footer ">En cours....</section>
+				</aside>
+			</section>
+		</div>
+
+
+		<div class="row">
+			<section class="col-sm-12">
+				<form action="martinique.html">
+					<section class="form-group">
+						<label for="search1">Nom</label><input type="text" name="nom"
+							id="search1" class="form-control input-lg">
+					</section>
+					<section class="form-group">
+						<label for="search2">Email</label><input type="email" name="mail"
+							id="search2" class="form-control">
+					</section>
+					<section class="form-group">
+						<label for="search3">Voyageurs</label><input type="number"
+							name="nb" min="1" max="10" id="search3" class="form-control">
+					</section>
+					<section class="form-group">
+						<label>Départ</label> <label class="radio-inline"> <input
+							type="radio" name="form" value="Paris">Paris
+						</label> <label class="radio-inline"> <input type="radio"
+							name="form" value="Bordeaux">Bordeaux
+						</label> <label class="radio-inline"> <input type="radio"
+							name="form" value="Lyon">Lyon
+						</label>
+					</section>
+					<section class="form-group">
+						<input type="submit" name="send" value="Demande"
+							class="btn btn-danger btn-block"> <input type="submit"
+							name="send" value="Inscription" class="btn btn-success btn-block">
+					</section>
+				</form>
+			</section>
+		</div>
+	</div>
+</body>
+</html>
