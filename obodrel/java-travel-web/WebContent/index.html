@@ -3,391 +3,692 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/index.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 <script type="text/javascript" src="./js/function.js" defer></script>
 <script type="text/javascript" src="./js/init.js" defer></script>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=0.5">
 <title>Obodrel's Travel, make your travel come true !</title>
 </head>
 <body id="body">
-	<h1>Obodrel's Travel</h1>
-	<div class="absoluteMenu" id="menuTravel">
-		<table>
-			<tr>
-				<td class="countryBtn" id="btnHome">Home</td>
-				<td class="countryBtn" id="btnMexico">Mexico</td>
-				<td class="countryBtn" id="btnGuatemala">Guatemala</td>
-				<td class="countryBtn" id="btnHonduras">Honduras</td>
-				<td class="countryBtn" id="btnSalvador">Salvador</td>
-				<td class="countryBtn" id="btnNicaragua">Nicaragua</td>
-				<td class="countryBtn" id="btnCostaRica">Costa Rica</td>
-				<td class="countryBtn" id="btnPanama">Panama</td>
-			</tr>
-		</table>
-	</div>
-	<div class="countryContent" id="homeContent">
-		<div id="welcome-txt">
-			<h2>Our Agency</h2>
-			<p>
-				Wel<span>come</span> on <em>our</em> <strong>travel agency</strong> website!<br> Our center is : 400m<sup>2</sup>.
-			</p>
-		</div>
-		<p>
-			Take our agency? Here is why!
-			<ol>
-				<li>Warranty</li>
-				<li>
-					Quality	
-					<ul>
-						<li>Fly insurance</li>
-						<li>Hotels quality</li>
-					</ul>
-				</li>
-				<li>Proximity</li>
-			</ol>
-		</p>
-		<p>
-			<table id="firstTable">
-				<thead>
-					<tr>
-						<th></th>
-						<th>Winter</th>
-						<th>Summer</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>Normal</th>
-						<td>Freighter</td>
-						<td>Ferry</td>
-					</tr>
-					<tr>
-						<th>Luxury</th>
-						<td>Plane</td>
-						<td>Liner</td>
-					</tr>
-					<tr>
-						<th>2017</th>
-						<td colspan="2">Freighter/Boat</td>
-					</tr>					
-				</tbody>
+	<div class="container-fluid">
+		<h1>Obodrel's Travel</h1>
+		<div class="absoluteMenu row" id="menuTravel">
+			<table class="hidden-xs">
+				<tr>
+					<td class="countryBtn" id="btnHome">Home</td>
+					<td class="countryBtn" id="btnMexico">Mexico</td>
+					<td class="countryBtn" id="btnGuatemala">Guatemala</td>
+					<td class="countryBtn" id="btnHonduras">Honduras</td>
+					<td class="countryBtn" id="btnSalvador">Salvador</td>
+					<td class="countryBtn" id="btnNicaragua">Nicaragua</td>
+					<td class="countryBtn" id="btnCostaRica">Costa Rica</td>
+					<td class="countryBtn" id="btnPanama">Panama</td>
+					<td class="countryBtn" id="btnHaiti">Haiti</td>
+					<td class="countryBtn" id="btnGuadeloupe">Guadeloupe</td>
+					<td class="countryBtn" id="btnMartinique">Martinique</td>
+					<td class="countryBtn" id="btnBarbade">Barbade</td>		
+				</tr>
 			</table>
-		</p>
-		<p>
-			Visit our partner website : <a href="https://embamex2.sre.gob.mx/francia/index.php/fr/" class="normalLinks">Mexico embassy</a>, or our devoted <a href="./mexico.html" class="normalLinks">page</a>!
-		</p>
-		<!--<p>
-			Check out live :
-			<iframe 
-		        src="http://player.twitch.tv/?channel=lck1" 
-		        height="200" 
-		        width="340" 
-		        frameborder="0" 
-		        scrolling="no"
-		        allowfullscreen="true">
-		    </iframe>
-		</p>-->
-	</div>
-	<div class="countryContent" id="mexicoContent">
-		<div id="welcome-txt">
-			<h2>Mexico page</h2>
-			<form id="formRight" method="GET" action="./mexico.html">
-				<label>Name : <input type="text" name="name"></label><br><br>
-				<label>Email : <input type="email" name="email"></label><br><br>
-				<label>Have you already gone there? : <input type="checkbox" name="isGone"></label><br><br>
-				<label>Nationality : 
-					<select name="nationality">
-						<option>French</option>		
-						<option>UE</option>		
-						<option>Outside EU</option>		
-					</select>
-				</label><br><br>
-				<label>Message : 
-					<textarea name="message" title="message from the user"></textarea>
-				</label><br><br>
-				<input type="submit" value="Submit"><br><br>
-			</form>
-			<div class="centeredImg" >
-				<figure>
-					<a href="./mexico.html" class="normalLinks">
-						<img alt="Mexico_Chiapas_Waterfall" src="./img/obodrel_image_mexico_chiapas_waterfall.jpg">
-					</a>
-					<figcaption id="fig1">Chiapas Waterfall</figcaption>
-				</figure>
-			</div>
-			<p>
-				<div class="textUnderImg">Check out the kind of landscapes we have here! 
-				</div>
-			</p>
+			<div class="visible-xs" id="countryLiRoller">►</div>
+			<ul class="nav visible-xs list-unstyled">
+				<li class="countryBtn" id="uliHome">Home</li>
+				<li class="countryBtn" id="uliMexico">Mexico</li>
+				<li class="countryBtn" id="uliGuatemala">Guatemala</li>
+				<li class="countryBtn" id="uliHonduras">Honduras</li>
+				<li class="countryBtn" id="uliSalvador">Salvador</li>
+				<li class="countryBtn" id="uliNicaragua">Nicaragua</li>
+				<li class="countryBtn" id="uliCostaRica">Costa Rica</li>
+				<li class="countryBtn" id="uliPanama">Panama</li>
+				<li class="countryBtn" id="uliHaiti">Haiti</li>
+				<li class="countryBtn" id="uliGuadeloupe">Guadeloupe</li>
+				<li class="countryBtn" id="uliMartinique">Martinique</li>
+				<li class="countryBtn" id="uliBarbade">Barbade</li>
+			</ul>
 		</div>
-		<footer class="linkBack">
-			<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-		</footer>
-	</div>
-	<div class="countryContent" id="guatemalaContent">
-		<h2 id="guatTitle">Guatemala</h2>
-		<header class="headerTextBlock">
-			<div><h3>About</h3></div>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo massa, scelerisque eget nulla ac, semper vulputate tortor. Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare pretium. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at aliquet risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.
-			</p>
-		</header>
-		<section class="textBlock">
-			<div><h3>Touritical locations</h3></div>
-			<p>
-				Praesent pulvinar diam at sapien aliquam suscipit. Sed efficitur leo at est aliquam, et scelerisque metus sollicitudin. Duis nec tortor neque. Pellentesque eget maximus tellus. Mauris nisi ante, blandit lobortis sapien ac, sagittis porttitor augue. In bibendum quis ipsum at posuere. Suspendisse sit amet erat accumsan, pretium lorem sed, gravida nisl. Etiam nec orci erat. Integer varius euismod efficitur. Curabitur viverra dolor vel odio tincidunt, vel posuere mauris porta. Vivamus et dapibus justo. Cras at dignissim felis, at condimentum quam. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis.
-				<br><br>
-				Proin id dolor blandit, ultrices turpis id, sodales ex. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem. Quisque et velit dolor. Ut dictum massa in viverra aliquam. In posuere neque quam, ac bibendum urna fringilla vitae. Maecenas metus erat, condimentum sed arcu non, vulputate semper felis. Maecenas tempor dignissim odio, nec dapibus nunc condimentum eu. Nulla accumsan sit amet purus ac pharetra. Fusce eget volutpat quam. Pellentesque sit amet pellentesque lorem. Donec aliquam risus a metus interdum posuere.
-			</p>
-		</section>
-		<section class="textBlock">
-			<div><h3>Our trips</h3></div>
-			<p>
-				Donec a interdum ex, a pretium dui. Proin nibh velit, lobortis et lorem eu, dignissim scelerisque sem. Ut tellus nulla, fringilla et odio id, mollis euismod lectus. Mauris sit amet aliquet neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. Sed tellus mauris, pretium ut purus nec, lacinia pulvinar elit. Etiam pharetra sodales massa, non mattis sem molestie sit amet. Etiam fringilla posuere vehicula. Suspendisse vel libero et lacus tincidunt scelerisque. Vestibulum eleifend, risus at faucibus sagittis, justo sapien convallis mi, eget euismod justo ex vel felis. Etiam pulvinar vitae tortor ac hendrerit. Vestibulum vel nisl felis.
-				<br><br>
-				Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue. Integer nunc sem, bibendum eu vulputate ut, ullamcorper sit amet metus. Mauris quis ante nisl. Ut et justo massa. Aenean id nisl sed turpis ultrices semper. Fusce pellentesque augue eget est porta feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis finibus leo quis nisi ullamcorper sodales. Praesent malesuada pharetra nulla, nec iaculis ipsum rutrum ac. Integer finibus placerat neque in cursus. Proin eu arcu lorem.
-			</p>
-		</section>
-		<footer class="linkBack">
-			<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-		</footer>
-	</div>
-	<div class="countryContent" id="hondurasContent">
-		<h2 id="hondTitle">Honduras</h2>
-		<header class="headerTextBlock">
-			<div><h3>About</h3></div>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo massa, scelerisque eget nulla ac, semper vulputate tortor. Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare pretium. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at aliquet risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.
-			</p>
-		</header>
-		<section class="textBlock">
-			<div><h3>Touritical locations</h3></div>
-			<p>
-				Praesent pulvinar diam at sapien aliquam suscipit. Sed efficitur leo at est aliquam, et scelerisque metus sollicitudin. Duis nec tortor neque. Pellentesque eget maximus tellus. Mauris nisi ante, blandit lobortis sapien ac, sagittis porttitor augue. In bibendum quis ipsum at posuere. Suspendisse sit amet erat accumsan, pretium lorem sed, gravida nisl. Etiam nec orci erat. Integer varius euismod efficitur. Curabitur viverra dolor vel odio tincidunt, vel posuere mauris porta. Vivamus et dapibus justo. Cras at dignissim felis, at condimentum quam. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis.
-				<br><br>
-				Proin id dolor blandit, ultrices turpis id, sodales ex. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem. Quisque et velit dolor. Ut dictum massa in viverra aliquam. In posuere neque quam, ac bibendum urna fringilla vitae. Maecenas metus erat, condimentum sed arcu non, vulputate semper felis. Maecenas tempor dignissim odio, nec dapibus nunc condimentum eu. Nulla accumsan sit amet purus ac pharetra. Fusce eget volutpat quam. Pellentesque sit amet pellentesque lorem. Donec aliquam risus a metus interdum posuere.
-			</p>
-		</section>
-		<section class="textBlock">
-			<div><h3>Our trips</h3></div>
-			<p>
-				Donec a interdum ex, a pretium dui. Proin nibh velit, lobortis et lorem eu, dignissim scelerisque sem. Ut tellus nulla, fringilla et odio id, mollis euismod lectus. Mauris sit amet aliquet neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. Sed tellus mauris, pretium ut purus nec, lacinia pulvinar elit. Etiam pharetra sodales massa, non mattis sem molestie sit amet. Etiam fringilla posuere vehicula. Suspendisse vel libero et lacus tincidunt scelerisque. Vestibulum eleifend, risus at faucibus sagittis, justo sapien convallis mi, eget euismod justo ex vel felis. Etiam pulvinar vitae tortor ac hendrerit. Vestibulum vel nisl felis.
-				<br><br>
-				Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue. Integer nunc sem, bibendum eu vulputate ut, ullamcorper sit amet metus. Mauris quis ante nisl. Ut et justo massa. Aenean id nisl sed turpis ultrices semper. Fusce pellentesque augue eget est porta feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis finibus leo quis nisi ullamcorper sodales. Praesent malesuada pharetra nulla, nec iaculis ipsum rutrum ac. Integer finibus placerat neque in cursus. Proin eu arcu lorem.
-			</p>
-		</section>
-		<section class="textBlock">
-			<div><h3>Our prices</h3></div>
-			<p>
-				Please find below our travels costs!
-			</p>
-			<table id="hondPrice">
-				<thead>
-					<tr>
-						<th>Months</th>
-						<th>Departure</th>
-						<th>Price</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>January</th>
-						<td>18</td>
-						<td>970€</td>
-					</tr>
-					<tr>
-						<th>February</th>
-						<td>18</td>
-						<td>970€</td>
-					</tr>
-					<tr>
-						<th>March</th>
-						<td>18</td>
-						<td>970€</td>
-					</tr>
-					<tr>
-						<th>April</th>
-						<td>18</td>
-						<td>970€</td>
-					</tr>
-					<tr>
-						<th>May</th>
-						<td>18</td>
-						<td>970€</td>
-					</tr>
-					<tr>
-						<th>June</th>
-						<td>18</td>
-						<td>970€</td>
-					</tr>
-					<tr>
-						<th>July</th>
-						<td>18</td>
-						<td>970€</td>
-					</tr>
-					<tr>
-						<th>August</th>
-						<td>18</td>
-						<td>970€</td>
-					</tr>
-					<tr>
-						<th>September</th>
-						<td>18</td>
-						<td>970€</td>
-					</tr>
-					<tr>
-						<th>October</th>
-						<td>18</td>
-						<td>970€</td>
-					</tr>
-					<tr>
-						<th>November</th>
-						<td>18</td>
-						<td>970€</td>
-					</tr>
-					<tr>
-						<th>December</th>
-						<td>18</td>
-						<td>970€</td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
-		<footer class="linkBack">
-			<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-		</footer>
-	</div>
-	<div class="countryContent" id="salvadorContent">
-		<h2 id="salTitle">Salvador</h2>
-		<section class="textBlock" id="offerSalvador">
-			<div><h3>Our offer</h3></div>
-			<p>
-				Donec a interdum ex, a <strong>pretium</strong> dui. Proin nibh velit, lobortis et lorem eu, dignissim scelerisque sem. Ut tellus nulla, fringilla et odio id, mollis euismod lectus. Mauris sit amet <strong>aliquet</strong> neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. Sed tellus mauris, <strong>pretium</strong> ut purus nec, lacinia pulvinar elit. Etiam pharetra sodales massa, non mattis sem molestie sit amet. Etiam fringilla posuere vehicula.<br><br> Suspendisse vel libero et lacus tincidunt scelerisque. Vestibulum eleifend, risus at faucibus sagittis, justo sapien convallis mi, eget euismod justo ex vel felis. Etiam pulvinar vitae tortor ac hendrerit. Vestibulum vel nisl felis. Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue.
-			</p>
-		</section>
-		<header class="headerTextBlock">
-			<div><h3>The country</h3></div>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo massa, scelerisque eget nulla ac, semper vulputate tortor. Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare <strong>pretium</strong>. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at <strong>aliquet</strong> risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis. <br><br>Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare <strong>pretium</strong>. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at <strong>aliquet</strong> risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis.<br><br>Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare <strong>pretium</strong>. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at <strong>aliquet</strong> risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.Mauris sit amet <strong>aliquet</strong> neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. <br><br>Donec id est ac sem congue faucibus. Aenean rutrum ornare <strong>pretium</strong>. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at <strong>aliquet</strong> risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem. Donec id est ac sem congue faucibus. Aenean rutrum ornare <strong>pretium</strong>. Duis at purus in nibh facilisis ultricies. <br><br>Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at <strong>aliquet</strong> risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.
-			</p>
-		</header>
-		<section class="textBlock" id="headSalvador">
-			<div><h3>The Head City</h3></div>
-			<p>
-				Praesent pulvinar diam at sapien aliquam suscipit. Sed efficitur leo at est aliquam, et scelerisque metus sollicitudin. Duis nec tortor neque. Pellentesque eget maximus tellus. Mauris nisi ante, blandit lobortis sapien ac, sagittis porttitor augue. In bibendum quis ipsum at posuere. Suspendisse sit amet erat accumsan, <strong>pretium</strong> lorem sed, gravida nisl. Etiam nec orci erat. Integer varius euismod efficitur. Curabitur viverra dolor vel odio tincidunt, vel posuere mauris porta. Vivamus et dapibus justo. <br><br>Cras at dignissim felis, at condimentum quam. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis. Proin id dolor blandit, ultrices turpis id, sodales ex. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem.
-			</p>
-		</section>
-		<footer class="linkBack">
-			<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-	</footer>
-	</div>
-	<div class="countryContent" id="nicaraguaContent">
-		<h2 id="nicaTitle">Nicaragua</h2>
-		<header class="headerTextBlock">
-			<div><h3>About the country</h3></div>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo massa, scelerisque eget nulla ac, semper vulputate tortor. Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare pretium. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at aliquet risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.
-			</p>
-		</header>
-		<section class="textBlock">
-			<div><h3>Inscriptions</h3></div>
-			<div id="formNicaDiv">
-				<form id="formNica" ">
-					<label>Name : <input type="text" name="formName" required="required" ></label><br><br>
-					<label>Email : <input type="email" name="formEmail" required="required" ></label><br><br>
-					<label>Travellers Number : <input type="number" name="formNb" required="required" ></label><br><br>
-					<input type="submit" id="formSubmit" value="Submit"><br><br>
-				</form>
-			</div>
-			<p>
-				<span id="formRes"></span>
-			</p>
-		</section>
-		<section class="textBlock">
-			<div><h3>Touritical locations</h3></div>
-			<p>
-				Praesent pulvinar diam at sapien aliquam suscipit. Sed efficitur leo at est aliquam, et scelerisque metus sollicitudin. Duis nec tortor neque. Pellentesque eget maximus tellus. Mauris nisi ante, blandit lobortis sapien ac, sagittis porttitor augue. In bibendum quis ipsum at posuere. Suspendisse sit amet erat accumsan, pretium lorem sed, gravida nisl. Etiam nec orci erat. Integer varius euismod efficitur. Curabitur viverra dolor vel odio tincidunt, vel posuere mauris porta. Vivamus et dapibus justo. Cras at dignissim felis, at condimentum quam. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis.
-				<br><br>
-				Proin id dolor blandit, ultrices turpis id, sodales ex. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem. Quisque et velit dolor. Ut dictum massa in viverra aliquam. In posuere neque quam, ac bibendum urna fringilla vitae. Maecenas metus erat, condimentum sed arcu non, vulputate semper felis. Maecenas tempor dignissim odio, nec dapibus nunc condimentum eu. Nulla accumsan sit amet purus ac pharetra. Fusce eget volutpat quam. Pellentesque sit amet pellentesque lorem. Donec aliquam risus a metus interdum posuere.
-			</p>
-		</section>
-		<section class="textBlock">
-			<div><h3>Our trips</h3></div>
-			<p>
-				Donec a interdum ex, a pretium dui. Proin nibh velit, lobortis et lorem eu, dignissim scelerisque sem. Ut tellus nulla, fringilla et odio id, mollis euismod lectus. Mauris sit amet aliquet neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. Sed tellus mauris, pretium ut purus nec, lacinia pulvinar elit. Etiam pharetra sodales massa, non mattis sem molestie sit amet. Etiam fringilla posuere vehicula. Suspendisse vel libero et lacus tincidunt scelerisque. Vestibulum eleifend, risus at faucibus sagittis, justo sapien convallis mi, eget euismod justo ex vel felis. Etiam pulvinar vitae tortor ac hendrerit. Vestibulum vel nisl felis.
-				<br><br>
-				Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue. Integer nunc sem, bibendum eu vulputate ut, ullamcorper sit amet metus. Mauris quis ante nisl. Ut et justo massa. Aenean id nisl sed turpis ultrices semper. Fusce pellentesque augue eget est porta feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis finibus leo quis nisi ullamcorper sodales. Praesent malesuada pharetra nulla, nec iaculis ipsum rutrum ac. Integer finibus placerat neque in cursus. Proin eu arcu lorem.
-			</p>
-		</section>
-		<footer class="linkBack">
-			<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-		</footer>
-	</div>
-	<div class="countryContent" id="costaricaContent">
-		<h2 id="coriTitle">Costa Rica</h2>
-		<header class="headerTextBlock">
-			<div><h3>About the country</h3></div>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo massa, scelerisque eget nulla ac, semper vulputate tortor. Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare pretium. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at aliquet risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.
-			</p>
-		</header>
-		<section class="textBlock">
-			<div><h3>Estimate your travel</h3></div>
-			<div id="estimateCoRi">
-				<label>Travellers Number : <input type="number" name="formNb" id="estimateNb" min="1" max="50"></label><br><br>
-				<input type="button" id="estimateBtn" value="Your Estimate"><br><br>
+		<div class="countryContent" id="homeContent">
+			<div id="welcome-txt">
+				<h2>Our Agency</h2>
 				<p>
-					<span id="chooseCoRi">Choose Now</span>
+					Wel<span>come</span> on <em>our</em> <strong>travel agency</strong> website!<br> Our center is : 400m<sup>2</sup>.
 				</p>
 			</div>
 			<p>
-				<span id="outputCoRi"></span>
+				Take our agency? Here is why!
+				<ol>
+					<li>Warranty</li>
+					<li>
+						Quality	
+						<ul>
+							<li>Fly insurance</li>
+							<li>Hotels quality</li>
+						</ul>
+					</li>
+					<li>Proximity</li>
+				</ol>
 			</p>
-		</section>
-		<section class="textBlock">
-			<div><h3>Touritical locations</h3></div>
 			<p>
-				Praesent pulvinar diam at sapien aliquam suscipit. Sed efficitur leo at est aliquam, et scelerisque metus sollicitudin. Duis nec tortor neque. Pellentesque eget maximus tellus. Mauris nisi ante, blandit lobortis sapien ac, sagittis porttitor augue. In bibendum quis ipsum at posuere. Suspendisse sit amet erat accumsan, pretium lorem sed, gravida nisl. Etiam nec orci erat. Integer varius euismod efficitur. Curabitur viverra dolor vel odio tincidunt, vel posuere mauris porta. Vivamus et dapibus justo. Cras at dignissim felis, at condimentum quam. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis.
-				<br><br>
-				Proin id dolor blandit, ultrices turpis id, sodales ex. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem. Quisque et velit dolor. Ut dictum massa in viverra aliquam. In posuere neque quam, ac bibendum urna fringilla vitae. Maecenas metus erat, condimentum sed arcu non, vulputate semper felis. Maecenas tempor dignissim odio, nec dapibus nunc condimentum eu. Nulla accumsan sit amet purus ac pharetra. Fusce eget volutpat quam. Pellentesque sit amet pellentesque lorem. Donec aliquam risus a metus interdum posuere.
+				<table id="firstTable">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Winter</th>
+							<th>Summer</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Normal</th>
+							<td>Freighter</td>
+							<td>Ferry</td>
+						</tr>
+						<tr>
+							<th>Luxury</th>
+							<td>Plane</td>
+							<td>Liner</td>
+						</tr>
+						<tr>
+							<th>2017</th>
+							<td colspan="2">Freighter/Boat</td>
+						</tr>					
+					</tbody>
+				</table>
 			</p>
-		</section>
-		<section class="textBlock">
-			<div><h3>Our trips</h3></div>
 			<p>
-				Donec a interdum ex, a pretium dui. Proin nibh velit, lobortis et lorem eu, dignissim scelerisque sem. Ut tellus nulla, fringilla et odio id, mollis euismod lectus. Mauris sit amet aliquet neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. Sed tellus mauris, pretium ut purus nec, lacinia pulvinar elit. Etiam pharetra sodales massa, non mattis sem molestie sit amet. Etiam fringilla posuere vehicula. Suspendisse vel libero et lacus tincidunt scelerisque. Vestibulum eleifend, risus at faucibus sagittis, justo sapien convallis mi, eget euismod justo ex vel felis. Etiam pulvinar vitae tortor ac hendrerit. Vestibulum vel nisl felis.
-				<br><br>
-				Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue. Integer nunc sem, bibendum eu vulputate ut, ullamcorper sit amet metus. Mauris quis ante nisl. Ut et justo massa. Aenean id nisl sed turpis ultrices semper. Fusce pellentesque augue eget est porta feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis finibus leo quis nisi ullamcorper sodales. Praesent malesuada pharetra nulla, nec iaculis ipsum rutrum ac. Integer finibus placerat neque in cursus. Proin eu arcu lorem.
+				Visit our partner website : <a href="https://embamex2.sre.gob.mx/francia/index.php/fr/" class="normalLinks">Mexico embassy</a>, or our devoted <a href="./mexico.html" class="normalLinks">page</a>!
 			</p>
-		</section>
-		<footer class="linkBack">
-			<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-		</footer>
-	</div>
-	<div class="countryContent" id="panamaContent">
-		<h2 id="panamaTitle">Panama</h2>
-		<header class="headerTextBlock">
-			<div><h3 class="plus" id="panamaCountry">About the country</h3></div>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo massa, scelerisque eget nulla ac, semper vulputate tortor. Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare pretium. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at aliquet risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.
-			</p>
-		</header>
-		<section class="textBlock">
-			<div><h3 class="plus"  id="panamaTrips">Our Trips</h3></div>
-			<p>
-				Praesent pulvinar diam at sapien aliquam suscipit. Sed efficitur leo at est aliquam, et scelerisque metus sollicitudin. Duis nec tortor neque. Pellentesque eget maximus tellus. Mauris nisi ante, blandit lobortis sapien ac, sagittis porttitor augue. In bibendum quis ipsum at posuere. Suspendisse sit amet erat accumsan, pretium lorem sed, gravida nisl. Etiam nec orci erat. Integer varius euismod efficitur. Curabitur viverra dolor vel odio tincidunt, vel posuere mauris porta. Vivamus et dapibus justo. Cras at dignissim felis, at condimentum quam. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis.
-				<br><br>
-				Proin id dolor blandit, ultrices turpis id, sodales ex. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem. Quisque et velit dolor. Ut dictum massa in viverra aliquam. In posuere neque quam, ac bibendum urna fringilla vitae. Maecenas metus erat, condimentum sed arcu non, vulputate semper felis. Maecenas tempor dignissim odio, nec dapibus nunc condimentum eu. Nulla accumsan sit amet purus ac pharetra. Fusce eget volutpat quam. Pellentesque sit amet pellentesque lorem. Donec aliquam risus a metus interdum posuere.
-			</p>
-		</section>
-		<section class="textBlock">
-			<div><h3 class="plus"  id="panamaProg">When should you go ?</h3></div>
-			<p>
-				Donec a interdum ex, a pretium dui. Proin nibh velit, lobortis et lorem eu, dignissim scelerisque sem. Ut tellus nulla, fringilla et odio id, mollis euismod lectus. Mauris sit amet aliquet neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. Sed tellus mauris, pretium ut purus nec, lacinia pulvinar elit. Etiam pharetra sodales massa, non mattis sem molestie sit amet. Etiam fringilla posuere vehicula. Suspendisse vel libero et lacus tincidunt scelerisque. Vestibulum eleifend, risus at faucibus sagittis, justo sapien convallis mi, eget euismod justo ex vel felis. Etiam pulvinar vitae tortor ac hendrerit. Vestibulum vel nisl felis.
-				<canvas width="500" height="500" id="costaRicaCanvas"></canvas>
-			</p>
-		</section>
-		<footer class="linkBack">
-			<a href="./index.html" class="bottomLinks">HOME PAGE</a>
-		</footer>
+		</div>
+		<div class="countryContent" id="mexicoContent">
+			<div id="welcome-txt">
+				<h2>Mexico page</h2>
+				<form id="formRight" method="GET" action="./mexico.html">
+					<label>Name : <input type="text" name="name"></label><br><br>
+					<label>Email : <input type="email" name="email"></label><br><br>
+					<label>Have you already gone there? : <input type="checkbox" name="isGone"></label><br><br>
+					<label>Nationality : 
+						<select name="nationality">
+							<option>French</option>		
+							<option>UE</option>		
+							<option>Outside EU</option>		
+						</select>
+					</label><br><br>
+					<label>Message : 
+						<textarea name="message" title="message from the user"></textarea>
+					</label><br><br>
+					<input type="submit" value="Submit"><br><br>
+				</form>
+				<div class="centeredImg" >
+					<figure>
+						<a href="./mexico.html" class="normalLinks">
+							<img alt="Mexico_Chiapas_Waterfall" src="./img/obodrel_image_mexico_chiapas_waterfall.jpg">
+						</a>
+						<figcaption id="fig1">Chiapas Waterfall</figcaption>
+					</figure>
+				</div>
+				<p>
+					<div class="textUnderImg">Check out the kind of landscapes we have here! 
+					</div>
+				</p>
+			</div>
+		</div>
+		<div class="countryContent" id="guatemalaContent">
+			<h2 id="guatTitle">Guatemala</h2>
+			<header class="headerTextBlock">
+				<div><h3>About</h3></div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo massa, scelerisque eget nulla ac, semper vulputate tortor. Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare pretium. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at aliquet risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.
+				</p>
+			</header>
+			<section class="textBlock">
+				<div><h3>Touritical locations</h3></div>
+				<p>
+					Praesent pulvinar diam at sapien aliquam suscipit. Sed efficitur leo at est aliquam, et scelerisque metus sollicitudin. Duis nec tortor neque. Pellentesque eget maximus tellus. Mauris nisi ante, blandit lobortis sapien ac, sagittis porttitor augue. In bibendum quis ipsum at posuere. Suspendisse sit amet erat accumsan, pretium lorem sed, gravida nisl. Etiam nec orci erat. Integer varius euismod efficitur. Curabitur viverra dolor vel odio tincidunt, vel posuere mauris porta. Vivamus et dapibus justo. Cras at dignissim felis, at condimentum quam. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis.
+					<br><br>
+					Proin id dolor blandit, ultrices turpis id, sodales ex. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem. Quisque et velit dolor. Ut dictum massa in viverra aliquam. In posuere neque quam, ac bibendum urna fringilla vitae. Maecenas metus erat, condimentum sed arcu non, vulputate semper felis. Maecenas tempor dignissim odio, nec dapibus nunc condimentum eu. Nulla accumsan sit amet purus ac pharetra. Fusce eget volutpat quam. Pellentesque sit amet pellentesque lorem. Donec aliquam risus a metus interdum posuere.
+				</p>
+			</section>
+			<section class="textBlock">
+				<div><h3>Our trips</h3></div>
+				<p>
+					Donec a interdum ex, a pretium dui. Proin nibh velit, lobortis et lorem eu, dignissim scelerisque sem. Ut tellus nulla, fringilla et odio id, mollis euismod lectus. Mauris sit amet aliquet neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. Sed tellus mauris, pretium ut purus nec, lacinia pulvinar elit. Etiam pharetra sodales massa, non mattis sem molestie sit amet. Etiam fringilla posuere vehicula. Suspendisse vel libero et lacus tincidunt scelerisque. Vestibulum eleifend, risus at faucibus sagittis, justo sapien convallis mi, eget euismod justo ex vel felis. Etiam pulvinar vitae tortor ac hendrerit. Vestibulum vel nisl felis.
+					<br><br>
+					Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue. Integer nunc sem, bibendum eu vulputate ut, ullamcorper sit amet metus. Mauris quis ante nisl. Ut et justo massa. Aenean id nisl sed turpis ultrices semper. Fusce pellentesque augue eget est porta feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis finibus leo quis nisi ullamcorper sodales. Praesent malesuada pharetra nulla, nec iaculis ipsum rutrum ac. Integer finibus placerat neque in cursus. Proin eu arcu lorem.
+				</p>
+			</section>
+		</div>
+		<div class="countryContent" id="hondurasContent">
+			<h2 id="hondTitle">Honduras</h2>
+			<header class="headerTextBlock">
+				<div><h3>About</h3></div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo massa, scelerisque eget nulla ac, semper vulputate tortor. Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare pretium. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at aliquet risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.
+				</p>
+			</header>
+			<section class="textBlock">
+				<div><h3>Touritical locations</h3></div>
+				<p>
+					Praesent pulvinar diam at sapien aliquam suscipit. Sed efficitur leo at est aliquam, et scelerisque metus sollicitudin. Duis nec tortor neque. Pellentesque eget maximus tellus. Mauris nisi ante, blandit lobortis sapien ac, sagittis porttitor augue. In bibendum quis ipsum at posuere. Suspendisse sit amet erat accumsan, pretium lorem sed, gravida nisl. Etiam nec orci erat. Integer varius euismod efficitur. Curabitur viverra dolor vel odio tincidunt, vel posuere mauris porta. Vivamus et dapibus justo. Cras at dignissim felis, at condimentum quam. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis.
+					<br><br>
+					Proin id dolor blandit, ultrices turpis id, sodales ex. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem. Quisque et velit dolor. Ut dictum massa in viverra aliquam. In posuere neque quam, ac bibendum urna fringilla vitae. Maecenas metus erat, condimentum sed arcu non, vulputate semper felis. Maecenas tempor dignissim odio, nec dapibus nunc condimentum eu. Nulla accumsan sit amet purus ac pharetra. Fusce eget volutpat quam. Pellentesque sit amet pellentesque lorem. Donec aliquam risus a metus interdum posuere.
+				</p>
+			</section>
+			<section class="textBlock">
+				<div><h3>Our trips</h3></div>
+				<p>
+					Donec a interdum ex, a pretium dui. Proin nibh velit, lobortis et lorem eu, dignissim scelerisque sem. Ut tellus nulla, fringilla et odio id, mollis euismod lectus. Mauris sit amet aliquet neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. Sed tellus mauris, pretium ut purus nec, lacinia pulvinar elit. Etiam pharetra sodales massa, non mattis sem molestie sit amet. Etiam fringilla posuere vehicula. Suspendisse vel libero et lacus tincidunt scelerisque. Vestibulum eleifend, risus at faucibus sagittis, justo sapien convallis mi, eget euismod justo ex vel felis. Etiam pulvinar vitae tortor ac hendrerit. Vestibulum vel nisl felis.
+					<br><br>
+					Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue. Integer nunc sem, bibendum eu vulputate ut, ullamcorper sit amet metus. Mauris quis ante nisl. Ut et justo massa. Aenean id nisl sed turpis ultrices semper. Fusce pellentesque augue eget est porta feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis finibus leo quis nisi ullamcorper sodales. Praesent malesuada pharetra nulla, nec iaculis ipsum rutrum ac. Integer finibus placerat neque in cursus. Proin eu arcu lorem.
+				</p>
+			</section>
+			<section class="textBlock">
+				<div><h3>Our prices</h3></div>
+				<p>
+					Please find below our travels costs!
+				</p>
+				<table id="hondPrice">
+					<thead>
+						<tr>
+							<th>Months</th>
+							<th>Departure</th>
+							<th>Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>January</th>
+							<td>18</td>
+							<td>970€</td>
+						</tr>
+						<tr>
+							<th>February</th>
+							<td>18</td>
+							<td>970€</td>
+						</tr>
+						<tr>
+							<th>March</th>
+							<td>18</td>
+							<td>970€</td>
+						</tr>
+						<tr>
+							<th>April</th>
+							<td>18</td>
+							<td>970€</td>
+						</tr>
+						<tr>
+							<th>May</th>
+							<td>18</td>
+							<td>970€</td>
+						</tr>
+						<tr>
+							<th>June</th>
+							<td>18</td>
+							<td>970€</td>
+						</tr>
+						<tr>
+							<th>July</th>
+							<td>18</td>
+							<td>970€</td>
+						</tr>
+						<tr>
+							<th>August</th>
+							<td>18</td>
+							<td>970€</td>
+						</tr>
+						<tr>
+							<th>September</th>
+							<td>18</td>
+							<td>970€</td>
+						</tr>
+						<tr>
+							<th>October</th>
+							<td>18</td>
+							<td>970€</td>
+						</tr>
+						<tr>
+							<th>November</th>
+							<td>18</td>
+							<td>970€</td>
+						</tr>
+						<tr>
+							<th>December</th>
+							<td>18</td>
+							<td>970€</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</div>
+		<div class="countryContent" id="salvadorContent">
+			<h2 id="salTitle">Salvador</h2>
+			<section class="textBlock" id="offerSalvador">
+				<div><h3>Our offer</h3></div>
+				<p>
+					Donec a interdum ex, a <strong>pretium</strong> dui. Proin nibh velit, lobortis et lorem eu, dignissim scelerisque sem. Ut tellus nulla, fringilla et odio id, mollis euismod lectus. Mauris sit amet <strong>aliquet</strong> neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. Sed tellus mauris, <strong>pretium</strong> ut purus nec, lacinia pulvinar elit. Etiam pharetra sodales massa, non mattis sem molestie sit amet. Etiam fringilla posuere vehicula.<br><br> Suspendisse vel libero et lacus tincidunt scelerisque. Vestibulum eleifend, risus at faucibus sagittis, justo sapien convallis mi, eget euismod justo ex vel felis. Etiam pulvinar vitae tortor ac hendrerit. Vestibulum vel nisl felis. Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue.
+				</p>
+			</section>
+			<header class="headerTextBlock">
+				<div><h3>The country</h3></div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo massa, scelerisque eget nulla ac, semper vulputate tortor. Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare <strong>pretium</strong>. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at <strong>aliquet</strong> risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis. <br><br>Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare <strong>pretium</strong>. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at <strong>aliquet</strong> risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis.<br><br>Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare <strong>pretium</strong>. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at <strong>aliquet</strong> risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.Mauris sit amet <strong>aliquet</strong> neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. <br><br>Donec id est ac sem congue faucibus. Aenean rutrum ornare <strong>pretium</strong>. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at <strong>aliquet</strong> risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem. Donec id est ac sem congue faucibus. Aenean rutrum ornare <strong>pretium</strong>. Duis at purus in nibh facilisis ultricies. <br><br>Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at <strong>aliquet</strong> risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.
+				</p>
+			</header>
+			<section class="textBlock" id="headSalvador">
+				<div><h3>The Head City</h3></div>
+				<p>
+					Praesent pulvinar diam at sapien aliquam suscipit. Sed efficitur leo at est aliquam, et scelerisque metus sollicitudin. Duis nec tortor neque. Pellentesque eget maximus tellus. Mauris nisi ante, blandit lobortis sapien ac, sagittis porttitor augue. In bibendum quis ipsum at posuere. Suspendisse sit amet erat accumsan, <strong>pretium</strong> lorem sed, gravida nisl. Etiam nec orci erat. Integer varius euismod efficitur. Curabitur viverra dolor vel odio tincidunt, vel posuere mauris porta. Vivamus et dapibus justo. <br><br>Cras at dignissim felis, at condimentum quam. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis. Proin id dolor blandit, ultrices turpis id, sodales ex. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem.
+				</p>
+			</section>
+		</div>
+		<div class="countryContent" id="nicaraguaContent">
+			<h2 id="nicaTitle">Nicaragua</h2>
+			<header class="headerTextBlock">
+				<div><h3>About the country</h3></div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo massa, scelerisque eget nulla ac, semper vulputate tortor. Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare pretium. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at aliquet risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.
+				</p>
+			</header>
+			<section class="textBlock">
+				<div><h3>Inscriptions</h3></div>
+				<div id="formNicaDiv">
+					<form id="formNica" ">
+						<label>Name : <input type="text" name="formName" required="required" ></label><br><br>
+						<label>Email : <input type="email" name="formEmail" required="required" ></label><br><br>
+						<label>Travellers Number : <input type="number" name="formNb" required="required" ></label><br><br>
+						<input type="submit" id="formSubmit" value="Submit"><br><br>
+					</form>
+				</div>
+				<p>
+					<span id="formRes"></span>
+				</p>
+			</section>
+			<section class="textBlock">
+				<div><h3>Touritical locations</h3></div>
+				<p>
+					Praesent pulvinar diam at sapien aliquam suscipit. Sed efficitur leo at est aliquam, et scelerisque metus sollicitudin. Duis nec tortor neque. Pellentesque eget maximus tellus. Mauris nisi ante, blandit lobortis sapien ac, sagittis porttitor augue. In bibendum quis ipsum at posuere. Suspendisse sit amet erat accumsan, pretium lorem sed, gravida nisl. Etiam nec orci erat. Integer varius euismod efficitur. Curabitur viverra dolor vel odio tincidunt, vel posuere mauris porta. Vivamus et dapibus justo. Cras at dignissim felis, at condimentum quam. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis.
+					<br><br>
+					Proin id dolor blandit, ultrices turpis id, sodales ex. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem. Quisque et velit dolor. Ut dictum massa in viverra aliquam. In posuere neque quam, ac bibendum urna fringilla vitae. Maecenas metus erat, condimentum sed arcu non, vulputate semper felis. Maecenas tempor dignissim odio, nec dapibus nunc condimentum eu. Nulla accumsan sit amet purus ac pharetra. Fusce eget volutpat quam. Pellentesque sit amet pellentesque lorem. Donec aliquam risus a metus interdum posuere.
+				</p>
+			</section>
+			<section class="textBlock">
+				<div><h3>Our trips</h3></div>
+				<p>
+					Donec a interdum ex, a pretium dui. Proin nibh velit, lobortis et lorem eu, dignissim scelerisque sem. Ut tellus nulla, fringilla et odio id, mollis euismod lectus. Mauris sit amet aliquet neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. Sed tellus mauris, pretium ut purus nec, lacinia pulvinar elit. Etiam pharetra sodales massa, non mattis sem molestie sit amet. Etiam fringilla posuere vehicula. Suspendisse vel libero et lacus tincidunt scelerisque. Vestibulum eleifend, risus at faucibus sagittis, justo sapien convallis mi, eget euismod justo ex vel felis. Etiam pulvinar vitae tortor ac hendrerit. Vestibulum vel nisl felis.
+					<br><br>
+					Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue. Integer nunc sem, bibendum eu vulputate ut, ullamcorper sit amet metus. Mauris quis ante nisl. Ut et justo massa. Aenean id nisl sed turpis ultrices semper. Fusce pellentesque augue eget est porta feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis finibus leo quis nisi ullamcorper sodales. Praesent malesuada pharetra nulla, nec iaculis ipsum rutrum ac. Integer finibus placerat neque in cursus. Proin eu arcu lorem.
+				</p>
+			</section>
+		</div>
+		<div class="countryContent" id="costaricaContent">
+			<h2 id="coriTitle">Costa Rica</h2>
+			<header class="headerTextBlock">
+				<div><h3>About the country</h3></div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo massa, scelerisque eget nulla ac, semper vulputate tortor. Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare pretium. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at aliquet risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.
+				</p>
+			</header>
+			<section class="textBlock">
+				<div><h3>Estimate your travel</h3></div>
+				<div id="estimateCoRi">
+					<label>Travellers Number : <input type="number" name="formNb" id="estimateNb" min="1" max="50"></label><br><br>
+					<input type="button" id="estimateBtn" value="Your Estimate"><br><br>
+					<p>
+						<span id="chooseCoRi">Choose Now</span>
+					</p>
+				</div>
+				<p>
+					<span id="outputCoRi"></span>
+				</p>
+			</section>
+			<section class="textBlock">
+				<div><h3>Touritical locations</h3></div>
+				<p>
+					Praesent pulvinar diam at sapien aliquam suscipit. Sed efficitur leo at est aliquam, et scelerisque metus sollicitudin. Duis nec tortor neque. Pellentesque eget maximus tellus. Mauris nisi ante, blandit lobortis sapien ac, sagittis porttitor augue. In bibendum quis ipsum at posuere. Suspendisse sit amet erat accumsan, pretium lorem sed, gravida nisl. Etiam nec orci erat. Integer varius euismod efficitur. Curabitur viverra dolor vel odio tincidunt, vel posuere mauris porta. Vivamus et dapibus justo. Cras at dignissim felis, at condimentum quam. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis.
+					<br><br>
+					Proin id dolor blandit, ultrices turpis id, sodales ex. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem. Quisque et velit dolor. Ut dictum massa in viverra aliquam. In posuere neque quam, ac bibendum urna fringilla vitae. Maecenas metus erat, condimentum sed arcu non, vulputate semper felis. Maecenas tempor dignissim odio, nec dapibus nunc condimentum eu. Nulla accumsan sit amet purus ac pharetra. Fusce eget volutpat quam. Pellentesque sit amet pellentesque lorem. Donec aliquam risus a metus interdum posuere.
+				</p>
+			</section>
+			<section class="textBlock">
+				<div><h3>Our trips</h3></div>
+				<p>
+					Donec a interdum ex, a pretium dui. Proin nibh velit, lobortis et lorem eu, dignissim scelerisque sem. Ut tellus nulla, fringilla et odio id, mollis euismod lectus. Mauris sit amet aliquet neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. Sed tellus mauris, pretium ut purus nec, lacinia pulvinar elit. Etiam pharetra sodales massa, non mattis sem molestie sit amet. Etiam fringilla posuere vehicula. Suspendisse vel libero et lacus tincidunt scelerisque. Vestibulum eleifend, risus at faucibus sagittis, justo sapien convallis mi, eget euismod justo ex vel felis. Etiam pulvinar vitae tortor ac hendrerit. Vestibulum vel nisl felis.
+					<br><br>
+					Nam ultrices mauris a est consequat dictum. Nullam consequat commodo ornare. Integer scelerisque tortor sit amet porttitor dignissim. Vestibulum dapibus ligula dui. Fusce iaculis, nulla at dignissim sodales, felis lorem tristique magna, eget elementum ipsum mi et augue. Integer nunc sem, bibendum eu vulputate ut, ullamcorper sit amet metus. Mauris quis ante nisl. Ut et justo massa. Aenean id nisl sed turpis ultrices semper. Fusce pellentesque augue eget est porta feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis finibus leo quis nisi ullamcorper sodales. Praesent malesuada pharetra nulla, nec iaculis ipsum rutrum ac. Integer finibus placerat neque in cursus. Proin eu arcu lorem.
+				</p>
+			</section>
+		</div>
+		<div class="countryContent" id="panamaContent">
+			<h2 id="panamaTitle">Panama</h2>
+			<header class="headerTextBlock">
+				<div><h3 class="plus" id="panamaCountry">About the country</h3></div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo massa, scelerisque eget nulla ac, semper vulputate tortor. Pellentesque et pulvinar arcu, at vulputate eros. Suspendisse potenti. Donec id est ac sem congue faucibus. Aenean rutrum ornare pretium. Duis at purus in nibh facilisis ultricies. Aliquam euismod, erat eget facilisis tincidunt, ante nisl congue arcu, et convallis metus mi a ante. Proin sodales mauris sem, vel mollis orci tincidunt tincidunt. Sed mattis libero ac nisl auctor dapibus. In at aliquet risus. Quisque ut metus a massa tristique lacinia dapibus ac leo. Proin venenatis nulla ante, sed pellentesque ex vehicula non. Nam hendrerit iaculis sapien. Aliquam accumsan ligula sapien, vel suscipit lectus tincidunt quis. Donec eu erat et leo commodo vestibulum eget sed risus.
+				</p>
+			</header>
+			<section class="textBlock">
+				<div><h3 class="plus"  id="panamaTrips">Our Trips</h3></div>
+				<p>
+					Praesent pulvinar diam at sapien aliquam suscipit. Sed efficitur leo at est aliquam, et scelerisque metus sollicitudin. Duis nec tortor neque. Pellentesque eget maximus tellus. Mauris nisi ante, blandit lobortis sapien ac, sagittis porttitor augue. In bibendum quis ipsum at posuere. Suspendisse sit amet erat accumsan, pretium lorem sed, gravida nisl. Etiam nec orci erat. Integer varius euismod efficitur. Curabitur viverra dolor vel odio tincidunt, vel posuere mauris porta. Vivamus et dapibus justo. Cras at dignissim felis, at condimentum quam. Sed rutrum vestibulum nisl non placerat. In pellentesque ut nibh ut finibus. Suspendisse interdum leo nunc, a suscipit diam vulputate lacinia. Nullam in neque sit amet nisi scelerisque iaculis vitae at felis.
+					<br><br>
+					Proin id dolor blandit, ultrices turpis id, sodales ex. Ut a malesuada metus. Nulla placerat vestibulum ultrices. Donec feugiat porta diam sed luctus. Aenean euismod, diam in maximus facilisis, nulla ipsum mattis lectus, nec viverra nisi ipsum vestibulum sem. Quisque et velit dolor. Ut dictum massa in viverra aliquam. In posuere neque quam, ac bibendum urna fringilla vitae. Maecenas metus erat, condimentum sed arcu non, vulputate semper felis. Maecenas tempor dignissim odio, nec dapibus nunc condimentum eu. Nulla accumsan sit amet purus ac pharetra. Fusce eget volutpat quam. Pellentesque sit amet pellentesque lorem. Donec aliquam risus a metus interdum posuere.
+				</p>
+			</section>
+			<section class="textBlock">
+				<div><h3 class="plus"  id="panamaProg">When should you go ?</h3></div>
+				<p>
+					Donec a interdum ex, a pretium dui. Proin nibh velit, lobortis et lorem eu, dignissim scelerisque sem. Ut tellus nulla, fringilla et odio id, mollis euismod lectus. Mauris sit amet aliquet neque. In bibendum varius lobortis. Ut ultrices hendrerit quam, vel tristique nulla egestas id. In hendrerit consectetur ligula sit amet rutrum. Sed tellus mauris, pretium ut purus nec, lacinia pulvinar elit. Etiam pharetra sodales massa, non mattis sem molestie sit amet. Etiam fringilla posuere vehicula. Suspendisse vel libero et lacus tincidunt scelerisque. Vestibulum eleifend, risus at faucibus sagittis, justo sapien convallis mi, eget euismod justo ex vel felis. Etiam pulvinar vitae tortor ac hendrerit. Vestibulum vel nisl felis.
+					<canvas width="500" height="500" id="costaRicaCanvas"></canvas>
+				</p>
+			</section>
+		</div>
+		<div class="countryContent" id="haitiContent">
+			<div class="row">
+				<h2 class="col-sm-12 col-xs-offset-5" id="haitiTitle">Haiti</h2>
+			</div>
+			<div class="row">
+				<section class="col-lg-3 col-lg-push-3 col-md-6 col-sm-12">
+					<div><h3>The Island</h3></div>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit ex nulla, non cursus nulla ornare ut. Donec feugiat nulla nec massa blandit, varius pulvinar lacus gravida. Vestibulum blandit lobortis sem a lobortis. Morbi sed leo nisl. Quisque ac tincidunt quam. Phasellus vel tristique sem, id viverra nisl. Phasellus condimentum felis pharetra faucibus gravida. Fusce id nunc est.<br><br>Pellentesque libero ligula, cursus eu vehicula quis, feugiat vel orci. Vivamus a magna velit. Phasellus malesuada, orci id semper gravida, velit ipsum elementum purus, nec porttitor leo nisl at justo. Vivamus eu ex vitae purus imperdiet venenatis non eu justo. Maecenas ultricies lectus ut leo volutpat placerat eget nec dui. Proin a rutrum eros, sit amet interdum odio. Sed eget diam ornare, eleifend sapien in, feugiat libero. Mauris sit amet dapibus erat. Nulla vel hendrerit dui. Vestibulum in finibus massa. Nullam id turpis non sapien luctus porta at ac libero.
+					</p>
+				</section>
+				<section class="col-lg-3 col-lg-pull-3 col-md-6 col-sm-12">
+					<div><h3>Port-au-prince</h3></div>
+					<p>
+						Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut ante eget tortor pretium blandit. Aliquam auctor purus nisi, pellentesque semper metus commodo vitae. Aliquam congue nisi ut odio aliquet ullamcorper ac at purus. Vivamus velit tellus, suscipit a metus euismod, accumsan gravida massa. Quisque accumsan nulla at eros sodales, vitae finibus mauris malesuada. Nam quis ante scelerisque, bibendum lorem eleifend, pellentesque sapien. Fusce sit amet lacus ut nisi blandit sollicitudin. Etiam nec quam mattis, facilisis diam nec, varius purus. Morbi sit amet faucibus arcu, eu molestie diam. Nam in diam nunc. Nulla blandit quis elit quis viverra.
+					</p>
+				</section>
+				<div class="clearfix visible-md"></div>
+				<section class="col-lg-2 col-md-4 col-sm-12">
+					<div><h3>Go there</h3></div>
+					<p>
+						Sed vel nibh ligula. Phasellus arcu sapien, interdum eget porttitor quis, congue quis velit. Fusce lobortis ante dolor, non accumsan lectus semper sit amet. Proin dapibus metus sed sapien laoreet, eget lobortis augue laoreet. Cras imperdiet ornare libero at posuere. Quisque eget tellus neque. Maecenas condimentum, lectus non porttitor fringilla, erat lacus auctor turpis, vel vehicula dolor lacus quis eros. Curabitur lacinia rutrum elit, in pellentesque sapien laoreet sit amet. Cras id tempus magna. Curabitur luctus nunc nibh, vulputate consectetur dolor ornare a. Suspendisse vel risus gravida risus rhoncus dignissim. Vestibulum sit amet mauris massa.
+					</p>
+				</section>
+				<section class="col-lg-2 col-md-4 col-sm-12">
+					<div><h3>Our trips</h3></div>
+					<p>
+						Integer sed ipsum bibendum lectus consequat ullamcorper pulvinar et libero. Nulla ullamcorper ut justo sit amet tristique. Aenean sed sem odio. Proin quis molestie erat. Etiam hendrerit ac tellus et fringilla. Quisque ligula libero, pellentesque eget dui id, consectetur vestibulum neque. Fusce ligula orci, congue quis odio eget, rhoncus pharetra nunc. Maecenas eu eros sed nulla viverra condimentum. Nam dictum lorem nunc, vel mollis neque vulputate et. Donec ac auctor tortor, et vehicula ex. Mauris venenatis vel orci sit amet vehicula.Vivamus hendrerit efficitur velit eget pharetra. Praesent cursus dignissim mollis. In malesuada euismod eleifend.
+					</p>
+				</section>
+				<section>
+					<img class="col-lg-2 col-md-4 col-sm-12" src="./img/obodrel_image_mexico_chiapas_waterfall.jpg">
+				</section>
+			</div>
+			<div class="row">
+				<section class="col-lg-7 col-md-6 col-sm-12">
+					<div><h3>The hotel</h3></div>
+					<p>
+						Vivamus non tortor dignissim, auctor diam ornare, laoreet tellus. Vivamus varius aliquam tortor vel tincidunt. Nam vel augue et metus tincidunt placerat. Vestibulum aliquet massa non enim sollicitudin commodo. Nullam libero nunc, pulvinar nec rutrum eget, semper at enim. Mauris dignissim, tellus ac dapibus sagittis, orci elit consequat libero, ut gravida eros libero ut quam. Sed felis enim, cursus a ex ac, tristique imperdiet est. Donec ex mi, elementum et lorem laoreet, fringilla rutrum nibh. Curabitur sit amet lobortis lorem.<br><br>Donec dolor metus, suscipit non tincidunt at, tempus eget nibh. Nunc id turpis lorem. Maecenas mollis, ipsum at aliquam feugiat, tellus nunc cursus lorem, a venenatis nunc quam id lacus. Ut imperdiet magna sit amet nunc hendrerit, vitae tristique mauris varius. Quisque ut purus eget erat dignissim aliquam. Duis tempus elementum mi, non eleifend leo porta id. Praesent in elementum augue. Suspendisse hendrerit, purus ac hendrerit dapibus, turpis orci tristique dui, non vestibulum nibh ipsum quis est. Praesent vel malesuada felis. Phasellus eu dui in odio facilisis gravida et ut nibh. Aenean a urna augue. Cras malesuada, nisl nec convallis aliquam, lacus velit aliquet urna, ac vestibulum libero sem in ligula. Integer dictum nibh vel mauris placerat laoreet. Aliquam finibus orci eget neque pharetra, at sodales turpis congue.
+					</p>
+				</section>
+				<section class="col-lg-3 col-md-6 col-sm-12">
+					<div><h3>Prices</h3></div>
+					<p>
+						Integer luctus tellus semper nibh gravida lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris magna ante, ultricies vestibulum imperdiet nec, tincidunt nec eros. Sed porta iaculis arcu vel varius. Vivamus non hendrerit ex. Ut euismod non dolor ut bibendum. Vivamus viverra et nisl in iaculis. Praesent blandit purus vitae ligula venenatis tincidunt. Vivamus ac ex ac risus venenatis posuere in non nibh. Quisque eu lorem sit amet enim suscipit malesuada. Nullam eleifend tortor sit amet dolor venenatis elementum.
+					</p>
+				</section>
+			</div>
+			<div class="row">
+				<section>
+					<section class="col-lg-12 visible-lg">
+						<div><h3>Everything about Haiti</h3></div>
+						<div class="row">
+							<div class="col-lg-12"><h3>Haiti!</h3></div>
+						</div>
+						<div class="row">
+							<div class="col-lg-4">
+								<p>
+									Integer luctus tellus semper nibh gravida lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris magna ante, ultricies vestibulum imperdiet nec, tincidunt nec eros. Sed porta iaculis arcu vel varius. Vivamus non hendrerit ex. Ut euismod non dolor ut bibendum. Vivamus viverra et nisl in iaculis. Praesent blandit purus vitae ligula venenatis tincidunt. Vivamus ac ex ac risus venenatis posuere in non nibh. Quisque eu lorem sit amet enim suscipit malesuada. Nullam eleifend tortor sit amet dolor venenatis elementum.
+								</p>
+							</div>
+							<div class="col-lg-4">
+								<p>
+									Integer luctus tellus semper nibh gravida lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris magna ante, ultricies vestibulum imperdiet nec, tincidunt nec eros. Sed porta iaculis arcu vel varius. Vivamus non hendrerit ex. Ut euismod non dolor ut bibendum. Vivamus viverra et nisl in iaculis. Praesent blandit purus vitae ligula venenatis tincidunt. Vivamus ac ex ac risus venenatis posuere in non nibh. Quisque eu lorem sit amet enim suscipit malesuada. Nullam eleifend tortor sit amet dolor venenatis elementum.
+								</p>
+							</div>
+							<div class="col-lg-4">
+								<p>
+									Integer luctus tellus semper nibh gravida lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris magna ante, ultricies vestibulum imperdiet nec, tincidunt nec eros. Sed porta iaculis arcu vel varius. Vivamus non hendrerit ex. Ut euismod non dolor ut bibendum. Vivamus viverra et nisl in iaculis. Praesent blandit purus vitae ligula venenatis tincidunt. Vivamus ac ex ac risus venenatis posuere in non nibh. Quisque eu lorem sit amet enim suscipit malesuada. Nullam eleifend tortor sit amet dolor venenatis elementum.
+								</p>
+							</div>
+						</div>
+					</section>
+					<section class="col-xs-12 hidden-lg">
+						<div><h3>Everything about Haiti</h3></div>
+						<p>
+							Check our website on a big screen!
+						</p>
+					</section>
+				</section>
+			</div>
+		</div>
+		<div class="countryContent" id="guadeloupeContent">
+			<div class="row">
+				<h2 class="col-sm-12 col-xs-offset-5" id="guadeloupeTitle">Guadeloupe</h2>
+			</div>
+			<div class="row">
+				<section class="col-sm-6 col-xs-12">
+					<div><h3>The Island</h3></div>
+					<p class="text-justify text-capitalize">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit ex nulla, non cursus nulla ornare ut. Donec feugiat nulla nec massa blandit, varius pulvinar lacus gravida. Vestibulum blandit lobortis sem a lobortis. Morbi sed leo nisl. Quisque ac tincidunt quam. Phasellus vel tristique sem, id viverra nisl. Phasellus condimentum felis pharetra faucibus gravida. Fusce id nunc est.<br><br>Pellentesque libero ligula, cursus eu vehicula quis, feugiat vel orci. Vivamus a magna velit. Phasellus malesuada, orci id semper gravida, velit ipsum elementum purus, nec porttitor leo nisl at justo. Vivamus eu ex vitae purus imperdiet venenatis non eu justo. Maecenas ultricies lectus ut leo volutpat placerat eget nec dui. Proin a rutrum eros, sit amet interdum odio. Sed eget diam ornare, eleifend sapien in, feugiat libero. Mauris sit amet dapibus erat. Nulla vel hendrerit dui. Vestibulum in finibus massa. Nullam id turpis non sapien luctus porta at ac libero.
+					</p>
+				</section>
+				<section class="col-sm-6 col-xs-12">
+					<div><h3>Towns</h3></div>
+					<p>
+						Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ut ante eget tortor pretium blandit.
+					</p>
+					<ul>
+						<li>Lorem</li>
+						<li>Ipsum</li>
+						<li>Sed Etiam</li>
+						<li>Non Solum</li>
+						<li>Potens</li>
+						<li class="visible-lg-inline-block">Quo Voce</li>
+						<li class="hidden-xs">Ave Caesar</li>
+						<li class="hidden-xs">Qui Morituri</li>
+						<li class="hidden-xs">Te Salutant</li>
+					</ul>
+				</section>
+			</div>
+			<div class="row">
+				<figure class="col-sm-6 col-xs-12" >
+					<img class="img-thumbnail" id="imgGuadeloupe" src="./img/obodrel_image_guadeloupe_landscape.jpg">
+    				<figcaption id="figGuadeloupe">Fusce ligula orci, congue quis odio eget, rhoncus pharetra nunc. Maecenas eu eros sed nulla viverra condimentum.</figcaption>
+				</figure>
+				<section class="col-sm-6 col-xs-12">
+					<div><h3>Beaches</h3></div>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Beaches Name</th>
+								<th>Desccription</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Proin</td>
+								<td>Etiam vel mi in orci efficitur hendrerit.</td>
+							</tr>
+							<tr>
+								<td>Quisque</td>
+								<td>Phasellus id lacinia ante.</td>
+							</tr>
+							<tr>
+								<td>Maecenas</td>
+								<td>Duis sem magna, sagittis ac velit vel.</td>
+							</tr>
+							<tr>
+								<td>Aliquam</td>
+								<td>Sed laoreet, mauris ac varius molestie.</td>
+							</tr>
+							<tr>
+								<td>Cras</td>
+								<td>Nam lacus justo, porta ullamcorper iaculis.</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</div>
+			<div class="row">
+				<section class="col-sm-6 col-xs-12">
+					<div><h3>Hotels</h3></div>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Hotel Name</th>
+								<th>Desccription</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><del>Huinean</del>Aenean</td>
+								<td>Fusce convallis est sed justo egestas elementum.</td>
+							</tr>
+							<tr>
+								<td>Curabitur</td>
+								<td>Curabitur nec turpis eu urna vestibulum rhoncus.</td>
+							</tr>
+							<tr>
+								<td>Vestibulum</td>
+								<td>Proin bibendum tellus a nibh dictum.</td>
+							</tr>
+							<tr>
+								<td>Phasellus</td>
+								<td>Donec ultrices, nulla vel vulputate faucibus.</td>
+							</tr>
+							<tr>
+								<td>Donec</td>
+								<td>Ut dolor sapien, rutrum nec elit at.</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section class="col-sm-6 col-xs-12 table-responsive">
+					<div><h3>Prices</h3></div>
+					<table class="table table-striped table-bordered table-condensed">
+						<thead>
+							<tr class="danger">
+								<th>Prices for activities</th>
+								<th>New Activities (contains previouses)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="warning">
+								<td>100€</td>
+								<td>Quisque ac ornare nulla.</td>
+							</tr>
+							<tr class="info">
+								<td>200€</td>
+								<td>Fusce lacinia, dolor ut dictum.</td>
+							</tr>
+							<tr class="success">
+								<td>300€</td>
+								<td>Cras quis placerat tellus.</td>
+							</tr>
+							<tr class="info">
+								<td>400€</td>
+								<td>Praesent eget elit eu ex.</td>
+							</tr>
+							<tr class="warning">
+								<td>500€</td>
+								<td>Duis nisl libero, porta quis.</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</div>
+		</div>
+		<div class="countryContent" id="martiniqueContent">
+			<div class="row">
+				<h2 class="col-sm-12 col-xs-offset-5" id="martiniqueTitle">Martinique</h2>
+			</div>
+			<div class="row">
+				<section class="col-sm-12 col-xs-12">
+					<div><h3>Look for a city</h3></div>
+					<form class="form-inline">
+						<section class="form-group">
+							<label for="searchMartinique">Search :</label><input id="searchMartinique" class="form-control" type="text" name="destinationFormMartinique">
+						</section>
+						<input id="submitMartinique" class="btn btn-default" type="button" value="Submit">
+					</form>
+					<br>
+					<aside id="searchPanel" class="panel panel-warning">
+						<section class="panel-footer">
+							Searchs...
+						</section>
+						<section class="panel-body">
+							Search...
+						</section>
+						<section class="panel-heading">
+							Searchf...
+						</section>
+					</aside>
+					<aside class="panel panel-danger">
+						<section class="panel-heading">
+							Searchs...
+						</section>
+						<section class="panel-body">
+							Search...
+						</section>
+						<section class="panel-footer">
+							Searchf...
+						</section>
+					</aside>
+				</section>
+			</div>
+			<div class="row">
+				<section class="col-sm-12 col-xs-12">
+					<div><h3>Make a request to travel</h3></div>
+					<form>
+						<section class="form-group">
+							<label for="nameMartinique">Name : </label><input id="nameMartinique" type="text" class="form-control" name="nameFormMartinique">
+							<label for="emailMartinique">Email : </label><input id="emailMartinique" type="email" class="form-control" name="emailFormMartinique">
+							<label for="nbTravellersMartinique">Travellers : </label><input id="nbTravellersMartinique" type="number" class="form-control" name="nbTravellersFormMartinique" min="0" max="5">
+							<label>Departure :</label>
+								<label class="radio-inline"><input type="radio" name="departureFormMartinique" value="Paris" checked>Paris</label>	
+								<label class="radio-inline"><input type="radio" name="departureFormMartinique" value="Bordeaux">Bordeaux</label>	
+								<label class="radio-inline"><input type="radio" name="departureFormMartinique" value="Marseille">Marseille</label>	
+							</label>
+						</section>
+						<input class="btn btn-primary" type="button" value="Request">
+						<input class="btn btn-link" type="button" value="Inscription">
+					</form>
+				</section>
+			</div>
+		</div>
+		<div class="countryContent" id="barbadeContent">
+			<nav>
+				<ul class="nav nav-pills nav-justified">
+					<li><a href="https://fr.wikipedia.org/wiki/Barbade">Wikipedia</a></li>
+					<li><a href="http://www.routard.com/guide/code_dest/barbade.htm">Routard</a></li>
+					<li><a href="http://www.easyvoyage.com/barbade">Easy Voyage</a></li>
+					<li class="active"><a href="#"><span class="glyphicon glyphicon-list"></span> Barbade</a></li>
+				</ul>
+			</nav>
+			<div class="row">
+				<h2 class="col-sm-12 col-xs-offset-5" id="barbardeTitle">La Babarde</h2>
+			</div>
+			<div class="row">
+				<p>
+					<button class="btn btn-warning">
+						Warning<span class="badge">3</span>
+					</button>
+				</p>
+			</div>
+			<div class="row">
+				<div><h3>Filling In</h3></div>
+				<div class="progress">
+					<div class="progress-bar">50%</div>
+					<div class="progress-bar progress-bar-danger">80%</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<footer class="col-sm-12 col-xs-offset-11">
+				<div id="lastOfPage" class="goUpBtn">&uarr;</a>
+			</footer>
+		</div>
 	</div>
 </body>
 </html>
