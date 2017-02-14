@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, minimum-scale=0.5">
+<title>Voyages: Martinique</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<section>
+			<h1 style="text-align: center">Martinique</h1>
+		</section>
+		<div class="row">
+			<form class="form-inline">
+				<section class="form-group">
+					<label for="search">Recherche: </label><input id="search"
+						class="form-control">
+				</section>
+				<input type="submit" name="envoi" class="btn"
+					onclick='document.getElementById("searchpanel").style.display="block"; return false;'>
+
+			</form>
+			<aside class="panel panel-info" id="searchpanel"
+				style="display: none">
+				<section class="panel-heading">Recherche</section>
+				<section class="panel-body">En cours...</section>
+			</aside>
+		</div>
+		<div class="row">
+			<form>
+				<section class="form-group">
+					<label>Nom: </label> <input id="name" class="form-control input-lg"
+						type="text">
+				</section>
+				<section class="form-group">
+					<label>Email: </label><input id="email" class="form-control"
+						type="email">
+				</section>
+				<section class="form-group">
+					<label>Voyageurs: </label> <input id="number" class="form-control"
+						type="number">
+				</section>
+				<section class="from- group">
+					<label>Départ: </label> <label class="radio-inline"> <input
+						type="radio" name="from" value="paris">Paris
+					</label> <label class="radio-inline"><input type="radio"
+						name="from" value="bordeaux">Bordeaux </label> <label
+						class="radio-inline"> <input type="radio" name="from"
+						value="lyon">Lyon
+					</label>
+				</section>
+				<section class="form-group">
+					<input type="submit" name="demande"
+						class="btn btn-danger btn-block" value="Demande"> <input
+						type="submit" name="inscription" class="btn btn-success btn-block"
+						value="Inscription">
+				</section>
+			</form>
+			<a href="Index.html">Retour à l'Acceuil</a>
+		</div>
+	</div>
+
+</body>
+
+</html>
