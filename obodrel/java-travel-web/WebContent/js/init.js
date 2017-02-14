@@ -1,13 +1,16 @@
 window.onload = onLoadInit;
 var body;
-var CURRENT_CONTENT_NEEDED = "panama";
+var CURRENT_CONTENT_NEEDED = "barbade";
 var indexRule = null;
 var currentSection = null;
+var isMenuDisplayed = false;
 
 function onLoadInit() {
 	body = document.getElementById("body");
 	var path = document.documentURI;
 	var pageName = path.split("/").pop();
+	pageName = pageName.split("#").shift();
+	pageName = pageName.split("?").shift();
 
 	switch (pageName) {
 	case "nicaragua.html":
@@ -26,6 +29,11 @@ function onLoadInit() {
 		for(element of document.getElementsByClassName("countryBtn")) {
 			element.addEventListener("click",displayCurrentContent);
 		}
+		for(element of document.getElementsByClassName("goUpBtn")) {
+			element.addEventListener("click",setScrollToTop);
+		}
+		document.getElementById("countryLiRoller").addEventListener("click",
+				displayMenu);
 		document.getElementById("formNica")["formNb"].addEventListener("click",
 				nbTravellers);
 		document.getElementById("formNica").addEventListener("submit",
@@ -42,7 +50,20 @@ function onLoadInit() {
 				displayPanamaAccordionContent);
 		displaySectionByName(CURRENT_CONTENT_NEEDED);
 		document.addEventListener("scroll",makeMenuTopFixed);
+		document.getElementById("submitMartinique").addEventListener("click",displaySearchAside)
 	}
+}
+
+function displaySearchAside(evt) {
+	if(document.getElementById("searchPanel").style.display == "none" 
+		|| document.getElementById("searchPanel").style.display == "") {
+		document.getElementById("searchPanel").style.display = "block";
+	}
+}
+
+function setScrollToTop(evt) {
+	window.scrollTo(0,0);
+	document.getElementById("lastOfPage").style.display = "none";
 }
 
 function makeMenuTopFixed(evt) {
@@ -50,6 +71,13 @@ function makeMenuTopFixed(evt) {
 		document.getElementById("menuTravel").className = "fixedMenu";
 	} else {
 		document.getElementById("menuTravel").className = "absoluteMenu";
+	}
+	document.getElementById("lastOfPage").style.top = window.innerHeight/100*85+"px";
+	if(evt.type  == "scroll" && document.body.scrollTop > 0) {
+		document.getElementById("lastOfPage").style.display = "block";
+	}
+	else { 
+		document.getElementById("lastOfPage").style.display = "none";
 	}
 }
 
@@ -78,15 +106,28 @@ function displayPanamaAccordionContent(evt) {
 		currentP.style.maxHeight = currentP.scrollHeight+"px";
 		currentP.style.marginTop = "25px";
 		currentP.style.marginBottom = "25px";
-		currentH3.style.backgroundColor = "#bbeebb";
+		currentH3.style.backgroundColor = "#E07400";
 		currentH3.className = "minus";
 	} else {
 		currentP.style.margin = "0";
 		currentP.style.maxHeight = "0";
-		currentH3.style.backgroundColor = "#bbee99";
+		currentH3.style.backgroundColor = "#000000";
 		currentH3.className = "plus";
 	}
 } 
+
+function displayMenu(evt) {
+	var menuUL = document.querySelector("div#menuTravel ul");
+	var rollerUL = document.querySelector("div#menuTravel div#countryLiRoller");
+	if(!isMenuDisplayed) {
+		menuUL.style.maxHeight = menuUL.scrollHeight+"px";
+		rollerUL.textContent = "▼";
+	} else {
+		rollerUL.textContent = "►";
+		menuUL.style.maxHeight = "0px";
+	}
+	isMenuDisplayed = !isMenuDisplayed;
+}
 
 if(!localStorage.hasAlreadyVisited) {
 	localStorage.hasAlreadyVisited = true;

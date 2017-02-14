@@ -1,6 +1,3 @@
-/**
- * 
- */
 
 console.log("costarica.js loaded")
 
@@ -12,7 +9,7 @@ function send() { // le e est créé par la ligen 53
 	// m.value= "inscription envoyé "+nb.value // concate avec la value lit
 	// précédement $
 	m.value = "inscription envoyé ";
-	//m.value += (n * 1080)
+	// m.value += (n * 1080)
 
 	if (n < 1 | n > 50)
 		m.value = "ERREUR ";
@@ -27,14 +24,28 @@ function send() { // le e est créé par la ligen 53
 	if (n % 2 == 1)
 		m.value += "une chambre simple"
 	m.value += ")";
-	var t=[45,460,190,80]
-	var dure=0;
-	for(var i in t)
-		dure+=40+ t[i]
-	m.value+="Trajet:"+dure+"min"
+	var t = [ 45, 460, 190, 80 ]
+	var dure = 0;
+	for ( var i in t)
+		dure += 40 + t[i]
+	m.value += "Trajet:" + dure + "min"
+
+	var ob = {
+		chmitoyennes : 3,
+		Croisière : 5,
+		spectacle : 3,
+		souvenir : 4
+	}
+	m.value += "option:"
+	for ( var o in ob)
+
+		if (ob[o] <= 3)
+			m.value += "mitoyen et souvenir"
+	if (ob[o] <= 4)
+		m.value += "spectacle"
+	if (ob[o] <= 5)
+		m.value += "croisière"
 
 }
-
-
 
 document.getElementById("send").addEventListener("click", send)
