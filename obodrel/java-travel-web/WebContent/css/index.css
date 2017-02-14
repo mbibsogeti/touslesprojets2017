@@ -89,7 +89,7 @@ h2#hondTitle {
 }
 body {
     font-family: Tahoma;
-    background-image: url("../img/obodrel_image_diana_blood_moon_riot_games.jpg");
+    /*background-image: url("../img/obodrel_image_diana_blood_moon_riot_games.jpg");*/
     background-size: cover; 
 }
 section.textBlock h3, header.headerTextBlock h3 {
@@ -227,4 +227,9 @@ div.fixedMenu {
     top: 0px;
     left: 0px;
     width: 100%;
+}
+div#haitiContent {
+    background-color: inherit;
+    width: 100%;
+    box-shadow: none;
 }
