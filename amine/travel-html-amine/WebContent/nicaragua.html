@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Voyages: Nicaragua</title>
+
+</head>
+<body onload="startup()">
+	<header>
+		<h1>Nicaragua</h1>
+	</header>
+	<section>
+		<h3>Le Pays</h3>
+		<p onclick="alert('Téléphonez pour + d\'infos')">Le Nicaragua, en
+			forme longue la République du Nicaragua, en espagnol República de
+			Nicaragua, est un pays d'Amérique centrale. Il est limitrophe du
+			Costa Rica au sud et du Honduras au nord. Il est aussi entouré par
+			l'océan Pacifique et la mer des Caraïbes. Sa capitale et plus grande
+			ville est Managua. Le Nicaragua est membre de l'Alliance bolivarienne
+			pour les Amériques (Alba) depuis 2007.L'histoire des débuts de la
+			nation a été fortement influencée par les interventions militaires
+			des États-Unis, qui y voyaient la possibilité d'y creuser un canal
+			entre l'Atlantique et le Pacifique. Le pays est troublé par des
+			périodes prolongées de dictature militaire, la plus dure étant sans
+			doute le règne de la famille Somoza au début du XXe siècle. Entre
+			1927 et 1933, le général Augusto Sandino, nationaliste, mène une
+			guérilla, d'abord contre le gouvernement conservateur, puis contre
+			les forces américaines. Il fait la déclaration devenue célèbre : « Si
+			cent hommes aiment le Nicaragua comme je l’aime, le Nicaragua sera
+			libre ! » En 1927, il refuse de rendre les armes aux troupes
+			d'occupation américaines comme l'avait fait le général Moncada dans
+			un accord de partage des pouvoirs avec les conservateurs. La
+			guérilla, dénommée Armée de Défense de la Souveraineté nationale du
+			Nicaragua, est combattue par l'United States Marine Corps (USMC), qui
+			s'octroie un avantage important par l'appui de l'aviation et de
+			l'artillerie mais dont les multiples exactions contre la population
+			renforce la popularité de l'armée rebelle de Sandino. Incapables d'en
+			finir avec la guérilla et frappées par de multiples revers
+			militaires, les troupes américaines évacuent le Nicaragua en 1933
+			après avoir pris soin de créer la Garde Nationale pour défendre le
+			régime, et qui devait remplacer l'armée et la police supprimées par
+			les Américains. L'armée rebelle de Sandino, dont la motivation
+			fondamentale résidait dans le désir d'expulser les troupes
+			américaines, accepte alors de négocier et signe un accord de paix en
+			février 19342. Anastasio Somoza García devient le premier dirigeant
+			de la Garde Nationale. Avec le soutien des États-Unis, Somoza fait
+			assassiner son principal opposant politique, Sandino, en février 1934
+			et prend le pouvoir en 1936. Il ordonne également le massacre des
+			anciens guérilleros de Sandino et de leurs familles. Il instaure
+			alors une dictature personnelle de 1936 à son assassinat en 1956. Ses
+			fils, Luis et Anastasio, lui succèdent et le pays reste assujetti à
+			la dictature. Les Somoza se posent comme anticommunistes et
+			bénéficient de l'appui des États-Unis tout au long de la Guerre
+			froide.</p>
+	</section>
+	<section>
+		<h3>Inscription</h3>
+		<form id="register">
+			<p>
+				<label> Nom: <input type="text" name="nom" id="name"></label>
+			</p>
+			<p>
+				<label> Email: <input type="email" name="email" id="email"></label>
+			</p>
+			<p>
+				<label> Voyageurs: <input type="number" name="nombre"
+					id="nbTravellers"></label>
+			</p>
+			<p>
+				<label><input type="submit"></label>
+			</p>
+		</form>
+	</section>
+	<p>
+		<output id="message"></output>
+	</p>
+	<section>
+		<a href="index.html">Retour à l'Acceuil</a>
+	</section>
+
+	<script>
+		console.log('début')
+		function startup() {
+			console.log('loaded')
+		}
+		function nbTravellersClicked() {
+			console.log('nbTravellersClicked')
+		}
+		document.getElementById("nbTravellers").addEventListener("click",
+				nbTravellersClicked)
+		/*function Registered(e) {
+			console.log('Registered!')
+			e.preventDefault()
+		}
+		var r = document.getElementById("register")
+		r.addEventListener("submit", Registered)*/
+
+		function Registered(e) {
+			console.log('Registered!')
+			e.preventDefault()
+			var name = document.getElementById("name")
+			var email = document.getElementById("email")
+			var m = document.getElementById("message")
+			//m.value = "Inscription envoyer"
+			m.value = "Inscription enregistrée pour " + name.value +" ("+email.value+")"
+			var nb = document.getElementById("nbTravellers")
+			nb.value = ""
+			name.value=""
+			email.value=""
+		}
+		var r = document.getElementById("register")
+		r.addEventListener("submit", Registered)
+	</script>
+</body>
+</html>
