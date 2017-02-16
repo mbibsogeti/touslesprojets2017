@@ -1,5 +1,27 @@
 @CHARSET "UTF-8";
 
 section {
-	
+	background: #7091f3;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px;
+}
+
+h1, h2 {
+	text-align: center;
+	color: #000040;
+	transition: color 1s;
+}
+
+section:hover, section:hover h1, section:hover h2 {
+	background: black;
+	color: white;
+}
+
+section {
+	transition: color 1s, background 1s;
+}
+
+form {
+	text-align: center;
 }

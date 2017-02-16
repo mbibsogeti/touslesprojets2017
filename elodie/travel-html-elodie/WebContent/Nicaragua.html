@@ -21,11 +21,11 @@
 		<h2>Inscription</h2>
 		<form id="nbSent">
 			<p>
-				<label> Nom: <input type="text" name="name">
+				<label> Nom: <input type="text" name="name" id="nom">
 				</label>
 			</p>
 			<p>
-				<label> Email: <input type="email" name="mail">
+				<label> Email: <input type="email" name="mail" id="email">
 				</label>
 			</p>
 			<p>
@@ -35,6 +35,9 @@
 			</p>
 			<p>
 				<input type="submit" name="send">
+			</p>
+			<p>
+				<output id="message"></output>
 			</p>
 		</form>
 	</section>
@@ -50,7 +53,14 @@
 				"click", nbTravellersClicked);
 		function nbSent(e) {
 			console.log('Nombre d\'envoi');
-			return e.preventDefault();
+			e.preventDefault();
+			var nom = document.getElementById("nom");
+			var mail = document.getElementById("email")
+			var r = document.getElementById("message");
+			r.value = "Inscription enregistrée pour "+nom.value+ " ("+mail.value+").";
+			var nb = document.getElementById("nbTravellersClicked");
+			nb.value = "0";
+			
 		}
 		document.getElementById("nbSent").addEventListener(
 				"submit", nbSent);

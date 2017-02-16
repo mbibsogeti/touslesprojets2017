@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/index.css">
-<script type="text/javascript" src="./js/nicaragua.js"></script>
+<script type="text/javascript" src="./js/init.js" defer></script>
+<script type="text/javascript" src="./js/function.js" defer></script>
 <title>Obodrel's Travel, make your travel come true !</title>
 </head>
 <body id="snowBG">
@@ -21,12 +22,15 @@
 		<div><h3>Inscriptions</h3></div>
 		<div id="formNicaDiv">
 			<form id="formNica" ">
-				<label>Name : <input type="text" name="formName"></label><br><br>
-				<label>Email : <input type="email" name="formEmail"></label><br><br>
-				<label>Travellers Number : <input type="number" name="formNb"></label><br><br>
+				<label>Name : <input type="text" name="formName" required="required" ></label><br><br>
+				<label>Email : <input type="email" name="formEmail" required="required" ></label><br><br>
+				<label>Travellers Number : <input type="number" name="formNb" required="required" ></label><br><br>
 				<input type="submit" id="formSubmit" value="Submit"><br><br>
 			</form>
 		</div>
+		<p>
+			<span id="formRes"></span>
+		</p>
 	</section>
 	<section class="textBlock">
 		<div><h3>Touritical locations</h3></div>

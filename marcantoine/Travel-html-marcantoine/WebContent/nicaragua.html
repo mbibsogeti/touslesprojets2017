@@ -2,12 +2,44 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Nicaragua</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2">
+<title>Dégage: Nicaragua</title>
 <link rel="stylesheet" href="css/nicaragua.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body onload="startup()">
+<nav>
+		<ul class="nav nav-pills nav-justified">
+			<li><a href="mexico.html"><span
+					class="glyphicon glyphicon-fire"></span> Mexico</a></li>
+			<li><a href="guatemala.html"><span
+					class="glyphicon glyphicon-flash"></span> Guatemala</a></li>
+			<li><a href="honduras.html"><span
+					class="glyphicon glyphicon-send"></span> Honduras</a></li>
+			<li><a href="salvador.html"><span
+					class="glyphicon glyphicon-tower"></span> Salvador</a></li>
+			<li class="active"><a href="#"><span
+					class=" glyphicon glyphicon-ice-lolly-tasted"></span> Nicaragua</a></li>
+			<li><a href="costaRica.html"><span
+					class="glyphicon glyphicon-grain"></span> Costa Rica</a></li>
+			<li><a href="panama.html"><span
+					class="glyphicon glyphicon-sunglasses"></span> Panama</a></li>
+			<li><a href="haiti.html"><span
+					class="glyphicon glyphicon-heart-empty"></span> Haiti</a></li>
+			<li><a href="guadeloupe.html"><span
+					class="glyphicon glyphicon-leaf"></span> Guadeloupe</a></li>
+			<li><a href="martinique.html"><span
+					class="glyphicon glyphicon-tint"></span> Martinique</a></li>
+			<li><a href="barbade.html"><span
+					class="glyphicon glyphicon-plane"></span> La Barbade</a></li>
+		</ul>
+	</nav>
 
-	<section></section>
+	<header>
+		<h1>Nicaragua</h1>
+	</header>
 
 	<section>
 		<h2 onclick="alert('Ça veut dire pays, bonhomme.')">The country</h2>
@@ -18,20 +50,38 @@
 			and beaches. Vast Lake Managua and the iconic stratovolcano Momotombo
 			sit north of the capital Managua. To its south is Granada, noted for
 			its Spanish colonial architecture and an archipelago of navigable
-			islets rich in tropical bird life.</p>
+			islets rich in tropical bird life. Nicaragua, set between the Pacific
+			Ocean and the Caribbean Sea, is a Central American nation known for
+			its dramatic terrain of lakes, volcanoes and beaches. Vast Lake
+			Managua and the iconic stratovolcano Momotombo sit north of the
+			capital Managua. To its south is Granada, noted for its Spanish
+			colonial architecture and an archipelago of navigable islets rich in
+			tropical bird life. Nicaragua, set between the Pacific Ocean and the
+			Caribbean Sea, is a Central American nation known for its dramatic
+			terrain of lakes, volcanoes and beaches. Vast Lake Managua and the
+			iconic stratovolcano Momotombo sit north of the capital Managua. To
+			its south is Granada, noted for its Spanish colonial architecture and
+			an archipelago of navigable islets rich in tropical bird life.
+			Nicaragua, set between the Pacific Ocean and the Caribbean Sea, is a
+			Central American nation known for its dramatic terrain of lakes,
+			volcanoes and beaches. Vast Lake Managua and the iconic stratovolcano
+			Momotombo sit north of the capital Managua. To its south is Granada,
+			noted for its Spanish colonial architecture and an archipelago of
+			navigable islets rich in tropical bird life.</p>
 	</section>
 
 	<section>
+		<h2>Votre voyage</h2>
 		<form id="register">
 			<p>
-				<label>Name: <input type="text" name="name" required></label>
+				<label>Name: <input type="text" id="name" name="name" required></label>
 			</p>
 			<p>
 				<label>First name: <input type="text" name="firstname"
 					required></label>
 			</p>
 			<p>
-				<label>Email: <input type="email" name="email" required></label>
+				<label>Email: <input type="email" id="email" name="email" required></label>
 
 			</p>
 			<p>
@@ -47,6 +97,9 @@
 			<p>
 				<label><button type="button">Ça j'aime !!!</button></label>
 			</p>
+			<p>
+				<output id="message"></output>
+			</p>
 
 		</form>
 	</section>
@@ -55,6 +108,8 @@
 		<p>Be sure to leave a comment on our website!!</p>
 		<a href="index.html">Retour à l'accueil</a>
 	</section>
+
+
 
 	<script>
 		console.log('début du script mon gars !')
@@ -66,12 +121,19 @@
 			console.log('nbTravellersClicked')
 		}
 
-		document.getElementById("nbTravellers").addEventListener("click",
-				nbTravellersClicked)
+		document.getElementById("nbTravellers").addEventListener("click", nbTravellersClicked)
 
-		function registeredClicked() {
+		function registeredClicked(e) {
 			alert('Merciiiiiii !')
 			console.log('form submitted')
+			e.preventDefault()
+			var n= document.getElementById("name")
+			var email= document.getElementById("email")
+			var m = document.getElementById("message")
+			m.value = "INSCRIPTION ENVOYEE pour "+ n.value +" ("+email.value+")"
+			var nb = document.getElementById("nbTravellers")
+			nb.value = "0"
+			n.value = ""
 		}
 
 		document.getElementById("register").addEventListener("submit",

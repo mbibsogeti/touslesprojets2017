@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width,initial-scale=2,minimum-scale=0.1,maximum-scale=200">
+
+<title>martinique</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body style="background-color: white">
+
+	<div class="container">
+		<div class="row">
+			<h1 class="col-sm-12">martinique</h1>
+		</div>
+		<div class="row">
+		<section class="col-xs-12">
+			<form class="form-inline">
+				<section class="form-group">
+					<label for="recherch">rechercher :</label><input id="recherch"
+						class="form-control" >
+				</section>
+				<input type="submit" class="btn" onclick='document.getElementById("searchpanel").style.display="block"; return false;'>
+			</form>
+			<section class="panel-header">
+			
+			</section>
+			<aside  id="searchpanel" style="display:none" class="panel panel-warning">
+			<section class="panel-heading">
+			début...
+			</section>
+			
+			<section class="panel-body">
+			recherche........
+			</section>
+			<section class="panel-footer">
+			fin...
+			</section>
+			</aside>
+			</section>
+		</div>
+		<div class="row">
+			<form>
+				<section class="form-group">
+					<label for="name">nom:</label><input id="name" type="text"
+						class="form-control input-lg">
+				</section>
+				<section class="form-group">
+					<label for="email">email:</label><input id="email" type="text"
+						class="form-control">
+				</section>
+				<section class="form-group">
+					<label for="voyage">voyage:</label><input id="voyage" type="number"
+						class="form-control">
+				</section>
+				<section class="form-group">
+
+					<label>depart:</label> <label class="radio-inline"><input
+						type="radio" name="depart" value="paris"> paris </label> <label
+						class="radio-inline"><input type="radio" name="depart"
+						value="bordeaux">bordeaux</label> <label class="radio-inline"><input
+						type="radio" name="depart" value="lyon">lyon</label>
+				</section>
+
+				<input id="demande" type="submit" value="demande"
+					class="btn btn-danger btn-block"> <input id="inscription"
+					type="submit" value="inscription" class="btn btn-primary btn-block">
+
+			</form>
+
+		</div>
+	</div>
+</body>
+</html>
