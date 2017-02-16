@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, minimal-scale=0.5">
+<title>Martinique</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<form class="form-inline">
+		<!-- pour revenir en allignement, celui de depart -->
+		<h1>La martinique</h1>
+		<section class="form-group">
+			<!-- formgroup pour regrouper dans une section recherche et submit et les utiliser ens -->
+			<label for="search">Recherche:</label>
+			<!-- label recherche avec son input -->
+			<input id="search" class="form-control" type="text">
+			<!-- relier les deux labels entre eux -->
+		</section>
+		<input class="btn" type="submit" onclick='document.getElementById("searchPanel").style.display="block";
+		return false;'>
+		
+		<aside class="panel panel-danger" id="searchPanel" style="display:none"><!-- Nouveau block aside entoure une section
+		qu'on va appeler en clicquant sur envoyer -->
+		<section class="panel-heading"><!-- afficher dans l'en-tête du panneau -->
+		Recherche 
+		</section>
+		<section class="panel-body">
+		</section>
+		<section class="panel-footer">
+		 En cours...
+		</section>
+		</aside>
+	</form>
+
+	<form>
+		<section class="form-group">
+			<label for="name"> Nom:</label>
+			<!-- label Nom avec son input -->
+			<input id="name" class="form-control input-lg" type="text">
+		</section>
+		<section class="form-group">
+			<!-- label email avec son input -->
+			<label for="email">email:</label> <input id="email"
+				class="form-control" type="email">
+		</section>
+		<section class="form-group">
+			<!-- label voyageurs avec son input -->
+			<label for="travellers"> Voyageurs:</label> <input id="travellers"
+				class="form-control" min=1 type="number">
+		</section>
+
+		<section class="form-group">
+			<!-- Tous les radios et leur input dans la meme section "forme group" -->
+			<label> Départ:</label> <label class="radio-inline"><input
+				type="radio" name="from" value="Paris"> Paris</label> <label
+				class="radio-inline"><input type="radio" name="from"
+				value="Lon">Lyon</label> <label class="radio-inline"><input
+				type="radio" name="from" value="Bordeaux">Bordeaux</label>
+
+		</section>
+		<section class="form-group">
+			<!-- label button avec son input -->
+			<label for="button"></label> <input id="button"
+				class="btn btn-danger" type="button" value="Demande"> <label
+				for="button1"></label>
+			<!-- label button1 avec son input -->
+			<input id="button1" class="btn btn-danger btn-block" type="button"
+				value="Inscription">
+		</section>
+
+	</form>
+</body>
+</html>
