@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2">
+<title>Dégage: Martinique</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/martinique.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/martinique.js"></script>
+</head>
+<body>
+<nav>
+		<ul class="nav nav-pills nav-justified">
+			<li><a href="mexico.html"><span
+					class="glyphicon glyphicon-fire"></span> Mexico</a></li>
+			<li><a href="guatemala.html"><span
+					class="glyphicon glyphicon-flash"></span> Guatemala</a></li>
+			<li><a href="honduras.html"><span
+					class="glyphicon glyphicon-send"></span> Honduras</a></li>
+			<li><a href="salvador.html"><span
+					class="glyphicon glyphicon-tower"></span> Salvador</a></li>
+			<li><a href="nicaragua.html"><span
+					class=" glyphicon glyphicon-ice-lolly-tasted"></span> Nicaragua</a></li>
+			<li><a href="costaRica.html"><span
+					class="glyphicon glyphicon-grain"></span> Costa Rica</a></li>
+			<li><a href="panama.html"><span
+					class="glyphicon glyphicon-sunglasses"></span> Panama</a></li>
+			<li><a href="haiti.html"><span
+					class="glyphicon glyphicon-heart-empty"></span> Haiti</a></li>
+			<li><a href="guadeloupe.html"><span
+					class="glyphicon glyphicon-leaf"></span> Guadeloupe</a></li>
+			<li class="active"><a href="#"><span
+					class="glyphicon glyphicon-tint"></span> Martinique</a></li>
+			<li><a href="barbade.html"><span
+					class="glyphicon glyphicon-plane"></span> La Barbade</a></li>
+		</ul>
+	</nav>
+	<div class="container">
+
+		<header class="row">
+			<h1>Martinique</h1>
+		</header>
+
+
+		<section class="row">
+			<section class="col-xs-4">
+				<section class="form-group">
+					<label for="search">Research: </label><input id="search"
+						type="text" class="form-control input-lg">
+				</section>
+				<section class="form-group">
+					<label for="sub"></label><input id="sub" type="submit"
+						value="research" class="btn btn-block"
+						onclick='document.getElementById("searchPanel").style.display="block"; return false;'>
+				</section>
+			</section>
+		</section>
+
+		<aside class="panel panel-primary" id="searchPanel"
+			style="display: none">
+			<section class="panel-heading">Research results:</section>
+			<section class="panel-body">blablablablablablablablabla</section>
+			<section class="panel-footer">Thanks for using Google.</section>
+		</aside>
+
+		<section class="row">
+			<section class="col-xs-4">
+				<form>
+					<section class="form-group">
+						<label for="name">Name: </label><input id="name" type="text"
+							class="form-control input-lg">
+					</section>
+					<section class="form-group">
+						<label for="email">Email: </label><input id="email" type="email"
+							class="form-control input-lg" required>
+					</section>
+					<section class="form-group">
+						<label for="nbr">Number of travellers: </label><input id="nbr"
+							type="number" class="form-control input-lg">
+					</section>
+					<section class="form-group">
+						<label>Departure from: </label> <label class="radio-inline"><input
+							type="radio" name="city" value="Paris">Paris</label> <label
+							class="radio-inline"><input type="radio" name="city"
+							value="Bordeaux">Bordeaux</label> <label class="radio-inline"><input
+							type="radio" name="city" value="Lyon">Lyon</label>
+					</section>
+					<section class="form-group">
+						<label><input type="submit" value="Query"
+							class="btn btn-primary"></label> <label><input
+							type="submit" value="Inscription" class="btn"></label>
+					</section>
+				</form>
+			</section>
+		</section>
+
+		<section class="row">
+			<section class="col-xs-4">
+				<h2>Your opinion:</h2>
+				<form>
+					<section class="form-group">
+						<label for="comm"></label>
+						<textarea id="comm" class="form-control input-lg"></textarea>
+					</section>
+					<section class="form-group">
+						<label for="sd"></label><input id="sd" type="submit" value="send"
+							class="btn">
+					</section>
+				</form>
+				<p>Be sure to leave a comment on our website!!</p>
+				<a href="index.html">Retour à l'accueil</a>
+			</section>
+		</section>
+	</div>
+</body>
+</html>

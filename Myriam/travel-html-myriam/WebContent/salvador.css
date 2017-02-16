@@ -4,7 +4,7 @@ section{
 	margin:20px;
 	padding:10px;
 	border-radius:10px;
-	background-image:linear-gradient(#f7f299 30%, #e6b317 70%);
+	background-image:linear-gradient(white 30%, snow 70%);
 	box-shadow:0 0 5px black;
 }
 #countryTitle{
@@ -15,9 +15,9 @@ section{
 #capitalesection{
 	background:#eed;
 	position:absolute;
-	width:30%;
-	left:auto;
-	top:auto;
+	width:20%;
+	top:20%;
+	left : 1%
 }
 #offersection{
 	width:50%;
@@ -25,6 +25,7 @@ section{
 	background-image:-moz-linear-gradient(right, white 30%, #73b1d0 70%);
 }
 body{
+	font-family:Garamond;
 	width:50%;
 	background: #73b1d0;
 	margin:auto;
@@ -52,7 +53,7 @@ h1,strong{
 	color:white;
 }
 #capitalesection p{
-	font-family:Arial;
+	font-family:Garamond;
 }
 .retour{
 	text-align:right;
