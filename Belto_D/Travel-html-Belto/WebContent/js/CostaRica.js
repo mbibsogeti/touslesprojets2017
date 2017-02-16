@@ -38,7 +38,7 @@ function buttonClicked() {
 		" et Souvenirs." : 4,
 		"option" : function() {
 			m.value += " .Les options disponibles pour vous sont: "
-			for ( var k in o)
+			for ( var k in o) // on aurait pu ecrire for (var k in this) et le reste pareille//
 				if (o[k] <= n)
 					m.value += k + " ";
 			return (m.value)

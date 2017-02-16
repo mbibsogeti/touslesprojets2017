@@ -5,7 +5,7 @@ using and distributing them may be illegal depending on your juridiction.
 There are created for a 2 months period, put here, and will be removed afterward,
 at the end of march, 2017.
 
-Notice : how to use this on Eclipse (in french)
+Notice : how to use this on Eclipse IDE (in french)
 
 Comment utiliser ce projet Github pour stoquer un nouveau projet Eclipse
 - Créer un compte utilisateur Github (gratuit ok)
