@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Martinique</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=0.5, minimal-scale=0.5">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+<body>
+
+	<div class="container">
+
+
+
+		<h1>Bienvenue à la Martinique</h1>
+
+		<div class="row">
+			<section class="col-xs-12">
+				<form class="form-inline">
+					<section class="form-group">
+						<label for="search">Recherche : </label> <input
+							class="form-control" type="text" />
+					</section>
+					<input type="submit" value="Envoi" class="btn" onclick="document.getElementById('searchpanel').style.display='block';return false;"/>
+
+				</form>
+				<aside class="panel panel-default" id="searchpanel" style="display:none">
+				<section class="panel-heading">Recherche</section>
+				<section class="panel-body">En cours ...</section>
+				</aside>
+			</section>
+		</div>
+
+		<div class="row">
+			<section class="col-xs-12">
+				<form>
+					<section class="form-group">
+						<label for="name">Nom </label><input type="text" id="name" class="form-control input-lg"/>
+					</section>
+					<section class="form-group">
+						<label for="email">email </label><input type="text" id="email"class="form-control"/>
+					</section>
+					<section class="form-group">
+						<label for="nb_v">Nombre de voyageurs </label><input type="number" id="nb_v"class="form-control"/>
+					</section>
+					<section class="form-group">
+						<label for="depart">Départ : </label>
+						<label class="radio-inline"><input type="radio" name="depart"/>Paris</label>
+						<label class="radio-inline"><input type="radio" name="depart" />Bordeaux</label> 
+						<label class="radio-inline"><input type="radio" name="depart" />Lyon</label>
+					</section>
+					<section class="form-group">
+						<p><input type="submit" value="Demande" class="btn btn-info"/></p>
+						<p> <input type="submit"
+							value="Inscription" class="btn btn-warning btn-block" /></p>
+					</section>
+				</form>
+			</section>
+		</div>
+
+		<p class="retour">
+			<a class="retour" href="index.html">Retour à l'accueil</a>
+		</p>
+	</div>
+
+</body>
+</html>
