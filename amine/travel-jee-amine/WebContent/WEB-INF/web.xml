@@ -11,7 +11,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Quito</servlet-name>
-        <url-pattern>/equateur/quito</url-pattern>
+        <url-pattern>/equateur/*</url-pattern>
     </servlet-mapping>
 
 
