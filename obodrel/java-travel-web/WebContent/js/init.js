@@ -8,7 +8,9 @@ var isMenuDisplayed = false;
 function onLoadInit() {
 	body = document.getElementById("body");
 	var path = document.documentURI;
+	console.log(path)
 	var pageName = path.split("/").pop();
+	console.log(pageName)
 	pageName = pageName.split("#").shift();
 	pageName = pageName.split("?").shift();
 
@@ -24,6 +26,15 @@ function onLoadInit() {
 				displayCostaRicaEstimation);
 		break;
 	case "index.html":
+		 initRoot();
+		 break;
+	case "":
+		 initRoot();
+		 break;
+	}
+}
+
+function initRoot() {
 		currentSection = document.querySelector("#homeContent");
 		currentSection.style.display = "block";
 		for(element of document.getElementsByClassName("countryBtn")) {
@@ -50,8 +61,8 @@ function onLoadInit() {
 				displayPanamaAccordionContent);
 		displaySectionByName(CURRENT_CONTENT_NEEDED);
 		document.addEventListener("scroll",makeMenuTopFixed);
-		document.getElementById("submitMartinique").addEventListener("click",displaySearchAside)
-	}
+		document.getElementById("submitMartinique").addEventListener("click",displaySearchAside);
+	
 }
 
 function displaySearchAside(evt) {

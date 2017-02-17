@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!--Dit à Internet Explorer de se comporter comme Edge (mode moderne compatible)-->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--Le navigateur zoome sur la colonne centrale en fonction de la largeur d'affichage du périphérique-->
+<!--initial-scale : Zoom lorsqu'on arrive sur la page, ici x2-->
+<!--minimum-scale et maximum-scale: délimitent les zooms de l'utilisateur-->
+<meta name="viewpart" content="width=device-width, initial-scale=2, minimum-scale=0.5, maximum-scale=3">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body>
+	<!--class="container-fluid" occupe tout l'espace. On choisit soit àa, soit le mode colonne.-->
+	<div class="container-fluid">
+		<div class="row">
+			<section class="col-sm-12">
+				<!--class="text-capitalize" met des majuscules à toutes les premières lettres de chaque mot-->
+				<h1 class="text-capitalize" style="text-align: center">séjour en guadeloupe</h1>
+			</section>
+		</div>
+		<div class="row">
+			<section class="col-sm-6">
+				<h2>L'île</h2>
+				<!--class="text-justify" pour justifier le texte du paragraphe-->
+				<p class="text-justify text-capitalize">La Guadeloupe est à la fois une région monodépartementale de l'Outre-mer français et une
+					région ultrapériphérique européenne, située dans les Caraïbes ; son code départemental officiel est le « 971 ». Ce territoire des
+					Antilles et département d'outre-mer français, bordé par la mer des Caraïbes et l'océan Atlantique, est situé à environ 6 200 km de la
+					France métropolitaine, à 600 km au nord des côtes du Venezuela en Amérique du Sud, à 700 km à l'est de la République dominicaine et à 2
+					200 km au sud-est des États-Unis. Il se compose d'îles et îlets, dont deux majeures habitées : la Grande-Terre et la Basse-Terre
+					formant la Guadeloupe proprement dite. Plusieurs terres voisines, Marie-Galante, l'archipel des Saintes (Terre-de-Haut et
+					Terre-de-Bas), La Désirade et les îles de la Petite-Terre sont rattachées administrativement à ce territoire. À l'instar d'autres îles
+					des Petites Antilles, la Guadeloupe est probablement occupée par des groupes amérindiens précéramiques à partir de 3000 av. J.-C. comme
+					semble l'indiquer la découverte récente de traces de culture sur brûlis sur l’île de Marie-Galante. Cette période est dénommée
+					Mésoindien ou Âge Archaïque dans la nomenclature archéologique américaine.</p>
+			</section>
+			<section class="col-sm-6">
+				<h2>Villes</h2>
+				<!--class="list-inline" enlève les puces ; class="list-unstyled" enlève les éléments spécifiques aux listes-->
+				<ul>
+					<li class="text-justify">Basse-Terre est une commune française, située dans le département de la Guadeloupe. La ville de
+						Basse-Terre située sur la côte sous-le-vent de l'île est le chef-lieu de la Guadeloupe. Principal centre administratif de l'île,
+						Basse-Terre abrite la préfecture, le conseil régional, le conseil général, le diocèse, le palais de justice et la cour d'appel de
+						l'archipel.</li>
+					<li class="hidden-xs text-justify">La ville de Pointe-à-Pitre est fondée au milieu du XVIIIe siècle sur les rives marécageuses de
+						la baie du Petit Cul-de-sac marin en raison de sa position géographique et des mouillages possibles. L'origine de la ville remonte
+						pourtant à l'occupation anglaise de la Guadeloupe (1759 à 1763). Le bourg n'occupe alors qu'une petite partie du site dit du « morne
+						Renfermé ».</li>
+					<li class="hidden-xs text-justify">Les Abymes est une commune française située dans le département de la Guadeloupe. Avec près de
+						60000 habitants, Les Abymes est la commune la plus peuplée de Guadeloupe. Ses habitants sont appelés les Abymiens. Elle est la
+						ville-centre de l'unité urbaine de Pointe-à-Pitre - Les Abymes, qui est la plus peuplée de l'outre-mer français, avec 257 361
+						habitants en 20121, et la 25e de France.</li>
+				</ul>
+			</section>
+		</div>
+		<div class="row">
+			<!--On rajoute col-xs-12 qui force l'image à ne pas dépasser de son conteneur dans le cas xs (car elle fait plus de 768px de largeur)-->
+			<!-- class="img-circle" encercle l'image, class="img-thumbnail" ajoute une petite marge et class="img-rounded" mystère et boule de gomme-->
+			<img class="col-xs-12 col-sm-6 img-circle" src="./images/guadeloupe.jpg">
+			<section class="col-sm-6">
+				<h2>Plages</h2>
+				<!--class="table-striped" met un petit fond une fois sur deux-->
+				<!--class="table-bordered" met une liseré sur le côté-->
+				<!--class="table-condensed" diminue le padding de chaque cellule-->
+				<table class="table-striped table-bordered table-condensed">
+					<tr>
+						<th>Plage de Grande Anse</th>
+						<td>La plage de Grande Anse est l'une des plus importantes plages de Guadeloupe, située au lieu-dit de Ziotte à deux kilomètres
+							au nord du bourg de Deshaies, dans la partie nord-ouest de Basse-Terre.
+					<tr>
+						<th>Plage de la Caravelle</th>
+						<td>La plage de la Caravelle est une plage de sable située à Sainte-Anne, en Guadeloupe. Elle est réputée pour être l'une des
+							plus belles plages de Guadeloupe, faite de sable blanc et bordée de cocotiers.
+					<tr>
+						<th>Plage de la Datcha</th>
+						<td>La plage de la Datcha est une plage municipale de sable fin située en plein bourg du Gosier, en Guadeloupe. Elle fait face à
+							l'îlet du Gosier et est très fréquentée même en semaine et réputée pour son éclairage nocturne jusqu’à 23h.
+				</table>
+			</section>
+		</div>
+		<div class="row">
+			<!--class="table-responsive" met des ascenseurs horizontaux en mode xs. Se met sur le conteneur juste au-dessus de la table-->
+			<section class="col-sm-6 table-responsive">
+				<h2>Hôtels</h2>
+				<!--class="table" met en forme joliment la table-->
+				<!--class="table-hover" change la couleur de l'élément au-dessus duquel on passe la souris-->
+				<table class="table table-hover">
+					<tr>
+						<!--La balise double <del> barre l'élément qu'elle contient-->
+						<th>Hôtel<del>Touhana</del>****
+						</th>
+						<td>Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes nec faciamus rogati. Turpis enim excusatio est et minime
+							accipienda cum in ceteris peccatis, tum si quis contra rem publicam se amici causa fecisse fateatur.
+					<tr>
+						<th>Hôtel ***</th>
+						<td>Hanc regionem praestitutis celebritati diebus invadere parans dux ante edictus per solitudines Aboraeque amnis herbidas
+							ripas, suorum indicio proditus, qui admissi flagitii metu exagitati ad praesidia descivere Romana.
+					<tr>
+						<th>Cachot</th>
+						<td>Un cachot sordide et nauséabond. Oui, mais pas cher ! Bon et puis de toutes façons, si vous êtes prêts à dormir dans un
+							cachot, vous n'allez pas faire la fine bouche avec les rats, l'absence de lit et la présence d'une prison fort peu sécurisée à côté.
+						
+				</table>
+
+			</section>
+			<section class="col-sm-6">
+				<h2>Tarifs</h2>
+				<table class="table">
+					<!--class="danger", class="warning", class="info" et class="success" colorent respectivement en rouge, jaune, bleu et vert-->
+					<tr class="danger">
+						<th>Formule Bolloré : 500000€</th>
+						<td>Haec igitur lex in amicitia sanciatur, ut neque rogemus res turpes nec faciamus rogati. Turpis enim excusatio est et minime
+							accipienda cum in ceteris peccatis, tum si quis contra rem publicam se amici causa fecisse fateatur.
+					<tr class="info">
+						<th>Formule normale 2000€</th>
+						<td>Hanc regionem praestitutis celebritati diebus invadere parans dux ante edictus per solitudines Aboraeque amnis herbidas
+							ripas, suorum indicio proditus, qui admissi flagitii metu exagitati ad praesidia descivere Romana.
+					<tr class="warning">
+						<th>Formule prolo 400€</th>
+						<td>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves,
+							sustinere.
+				</table>
+			</section>
+		</div>
+	</div>
+</body>
+</html>
