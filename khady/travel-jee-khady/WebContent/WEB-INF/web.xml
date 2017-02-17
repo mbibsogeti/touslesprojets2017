@@ -14,5 +14,40 @@
         <url-pattern>/equateur/*</url-pattern><!-- choisi arbitrairement -->
     </servlet-mapping>
 
+
+ <servlet>
+        <servlet-name>Cartagena</servlet-name>
+        <servlet-class>fr.ib.travel.CartagenaServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Cartagena</servlet-name>
+        <url-pattern>/colombie/*</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+        <servlet-name>Maracaibo</servlet-name>
+        <servlet-class>fr.ib.travel.MaracaiboServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Maracaibo</servlet-name>
+        <url-pattern>/venezuela/*</url-pattern>
+ </servlet-mapping>
+ 
+  <servlet>
+        <servlet-name>Lima</servlet-name>
+        <servlet-class>fr.ib.travel.LimaServlet</servlet-class>
+        <init-param>
+        <param-name>text</param-name>
+        <param-value>Pas de voyages actuellement ! Tant pis pour vous !</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>       
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Lima</servlet-name>
+        <url-pattern>/perou/*</url-pattern>
+ </servlet-mapping>
   
 </web-app>
