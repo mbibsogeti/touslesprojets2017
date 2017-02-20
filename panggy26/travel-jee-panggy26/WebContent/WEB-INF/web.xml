@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+	<!--Même nom dans les deux <servlet-name> : dans servlet et dans servlet-mapping -->
+	<!--QUITO -->
+	<servlet>
+		<servlet-name>Quito</servlet-name>
+		<!--Nom de package.Classe -->
+		<servlet-class>jk.travel.amsud.QuitoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Quito</servlet-name>
+		<!--Adresse arbitraire -->
+		<!--Ici : http://localhost:8080/travel-jee-panggy26/equateur/quito -->
+		<!--Ce nom est arbitraire, on peut par exemple ajouter .html ou même .php -->
+		<!--Le slash désigne la racine du projet : http://localhost:8080/travel-jee-panggy26 -->
+		<url-pattern>/equateur/*</url-pattern>
+	</servlet-mapping>
+	<!--CARTHAGÈ DES INDES -->
+	<servlet>
+		<servlet-name>Carthagène des Indes</servlet-name>
+		<servlet-class>jk.travel.amsud.CartagenaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Carthagène des Indes</servlet-name>
+		<url-pattern>/colombie/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<!--MACARAIBO -->
+		<servlet-name>Maracaibo</servlet-name>
+		<servlet-class>jk.travel.amsud.MaracaiboServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Maracaibo</servlet-name>
+		<url-pattern>/venezuela/*</url-pattern>
+	</servlet-mapping>
+	<!--LIMA -->
+	<servlet>
+		<servlet-name>Lima</servlet-name>
+		<servlet-class>jk.travel.amsud.LimaServlet</servlet-class>
+		<init-param>
+			<!--Clef -->
+			<param-name>text</param-name>
+			<!--Valeur -->
+			<param-value>
+				Pas de voyage à Lima pour le moment
+			</param-value>
+		</init-param>
+		<!--"<load-on-startup>1</load-on-startup>" permet d'appeler init de la 
+			Servlet au moment où le développeur démarre le serveur. Intelligent de faire 
+			ça si le code est long à compiler (le 1er visiteur n'attendra pas tout seul 
+			devant son écran. Auparavant, c'était le cas plus tard : au moment du premier 
+			appel de la Servlet. Le numéro sert aussi à indiquer l'ordre. -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Lima</servlet-name>
+		<url-pattern>/perou/*</url-pattern>
+	</servlet-mapping>
+</web-app>
