@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+        version="3.1">
+
+    <servlet>
+        <servlet-name>Quito</servlet-name>
+        <servlet-class>fr.ib.travel.QuitoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Quito</servlet-name>
+        <url-pattern>/quito</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Cartagena</servlet-name>
+        <servlet-class>fr.ib.travel.CartagenaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Cartagena</servlet-name>
+        <url-pattern>/cartagena</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>Maracaïbo</servlet-name>
+        <servlet-class>fr.ib.travel.MaracaiboServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Maracaïbo</servlet-name>
+        <url-pattern>/maracaibo</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Lima</servlet-name>
+        <servlet-class>fr.ib.travel.LimaServlet</servlet-class>
+        <init-param>
+        <param-name>text</param-name>
+        <param-value>Pas de voyages actuellement</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Lima</servlet-name>
+        <url-pattern>/lima</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
