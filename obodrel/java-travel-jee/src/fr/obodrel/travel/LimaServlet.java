@@ -27,11 +27,13 @@ public class LimaServlet extends HttpServlet {
 				+ "<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/bootstrap.min.css\">"
 				+ "\n<title>Lima</title>\n</head>\n<body>\n\t<div class=\"container-fluid\">"
 				+ "\n\t\t<h1 class=\"col-xs-12 col-xs-offset-3\">Obodrel's Travel, South America division!"
-				+ "</h1>\n\t\t<nav>\n\t\t\t<ul class=\"nav nav-pills nav-justified\">\n\t\t\t\t<li><a href=\"../\">Home"
+				+ "</h1>\n\t\t<nav class=\"col-xs-12\">\n\t\t\t<ul class=\"nav nav-pills nav-justified\">\n\t\t\t\t<li><a href=\"../\">Home"
 				+ "</a></li>\n\t\t\t\t<li><a href=\"../equator/quito\">Quito Travel</a></li>"
 				+ "\n\t\t\t\t<li><a href=\"../colombia/cartagena\">Cartagena Travel</a></li>"
 				+ "\n\t\t\t\t<li><a href=\"../venezuela/maracaibo\">Maracaibo Travel</a></li>"
 				+ "\n\t\t\t\t<li class=\"active\"><a href=\".\">Lima Travel</a></li>"
+				+ "\n\t\t\t\t<li><a href=\"../chile/santiago\">Santiago Travel</a></li>"
+				+ "\n\t\t\t\t<li><a href=\"../lapaz.jsp\">Lapaz Travel</a></li>"
 				+ "\n\t\t\t</ul>\n\t\t</nav>\n\t\t<h2>Welcome to Lima</h2>\n\t\t<p>"+getInitParameter("displayedTxt")+"</p>"
 				+  "\n\t</div>\n</body>\n</html>";
 		
