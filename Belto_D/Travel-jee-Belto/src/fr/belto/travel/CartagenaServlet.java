@@ -34,6 +34,8 @@ public class CartagenaServlet extends HttpServlet {
 		// pour aller chercher la valeur quand l'utilisateur click, en utilisant city comme nom de paramètre
 		if (req.getParameter("city")!=null && descs.containsKey(req.getParameter("city"))) // si le paramètre n'est pas nul et existe alors!!!
 			out.write(descs.get(req.getParameter("city")));
+		if (req.getParameter("city")!=null && ! descs.containsKey(req.getParameter("city"))) // Déclencher une exception
+			throw new ServletException("Destination inconnue");
 		          
 		}
 }
