@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,15 +8,7 @@
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
 <body>
-	<nav >
-		<ul class="nav nav-tabs nav-justified">
-			<li class="active"><a href="./index.html">Accueil</a>
-			<li><a href="./quito.html">Quito</a>
-			<li><a href="./cartagena.html">Cartagena</a>
-			<li><a href="./maracaibo.html">Maracaibo</a>
-			<li><a href='./lima.html'>Lima</a>
-		</ul>
-	</nav>
+	<%@ include file="/WEB-INF/jsp/header.jsp"%>
 	<div class="container">
 		<div class="row">
 			<img alt="" src="./img/images.jpeg" class="col-xs-1">
