@@ -15,10 +15,23 @@ public class CartagenaServlet extends HttpServlet {
 		res.setContentType("text/html");
 		res.setCharacterEncoding("utf-8");
 		Writer out = res.getWriter();
+		
+		HashMap<String, String> descs = new HashMap<>();
+		descs.put("Barranquilla", "Trekk de 4 dias");
+		descs.put("Bogota", "Viaje en tren");
+		descs.put("Cali", "Viaje en Autocar");
+		descs.put("San Andrés", "Viaje en crucero");
+		descs.put("Medellin", "Viaje en Jeep");
+		
+		if (req.getParameter("city") != null && !descs.containsKey(req.getParameter("city"))) {
+			throw new ServletException("Destino desconocido");
+		}
+		
 		out.write("<!DOCTYPE html>");
 		out.write("<html>");
 		out.write("<head>");
 		out.write("<link rel='stylesheet' href='../css/bootstrap.min.css'>");
+		out.write("<link rel='stylesheet' href='../css/bonito.css'>");
 		out.write("<meta charset='UTF-8'>");
 		out.write("<title>El viaje de tus sueños: Cartagena</title>");
 		out.write("</head>");
@@ -27,11 +40,16 @@ public class CartagenaServlet extends HttpServlet {
 		out.write("<ul class='nav nav-pills nav-justified'>");
 		out.write("<li><a href='../index.html'><span class='glyphicon glyphicon-home'></span> Inicio</a>");
 		out.write(
-				"<li><a href='../ecuador/quito'><span class='glyphicon glyphicon-headphones'></span> Viajar a Quito</a>");
+				"<li><a href='../ecuador/quito'><span class='glyphicon glyphicon-headphones'></span> Quito</a>");
 		out.write(
-				"<li class='active'><a href='#'><span class='glyphicon glyphicon-king'></span> Viajar a Cartagena</a>");
-		out.write("<li><a href='../venezuela/maracaibo'><span class='glyphicon glyphicon-apple'></span> Viajar a Maracaibo</a>");
-		out.write("<li><a href='../peru/lima'><span class='glyphicon glyphicon-camera'></span> Viajar a Lima</a>");
+				"<li class='active'><a href='#'><span class='glyphicon glyphicon-king'></span> Cartagena</a>");
+		out.write("<li><a href='../venezuela/maracaibo'><span class='glyphicon glyphicon-apple'></span> Maracaibo</a>");
+		out.write("<li><a href='../peru/lima'><span class='glyphicon glyphicon-camera'></span> Lima</a>");
+		out.write("<li><a href='../chile/santiago'><span class='glyphicon glyphicon-scissors'></span> Santiago</a>");
+		out.write("<li><a href='../lapaz.jsp'><span class='glyphicon glyphicon-cloud'></span> La Paz</a>");
+		out.write("<li><a href='../buenosaires.jsp'><span class='glyphicon glyphicon-education'></span> Buenos Aires</a>");
+		out.write("<li><a href='../asuncion.jsp'><span class='glyphicon glyphicon-tree-deciduous'></span> Asuncion</a>");
+		out.write("<li><a href='../uruguay/montevideo'><span class='glyphicon glyphicon-flash'></span> Montevideo</a>");
 		out.write("</ul>");
 		out.write("</nav>");
 		out.write("<div class='container'>");
@@ -39,18 +57,12 @@ public class CartagenaServlet extends HttpServlet {
 		out.write("<h1>Cartagena - Colombia</h1>");
 		out.write("</div>");
 
-		HashMap<String, String> descs = new HashMap<>();
-		descs.put("Barranquilla", "Trekk de 4 dias");
-		descs.put("Bogota", "Viaje en tren");
-		descs.put("Cali", "Viaje en Autocar");
-		descs.put("San Andrés", "Viaje en crucero");
-		descs.put("Medellin", "Viaje en Jeep");
-
 		out.write("<div class='row'>");
 		out.write("<section class='col-sm-6'>");
 		out.write("<h2>Desde Cartagena</h2>");
 		out.write(
 				"<p>Viaje desde Cartagena a los siguientes destinos, todo con la mejor agencia de viajes El Viaje de tus Sueños.</p>");
+		
 		for (String k : descs.keySet()) {
 			// out.write(k+"<br>");
 			out.write("<p><a href='cartagena?city=" + k + "'>" + k + "</a></p>");
@@ -62,7 +74,6 @@ public class CartagenaServlet extends HttpServlet {
 		}
 		out.write("</button>");
 		out.write("</p>");
-		
 		
 		out.write("</section>");
 		out.write("</div>");

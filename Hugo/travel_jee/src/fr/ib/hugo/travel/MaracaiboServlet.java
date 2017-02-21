@@ -19,6 +19,7 @@ public class MaracaiboServlet extends HttpServlet {
 		out.write("<html>");
 		out.write("<head>");
 		out.write("<link rel='stylesheet' href='../css/bootstrap.min.css'>");
+		out.write("<link rel='stylesheet' href='../css/bonito.css'>");
 		out.write("<meta charset='UTF-8'>");
 		out.write("<title>El viaje de tus sueños: Maracaibo</title>");
 		out.write("</head>");
@@ -27,12 +28,17 @@ public class MaracaiboServlet extends HttpServlet {
 		out.write("<ul class='nav nav-pills nav-justified'>");
 		out.write("<li><a href='../index.html'><span class='glyphicon glyphicon-home'></span> Inicio</a>");
 		out.write(
-				"<li><a href='../ecuador/quito'><span class='glyphicon glyphicon-headphones'></span> Viajar a Quito</a>");
+				"<li><a href='../ecuador/quito'><span class='glyphicon glyphicon-headphones'></span> Quito</a>");
 		out.write(
-				"<li><a href='../colombia/cartagena'><span class='glyphicon glyphicon-king'></span> Viajar a Cartagena</a>");
+				"<li><a href='../colombia/cartagena'><span class='glyphicon glyphicon-king'></span> Cartagena</a>");
 		out.write(
-				"<li class='active'><a href='#'><span class='glyphicon glyphicon-apple'></span> Viajar a Maracaibo</a>");
-		out.write("<li><a href='../peru/lima'><span class='glyphicon glyphicon-camera'></span> Viajar a Lima</a>");
+				"<li class='active'><a href='#'><span class='glyphicon glyphicon-apple'></span> Maracaibo</a>");
+		out.write("<li><a href='../peru/lima'><span class='glyphicon glyphicon-camera'></span> Lima</a>");
+		out.write("<li><a href='../chile/santiago'><span class='glyphicon glyphicon-scissors'></span> Santiago</a>");
+		out.write("<li><a href='../lapaz.jsp'><span class='glyphicon glyphicon-cloud'></span> La Paz</a>");
+		out.write("<li><a href='../buenosaires.jsp'><span class='glyphicon glyphicon-education'></span> Buenos Aires</a>");
+		out.write("<li><a href='../asuncion.jsp'><span class='glyphicon glyphicon-tree-deciduous'></span> Asuncion</a>");
+		out.write("<li><a href='../uruguay/montevideo'><span class='glyphicon glyphicon-flash'></span> Montevideo</a>");
 		out.write("</ul>");
 		out.write("</nav>");
 

@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,13 +10,13 @@
 <meta http-equiv="X-UA-Compatible" content='IE=edge'>
 <meta name='viewport'
 	content='width=device-width, initial-scale=1 minimum-scale=0.5'>
-<title>El viaje de tus sueños</title>
+<title>El viaje de tus sueños: Asuncion</title>
 </head>
 <body>
 
 	<nav>
 		<ul class='nav nav-pills nav-justified'>
-			<li class='active'><a href='#'><span
+			<li><a href='index.html'><span
 					class='glyphicon glyphicon-home'></span> Inicio</a>
 			<li><a href='ecuador/quito'><span
 					class='glyphicon glyphicon-headphones'></span> Quito</a>
@@ -29,29 +32,30 @@
 					class='glyphicon glyphicon-cloud'></span> La Paz</a>
 			<li><a href='buenosaires.jsp'><span
 					class='glyphicon glyphicon-education'></span> Buenos Aires</a>
-			<li><a href='asuncion.jsp'><span class='glyphicon glyphicon-tree-deciduous'></span> Asuncion</a>
+			<li class='active'><a href='#'><span
+					class='glyphicon glyphicon-tree-deciduous'></span> Asuncion</a>
+			<li><a href='uruguay/montevideo'><span
+					class='glyphicon glyphicon-flash'></span> Montevideo</a>
 		</ul>
 	</nav>
 
 	<div class='container'>
 		<div>
-			<h1>Agencia de viajes El Viaje de tus Sueños</h1>
+			<h1>Asuncion - Paraguay</h1>
 		</div>
 
 		<div class='row'>
 			<section class='col-sm-6'>
-				<h2>Nuestra agencia</h2>
-				<p>En El viaje de tus Sueños tenemos grandes talentos, sé parte
-					de ellos. Te invitamos a formar parte de esta gran familia con
-					presencia a nivel mundial, donde podrás desarrollarte y crecer
-					profesional y laboralmente.</p>
+				<h2>Asuncion</h2>
+				<%@ include file='WEB-INF/JSP/header.jsp'%>
 			</section>
 
 			<section class='col-sm-6'>
-				<h2>Viajes a Sudamérica a tan solo un clic</h2>
-				<p></p>
+				<h2>Historia</h2>
+				<jsp:include page="WEB-INF/JSP/footer.jsp">
+					<jsp:param name="ano" value="2001" />
+				</jsp:include>
 			</section>
-
 		</div>
 	</div>
 
