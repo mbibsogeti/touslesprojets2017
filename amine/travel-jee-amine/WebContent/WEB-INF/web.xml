@@ -54,6 +54,15 @@
 		<servlet-name>Santiago</servlet-name>
 		<url-pattern>/santiago</url-pattern>
 	</servlet-mapping>
+	<!-- Montevideo -->
+	<servlet>
+		<servlet-name>Montevideo</servlet-name>
+		<servlet-class>fr.ib.travel.MontevideoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Montevideo</servlet-name>
+		<url-pattern>/montevideo</url-pattern>
+	</servlet-mapping>
 
 	<!-- filtre il filtre les données envoyé du client vers le serveur donc 
 		ne pas enlever les type d'encodage sur les autres fichiers -->
