@@ -52,6 +52,15 @@
         <url-pattern>/santiago</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>Montevideo</servlet-name>
+        <servlet-class>fr.belto.travel.MontevideoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Montevideo</servlet-name>
+        <url-pattern>/montevideo</url-pattern>
+    </servlet-mapping>
+    
     <filter>
     <filter-name>SetCharacterEncoding</filter-name>
     <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
