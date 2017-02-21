@@ -8,7 +8,8 @@
 <!--Le navigateur zoome sur la colonne centrale en fonction de la largeur d'affichage du périphérique-->
 <!--initial-scale : Zoom lorsqu'on arrive sur la page, ici x2-->
 <!--minimum-scale et maximum-scale: délimitent les zooms de l'utilisateur-->
-<meta name="viewpart" content="width=device-width, initial-scale=2, minimum-scale=0.5, maximum-scale=3">
+<meta name="viewpart"
+	content="width=device-width, initial-scale=2, minimum-scale=0.5, maximum-scale=3">
 <title>Insert title here</title>
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
@@ -16,7 +17,8 @@
 	<div class="container-fluid">
 		<div class="row">
 			<section class="col-sm-12">
-				<h1 class="text-capitalize" style="text-align: center">séjour en martinique</h1>
+				<h1 class="text-capitalize" style="text-align: center">séjour
+					en martinique</h1>
 			</section>
 		</div>
 		<div class="row">
@@ -27,12 +29,17 @@
 					<section class="form-group">
 						<!--class="form-control" applique une mise en forme du champ-->
 						<!--Autre syntaxe, en séparant les balises label et input, reliées par les attributs for et id-->
-						<label for="truc">Recherche : </label>
-						<input type="text" id="truc" class="form-control">
+						<label for="truc">Recherche : </label> <input type="text"
+							id="truc" class="form-control">
 					</section>
 					<!--class="btn" applique une mise en forme du boutton-->
 					<input type="submit" value="Envoi" class="btn">
 				</form>
+				<aside class="panel panel-info" id="searchpanel" style="display: none">
+					<section class="panel-heading">Recherche</section>
+					<section class="panel-body">En curso...</section>
+					<section class="panel-footer"></section>
+				</aside>
 			</section>
 		</div>
 		<div class="row">
@@ -40,30 +47,34 @@
 				<form action="./martinique.html">
 					<section class="form-group">
 						<!--class="input-lg" pour avoir un champ plus grand-->
-						<label for="nom1">Nom : </label>
-						<input type="text" id="nom1" class="form-control input-lg">
+						<label for="nom1">Nom : </label> <input type="text" id="nom1"
+							class="form-control input-lg">
 					</section>
 					<section class="form-group">
-						<label for="nom2">Email : </label>
-						<input type="email" class="form-control" id="nom2">
+						<label for="nom2">Email : </label> <input type="email"
+							class="form-control" id="nom2">
 					</section>
 					<section class="form-group">
-						<label for="nom3">Voyageurs : </label>
-						<input type="number" min="0" class="form-control" id="nom3">
+						<label for="nom3">Voyageurs : </label> <input type="number"
+							min="0" class="form-control" id="nom3">
 					</section>
 					<section class="form-group">
 						<label>Départ :</label>
 						<!--Mettre un même name à ces radios permet de décocher l'un quand on coche l'autre-->
 						<!--class="radio-inline" pour mettre les boutons radios à la suite-->
-						<label class="radio-inline"> <input type="radio" name="from" value="Paris">Paris
-						</label> <label class="radio-inline"><input type="radio" name="from" value="Bordeaux">Bordeaux </label> <label class="radio-inline"><input
-							type="radio" name="from" value="Lyon">Lyon</label>
+						<label class="radio-inline"> <input type="radio"
+							name="from" value="Paris">Paris
+						</label> <label class="radio-inline"><input type="radio"
+							name="from" value="Bordeaux">Bordeaux </label> <label
+							class="radio-inline"><input type="radio" name="from"
+							value="Lyon">Lyon</label>
 					</section>
 					<p>
 						<!--class="btn btn-primary", class="btn btn-default", class="btn btn-link" en plus de ceux d'avant (warning, danger, info, success-->
 						<!--class="btn-block" pour agrandir le bouton sur toute la largeur (très utilisé en mobile)-->
-						<input type="submit" value="Demande" class="btn btn-primary btn-block">
-						<input type="submit" value="Inscription"class="btn btn-default btn-block">
+						<input type="submit" value="Demande"
+							class="btn btn-primary btn-block"> <input type="submit"
+							value="Inscription" class="btn btn-default btn-block">
 					</p>
 				</form>
 			</section>
