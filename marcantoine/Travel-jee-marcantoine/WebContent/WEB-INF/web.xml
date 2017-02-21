@@ -54,6 +54,15 @@
 		<servlet-name>Santiago</servlet-name>
 		<url-pattern>/chile/*</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Montevideo</servlet-name>
+		<servlet-class>travel.MontevideoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Montevideo</servlet-name>
+		<url-pattern>/uruguay/*</url-pattern>
+	</servlet-mapping>
 
 	<filter>
 		<filter-name>SetCharacterEncoding</filter-name>
