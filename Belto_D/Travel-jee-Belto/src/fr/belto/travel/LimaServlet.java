@@ -1,4 +1,4 @@
-package travel;
+package fr.belto.travel;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -10,38 +10,34 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class LimaServlet extends HttpServlet {
-
+	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		res.setContentType("text/html");
-		res.setCharacterEncoding("UTF-8");
-		Writer out = res.getWriter();
-		log("Youpla"+this);
-//		Lire les options de servlet du web.xml
-		
-		
-		out.write("<!DOCTYPE html><html><head><meta charset='UTF-8'>");
-		out.write("<title>Lima</title>");
-		out.write("<link rel='stylesheet' href='../css/bootstrap.min.css'>");
+		res.setCharacterEncoding("utf-8");
+		Writer out = res.getWriter(); 
+		out.write("<html>");
+		out.write("<head>");
+		out.write("<meta charset='UTF-8'>");
+		out.write("<title>Bienvenue à Cartagena (ville de Colombie)</title>");
+		out.write("<link rel='stylesheet' href='css/bootstap.min.css'>");
 		out.write("</head>");
 		out.write("<body>");
-		out.write("<div class='container'>");
-		out.write("<h1>Welcome in Lima man</h1>");
-		out.write("<h2>"+getInitParameter("text")+"</h2>");
-		out.write("</div></body><html>");		
+		log("doGet"+ this);	
+		out.write("<h1>"+getInitParameter("text")+"</h1>");
 	}
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stu
 		super.init(config);
-		log("init used!");
+		log("init");
 	}
-	
+
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
 		super.destroy();
-		log("destroy used!");
+		log("destroy");
 	}
-	
+
 }

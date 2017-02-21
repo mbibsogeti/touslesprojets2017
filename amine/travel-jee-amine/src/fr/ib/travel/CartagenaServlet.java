@@ -8,6 +8,7 @@ import java.io.Writer;
 import java.util.HashMap;
 import java.util.TreeMap;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  */
 public class CartagenaServlet extends HttpServlet {
-	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
+	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
 		/* Dictionnaire de données */
 		TreeMap<String, String> descs = new TreeMap<>(); // dictionnaire de
@@ -46,9 +47,13 @@ public class CartagenaServlet extends HttpServlet {
 			// out.write(k);
 			// lien qui renvoi dans la même page, exemple pour faire des liens
 			out.write("<p><a href='cartagena?city=" + k + "'>" + k + "</a></p>");
-			//pour récupérer un paramètre du dictionnaire
-		if(req.getParameter("city")!=null && descs.containsKey(req.getParameter("city")))
-			out.write("<p>"+descs.get(req.getParameter("city"))+"</p>");
+		// déclenchement d'exceptions
+		if (req.getParameter("city") != null && !descs.containsKey(req.getParameter("city")))
+			throw new ServletException("Destination inconnue!");
+		// pour récupérer un paramètre du dictionnaire
+		if (req.getParameter("city") != null && descs.containsKey(req.getParameter("city")))
+			out.write("<p>" + descs.get(req.getParameter("city")) + "</p>");
+
 		out.write("</body>");
 		out.write("</html>");
 	}
