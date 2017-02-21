@@ -29,7 +29,13 @@ public class maracaiboServlet extends HttpServlet {
 
 		out.write("<h1>Agence de voyage amerique du sud</h1>");
 		out.write("<h2>formulaire Maraciabo</h2>");
-		out.write("<form action='?' method='post'>");//on peut mettre get ppur que les truc apparaise en clair sur la barre d'adress , par contre caché ou en clair on peut tjr les utilisé
+		out.write("<form action='?' method='post'>");// on peut mettre get ppur
+														// que les truc
+														// apparaise en clair
+														// sur la barre d'adress
+														// , par contre caché ou
+														// en clair on peut tjr
+														// les utilisé
 		if (req.getParameter("Nom") != null)
 			name = req.getParameter("Nom");
 		out.write("<p><label>Nom:<input type='text' name='Nom' value= '" + name + "'></label></p>");
@@ -37,7 +43,7 @@ public class maracaiboServlet extends HttpServlet {
 		if (req.getParameter("tel") != null)
 			tel = req.getParameter("tel");
 		out.write("<p><label>tel:<input type='text' name='tel' value= '" + tel + "'></label></p>");
-		
+
 		if (req.getParameter("number") != null)
 			nb = req.getParameter("number");
 

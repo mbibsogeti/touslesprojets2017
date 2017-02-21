@@ -42,6 +42,12 @@ public class CartagenaServlet extends HttpServlet {
 		if(req.getParameter("city")!=null &&descs.containsKey(req.getParameter("city")))
 		out.write("<p>"+ descs.get(req.getParameter("city"))+"</p>");
 		
+		// declanchemebt d'exception 
+		
+	//if(req.getParameter("city")!=null && !descs.containsKey(req.getParameter("city")))
+		//throw new ServletException("destination inconnu");
+		//
+		
 		out.write("</body>");
 		out.write("</html>");
 		
