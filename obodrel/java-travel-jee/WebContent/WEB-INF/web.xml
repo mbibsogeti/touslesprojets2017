@@ -48,6 +48,15 @@
 		<servlet-name>Santiago</servlet-name>
 		<url-pattern>/chile/*</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>Montevideo</servlet-name>
+		<servlet-class>fr.obodrel.travel.MontevideoServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Montevideo</servlet-name>
+		<url-pattern>/montevideo</url-pattern>
+	</servlet-mapping>
 
 	<filter>
 		<filter-name>SetCharacterEncoding</filter-name>

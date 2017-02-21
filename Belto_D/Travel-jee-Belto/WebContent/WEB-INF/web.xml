@@ -43,6 +43,30 @@
         <url-pattern>/lima</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>Santiago</servlet-name>
+        <servlet-class>fr.belto.travel.SantiagoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Santiago</servlet-name>
+        <url-pattern>/santiago</url-pattern>
+    </servlet-mapping>
+    
+    <filter>
+    <filter-name>SetCharacterEncoding</filter-name>
+    <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>SetCharacterEncoding</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping> 
+    
+     
     <error-page>
     <error-code>404</error-code>
     <location>/erreur404.html</location>

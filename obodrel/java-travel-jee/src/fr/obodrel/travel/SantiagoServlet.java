@@ -55,6 +55,9 @@ public class SantiagoServlet extends HttpServlet {
 				+ "\n\t\t\t\t<li><a href=\"../peru/lima\">Lima Travel</a></li>"
 				+ "\n\t\t\t\t<li class=\"active\"><a href=\".\">Santiago Travel</a></li>"
 				+ "\n\t\t\t\t<li><a href=\"../lapaz.jsp\">Lapaz Travel</a></li>"
+				+ "\n\t\t\t\t<li><a href=\"../buenosaires.jsp\">Buenos Aires Travel</a></li>"
+				+ "\n\t\t\t\t<li><a href=\"../asuncion.jsp\">Asuncion Travel</a></li>"
+				+ "\n\t\t\t\t<li><a href=\"../montevideo\">Montevideo Travel</a></li>"
 				+ "\n\t\t\t</ul>\n\t\t</nav>\n\t\t<h2>Welcome to Santiago</h2>\n\t\t<p>Welcome!</p>";
 		
 		
