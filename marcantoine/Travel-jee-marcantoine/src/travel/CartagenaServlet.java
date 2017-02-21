@@ -28,7 +28,7 @@ public class CartagenaServlet extends HttpServlet {
 		out.write("<link rel='stylesheet' href='../css/bootstrap.min.css'>");
 		out.write("</head>");
 		out.write("<body>");
-		
+		out.write("<div class='container'>");
 		out.write("<h1>Welcome on the Cartagena webpage</h1>");
 		
 		out.write("<section>");
@@ -38,9 +38,12 @@ public class CartagenaServlet extends HttpServlet {
 		if (req.getParameter("city")!=null && descs.containsKey(req.getParameter("city"))) {
 			out.write("Our offer for this place: "+descs.get(req.getParameter("city")));
 		}
+		if (req.getParameter("city")!=null && !descs.containsKey(req.getParameter("city"))) {
+			throw new ServletException("Destination unknown!");
+		}
 		
 		out.write("<a href='../index.html'>Accueil</a>");
-		out.write("</section></body></html>");
+		out.write("</section></div></body></html>");
 	
 	}
 

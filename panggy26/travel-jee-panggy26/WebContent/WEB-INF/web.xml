@@ -27,8 +27,8 @@
 		<servlet-name>Carthagène des Indes</servlet-name>
 		<url-pattern>/colombie/*</url-pattern>
 	</servlet-mapping>
+	<!--MACARAIBO -->
 	<servlet>
-		<!--MACARAIBO -->
 		<servlet-name>Maracaibo</servlet-name>
 		<servlet-class>jk.travel.amsud.MaracaiboServlet</servlet-class>
 	</servlet>
@@ -59,4 +59,38 @@
 		<servlet-name>Lima</servlet-name>
 		<url-pattern>/perou/*</url-pattern>
 	</servlet-mapping>
+<!--SANTIAGO-->
+	<servlet>
+		<servlet-name>Santiago</servlet-name>
+		<servlet-class>jk.travel.amsud.SantiagoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Santiago</servlet-name>
+		<url-pattern>/chili/*</url-pattern>
+	</servlet-mapping>
+	<!--FILTRE POUR L'ENCODAGE UTF-8 -->
+	<filter>
+		<filter-name>SetCharacterEncoding</filter-name>
+		<filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SetCharacterEncoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!--ERREUR 404 -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/erreur404.html</location>
+	</error-page>
+	<!-- Soit, on met error code, soit on met exception-type -->
+	<!-- <error-page> -->
+	<!-- <exception-type>javax.servlet.ServletException</exception-type> -->
+	<!-- Dans ce cas, en plus d'un fichier HTML, on peut mettre une JSP ou l'adresse 
+		d'une Servlet -->
+	<!-- <location>/erreur404.html</location> -->
+	<!-- </error-page> -->
 </web-app>

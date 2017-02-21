@@ -39,8 +39,13 @@ public class CartagenaServlet extends HttpServlet {
 			// Le premier k est celui de la barre d'adresse, le second écrit les clefs sur la page
 			out.write("<p><a href='cartagena?city=" + k + "'>" + k + "</a></p>");
 		}
+		// Si on a rentré une clef qui n'existe pas dans le dictionnaire
+		if (req.getParameter("city") != null && !descs.containsKey(req.getParameter("city"))) {
+			// Erreur affichée dans la console du navigateur
+			throw new ServletException("Destination inconnue !");
+		}
 		// Si on a cliqué sur un lien, on reste sur la même page mais la valeur du paramètre de city="" s'ajoute dans l'URL
-		if (req.getParameter("city") != null) {
+		if (req.getParameter("city") != null && descs.containsKey(req.getParameter("city"))) {
 			// Écrit la valeur correspondant à la clef dans le dictionnaire descs
 			out.write(descs.get(req.getParameter("city")));
 		}
@@ -49,5 +54,4 @@ public class CartagenaServlet extends HttpServlet {
 		// On parcourt les clefs du dictionnaire
 
 	}
-	
 }

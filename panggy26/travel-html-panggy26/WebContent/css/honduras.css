@@ -40,12 +40,10 @@ table {
 	border-collapse: collapse;
 	width: 100%;
 	text-align: center;
-	
 	/* Centrer la table */
 	width: 50%;
 	margin-left: 25%;
 	/* margin-right: 25%; est inutile, car le navigateur déduit cette valeur des 2 autres */
-	
 	/* Autre solution avec auto : il prend le reste et le divise équitablement */
 	width: 50%;
 	margin-left: auto;
