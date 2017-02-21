@@ -20,13 +20,14 @@ public class LimaServlet extends HttpServlet {
 		
 		
 		out.write("<!DOCTYPE html><html><head><meta charset='UTF-8'>");
-		out.write("<title>Maracaibo</title>");
+		out.write("<title>Lima</title>");
 		out.write("<link rel='stylesheet' href='../css/bootstrap.min.css'>");
 		out.write("</head>");
 		out.write("<body>");
+		out.write("<div class='container'>");
 		out.write("<h1>Welcome in Lima man</h1>");
 		out.write("<h2>"+getInitParameter("text")+"</h2>");
-		out.write("</body><html>");		
+		out.write("</div></body><html>");		
 	}
 
 	@Override
