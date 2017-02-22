@@ -22,6 +22,7 @@ public class LimaServlet extends HttpServlet{
 		out.write("<!DOCTYPE html>");
 		out.write("<h1>Bienvenue à Lima</h1>");
 		out.write(getInitParameter("texte"));
+
 	}
 
 	@Override

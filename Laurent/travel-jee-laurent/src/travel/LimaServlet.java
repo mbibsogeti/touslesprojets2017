@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 public class LimaServlet extends HttpServlet{
 
 	String titleHTML="Welcome to 'Lima'";
-	String headHTML="<!DOCTYPE html><html><head><meta charset='UTF-8'><title>"+titleHTML+"</title><link rel='stylesheet' href='./css/bootstrap.min.css'></head>";
+	String headHTML="<!DOCTYPE html><html><head><meta charset='UTF-8'><title>"+titleHTML+"</title><link rel='stylesheet' href='/travel-jee-laurent/css/bootstrap.min.css'></head>";
 	String bodyHeadHTML="<body><div class='container'>";
 	String bodyFootHTML="</div></body>";
-	String bodyMenuHTML="<nav ><ul class='nav nav-tabs nav-justified'><li><a href='./index.html'>Accueil</a><li><a href='./quito.html'>Quito</a><li><a href='./cartagena.html'>Cartagena</a><li><a href='./maracaibo.html'>Maracaibo</a><li class='active'><a href='./lima.html'>Lima</a></ul></nav>";
+	String bodyMenuHTML="<nav ><ul class='nav nav-tabs nav-justified'><li><a href='./index.html'>Accueil</a><li><a href='./quito.html'>Quito</a><li><a href='./cartagena.html'>Cartagena</a><li><a href='./maracaibo.html'>Maracaibo</a><li class='active'><a href='./lima.html'>Lima</a><li><a href='./santiago.html'>Santiago</a><li><a href='/travel-jee-laurent/lapaz.jsp'>Lapaz</a><li><a href='/travel-jee-laurent/buenosaires.jsp'>Buenos Aires</a></ul></nav>";
 	
 	public LimaServlet() {
 		// TODO Auto-generated constructor stub
