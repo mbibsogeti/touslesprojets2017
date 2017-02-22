@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+    
+  <description>My first TagLib !!!</description>
+  <display-name>travel</display-name>
+  <tlib-version>1</tlib-version>
+  <!--Nom utilisé pour appeler les différentes balises de la TL  -->
+  <short-name>t</short-name>
+  <uri>http://travel.com</uri>
+
+  <tag>
+    <description>
+        Shows the message 'promo!!!' with some CSS attached.
+    </description>
+    <!--Nom de la balise utilisée suite à celui de la TL  -->
+    <name>discount</name>
+    <tag-class>taglib.DiscountTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>
+
+</taglib>
