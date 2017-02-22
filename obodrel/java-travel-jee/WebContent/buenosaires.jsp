@@ -98,6 +98,7 @@
 				<li class="active"><a href="./buenosaires.jsp">Buenos Aires Travel</a></li>
 				<li><a href="./asuncion.jsp">Asuncion Travel</a></li>
 				<li><a href="./montevideo">Montevideo Travel</a></li>
+				<li><a href="./georgetown">George Town Travel</a></li>
 			</ul>
 		</nav><%if(!isFirstTime) { %>
 		<div class="col-xs-6"><% } else { %>
