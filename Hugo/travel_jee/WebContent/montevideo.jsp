@@ -1,12 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="viaje" uri="http://seek-and-destroy.space"%>
+
+<fmt:setLocale scope="page" value="en" />
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel='stylesheet' href='../css/bootstrap.min.css'>
 <link rel='stylesheet' href='../css/bonito.css'>
-<title>Insert title here</title>
+<title>El Viaje de tus Sueños: Montevideo</title>
 </head>
 <body>
 
@@ -35,5 +42,46 @@
 		</ul>
 	</nav>
 
+	<div class='container'>
+		<div>
+			<h1>${fn:toUpperCase("Montevideo - Uruguay")}</h1>
+		</div>
+
+		<div class='row'>
+			<section class='col-sm-6'>
+				<h2>Viajes a Montevideo</h2>
+				<p>
+					<viaje:discount />
+				</p>
+				<p>
+					Con una reduccion de 15% sobre un precio inicial de 1399 €, el
+					precio del vuelo a Montevideo se lo dejamos por
+					<fmt:formatNumber value="${precioFinal}" pattern="0.00" />
+					€ (Promocion valida hasta el
+					${finPromo.getDayOfMonth()}/${finPromo.getMonthValue()}/${finPromo.plusYears(1).getYear()}
+				</p>
+			</section>
+
+			<section class='col-sm-6'>
+				<h2>Programa de la estadia</h2>
+				<p>El programa Montevideo reune actividades variadas durante
+					toda la estadia, tales como:</p>
+				<div class=" col-lg-6 col-push-right-4 tablas">
+					<table
+						class='table table-hover table-condensed table-striped table-bordered'>
+						<tr>
+							<th>Dia
+							<th>Actividad <c:forEach items="${programaDias}" var="dia"
+									varStatus="s">
+									<tr>
+										<td>${s.count}
+										<td>${dia}<c:if test="${s.count%2==0}">!</c:if>
+								</c:forEach>
+					</table>
+				</div>
+
+			</section>
+		</div>
+	</div>
 </body>
 </html>
