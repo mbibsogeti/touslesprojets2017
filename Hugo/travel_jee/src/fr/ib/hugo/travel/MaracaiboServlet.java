@@ -39,6 +39,7 @@ public class MaracaiboServlet extends HttpServlet {
 		out.write("<li><a href='../buenosaires.jsp'><span class='glyphicon glyphicon-education'></span> Buenos Aires</a>");
 		out.write("<li><a href='../asuncion.jsp'><span class='glyphicon glyphicon-tree-deciduous'></span> Asuncion</a>");
 		out.write("<li><a href='../uruguay/montevideo'><span class='glyphicon glyphicon-flash'></span> Montevideo</a>");
+		out.write("<li><a href='../guyana/georgetown'><span class='glyphicon glyphicon-send'></span> Georgetown</a>");
 		out.write("</ul>");
 		out.write("</nav>");
 

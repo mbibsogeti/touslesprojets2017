@@ -33,6 +33,8 @@
 					class='glyphicon glyphicon-tree-deciduous'></span> Asuncion</a>
 			<li><a href='uruguay/montevideo'><span
 					class='glyphicon glyphicon-flash'></span> Montevideo</a>
+			<li><a href='guyana/georgetown'><span
+					class='glyphicon glyphicon-send'></span> Georgetown</a>
 		</ul>
 	</nav>
 
@@ -66,17 +68,13 @@
 					<tr>
 						<th class='danger'>Dia</th>
 						<th class='danger'>Programa</th>
-					
+
 						<% for (int i=1; i<=DIAS; i++) { %>
-						<tr>
-							<td><%= i %>
-							<%	if (i==1 || i==DIAS){ %>
-							<td> Avion
-							   
-						<% } else { %>
-							<td>Visita					
-						<% } } %>
- 							
+					
+					<tr>
+						<td><%= i %> <%	if (i==1 || i==DIAS){ %>
+						<td>Avion <% } else { %>
+						<td>Visita <% } } %>
 				</table>
 			</section>
 
