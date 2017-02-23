@@ -49,4 +49,11 @@ public class CruiseServlet extends HttpServlet {
 		cruises.add("Santaren,10");
 	}
 
+	@Override
+	public void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		int n=0;
+		cruises.remove(n);
+	}
+	
+
 }
