@@ -18,6 +18,7 @@ h2 {
 	cursor: pointer;
 	padding: 10px;
 	margin: 10px;
+	text-align: center;
 }
 
 p{
@@ -28,4 +29,15 @@ nav{
 	padding: 10px;
 	background-image: url("../img/cool-header.jpg");
 	background-position: center;
+}
+
+.tablas{
+	background:#e04b4b;
+/* 	marging-right:100px; */
+/* 	marging-left:auto; */
+		margin: 50px;
+		padding: 10px;
+}
+.tablas td, .tablas th{
+	text-align: center;
 }

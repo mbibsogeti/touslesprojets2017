@@ -63,10 +63,24 @@
 		<servlet-name>Montevideo</servlet-name>
 		<url-pattern>/montevideo</url-pattern>
 	</servlet-mapping>
-
+	<!-- George Town -->
+	<servlet>
+		<servlet-name>GeorgeTown</servlet-name>
+		<servlet-class>fr.ib.travel.GeorgeTownServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GeorgeTown</servlet-name>
+		<url-pattern>/georgetown</url-pattern>
+	</servlet-mapping>
+	<!-- configuration pour BD -->
+	<resource-ref>
+		<res-ref-name>jdbc/travelDS</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
 	<!-- filtre il filtre les données envoyé du client vers le serveur donc 
 		ne pas enlever les type d'encodage sur les autres fichiers -->
-  <filter>
+	<filter>
 		<filter-name>SetCharacterEncoding</filter-name>
 		<filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter
 		</filter-class>
@@ -81,10 +95,10 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	<!-- Traitement des erreurs -->
-	<!--  <error-page>
+	<error-page>
 		<erreur-code>404</erreur-code>
 		<location>/erreur404.html</location>
-	</error-page>-->
+	</error-page>
 
 
 </web-app>
