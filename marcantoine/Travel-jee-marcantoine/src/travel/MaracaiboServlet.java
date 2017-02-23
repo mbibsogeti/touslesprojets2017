@@ -38,6 +38,9 @@ public class MaracaiboServlet extends HttpServlet {
 		out.write("<link rel='stylesheet' href='../css/bootstrap.min.css'>");
 		out.write("</head>");
 		out.write("<body>");
+		out.write("<jsp:include page='WEB-INF/jsp/header.jsp'>");
+		out.write("<jsp:param name='year' value='2017'/>");
+		out.write("</jsp:include>");
 		out.write("<div class='container'>");
 		
 		out.write("<h1>Welcome on the Maracaibo webpage</h1>");
