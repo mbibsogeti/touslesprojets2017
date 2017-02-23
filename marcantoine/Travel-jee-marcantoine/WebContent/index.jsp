@@ -6,20 +6,11 @@
 <link rel='stylesheet' href='css/bootstrap.min.css'>
 </head>
 <body>
-	<nav>
-		<ul class="nav nav-pills nav-justified">
-			<li><a href="equateur/quito">Quito</a></li>
-			<li><a href="colombie/cartagena">Cartagena</a></li>
-			<li><a href="venezuela/maracaibo">Maracaibo</a></li>
-			<li><a href="chile/santiago">Santiago</a></li>
-			<li><a href="lapaz.jsp">La Paz</a></li>
-			<li><a href="buenosaires.jsp">Buenos Aires</a></li>
-			<li><a href="asuncion.jsp">Asuncion</a></li>
-			<li><a href="sanlorenzo.jsp">San Lorenzo</a></li>
-			<li><a href="uruguay/montevideo.jsp">Montevideo</a></li>
-		</ul>
-	</nav>
-
+	
+	<jsp:include page="WEB-INF/jsp/header.jsp">
+		<jsp:param name="year" value="2017" />
+	</jsp:include>
+	
 	<div class='container'>
 		<h1>Welcome!</h1>
 		<h2>Here is our offer</h2>
@@ -33,6 +24,7 @@
 		<a href="asuncion.jsp">Asuncion</a><br>
 		<a href="sanlorenzo.jsp">San Lorenzo</a><br>
 		<a href="uruguay/montevideo.jsp">Montevideo</a>
+		<a href="guyana/georgetown">Georgetown</a>
 	</div>
 </body>
 </html>

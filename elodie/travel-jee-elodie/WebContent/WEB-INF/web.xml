@@ -61,6 +61,21 @@
 		<servlet-name>Montevideo</servlet-name>
 		<url-pattern>/uruguay/montevideo</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>GeorgeTown</servlet-name>
+		<servlet-class>fr.ib.travel.GeorgeTownServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GeorgeTown</servlet-name>
+		<url-pattern>/guyana/georgeTown</url-pattern>
+	</servlet-mapping>
+	
+	<resource-ref>
+	<res-ref-name>jdbc/travelDS</res-ref-name>
+	<res-type>javax.sql.DataSource</res-type>
+	<res-auth>Container</res-auth>
+	</resource-ref>
 
 	<filter>
 		<filter-name>SetCharacterEncoding</filter-name>

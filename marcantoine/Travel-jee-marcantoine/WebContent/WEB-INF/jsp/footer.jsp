@@ -4,8 +4,8 @@
 	style="background: lightblue">
 	<section class="row">
 		<section class="col-xs-12">
-			<h2>Your opinion, ${param.name}:</h2>
-			<form>
+			<h2>Your opinion:</h2>
+			<form class="form form-group">
 				<label><textarea></textarea></label> <label><input
 					type="submit" value="thanks!"></label>
 			</form>

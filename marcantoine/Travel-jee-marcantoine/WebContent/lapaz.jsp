@@ -10,6 +10,11 @@
 <link rel='stylesheet' href='css/bootstrap.min.css'>
 </head>
 <body>
+
+	<jsp:include page="WEB-INF/jsp/header.jsp">
+		<jsp:param name="year" value="2017" />
+	</jsp:include>
+	
 	<div class='container'>
 		<header>
 			<h1>La Paz</h1>
@@ -40,7 +45,7 @@
 				<%=price%>
 				<%="\u20ac"%>. Very cheap, ain't it?
 			</p>
-			
+
 			<!--  Création d'une table utilisant une boucle Java-->
 			<table class="table">
 				<tr>
