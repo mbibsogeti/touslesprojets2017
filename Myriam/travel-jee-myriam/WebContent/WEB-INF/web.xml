@@ -52,8 +52,8 @@
 		<servlet-name>santiago</servlet-name>
 		<url-pattern>/santiago</url-pattern>
 	</servlet-mapping>
-	
-		<servlet>
+
+	<servlet>
 		<servlet-name>montevideo</servlet-name>
 		<servlet-class>fr.ib.travel.MontevideoServlet</servlet-class>
 	</servlet>
@@ -61,6 +61,21 @@
 		<servlet-name>montevideo</servlet-name>
 		<url-pattern>/montevideo</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>georgestown</servlet-name>
+		<servlet-class>fr.ib.travel.GeorgeTownServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>georgestown</servlet-name>
+		<url-pattern>/georgestown</url-pattern>
+	</servlet-mapping>
+	
+	<resource-ref>
+	<res-ref-name>jdbc/travelDS</res-ref-name>
+	<res-type>javax.sql.DataSource</res-type>
+	<res-auth>Container</res-auth>
+	</resource-ref>
 
 	<filter>
 		<filter-name>SetCharacterEncoding</filter-name>
