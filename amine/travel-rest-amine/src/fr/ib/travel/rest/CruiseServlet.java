@@ -50,7 +50,7 @@ public class CruiseServlet extends HttpServlet {
 	}
 
 	@Override
-	public void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		int n=0;
 		cruises.remove(n);
 	}
