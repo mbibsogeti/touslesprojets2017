@@ -12,5 +12,6 @@
 				<li class="${param.pageName=="buenosaires"?"active":""}"><a href="./buenosaires.jsp">Buenos Aires Travel</a></li>
 				<li class="${param.pageName=="asuncion"?"active":""}"><a href="./asuncion.jsp">Asuncion Travel</a></li>
 				<li class="${param.pageName=="montevideo"?"active":""}"><a href="./montevideo">Montevideo Travel</a></li>
+				<li class="${param.pageName=="georgetown"?"active":""}"><a href="./georgetown">George Town Travel</a></li>
 			</ul>
 		</nav>

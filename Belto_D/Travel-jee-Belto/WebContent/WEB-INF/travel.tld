@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+    
+  <description>Belto first taglib haha library</description><!-- commentaire qui decrit la tablib et sera lu par tout le monde -->
+  <display-name>JSTL core</display-name><!-- information libre -->
+  <tlib-version>1</tlib-version><!-- information libre -->
+  <short-name>travel</short-name><!-- information libre mais différent de c, fmt, fn -->
+  <uri>http://travel.com</uri><!-- information libre mais unique dans le monde -->
+
+  <tag><!-- on utilise qu'un seul-->
+    <description><!-- information libre -->
+        Catches any Throwable that occurs in its body and optionally
+        exposes it.
+    </description>
+    <name>discount</name><!--Nom q'utilisera la taglib quand on va l'appeler -->
+    <tag-class>fr.belto.travel.DiscountTag</tag-class><!-- Nom de la class à la fin-->
+    <body-content>empty</body-content><!--JSP=il y a du contenu, empty=rien -->
+    </tag>
+    </taglib>

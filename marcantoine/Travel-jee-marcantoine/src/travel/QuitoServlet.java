@@ -20,6 +20,9 @@ public class QuitoServlet extends HttpServlet {
 		out.write("<link rel='stylesheet' href='../css/bootstrap.min.css'>");
 		out.write("</head>");
 		out.write("<body>");
+		out.write("<jsp:include page='/header.jsp'>");
+		out.write("<jsp:param name='year' value='2017'/>");
+		out.write("</jsp:include>");
 		out.write("<div class='container'>");
 		out.write("<h1>Quito</h1>");
 		out.write("<table class='table table-bordered table-striped table-hover'><thead><tr><th>Jours</th><th>Prix TTC ()</th></tr></thead>");

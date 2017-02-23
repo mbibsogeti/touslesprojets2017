@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+body {
+	text-align: justify;
+	margin: 50;
+	padding: 0;
+	margin: 50;
+}
+
+h1{
+	text-align: center;
+	margin: 0px;
+	padding: 30px;
+}
+
+h2 {
+	background: #b9b7ff;
+	cursor: pointer;
+	padding: 10px;
+	margin: 10px;
+	text-align: center;
+}
+
+p{
+	margin: 50px;
+}
+nav{
+	text-color: #ff8040;
+	padding: 10px;
+	background-image: url("../img/cool-header.jpg");
+	background-position: center;
+}
+
+.tablas{
+	background:#e04b4b;
+/* 	marging-right:100px; */
+/* 	marging-left:auto; */
+		margin: 50px;
+		padding: 10px;
+}
+.tablas td, .tablas th{
+	text-align: center;
+}
