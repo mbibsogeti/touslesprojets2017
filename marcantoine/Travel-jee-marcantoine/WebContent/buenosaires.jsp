@@ -9,9 +9,13 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-<%@ include file="WEB-INF/jsp/header.jsp" %>
+
+	<jsp:include page="WEB-INF/jsp/header.jsp">
+		<jsp:param name="year" value="2017" />
+	</jsp:include>
+
 	<div class="container">
-		
+
 		<section class="row">
 			<section class="col-xs-12" style="text-align: center">
 				<h1>Buenos Aires: you sure wanna go there, ain't ya?</h1>
@@ -41,7 +45,8 @@
 					</p>
 					<p class="form-group">
 						<label>email: <input type="email" name="email"
-							placeholder="John@Doe.com" class="form-control" value="${param.email}"></label>
+							placeholder="John@Doe.com" class="form-control"
+							value="${param.email}"></label>
 					</p>
 					<p class="form-group">
 						<input type="submit" value="send" class="btn btn-danger">
@@ -77,6 +82,6 @@
 		</section>
 
 	</div>
-	<jsp:include page="WEB-INF/jsp/footer.jsp"/>
+	<jsp:include page="WEB-INF/jsp/footer.jsp" />
 </body>
 </html>
