@@ -81,6 +81,31 @@
 		<filter-name>SetCharacterEncoding</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	<!--MONTEVIDEO-->
+	<servlet>
+		<servlet-name>Montevideo</servlet-name>
+		<servlet-class>jk.travel.amsud.MontevideoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Montevideo</servlet-name>
+		<url-pattern>/uruguay/*</url-pattern>
+	</servlet-mapping>
+	<!--GEORGETOWN-->
+	<servlet>
+		<servlet-name>Georgetown</servlet-name>
+		<servlet-class>jk.travel.amsud.GeorgetownServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Georgetown</servlet-name>
+		<url-pattern>/guyana/*</url-pattern>
+	</servlet-mapping>
+	<!--CONNEXION À LA BASE DE DONNÉES-->
+	<!--Référencement d'une ressource-->
+	<resource-ref>
+		<res-ref-name>jdbc/travelDS</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
 	<!--ERREUR 404 -->
 	<error-page>
 		<error-code>404</error-code>
