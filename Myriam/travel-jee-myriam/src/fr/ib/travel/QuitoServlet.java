@@ -15,11 +15,11 @@ public class QuitoServlet extends HttpServlet {
 		res.setContentType("text/html");
 		res.setCharacterEncoding("UTF-8");
 		Writer out = res.getWriter();
-		out.write("<!DOCTYPE html><head><meta charset='UTF-8'><title>Amérique Latine</title></head>");
-		out.write("<h1>Bienvenue à Quito</h1>");
+		out.write("<!DOCTYPE html><head><meta charset='UTF-8'><title>Amérique Latine</title><meta http-equiv='X-UA-Compatible' content='IE=Edge'><meta name='viewport'content='width=device-width, initial-scale=0.5, minimal-scale=0.5'><link rel='stylesheet' href='css/bootstrap.min.css'></head>");
+		out.write("<h1>Bienvenue à Quito (Chili)</h1>");
 		out.write("<p>Blablabla</p>");
 		
-		out.write("<table><tr><th>Nombre de jours</th><th>Tarif TTC en euros</th></tr>");
+		out.write("<table><tr><th>Nombre de jours</th><th>Tarif TTC €</th></tr>");
 		
 		for (int i=1;i<=5;i++) {
 			float prix=(float) (1060+(i*5*32.80));
