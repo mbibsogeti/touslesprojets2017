@@ -18,19 +18,26 @@ public class CruiseServlet extends HttpServlet {
 	private ArrayList<String> cruises;
 
 	// Annotation permettant d'aider le développeur à ne pas faire d'erreur en
-	// redéfinissant une méthode héritée
+	// Redéfinissant une méthode héritée
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		res.setContentType("text/csv");
 		Writer out = res.getWriter();
-		// On regarde dans la liste pour afficher ses éléments :
+//		On regarde dans la liste pour afficher ses éléments :
+//		Transforme l'url en chaîne de caractères :
 		String url = req.getRequestURL().toString();
+//		Test d'une fin de chaîne de caractères :
 		if (url.endsWith("/cruise")) {
+//			Parcourir une liste :
 			for (String c : cruises) {
 				out.write(c + "\n");
 			}
 		} else {
+//			substring : crée une chaîne de caractères à partir d'un morceau
+//			de la chaîne cible.
 			String r = url.substring(url.lastIndexOf("/")+1);
+//			méthode get(int indexvalue) permet de donner l'élément de la liste
+//			d'index 'indexvalue.'
 			out.write(cruises.get(Integer.parseInt(r)));			
 		}
 	}
@@ -48,7 +55,7 @@ public class CruiseServlet extends HttpServlet {
 	}
 	
 	@Override
-	public void doDelete () {
+	public void doDelete (HttpServletRequest req, HttpServletResponse res) {
 		int n = 0;
 //		Pour supprimer un élément (définitif jusqu'à recréation servlet) :
 		cruises.remove(n);
