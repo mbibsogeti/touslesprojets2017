@@ -1,5 +1,6 @@
 package fr.ib.travel.rest;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
@@ -26,16 +27,15 @@ public class CruiseServlet extends HttpServlet {
 		// traitement d'URL
 		String url = req.getRequestURL().toString();
 		log(url);
-		if(url.endsWith("/cruise")){
+		if (url.endsWith("/cruise")) {
 			// enregistrer les données de liste dans le fichier cruise.csv
 			for (String c : cruises)
 				out.write(c + "\n");
-		}
-		else {
-			String n=url.substring(url.lastIndexOf("/")+1);
+		} else {
+			String n = url.substring(url.lastIndexOf("/") + 1);
 			out.write(cruises.get(Integer.parseInt(n)));
 		}
-		
+
 	}
 
 	@Override
@@ -50,10 +50,18 @@ public class CruiseServlet extends HttpServlet {
 	}
 
 	@Override
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		//lire la requête 
+		//cruises.add(req.getReader().readLine());
+		//ou bien 
+		BufferedReader in= req.getReader();
+		cruises.add(in.readLine());
+	}
+
+	@Override
 	public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		int n=0;
+		int n = 0;
 		cruises.remove(n);
 	}
-	
 
 }
