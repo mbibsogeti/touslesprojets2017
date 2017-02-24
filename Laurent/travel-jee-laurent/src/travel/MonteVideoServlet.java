@@ -1,6 +1,8 @@
 package travel;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +17,14 @@ public class MonteVideoServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+		req.setAttribute("promo", (1399*15)/100);
+
+		req.setAttribute("now", LocalDateTime.now());
+		
+		String[] days= new String[]{"Arrivée","Plage","Randonnée","Kayak","Canyonning","Visite des villages voisins","Repos","Départ"};
+		
+		req.setAttribute("days", days);
 		
 		req.getRequestDispatcher("/montevideo.jsp").forward(req,res);
 	}
