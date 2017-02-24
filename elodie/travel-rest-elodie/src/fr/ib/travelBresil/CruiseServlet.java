@@ -23,14 +23,12 @@ public class CruiseServlet extends HttpServlet {
 
 		String url = req.getRequestURL().toString();
 		log(url);
-
 		Boolean f = true;
-
-		for (int i = 1; i < cruises.size(); i++) {
+		for (int i = 0; i < cruises.size(); i++) {
 			String fin = url.substring(url.length() - 1);
 			try {
 				if (Integer.parseInt(fin) == i) {
-					out.write(cruises.get(i - 1));
+					out.write(cruises.get(i));
 					f = false;
 				}
 			} catch (Exception ex) {
@@ -42,6 +40,22 @@ public class CruiseServlet extends HttpServlet {
 				out.write(c + "\n");
 			}
 		}
+
+	}
+
+	
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		cruises.add(req.getReader().readLine());
+	}
+
+
+
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		int n = 0;
+		cruises.remove(n);
 	}
 
 	@Override
