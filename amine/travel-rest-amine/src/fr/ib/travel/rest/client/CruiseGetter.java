@@ -7,6 +7,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+
 public class CruiseGetter {
 	public static void main(String[] args) {
 
@@ -28,7 +31,20 @@ public class CruiseGetter {
 				// conversion textuelle
 				BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
 
-				System.out.println(br.readLine());
+				// System.out.println(br.readLine());
+				String csv = br.readLine();
+				System.out.println(csv);
+				// création d'objet tour de contrôle de Jackson
+				ObjectMapper m = new ObjectMapper();
+				ObjectNode node = m.getNodeFactory().objectNode();
+				// la virgule pour séparer les données entre elles
+				String[] data = csv.split(",");
+				// définition de la clé et de la valeur
+				node.put("dest", data[0]);
+				// pour la conversion en entier du nombre de jours de la
+				// croisière
+				node.put("days", Integer.parseInt(data[1]));
+				System.out.println(node.toString());
 				is.close();// ferme la connection à la fin
 			} else
 				System.out.println(conn.getResponseCode());
