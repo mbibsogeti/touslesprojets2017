@@ -4,3 +4,11 @@
 /commons-logging-1.2.jar
 /httpclient-4.5.3.jar
 /httpcore-4.4.6.jar
+/hk2-api-2.3.0.jar
+/jackson-annotations-2.8.6.jar
+/jackson-core-2.8.6.jar
+/jackson-databind-2.8.6.jar
+/javax.ws.rs-api-2.0.1.jar
+/jersey-client.jar
+/jersey-common.jar
+/jersey-guava-2.14.jar
