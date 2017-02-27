@@ -73,5 +73,4 @@ public class CruiseServlet extends HttpServlet {
 		int n = 0;
 		cruises.remove(n);
 	}
-	
 } // end CruiseServlet class

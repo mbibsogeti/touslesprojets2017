@@ -1,7 +1,6 @@
 package jk.travel.bresil.client;
 
 import java.util.Scanner;
-
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -30,7 +29,7 @@ public class CruisePoster {
 			client.close();	
 			} catch (Exception exc) {
 			exc.printStackTrace();
-		}
+		} // end try-catch
 		scan.close();
-	}
-}
+	} // end main method
+} // end CruisePoster class
