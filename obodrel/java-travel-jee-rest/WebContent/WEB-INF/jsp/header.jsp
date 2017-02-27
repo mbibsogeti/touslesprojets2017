@@ -4,5 +4,7 @@
 			<ul class="nav nav-pills nav-justified">
 				<li class="${param.pageName=="home"?"active":""}"><a href="${param.pageName=="error"?"/jee-rest-travel-obodrel/":"./"}">Home</a></li>
 				<li class="${param.pageName=="cruise"?"active":""}"><a href="${param.pageName=="error"?"/jee-rest-travel-obodrel/cruise":"./cruise"}">Cruise</a></li>
+				<li class="${param.pageName=="olympics"?"active":""}"><a href="${param.pageName=="error"?"/jee-rest-travel-obodrel/jersey/olympics":"./jersey/olympics"}">Olympics</a></li>
+				<li class="${param.pageName=="trip"?"active":""}"><a href="${param.pageName=="error"?"/jee-rest-travel-obodrel/tripviewer":"./tripviewer"}">Trips</a></li>
 			</ul>
 		</nav>
