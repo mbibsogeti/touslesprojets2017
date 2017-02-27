@@ -11,19 +11,22 @@ import org.glassfish.jersey.client.ClientConfig;
 public class SaoPauloGetter {
 
 	public static void main(String[] args) {
-		String addr = "bit.ly/2mfy66U";
+		// Adresse bit.ly : bit.ly/2mfy66U
+		String addr = "https://fr.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=São_Paulo";
 		try {
+			// Préparation de l'objet Client
 			Client client = ClientBuilder.newClient(new ClientConfig());
-			// Ciblage de l'adresse
+			// Ciblage de l'adresse URL
 			WebTarget cible = client.target(addr);
+			// Invocation.Builder : la classe Builder est interne à la classe Invocation
+			// APPLICATION_JSON ; type de retour
 			Invocation.Builder invoBuilder = cible.request(MediaType.APPLICATION_JSON);
-			// On appelle la requête en mode get
+			// On appelle la requête en mode get, ce qui renvoie une réponse
 			Response reponse = invoBuilder.get();
+			// Lecture de la réponse
 			System.out.println(reponse.readEntity(String.class));
 		} catch(Exception exc) {
 			exc.printStackTrace();
 		} // end catch
-		
 	} // end main method
-
 } // end SaoPauloGetter class
