@@ -19,7 +19,7 @@ public class SaoPauloGetter {
 				+ "json&prop=extracts&titles=São_Paulo";
 
 		try {
-			Client jerseyClientGET = ClientBuilder.newClient(new ClientConfig());
+			Client jerseyClientGET = ClientBuilder.newClient();
 			WebTarget jerseyWebTargetGET = jerseyClientGET.target(requestURL);
 			Invocation.Builder jerseyInvocationBuilderGET = jerseyWebTargetGET.request(MediaType.APPLICATION_JSON);	
 			Response jerseyResponsGET = jerseyInvocationBuilderGET.get();
