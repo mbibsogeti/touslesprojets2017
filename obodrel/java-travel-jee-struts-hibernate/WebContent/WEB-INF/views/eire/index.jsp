@@ -7,20 +7,17 @@
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
-<title>404 not found</title>
+<title>Eire</title>
 </head>
 <body id="body">
 	<div class="container-fluid">
-		<jsp:include page="./WEB-INF/jsp/header.jsp">
-			<jsp:param name="pageName" value="error"/>
+		<jsp:include page="../../jsp/header.jsp">
+			<jsp:param name="pageName" value="homeEire"/>
 		</jsp:include>
 		<div class="col-xs-12">
-			<h2>Error 404</h2>
+			<h3>Welcome to Ireland/Eire</h3>
 		</div>
-		<div class="col-xs-12">
-			<p>The page you requested doesn't exist (yet), or is not available for now!</p>
-		</div>
-		<jsp:include page="./WEB-INF/jsp/footer.jsp">
+		<jsp:include page="../../jsp/footer.jsp">
 			<jsp:param name="year" value="2017"/>
 		</jsp:include>
 	</div>
