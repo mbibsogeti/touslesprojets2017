@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Excursions</h1>
+	<table id="extable"></table>
+	<script>
+
+function received(){
+	console.log("received")
+	if(xhr.readyState==4){
+		var excs=JSON.parse(xhr.responseText)
+		for(var i in excs){document.getElementById("extable").innerHTML +="<tr><td>"+excs[i].location+"</td></tr>"
+			}
+		}
+	
+	}
+var url="jersey/excursions/list"  // créé une adress
+var xhr=new XMLHttpRequest()   // créé une xml httprequest
+xhr.onreadystatechange = received // appel la fonction received a chaque fois que ca intervient
+xhr.open("get",url, true)
+xhr.send(null)
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
