@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>excursions Brésil</title>
+</head>
+<body>
+<h1> Excursions</h1>
+<table id="exTable"></table>
+<script>
+function received() {
+	console.log("received");
+	if (xhr.readyState==4) {
+		var excs= JSON.parse(xhr.responseText);
+		for (var i in excs) {
+			document.getElementById("exTable").innerHTML+= "<tr><td>"+excs[i].location+"</td></tr>"
+		}
+	}
+}
+
+var url = "jersey/excursions/list";
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = received; 
+xhr.open("GET",url,true);
+xhr.send(null)
+
+
+</script>
+
+
+</body>
+</html>
