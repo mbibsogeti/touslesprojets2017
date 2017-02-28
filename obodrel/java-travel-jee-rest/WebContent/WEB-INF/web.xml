@@ -22,8 +22,44 @@
 	<servlet-mapping>
 		<servlet-name>Cruise</servlet-name>
 		<url-pattern>/cruise</url-pattern>
-	</servlet-mapping>	
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Trip</servlet-name>
+		<servlet-class>fr.obodrel.travel.TripServelt</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Trip</servlet-name>
+		<url-pattern>/tripviewer</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>jaxrs</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>fr.obodrel.travel</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jaxrs</servlet-name>
+		<url-pattern>/jersey/*</url-pattern>
+	</servlet-mapping>
+		
+	<filter>
+		<filter-name>AddDefaultCharsetFilter</filter-name>
+		<filter-class>org.apache.catalina.filters.AddDefaultCharsetFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
 
+	<filter-mapping>
+		<filter-name>AddDefaultCharsetFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 	<error-page>
 		<error-code>404</error-code>
 		<location>/error404.jsp</location>

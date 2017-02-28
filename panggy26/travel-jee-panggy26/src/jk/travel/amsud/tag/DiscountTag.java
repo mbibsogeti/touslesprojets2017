@@ -11,5 +11,5 @@ public class DiscountTag extends SimpleTagSupport {
 		// Obtenir la main sur le flux de sortie
 		Writer out = getJspContext().getOut();
 		out.write("<span style='padding: 50px; border-radius: 50px; background: #ECA; font-weight: bold'> Promo ! </span>");
-	}
-}
+	} // end doTzg method
+} // end DiscountTag class
