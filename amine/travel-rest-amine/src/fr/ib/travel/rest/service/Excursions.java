@@ -5,10 +5,15 @@ import java.util.List;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
+
 
 @Path("/excursions")
 public class Excursions {
@@ -17,7 +22,7 @@ public class Excursions {
 	public Excursions() {
 		l = new ArrayList<>();
 		l.add(new Excursion("Ciuaba", 6));
-		l.add(new Excursion("Uberlandia", 5));
+		l.add(new Excursion("Uberlandia", 8));
 		l.add(new Excursion("Curitiba", 7));
 	}
 
@@ -44,8 +49,13 @@ public class Excursions {
 	@GET
 	@Path("/bestvalue")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Excursion getBestValue() {
-		return new Excursion("Ciuaba", 6);
+	//@Context HttpServletRequest 
+	public Excursion getBestValue(@HeaderParam("User-Agent") String ua) {
+		System.out.println(ua);
+		if(ua.toLowerCase().contains("chrome"))
+			return new Excursion("Ciuaba", 8);
+		
+		return new Excursion ("Ciuba",6);
 	}
 
 	// pour afficher juste une excursion
@@ -56,8 +66,9 @@ public class Excursions {
 
 		return l.get(n);
 	}
-	//supprimer une donnée quelconque dans notre liste excursions
-	//ne marche pas sur le navigateur (elle ne s'excute pas) 
+
+	// supprimer une donnée quelconque dans notre liste excursions
+	// ne marche pas sur le navigateur (elle ne s'excute pas)
 	@DELETE
 	@Path("/bynumber/{no}")
 	public void deleteByNumber(@PathParam("no") int n) {
