@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+
+    <!-- Some or all of these can be flipped to true for debugging -->
+    <constant name="struts.i18n.reload" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.configuration.xml.reload" value="true" />
+    
+    <package name="welcome" namespace="/" extends="struts-default">
+    	<default-action-ref name="index"/>
+    	<action name="index">
+    	<result>/WEB-INF/views/index.jsp</result>
+    	</action>
+    </package>
+    
+    <package name="welcome-irelande" namespace="/irelande" extends="struts-default" >
+    	<default-action-ref name="index"/><!-- action à faire par defaut -->
+    	<action name="index">
+    	<result>/WEB-INF/views/irelande/index.jsp</result><!--Le chemin pour trouver le fichier -->
+    	</action>
+    </package>
+    
+     <package name="welcome-irelande-infos" namespace="/irelande" extends="struts-default">
+    	<action name="infos">
+    	<result>/WEB-INF/views/irelande/infos.jsp</result>
+    	</action>
+    </package>
+    
+    <package name="welcome-irelande-travels" namespace="/irelande" extends="struts-default">
+    	<action name="travels" class="fr.belto.travel.irelande.TravelsAction">
+    	<result>/WEB-INF/views/irelande/travels.jsp</result>
+    	</action>
+    </package>
+
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+
