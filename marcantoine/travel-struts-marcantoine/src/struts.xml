@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+
+	<!-- Some or all of these can be flipped to true for debugging -->
+	<!-- Ces constantes sont par défaut en mode performance (ou production). 
+		On passe en mode développement en inversant leurs valeurs pour avoir -->
+	<constant name="struts.i18n.reload" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<!-- assiste le développeur : -->
+	<constant name="struts.devMode" value="true" />
+	<!-- lorsqu'on change les choses, prises en cpte immédiatemt ou non : -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+
+	<!-- namespace : comment on accède à ce package -->
+	<package name="welcome" namespace="/" extends="struts-default">
+		<action name="index">
+			<result>/WEB-INF/views/index.jsp</result>
+		</action>
+	</package>
+
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
