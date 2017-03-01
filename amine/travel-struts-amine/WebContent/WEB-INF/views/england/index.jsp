@@ -12,7 +12,8 @@
 		<s:text name="england.title" />
 	</h1>
 	<ul>
-		<li>Départ: <s:date name="departure" format="dd/MM/yyyy" /> <%-- <s:date name="departure" nice="true" /></li>--%>
+		<li><s:text name="england.departure" />: <s:date
+				name="departure" format="dd/MM/yyyy" /> <%-- <s:date name="departure" nice="true" /></li>--%>
 		<li>
 			<!--Prix: <s:property value="price" /> €--> <s:text
 				name="england.price">
@@ -24,13 +25,19 @@
 	<a href="?request_locale=en">EN</a>
 	<a href="?request_locale=fr">FR</a>
 	<p>
+		<s:url namespace="/england" action="registration" var="u2" />
+		<a href="${u2}"><s:text name="england.registration" /></a>
+	</p>
+	<p>
 		<%--<s:url namespace="/england" action="index" var=u_en>
-		<s:param name="request_locale" value="en"/></s:url>
-		<a href="${u_en}">EN Acceuil</a>--%>
 		
+		<s:param name="request_locale" value="'en'"/></s:url>
+		<a href="${u_en}">EN Acceuil</a>--%>
+
 		<%-- <a href="../">Retour à l'acceuil</a>--%>
-		<s:url namespace="/" action="index" var="u1"/>
+		<s:url namespace="/" action="index" var="u1" />
 		<a href="${u1}">Acceuil</a>
 	</p>
+
 </body>
 </html>
