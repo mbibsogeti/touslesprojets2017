@@ -4,15 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Voyage Europe</title>
+<title>Index-Euroooooooope</title>
 </head>
 <body>
-	<h1>Europe</h1>
-	<p>
-		<a href="irlande/index">Voyage en Irlande</a>
-	</p>
-	<p>
-		<a href="england/index">Voyage en Angleterre</a>
-	</p>
+<h1> Bienvenue en europe!</h1>
+<h2>Euroooooooooope</h2>
+<p>Le continent européen!</p>
+
+<br>
+<a href= "irelande/index" >Lien vers l'Irelande </a>
 </body>
 </html>
