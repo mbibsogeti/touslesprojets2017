@@ -12,7 +12,7 @@
 		<a href="irlande/index">Voyage en Irlande</a>
 	</p>
 	<p>
-		<a href="irlande/info">Infos sur l'Irlande</a>
+		<a href="england/index">Voyage en Angleterre</a>
 	</p>
 </body>
 </html>
