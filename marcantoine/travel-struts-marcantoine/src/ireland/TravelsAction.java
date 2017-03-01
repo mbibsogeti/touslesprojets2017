@@ -7,8 +7,8 @@ import java.util.Map;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class TravelsAction {
-
+public class TravelsAction extends ActionSupport {
+	
 	public List<Map<String, String>> getTravels() {
 		// interface (List, Map) qui déclare, puis implémentation avec HashMap
 		// et ArrayList.
@@ -29,7 +29,7 @@ public class TravelsAction {
 		Map<String, String> v3 = new HashMap<>();
 		v3.put("location", "Limerick");
 		v3.put("days", "10");
-		v3.put("accomodation", "Hilton");
+		v3.put("accomodation", "hotel");
 		l.add(v3);
 		Map<String, String> v4 = new HashMap<>();
 		v4.put("location", "Belfast");
@@ -39,7 +39,7 @@ public class TravelsAction {
 		Map<String, String> v5 = new HashMap<>();
 		v5.put("location", "Galway");
 		v5.put("days", "6");
-		v5.put("accomodation", "campsite");
+		v5.put("accomodation", "boat");
 		l.add(v5);
 		Map<String, String> v6 = new HashMap<>();
 		v6.put("location", "Waterford");

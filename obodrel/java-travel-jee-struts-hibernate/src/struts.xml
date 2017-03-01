@@ -8,8 +8,10 @@
 
     <constant name="struts.i18n.reload" value="true" />
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
-    <constant name="struts.devMode" value="false" />
+    <constant name="struts.devMode" value="true" />
     <constant name="struts.configuration.xml.reload" value="true" />
+    <constant name="struts.custom.i18n.resources" value="global" />
+<!-- 	<constant name="struts.action.extension" value=""/> -->
 
     <package name="welcome" namespace="/" extends="struts-default">
         <default-action-ref name="index" />        
@@ -27,8 +29,21 @@
         <action name="infos">
             <result>/WEB-INF/views/eire/infos.jsp</result>
         </action>
-        <action name="travels" class="fr.obodrel.travel.eire.TravelsAction">
+        <action name="travels" class="fr.obodrel.travel.actions.EireTravelsAction">
             <result>/WEB-INF/views/eire/travels.jsp</result>
+        </action>
+    </package>
+    
+    <package name="united-kingdom" namespace="/united-kingdom" extends="struts-default"> 
+    </package>
+    <package name="england" namespace="/united-kingdom/england" extends="united-kingdom"> 
+        <default-action-ref name="index" />
+        <action name="index" class="fr.obodrel.travel.actions.EnglandTravelsAction">
+            <result>/WEB-INF/views/united-kingdom/england/index.jsp</result>
+        </action>
+        <action name="register" class="fr.obodrel.travel.actions.EnglandRegisterAction">
+            <result name="input">/WEB-INF/views/united-kingdom/england/register.jsp</result>
+            <result name="success">/WEB-INF/views/united-kingdom/england/register.jsp</result>
         </action>
     </package>
 

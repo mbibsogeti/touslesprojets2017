@@ -16,6 +16,8 @@
 	<constant name="struts.devMode" value="true" />
 	<!-- lorsqu'on change les choses, prises en cpte immédiatemt ou non : -->
 	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- constante pour utiliser les balises <s:text/> avec les fichiers "properties" -->
+	<constant name="struts.custom.i18n.resources" value="global" />
 
 	<!-- namespace : comment on accède à ce package. pour l'adresse .../index, 
 		"/" est le namespace du package (pourrait être plus compliqué) et "index" 
@@ -25,7 +27,8 @@
 			sur cette page par défaut avec "/" -->
 		<default-action-ref name="index">/WEB-INF/views/index.jsp</default-action-ref>
 		<action name="index">
-			<!-- le result donne le chemin dans notre projet -->
+			<!-- le result donne le chemin dans notre projet, l'action renvoie cette 
+				page -->
 			<result>/WEB-INF/views/index.jsp</result>
 		</action>
 	</package>
@@ -40,6 +43,24 @@
 		</action>
 		<action name="travels" class="ireland.TravelsAction">
 			<result>/WEB-INF/views/ireland/travels.jsp</result>
+		</action>
+	</package>
+
+	<package name="england" namespace="/england" extends="struts-default">
+		<default-action-ref name="index">/WEB-INF/views/england/index.jsp</default-action-ref>
+		<action name="index" class="england.IndexAction">
+			<result>/WEB-INF/views/england/index.jsp</result>
+		</action>
+		<action name="registration" class="england.RegistrationAction">
+			<result>/WEB-INF/views/england/registration.jsp</result>
+		</action>
+		<action name="send" class="england.SendAction">
+			<!-- la classe action SendAction renvoie la jsp sent.jsp -->
+			<result name="success">/WEB-INF/views/england/sent.jsp</result>
+			<!-- on peut avoir plusieurs "results" -->
+			<!-- intérêt par rapport au "required" dans la balise : le "required" est du JS,
+			or certains users n'utilisent pas JS !! Passeront outre la page -->
+			<result name="input">/WEB-INF/views/england/registration.jsp</result>
 		</action>
 	</package>
 

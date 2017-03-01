@@ -24,22 +24,37 @@
 			Il y cherchera une méthode appelée methodeTravels (ce mécanisme est conventionnel). il considère donc que "travels." équivaut à "getTravels."-->
 		<p>We currently have ${travels.size()} destinations available. For
 			example: ${travels[4].location}!</p>
-		<table class="table table-hindered table-striped">
-			<tr style="background:lightblue;color:white">
-				<th>Location</th>
-				<th>Days</th>
-				<th>Accomodation</th>
+		<table class="table table-hindered table-striped"
+			style="text-align: center">
+			<tr style="background: lightblue; color: white">
+				<th style="text-align: center">Location</th>
+				<th style="text-align: center">Days</th>
+				<th style="text-align: center">Accomodation</th>
+				<th style="text-align: center">status from the iterator</th>
 			</tr>
-			<s:iterator value="travels">
+			<!-- attribut additionnel : status. Il produit une variable dans le stack que l'on pourra lire ensuite.
+			on y trouve plein de choses : index, count, even, odd, first, last, modulus -->
+			<s:iterator value="travels" status="st">
 				<tr>
-					<th><s:property value="location" /></th>
-					<th><s:property value="days" /></th>
-					<th><s:property value="accomodation" /></th>
+					<td><s:property value="location" /></td>
+					<td><s:property value="days" /><s:if test="days>=10">
+							<span class="glyphicon glyphicon-asterisk"></span>
+						</s:if></td>
+					<td><s:property value="accomodation" /> <!-- Attention, il faut utiliser des apostrophes ou des guillements pour la chaîne de caractères. On peut aussi faire des étoiles avec &#9733 -->
+						<s:if test="accomodation=='hotel'">
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span class="glyphicon glyphicon-star-empty"></span>
+						</s:if> <s:elseif test="accomodation=='boat'"> &#9733; &#9733;
+						</s:elseif> <s:elseif test="accomodation=='B&B'"> &#9733;
+						</s:elseif></td>
+					<td><s:property value="#st.index" /></td>
 				</tr>
 				<br>
 			</s:iterator>
 		</table>
-		<!-- Informations de debug affichées sur page web -->
+		<p><span class="glyphicon glyphicon-asterisk"> Repatriation in fatal cases offered for these trips!!</span></p>
+		<!-- Informations de debug affichées sur page web. donne des infos sur tout ce qui a un # (ex : #st.index) -->
 		<s:debug />
 	</div>
 </body>
