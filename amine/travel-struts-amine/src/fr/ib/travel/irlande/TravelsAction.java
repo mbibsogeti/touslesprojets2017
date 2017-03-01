@@ -36,7 +36,7 @@ public class TravelsAction {
 		Map<String, String> v4 = new HashMap<>();
 		v4.put("location", "Belfast");
 		v4.put("days", "15");
-		v4.put("accomodation", "ibis Hôtel");
+		v4.put("accomodation", "Hôtel");
 		l.add(v4);
 		return l;
 	}

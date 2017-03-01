@@ -12,6 +12,8 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- pour l'internationalisation multi langue -->
+	<constant name="struts.custom.i18n.resources" value="global"/>
 
 
 	<!-- Necessary for Showcase because default includes org.apache.struts2.* -->
@@ -22,6 +24,8 @@
 			<result>/WEB-INF/views/index.jsp</result>
 		</action>
 	</package>
+	
+	
 	<package name="irlande" namespace="/irlande" extends="struts-default">
 		<default-action-ref name="index" />
 		<action name="index">
@@ -33,6 +37,13 @@
 		<action name="travels" class="fr.ib.travel.irlande.TravelsAction">
 			<result>/WEB-INF/views/irlande/travels.jsp</result>
 		</action>
+	</package>
+	<!-- voyage england -->
+	<package name="england" namespace="/england" extends="struts-default">
+		<default-action-ref name="index" />
+		<action name="index" class="fr.ib.travel.england.EnglandAction">
+			<result>/WEB-INF/views/england/index.jsp</result>
+		</action>		
 	</package>
 </struts>
 
