@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.opensymphony.xwork2.ActionSupport;
-
-public class TravelsAction {
+// la classe d'action hérite de Action support pour les paramètre de langue
+public class TravelsAction extends ActionSupport {
  public String execute(){
 	 return ActionSupport.SUCCESS;
  						}
