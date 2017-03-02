@@ -6,7 +6,7 @@
 <base href="${initParam.BASE_URL}">
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="./js/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
 <title>Eire Travels</title>
 </head>
@@ -20,6 +20,7 @@
 			<table class="table table-stripped">
 				<thead>
 					<tr>
+						<th>Travel Number</th>
 						<th>Location</th>
 						<th>Days</th>
 						<th>Accomodation</th>
@@ -28,9 +29,18 @@
 				<tbody>
 				<s:iterator value="travels" status="st">
 					<tr>
+						<td><s:property value="#st.count"/></td>
 						<td><s:property value="location"/></td>
 						<td><s:property value="days"/></td>
-						<td><s:property value="accomodation"/></td>
+						<s:if test="location==\"Cork\"">
+							<td><s:property value="accomodation"/>***</td>
+						</s:if>
+						<s:elseif test="location==\"Dublin\"">
+							<td><s:property value="accomodation"/>**</td>
+						</s:elseif>
+						<s:else>
+							<td><s:property value="accomodation"/></td>
+						</s:else>
 					</tr>
 				</s:iterator>
 				</tbody>
@@ -42,4 +52,3 @@
 	</div>
 </body>
 </html>
-<s:debug/>

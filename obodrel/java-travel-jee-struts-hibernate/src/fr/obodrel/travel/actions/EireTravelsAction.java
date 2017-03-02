@@ -1,4 +1,4 @@
-package fr.obodrel.travel.eire;
+package fr.obodrel.travel.actions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.Map;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class TravelsAction {
+public class EireTravelsAction {
 	public List<Map<String, String>> getTravels() {
 		List<Map<String, String>> travelList  = new ArrayList<Map<String, String>>();
 		
