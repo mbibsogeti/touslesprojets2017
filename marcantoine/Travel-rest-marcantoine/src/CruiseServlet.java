@@ -1,3 +1,4 @@
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
@@ -23,22 +24,23 @@ public class CruiseServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		res.setContentType("text/csv");
 		Writer out = res.getWriter();
-//		On regarde dans la liste pour afficher ses éléments :
-//		Transforme l'url en chaîne de caractères :
+		// On regarde dans la liste pour afficher ses éléments :
+		// Transforme l'url en chaîne de caractères :
 		String url = req.getRequestURL().toString();
-//		Test d'une fin de chaîne de caractères :
+		// Test d'une fin de chaîne de caractères :
 		if (url.endsWith("/cruise")) {
-//			Parcourir une liste :
+			// Parcourir une liste :
 			for (String c : cruises) {
 				out.write(c + "\n");
 			}
 		} else {
-//			substring : crée une chaîne de caractères à partir d'un morceau
-//			de la chaîne cible.
-			String r = url.substring(url.lastIndexOf("/")+1);
-//			méthode get(int indexvalue) permet de donner l'élément de la liste
-//			d'index 'indexvalue.'
-			out.write(cruises.get(Integer.parseInt(r)));			
+			// substring : crée une chaîne de caractères à partir d'un morceau
+			// de la chaîne cible.
+			String r = url.substring(url.lastIndexOf("/") + 1);
+			// méthode get(int indexvalue) permet de donner l'élément de la
+			// liste
+			// d'index 'indexvalue.'
+			out.write(cruises.get(Integer.parseInt(r)));
 		}
 	}
 
@@ -53,11 +55,24 @@ public class CruiseServlet extends HttpServlet {
 		cruises.add("Porto Velho,5");
 		cruises.add("Sartaren,12");
 	}
-	
+
 	@Override
-	public void doDelete (HttpServletRequest req, HttpServletResponse res) {
+	public void doDelete(HttpServletRequest req, HttpServletResponse res) {
 		int n = 0;
-//		Pour supprimer un élément (définitif jusqu'à recréation servlet) :
+		// Pour supprimer un élément (définitif jusqu'à recréation servlet) :
 		cruises.remove(n);
 	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//		On crée un buffered reader :
+		BufferedReader in = req.getReader();
+//		Le client peut ajouter quelque chose
+//		readline : on lit une ligne du chargement avec read line
+		cruises.add(in.readLine());
+	}
+
+	
+	
+	
 }
