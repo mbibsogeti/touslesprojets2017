@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,25 +9,21 @@
 <meta name="viewport"
 	content="width =device-width, initial-scale = 1, minimum-scale = 0.5">
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-<title>INDEX - EUROPE</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css" />
+<style>.wwFormTable .label{color:black}</style>
+<title>SPAIN</title>
 </head>
 <body>
 	<div class="container">
 		<header class="row">
-			<img src="img/europe.jpg" alt="Photo_Europe" class="col-sm-12" />
+			<img src="../img/byidSpain.jpg" alt="Photo_spain" class="col-sm-12" />
 		</header>
 		<section class="row col-sm-12">
-			<h1>VOYAGES EN EUROPE</h1>
+			<h1>${mo.name}</h1>
+			<p>Où ? ${mo.location}</p>
 		</section>
 		<section class="row col-sm-12">
-			<a href="ireland/index">Go to Ireland</a>
-		</section>
-		<section class="row col-sm-12">
-			<a href="england/index">Go to England</a>
-		</section>
-		<section class="row col-sm-12">
-			<a href="spain/proposal">Go to Spain</a>
+			<a href="proposal">Back to Spain</a>
 		</section>
 	</div>
 </body>
