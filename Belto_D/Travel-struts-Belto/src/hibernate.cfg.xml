@@ -9,7 +9,10 @@
 	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
+<!-- configurer la connection, une propriété pour tout ce qu'on a besoin -->
 	<session-factory name="foo">
+	<!-- une propriété qui crée et enlève les tables(update=auto mise à jour, create= supprime et recré à chaque fois, validate= juste le valider(verifier) -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
 <!-- configurer la connection, une propriété pour tout ce qu'on a besoin -->
 		<property name="show_sql">true</property>
 <!-- Le driver à utiliser -->
@@ -21,7 +24,7 @@
 <!-- Le mot de passe -->
 		<property name="hibernate.connection.password"></property>
 <!-- Le dialect utilisé, quel langage utilisé (en fonction du type de serveur) -->
-		<property name="hibernate.dialect">MySQL5InnoDBDialect</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
 		
 		<mapping class="fr.belto.travel.hibernate.Monument"/>
 		

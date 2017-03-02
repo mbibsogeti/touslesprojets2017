@@ -56,7 +56,17 @@
     	</action>
     </package>
     
+    <package name="welcome-spain-proposal" namespace="/spain" extends="struts-default">
+    	<action name="proposal" class="fr.belto.travel.spain.ProposalAction">
+    	<result>/WEB-INF/views/spain/proposal.jsp</result>
+    	</action>
+    </package>
 
+<package name="welcome-spain-byid" namespace="/spain" extends="struts-default">
+    	<action name="byid" class="fr.belto.travel.spain.ByIdAction">
+    	<result>/WEB-INF/views/spain/byid.jsp</result>
+    	</action>
+    </package>
 </struts>
 
 <!-- END SNIPPET: xworkSample -->
