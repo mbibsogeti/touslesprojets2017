@@ -13,7 +13,7 @@
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.configuration.xml.reload" value="true" />
 	<!-- pour l'internationalisation multi langue -->
-	<constant name="struts.custom.i18n.resources" value="global"/>
+	<constant name="struts.custom.i18n.resources" value="global" />
 
 
 	<!-- Necessary for Showcase because default includes org.apache.struts2.* -->
@@ -24,8 +24,8 @@
 			<result>/WEB-INF/views/index.jsp</result>
 		</action>
 	</package>
-	
-	
+
+
 	<package name="irlande" namespace="/irlande" extends="struts-default">
 		<default-action-ref name="index" />
 		<action name="index">
@@ -43,7 +43,20 @@
 		<default-action-ref name="index" />
 		<action name="index" class="fr.ib.travel.england.EnglandAction">
 			<result>/WEB-INF/views/england/index.jsp</result>
-		</action>		
+		</action>
+		<action name="registration" class="fr.ib.travel.england.SendAction">
+			<result>/WEB-INF/views/england/registration.jsp</result>
+		</action>
+		<action name="send" class="fr.ib.travel.england.SendAction">
+			<result name="success">/WEB-INF/views/england/sent.jsp</result>
+			<result name="input">/WEB-INF/views/england/registration.jsp</result>
+		</action>
+	</package>
+	<!-- voyage espagne -->
+	<package name="spain" namespace="/spain" extends="struts-default">
+		<action name="proposal" class="fr.ib.travel.spain.ProposalAction">
+			<result>/WEB-INF/views/spain/proposal.jsp</result>
+		</action>
 	</package>
 </struts>
 
