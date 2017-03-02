@@ -9,24 +9,14 @@
 	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-<!-- configurer la connection, une propriété pour tout ce qu'on a besoin -->
-	<session-factory name="foo">
-	<!-- une propriété qui crée et enlève les tables(update=auto mise à jour, create= supprime et recré à chaque fois, validate= juste le valider(verifier) -->
-		<property name="hibernate.hbm2ddl.auto">update</property>
-<!-- configurer la connection, une propriété pour tout ce qu'on a besoin -->
+	<session-factory name="travelObodrel">
 		<property name="show_sql">true</property>
-<!-- Le driver à utiliser -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-<!-- url de connection local, le port -->
-		<property name="hibernate.connection.url">jdbc:mysql://localhost/travel</property>
-<!-- le login utiliser -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/travel_obodrel</property>
 		<property name="hibernate.connection.username">root</property>
-<!-- Le mot de passe -->
 		<property name="hibernate.connection.password"></property>
-<!-- Le dialect utilisé, quel langage utilisé (en fonction du type de serveur) -->
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
-		
-		<mapping class="fr.belto.travel.hibernate.Monument"/>
-		
+		<mapping class="fr.obodrel.travel.beans.Monument"/>
 	</session-factory>
 </hibernate-configuration>

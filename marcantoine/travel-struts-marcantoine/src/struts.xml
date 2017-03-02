@@ -58,9 +58,20 @@
 			<!-- la classe action SendAction renvoie la jsp sent.jsp -->
 			<result name="success">/WEB-INF/views/england/sent.jsp</result>
 			<!-- on peut avoir plusieurs "results" -->
-			<!-- intérêt par rapport au "required" dans la balise : le "required" est du JS,
-			or certains users n'utilisent pas JS !! Passeront outre la page -->
+			<!-- intérêt par rapport au "required" dans la balise : le "required" 
+				est du JS, or certains users n'utilisent pas JS !! Passeront outre la page. 
+				NB : on pourrait faire un "return" vers une autre classe action au lieu d'une 
+				JSP!!! C'est une forme d'équivalent des "forward" des JSP. -->
 			<result name="input">/WEB-INF/views/england/registration.jsp</result>
+		</action>
+	</package>
+
+	<package name="spain" namespace="/spain" extends="struts-default">
+		<action name="proposal" class="spain.ProposalAction">
+			<result>/WEB-INF/views/spain/proposal.jsp</result>
+		</action>
+		<action name="byId" class="spain.ByIdAction">
+			<result>/WEB-INF/views/spain/byId.jsp</result>
 		</action>
 	</package>
 
