@@ -17,6 +17,7 @@ public class SendAction extends ActionSupport {
 		}
 	}
 
+	// NB : On pourrait mettre l'étape de validation (le contenu de la fonction "validate()") dans cette fonction.
 	public String execute() {
 		return ActionSupport.SUCCESS;
 	}

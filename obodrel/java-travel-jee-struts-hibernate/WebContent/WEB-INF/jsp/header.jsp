@@ -18,5 +18,12 @@
 						<li><a href="./united-kingdom/england/register">Register</a></li>
 					</ul>
 				</li>
+				<li class='dropdown ${param.pageName=="homeSpain"?"active":""}'>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Spain<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="./spain/">Proposal</a></li>
+						<li><a href="./spain/byId">By Id</a></li>
+					</ul>
+				</li>
 			</ul>
 		</nav>

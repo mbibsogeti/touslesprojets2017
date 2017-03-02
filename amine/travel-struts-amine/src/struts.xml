@@ -52,6 +52,12 @@
 			<result name="input">/WEB-INF/views/england/registration.jsp</result>
 		</action>
 	</package>
+	<!-- voyage espagne -->
+	<package name="spain" namespace="/spain" extends="struts-default">
+		<action name="proposal" class="fr.ib.travel.spain.ProposalAction">
+			<result>/WEB-INF/views/spain/proposal.jsp</result>
+		</action>
+	</package>
 </struts>
 
 <!-- END SNIPPET: xworkSample -->
