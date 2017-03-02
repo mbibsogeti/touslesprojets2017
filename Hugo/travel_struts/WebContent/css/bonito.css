@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+
+body {
+	text-align: justify;
+	margin: 50;
+	padding: 0;
+	margin: 50;
+}
+
+h1{
+	text-align: center;
+	margin: 0px;
+	padding: 30px;
+}
+
+h2 {
+	background: #0400b0;
+	cursor: pointer;
+	padding: 10px;
+	margin: 10px;
+	text-align: center;
+	color: #ffffff;
+	border-radius: 40px;
+}
+
+p{
+	margin: 50px;
+}
+nav{
+	background-position: center;
+}
+
+nav text{
+	color: #ff8040;
+}
+
+.subnav1{
+	background-image: url("../img/cool-header.jpg");
+	padding: 10px;
+}
+.subnav2{
+	background-image: url("../img/cool-header2.jpg");
+	padding: 3px;
+}
+
+.tablas{
+	background:#e04b4b;
+/* 	marging-right:100px; */
+/* 	marging-left:auto; */
+		margin: 50px;
+		padding: 10px;
+}
+.tablas td, .tablas th{
+	text-align: center;
+}

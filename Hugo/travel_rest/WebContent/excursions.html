@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' href='css/bootstrap.min.css'>
+<link rel='stylesheet' href='css/bonito.css'>
+<meta http-equiv="X-UA-Compatible" content='IE=edge'>
+<meta name='viewport'
+	content='width=device-width, initial-scale=1 minimum-scale=0.5'>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<nav>
+		<ul class='nav nav-pills nav-justified'>
+			<li class='active'><a href='#'><span
+					class='glyphicon glyphicon-home'></span> Inicio</a>
+		</ul>
+	</nav>
+
+	<div class='container'>
+		<div>
+			<h1>Excursiones</h1>
+		</div>
+
+		<div class='row'>
+			<section class='col-sm-6'>
+				<h2>Excursiones</h2>
+			</section>
+
+			<section class='col-sm-6'>
+				<h2>Destinos</h2>
+				<table id="exTable"
+					class='tablas table table-hover table-condensed table-striped table-bordered'></table>
+				<script>
+					function recibido() {
+						console.log("Recibido")
+						if (xhr.readyState == 4) {							
+							var excs = JSON.parse(xhr.responseText)
+							for ( var i in excs) {
+								console.log("Test")
+								document.getElementById("exTable").innerHTML += "<tr><td>"
+										+ excs[i].location + "</td></tr>"
+							}
+						}
+					}
+
+					var url = "jersey/excursiones/lista"
+					var xhr = new XMLHttpRequest()
+					xhr.onreadystatechange = recibido
+					xhr.open("GET", url, true)
+					xhr.send(null)
+				</script>
+			</section>
+		</div>
+	</div>
+
+</body>
+</html>
