@@ -14,5 +14,8 @@
 	<p>
 		<a href="england/index">Voyage en Angleterre</a>
 	</p>
+	<p>
+		<a href="spain/proposal">Voyage en Espagne</a>
+	</p>
 </body>
 </html>
