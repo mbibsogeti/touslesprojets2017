@@ -29,11 +29,11 @@ public class ByIdAction {
 	}
 
 	public String execute(){
-		Session s= HibernateUtil.openSession();
-		monument=s.get(Monument.class, id);
-		Transaction tx=s.beginTransaction();
+		Session s= HibernateUtil.openSession();//ouverture de session
+		monument=s.get(Monument.class, id);// se connecter juste avec id(à éviter!!)
+		Transaction tx=s.beginTransaction();// lancer une transation pour supprimé dans la base
 		s.delete(monument);// pour supprimer un objet dans la base
-		tx.commit();
+		tx.commit();// lancer la supression
 		s.close();
 		return ActionSupport.SUCCESS;
 					}
