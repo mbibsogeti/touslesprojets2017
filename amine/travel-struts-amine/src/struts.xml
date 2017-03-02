@@ -57,6 +57,9 @@
 		<action name="proposal" class="fr.ib.travel.spain.ProposalAction">
 			<result>/WEB-INF/views/spain/proposal.jsp</result>
 		</action>
+		<action name="byid" class="fr.ib.travel.spain.ByIdAction">
+			<result>/WEB-INF/views/spain/byid.jsp</result>
+		</action>
 	</package>
 </struts>
 
