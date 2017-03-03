@@ -12,6 +12,9 @@
  <a href="irelande/index">irelande</a>
 
 <a href="england/index">england</a>
-
+<a href="spain/byid">spain</a>
+<a href="spain/list">spainlist</a>
+<a href="italie/index">italist</a>
+<a href="croatia/index">index</a>
 </body>
 </html>
