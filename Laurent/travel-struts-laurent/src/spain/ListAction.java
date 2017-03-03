@@ -1,23 +1,22 @@
 package spain;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ByIdAction extends ActionSupport{
+public class ListAction extends ActionSupport{
 	
 	private static final long serialVersionUID = 2001287484617484164L;
 	private int id;
+	
 	//Attributs
-	private Monument monument;
+	private List<Monument> monuments;
 
 	//Accesseur
-	public Monument getMonument() {
-		return monument;
-	}
-
-	public void setMonument(Monument monument) {
-		this.monument = monument;
+	public List<Monument> getMonuments() {
+		return monuments;
 	}
 
 	public int getId() {
@@ -33,14 +32,8 @@ public class ByIdAction extends ActionSupport{
 		
 		//ouverture de la session
 		Session s = HibernateUtil.openSession();
-		//Lecture de l'entrée avec l'id renseigné
-		monument = s.get(Monument.class, id);
-		//demarrage d'une transaction
-		Transaction tx = s.beginTransaction();
-		//Suppression de l'élément demandé
-		//if(monument!=null)s.delete(monument);
-		//application du changement
-		tx.commit();
+		//récupération d'une liste de d'élément ordonnée
+		monuments = (List<Monument>) s.createQuery("from Monument order by visitor",Monument.class).getResultList();
 		//fermeture de la session
 		s.close();
 		return ActionSupport.SUCCESS;

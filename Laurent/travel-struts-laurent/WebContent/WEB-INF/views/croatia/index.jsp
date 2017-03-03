@@ -5,29 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Spain</title>
+<title><s:text name="croatia.title"/></title>
 <link rel="stylesheet" href="/travel-struts-laurent/css/bootstrap.min.css">
-<style>
-	.wwFormTable .label{
-		color:black;
-	}
-</style> 
 </head>
 <body>
 <%@ include file="/WEB-INF/jsp/header.jsp"%>
 <div class="container">
 		<div class="row">
-			<h1 class="text-center"><s:text name="spain.proposal"/></h1>
+			<h1 class="text-center"><s:text name="croatia.title"/></h1>
 		</div>
 		<div class="row">
-			<div class="form-group col-md-6">
-				<s:form>
-					<s:textfield name="monument.name" label="Name" class="form-control" />
-					<s:textfield name="monument.location" label="Location" class="form-control"/>
-					<s:textfield type="number" name="monument.visitor" label="Visitor" class="form-control"/>
-					<s:submit value="Send" class="btn btn-default"/>
-				</s:form>
-			</div>
+			<h2> ${croatiaMessenger.offers} </h2>
 		</div>
 </div>
 <aside>
