@@ -10,7 +10,7 @@
 <meta name='viewport'
 	content='width=device-width, initial-scale=1 minimum-scale=0.5'>
 <meta charset="UTF-8">
-<title>Inscripciones para Inglaterra</title>
+<title>Viaje a España</title>
 </head>
 <body>
 
@@ -21,9 +21,9 @@
 					Inicio</a>
 			<li><a href='../Ireland/index'><span
 					class='glyphicon glyphicon-king'></span> Ireland</a>
-			<li><a href='index'><span class='glyphicon glyphicon-plane'></span>
-					England</a>
-			<li><a href='../Spain/proposal'><span
+			<li><a href='../England/index'><span
+					class='glyphicon glyphicon-plane'></span> England</a>
+			<li class='active'><a href='#'><span
 					class='glyphicon glyphicon-certificate'></span> Spain</a>
 			<li><a href="../Italy/index"><span
 					class='glyphicon glyphicon-glass'></span> Italy</a>
@@ -32,37 +32,32 @@
 
 	<nav class="subnav2">
 		<ul class='nav nav-pills nav-justified'>
-			<s:url namespace='/England' action='registration' var='eng_reg' />
-			<li class='active'><a href="${eng_reg}"><span
-					class='glyphicon glyphicon-tree-deciduous'></span> Inscripcion</a>
+			<li><a href='list'><span
+					class='glyphicon glyphicon-tree-conifer'></span> Monuments</a>
 		</ul>
 	</nav>
 
-
 	<div class='container'>
 		<div>
-			<h1>Inscripciones</h1>
+			<h1>España</h1>
 		</div>
 
 		<div class='row'>
 			<section class='col-sm-6'>
-				<h2>Formulario</h2>
-				<s:form action="send">
-					<style>
-.wwFormTable .label {
-	color: black
-}
-</style>
-					<s:textfield name="name" label="Nombre" />
-					<s:textfield name="email" label="E-mail" />
-					<s:checkbox name="luxury" label="Lujo?" />
+				<h2>Formulario de inscripcion</h2>
+				<s:form>
+					<style>.wwFormTable .label {color: black}</style>
+					<s:textfield name="monument.name" label="Nombre"></s:textfield>
+					<s:textfield name="monument.location" label="Sitio"></s:textfield>
+					<s:textfield name="monument.visitor" label="Visitantes"
+						type="number"></s:textfield>
 					<s:submit value="Enviar" />
 				</s:form>
 			</section>
 
-			<section class='col-sm-5'></section>
-
-			<section class='col-sm-1'></section>
+			<section class='col-sm-6'>
+				<!-- 			<h2></h2> -->
+			</section>
 		</div>
 	</div>
 
