@@ -24,7 +24,7 @@ h1 {
 		Monténégro. Sa capitale est Zagreb et elle est membre de l'Union
 		européenne depuis le 1er juillet 20135, de l'OMC (depuis 2000) et de
 		l'OTAN (depuis 2009).</p>
-		<p>${croatiaMessenger.offers}</p>
+		<h1>${croatiaMessenger.offers}</h1>
 	<p>
 		<a href="../index">Retour à l'Acceuil</a>
 	</p>
