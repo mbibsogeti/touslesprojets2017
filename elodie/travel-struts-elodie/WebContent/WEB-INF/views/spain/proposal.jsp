@@ -30,10 +30,7 @@
 			</s:form>
 		</section>
 		<section class="row col-sm-12">
-			<a href="byid">Monument</a>
-		</section>
-		<section class="row col-sm-12">
-			<a href="../index">Home</a>
+			<a href="list">Monuments à visiter....</a>
 		</section>
 	</div>
 </body>
