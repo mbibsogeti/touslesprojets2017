@@ -60,6 +60,9 @@
 		<action name="byid" class="fr.ib.travel.spain.ByIdAction">
 			<result>/WEB-INF/views/spain/byid.jsp</result>
 		</action>
+		<action name="list" class="fr.ib.travel.spain.ListAction">
+			<result>/WEB-INF/views/spain/list.jsp</result>
+		</action>
 	</package>
 </struts>
 

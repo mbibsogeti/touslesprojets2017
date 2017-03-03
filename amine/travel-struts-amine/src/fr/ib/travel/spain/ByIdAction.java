@@ -33,9 +33,9 @@ public class ByIdAction extends ActionSupport {
 		Session s = HibernateUtil.openSession();
 		monument = s.get(Monument.class, id);
 		if (monument != null) {
-			Transaction tx = s.beginTransaction();
-			s.delete(monument);
-			tx.commit();
+			//Transaction tx = s.beginTransaction();
+			//s.delete(monument);
+			//tx.commit();
 			s.close();
 		}
 		return ActionSupport.SUCCESS;
