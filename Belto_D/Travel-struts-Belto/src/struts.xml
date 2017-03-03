@@ -56,7 +56,33 @@
     	</action>
     </package>
     
-
+    <package name="welcome-spain" namespace="/spain" extends="struts-default">
+    	<action name="proposal" class="fr.belto.travel.spain.ProposalAction">
+    	<result>/WEB-INF/views/spain/proposal.jsp</result>
+    	</action>
+    	
+    	<action name="byid" class="fr.belto.travel.spain.ByIdAction">
+    	<result>/WEB-INF/views/spain/byid.jsp</result>
+    	</action>
+    	
+    	<action name="list" class="fr.belto.travel.spain.ListAction">
+    	<result>/WEB-INF/views/spain/list.jsp</result>
+    	</action>
+    </package>
+    
+     <package name="welcome-italy-index" namespace="/italy" extends="struts-default">
+    	<action name="index" class="fr.belto.travel.italy.IndexAction">
+    	<result>/WEB-INF/views/italy/index.jsp</result>
+    	</action>
+    </package>
+    
+     <package name="welcome-croatia-index" namespace="/croatia" extends="struts-default">
+    	<action name="index" class="fr.belto.travel.croatia.IndexAction">
+    	<result>/WEB-INF/views/croatia/index.jsp</result>
+    	</action>
+    </package>
+    
+    
 </struts>
 
 <!-- END SNIPPET: xworkSample -->

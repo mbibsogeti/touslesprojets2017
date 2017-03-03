@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
 <!DOCTYPE struts PUBLIC
 	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
 	"http://struts.apache.org/dtds/struts-2.5.dtd">
-
 <!-- START SNIPPET: xworkSample -->
 <struts>
-
 	<!-- Some or all of these can be flipped to true for debugging -->
 	<!-- MODIFS : On a changé la valeur des 4 booléens de l'argument value -->
 	<constant name="struts.i18n.reload" value="true" />
@@ -161,5 +158,29 @@
 			<!-- Il est aussi possible de rediriger un result vers une action (fichier .java) -->
 		</action>
 	</package>
+<!-- Espagne -->
+	<package name="espagne" namespace="/espagne" extends="struts-default">
+		<action name="proposal" class="jk.travel.espagne.EspagneProposal">
+			<result>/WEB-INF/views/espagne/proposal.jsp</result>
+		</action>
+		<action name="byId" class="jk.travel.espagne.EspagneById">
+			<result>/WEB-INF/views/espagne/byId.jsp</result>
+		</action>
+		<action name="list" class="jk.travel.espagne.EspagneList">
+			<result>/WEB-INF/views/espagne/list.jsp</result>
+		</action>
+	</package>
+<!-- Italie -->
+	<package name="italie" namespace="/italie" extends="struts-default">
+		<action name="index" class="jk.travel.italie.ItalieList">
+			<result>/WEB-INF/views/italie/index.jsp</result>
+		</action>
+	</package>
+<!-- Croatie -->
+	<package name="croatie" namespace="/croatie" extends="struts-default">
+		<action name="index" class="jk.travel.croatie.CroatieIndexAction">
+			<result>/WEB-INF/views/croatie/index.jsp</result>
+		</action>
+	</package>	
 </struts>
 <!-- END SNIPPET: xworkSample -->

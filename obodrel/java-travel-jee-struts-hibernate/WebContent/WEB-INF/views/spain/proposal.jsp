@@ -18,7 +18,7 @@
 		</jsp:include>
 		<div class="col-xs-12">
 			<h3>Spain proposal</h3>
-			<s:form action="register" >
+			<s:form>
 				<section class="form-group">
 					<s:textfield class="form-control" name="monument.name" label="Name" />
 					<s:textfield class="form-control" name="monument.location" label="Location" />

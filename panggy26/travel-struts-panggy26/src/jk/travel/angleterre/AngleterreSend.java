@@ -14,7 +14,7 @@ public class AngleterreSend extends ActionSupport {
 
 	// MÉTHODES //
 	public String execute() {
-		System.out.println("Eregistré !");
+		System.out.println("Enregistré !");
 		return ActionSupport.SUCCESS;
 	} // end execute method
 

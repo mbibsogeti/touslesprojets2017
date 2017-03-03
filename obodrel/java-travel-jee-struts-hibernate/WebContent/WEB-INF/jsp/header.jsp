@@ -21,8 +21,21 @@
 				<li class='dropdown ${param.pageName=="homeSpain"?"active":""}'>
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Spain<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="./spain/">Proposal</a></li>
+						<li><a href="./spain/">List</a></li>
 						<li><a href="./spain/byId">By Id</a></li>
+						<li><a href="./spain/proposal">Proposal</a></li>
+					</ul>
+				</li>
+				<li class='dropdown ${param.pageName=="homeItaly"?"active":""}'>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Italy<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="./italy/">Index</a></li>
+					</ul>
+				</li>
+				<li class='dropdown ${param.pageName=="homeCroatia"?"active":""}'>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Croatia<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="./croatia/">Index</a></li>
 					</ul>
 				</li>
 			</ul>
