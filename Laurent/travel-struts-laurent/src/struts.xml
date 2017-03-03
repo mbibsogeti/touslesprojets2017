@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+
+    <!-- Some or all of these can be flipped to true for debugging -->
+    <constant name="struts.i18n.reload" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <constant name="struts.custom.i18n.resources" value="global"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+    
+		<default-action-ref name="index"/>
+        <action name="index">
+            <result>/WEB-INF/views/index.jsp</result>
+        </action>
+    </package>
+    
+    <package name="ireland" namespace="/ireland" extends="struts-default">
+    	
+    	<default-action-ref name="index"/>
+        <action name="index">
+            <result>/WEB-INF/views/ireland/index.jsp</result>
+        </action>
+        <action name="infos">
+            <result>/WEB-INF/views/ireland/infos.jsp</result>
+        </action>
+        <action name="travels" class="ireland.TravelsAction"> 
+            <result>/WEB-INF/views/ireland/travels.jsp</result>
+        </action>
+    </package>
+    
+    <package name="england" namespace="/england" extends="struts-default">
+    	
+    	<default-action-ref name="index"/>
+        <action name="index" class="england.TravelsAction">
+            <result>/WEB-INF/views/england/index.jsp</result>
+        </action>
+        <action name="registration" class="england.RegistrationAction">
+            <result>/WEB-INF/views/england/registration.jsp</result>
+        </action>
+        <action name="send" class="england.SendAction">
+            <result name="success">/WEB-INF/views/england/sent.jsp</result>
+            <result name="input">/WEB-INF/views/england/registration.jsp</result>
+        </action>
+    </package>
+ 
+    <package name="spain" namespace="/spain" extends="struts-default">
+    	<default-action-ref name="proposal"/>
+        <action name="proposal" class="spain.ProposalAction">
+            <result>/WEB-INF/views/spain/proposal.jsp</result>
+        </action>
+        <action name="byid" class="spain.ByIdAction">
+            <result>/WEB-INF/views/spain/byid.jsp</result>
+        </action>
+    </package>
+    
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

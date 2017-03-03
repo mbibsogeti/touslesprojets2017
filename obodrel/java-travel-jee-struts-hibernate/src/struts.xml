@@ -49,12 +49,29 @@
     
     
     <package name="spain" namespace="/spain" extends="struts-default"> 
-        <default-action-ref name="proposal" />
+        <default-action-ref name="list" />
         <action name="proposal" class="fr.obodrel.travel.actions.SpainProposalAction">
             <result>/WEB-INF/views/spain/proposal.jsp</result>
         </action>
         <action name="byId" class="fr.obodrel.travel.actions.SpainByIdAction">
             <result>/WEB-INF/views/spain/byId.jsp</result>
+        </action>
+        <action name="list" class="fr.obodrel.travel.actions.SpainListAction">
+            <result>/WEB-INF/views/spain/list.jsp</result>
+        </action>
+    </package>
+    
+    <package name="italy" namespace="/italy" extends="struts-default"> 
+        <default-action-ref name="index" />
+        <action name="index" class="fr.obodrel.travel.actions.ItalyIndexAction">
+            <result>/WEB-INF/views/italy/index.jsp</result>
+        </action>
+    </package>
+
+    <package name="croatia" namespace="/croatia" extends="struts-default"> 
+        <default-action-ref name="index" />
+        <action name="index" class="fr.obodrel.travel.actions.CroatiaIndexAction">
+            <result>/WEB-INF/views/croatia/index.jsp</result>
         </action>
     </package>
 
