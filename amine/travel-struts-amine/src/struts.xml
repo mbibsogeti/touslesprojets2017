@@ -64,6 +64,17 @@
 			<result>/WEB-INF/views/spain/list.jsp</result>
 		</action>
 	</package>
+	<!-- voyage Italie -->
+	<package name="italy" namespace="/italy" extends="struts-default">
+		<action name="index" class="fr.ib.travel.italy.IndexAction">
+			<result>/WEB-INF/views/italy/index.jsp</result>
+		</action>
+	</package>
+	<package name="croatia" namespace="/croatia" extends="struts-default">
+		<action name="index" class="fr.ib.travel.croatia.IndexAction">
+			<result>/WEB-INF/views/croatia/index.jsp</result>
+		</action>
+	</package>
 </struts>
 
 <!-- END SNIPPET: xworkSample -->
