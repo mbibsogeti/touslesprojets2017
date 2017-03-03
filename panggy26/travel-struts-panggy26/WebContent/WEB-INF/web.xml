@@ -24,4 +24,10 @@
 		<filter-name>S2</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	<!--POUR QUE SPRING SE LANCE AUTOMATIQUEMENT -->
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
 </web-app>
