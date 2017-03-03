@@ -25,9 +25,10 @@
 		<!-- une autre façon de faire select dans un formulaire(TRES IMPORTANT) -->
 		<!-- une boucle pour aller chercher les variables du tableaux -->
 		<%
-			for (int i = 1; i <= 12; i++) {	
-				request.setAttribute("i",i);<%-- recuperer le select et le stocker ds i--%>
-		<option value="<%=i%>" ${param.month==i?"selected":""}><%=monthes[i - 1]%></option>
+		//	recuperer le select et le stocker ds i
+			for (int i = 1; i <= 12; i++) {
+				request.setAttribute("i",i);
+		<option value="<%=i--%>" ${param.month==i?"selected":""}><%=monthes[i - 1]%></option>
 		<!-- prendre la chaine de charactères qui se trouve entre (0-11) les 12 mois. Et afficher ce que l'utilisateur à rentré -->
 		<%
 			}

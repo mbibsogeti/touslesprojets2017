@@ -2,8 +2,11 @@
 <!DOCTYPE html>
 <html xmlns="">
 <head>
+<base href="${initParam.BASE_URL}">
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="/jee-rest-travel-obodrel/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
 <title>404 not found</title>
 </head>
 <body id="body">
