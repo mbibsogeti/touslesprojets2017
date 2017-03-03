@@ -52,7 +52,6 @@ public class Monument implements Serializable{
 	
 	@Column(name="name",length=100,nullable=false,unique=false)
 	public String getName() {
-		System.out.println("getname");
 		return _name;
 	}
 	

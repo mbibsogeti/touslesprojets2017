@@ -9,23 +9,17 @@
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 <script src="./js/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
-<title>Spain Proposal</title>
+<script src="./js/function.js"></script>
+<title>Croatia Index</title>
 </head>
 <body id="body">
 	<div class="container-fluid">
 		<jsp:include page="../../jsp/header.jsp">
-			<jsp:param name="pageName" value="homeSpain"/>
+			<jsp:param name="pageName" value="homeCroatia"/>
 		</jsp:include>
 		<div class="col-xs-12">
-			<h3>Spain proposal</h3>
-			<s:form>
-				<section class="form-group">
-					<s:textfield class="form-control" name="monument.name" label="Name" />
-					<s:textfield class="form-control" name="monument.location" label="Location" />
-					<s:textfield class="form-control" name="monument.maxVisitors" label="Max Visitors" type="number" />
-				</section>
-				<s:submit class="btn btn-default" value="Submit"/>
-			</s:form>
+			<h3>Croatia Index</h3>
+			<p>${croatiaMessenger.offers}</p>
 		</div>
 		<jsp:include page="../../jsp/footer.jsp">
 			<jsp:param name="year" value="2017"/>

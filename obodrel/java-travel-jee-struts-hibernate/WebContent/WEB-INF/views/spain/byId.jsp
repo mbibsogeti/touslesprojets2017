@@ -23,7 +23,7 @@
 			<div class="col-xs-6">
 				<p>Show a specific trip!</p>
 				<s:if test="#parameters.id!=null">
-					<input type="number" id="monumentId" min="5" max="12" value="<s:property value="#parameters.id"/>">
+					<input type="number" id="monumentId" min="1" max="12" value="<s:property value="#parameters.id"/>">
 				</s:if>
 				<s:else>
 					<input type="number" id="monumentId" min="5" max="12" value="5">
