@@ -24,6 +24,9 @@
 		<s:submit value="Envoi/Despacho" />
 	</s:form>
 	<p>
+		<a href="list">Liste des Monuments</a>
+	</p>
+	<p>
 		<a href="../index">Retour à l'Acceuil</a>
 	</p>
 </body>
