@@ -16,7 +16,7 @@ public class ProposalAction {
 			Session s = HibernateUtil.openSession();
 			Transaction tx = s.beginTransaction();
 			s.save(m);
-			m.setVisitor(10*(m.getVisitor()/10));
+			//m.setVisitor(10*(m.getVisitor()/10));
 			tx.commit();
 			s.close();
 		}

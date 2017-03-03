@@ -25,7 +25,13 @@
 			<a href="england/index">Go to England</a>
 		</section>
 		<section class="row col-sm-12">
-			<a href="spain/proposal">Go to Spain</a>
+			<a href="spain/list">Go to Spain</a>
+		</section>
+		<section class="row col-sm-12">
+			<a href="italy/index">Go to Italy</a>
+		</section>
+		<section class="row col-sm-12">
+			<a href="croatia/index">Go to Croatia</a>
 		</section>
 	</div>
 </body>

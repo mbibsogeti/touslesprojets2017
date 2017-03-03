@@ -10,20 +10,19 @@
 	content="width =device-width, initial-scale = 1, minimum-scale = 0.5">
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../css/bootstrap.min.css" />
-<style>.wwFormTable .label{color:black}</style>
-<title>SPAIN</title>
+<title>ITALY</title>
 </head>
 <body>
 	<div class="container">
 		<header class="row">
-			<img src="../img/byidSpain.jpg" alt="Photo_spain" class="col-sm-12" />
+			<img src="../img/Croatie.jpg" alt="Photo_ireland" class="col-sm-12" />
 		</header>
 		<section class="row col-sm-12">
-			<h1>${mo.name}</h1>
-			<p>Où ? ${mo.location}</p>
+			<h1>Welcome to CROATIA</h1>
 		</section>
+			<p>${croatiaMessenger.offers}</p>
 		<section class="row col-sm-12">
-			<a href="list">Back to Spain</a>
+			<a href="../index">Home</a>
 		</section>
 	</div>
 </body>
