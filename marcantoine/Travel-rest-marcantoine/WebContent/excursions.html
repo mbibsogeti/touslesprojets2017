@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2">
+<title>Excursions</title>
+<link rel='stylesheet' href='css/bootstrap.min.css'>
+</head>
+<body>
+	<div class="container">
+		<h1>Excursions</h1>
+		<table id="exTable"></table>
+		<script>
+			/* on crée une fonction pour afficher ce que l'on reçoit du serveur*/
+			/* on donne la confirmation avec un log*/
+			function received() {
+				console.log("Received")
+				/* la fonction nous renvoie une chaîne de caractères que l'on convertit en objet JS avec JSON.parse*/
+				if (xhr.readyState == 4) {
+					var excs = JSON.parse(xhr.responseText)
+					/* attention : boucles JS lisent les index et renvoient index*/
+					for (var i in excs) {
+						document.getElementById("exTable").innerHTML += "<tr><td>"+excs[i].location+"</td></tr>"
+					}
+				}
+			}
+			var url = "jersey/excursions/list"
+			/*  xhr = Xml Http Request*/
+			var xhr = new XMLHttpRequest()
+			/*  on précise à notre objet xhr que quand il y a un changement, il doit appeler la fonction*/
+			xhr.onreadystatechange = received
+			/*  on envoie la requête AJAX vers un serveur avec la méthode (GET), l'url et un paramètre peu immportant. Le null pourrait contenir un corps de requête*/
+			xhr.open("GET", url, true)
+			xhr.send(null)
+		</script>
+	</div>
+</body>
+</html>

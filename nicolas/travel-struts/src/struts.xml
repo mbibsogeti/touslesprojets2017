@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+
+    <!-- Some or all of these can be flipped to true for debugging -->
+    <constant name="struts.i18n.reload" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <constant name="struts.custom.i18n.resources" value="global" />
+    <package name="welcome" namespace="/" extends="struts-default">
+    <default-action-ref name="index"/>     <!--  nécessaire car a la racine il ne le fait pas ppur le répértoir de début   -->
+    	<action name="index"><result>
+    	/WEB-INF/views/index.jsp
+    	</result></action>
+    </package>
+    <package name="irelande" namespace="/irelande" extends="struts-default">
+    <default-action-ref name="index"/>     <!-- pas nécessaire car par défaut il le fait  -->
+    	<action name="index"><result>
+    	/WEB-INF/views/irelande/index.jsp
+    	</result></action>
+    	<action name="infos"><result>
+    	/WEB-INF/views/irelande/infos.jsp
+    	</result></action>
+    	<action name="travels" class="fr.ib.travel.ireland.TravelsAction"><result>
+    	/WEB-INF/views/irelande/Travels.jsp
+    	</result></action>
+    </package>
+    <package name="england" namespace="/england" extends="struts-default">
+    <default-action-ref name="index"/>     <!-- pas nécessaire car par défaut il le fait  -->
+    	<action name="index" class="fr.ib.travel.england.EnglandAction"><result>
+    	/WEB-INF/views/england/Index.jsp
+    	</result></action>
+    	
+    	
+    </package>
+           
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+
