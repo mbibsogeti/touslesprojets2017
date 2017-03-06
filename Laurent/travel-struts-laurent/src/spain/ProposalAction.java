@@ -28,11 +28,8 @@ public class ProposalAction extends ActionSupport{
 			//demarrage d'une transaction
 			Transaction tx = s.beginTransaction();
 			//récupération de la donnée relative à la nouvelle entrée dans la base
-			System.out.println(s.isDirty());
 			s.save(monument);
-			System.out.println(s.isDirty());
 			monument.setVisitor(10*(monument.getVisitor()/10));
-			System.out.println(s.isDirty());
 			//application du changement
 			tx.commit();//alternative : tx.rollback(); pour annuler tt ce qui était en attente dans la transaction
 			//fermeture de la session

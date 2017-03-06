@@ -21,7 +21,7 @@
 		</div>
 		<div class="row">
 			<div class="form-group col-md-6">
-				<s:form action="send">
+				<s:form>
 					<s:textfield name="monument.name" label="Name" class="form-control" />
 					<s:textfield name="monument.location" label="Location" class="form-control"/>
 					<s:textfield type="number" name="monument.visitor" label="Visitor" class="form-control"/>

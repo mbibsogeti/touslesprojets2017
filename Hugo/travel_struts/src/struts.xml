@@ -43,10 +43,34 @@
 		<action name="send" class="fr.ib.hugo.travel.england.SendAction">
 			<result name="success">/WEB-INF/views/England/send.jsp</result>
 			<result name="input">/WEB-INF/views/England/registration.jsp</result>
-		</action>		
+		</action>
+	</package>
+
+	<package name="spain" namespace="/Spain" extends="struts-default">
+		<action name="proposal" class="fr.ib.hugo.travel.spain.SpainDB">
+			<result>/WEB-INF/views/Spain/proposal.jsp</result>
+		</action>
+		<action name="byid" class="fr.ib.hugo.travel.spain.ByIdAction">
+			<result name="success">/WEB-INF/views/Spain/byid.jsp</result>
+			<result name="error">/WEB-INF/views/Spain/error.jsp</result>
+		</action>
+		<action name="list" class="fr.ib.hugo.travel.spain.ListAction">
+			<result>/WEB-INF/views/Spain/list.jsp</result>
+		</action>
+	</package>
+
+	<package name="italy" namespace="/Italy" extends="struts-default">
+		<action name="index" class="fr.ib.hugo.travel.italy.IndexAction">
+			<result>/WEB-INF/views/Italy/index.jsp</result>
+		</action>
+	</package>
+
+	<package name="croatia" namespace="/Croatia" extends="struts-default">
+		<action name="index" class="fr.ib.hugo.travel.croatia.CroatiaAction">
+			<result>/WEB-INF/views/Croatia/index.jsp</result>
+		</action>
 	</package>
 
 </struts>
 
 <!-- END SNIPPET: xworkSample -->
-
