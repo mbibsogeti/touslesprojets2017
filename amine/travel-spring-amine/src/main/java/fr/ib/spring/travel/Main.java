@@ -11,14 +11,14 @@ public class Main {
 		// faire une fonction qui est équivalent à un close
 		// ferme automatiquement quand la JVM s'arrête ;)
 		ctx.registerShutdownHook();
-		//afficher les beans disponible
-		for(String n:ctx.getBeanDefinitionNames())
+		// afficher les beans disponible
+		for (String n : ctx.getBeanDefinitionNames())
 			System.out.println(n);
-		//tester si le bean existe
-		if(ctx.containsBean("cruiseSource")){
+		// tester si le bean existe
+		if (ctx.containsBean("cruiseSource")) {
 			System.out.println("true");
 		}
-		// id de spring.xml
+		// id de spring. xml
 		CruiseSource cs = (CruiseSource) ctx.getBean("cruiseSource");
 		if (cs.getActive())
 			System.out.println("Actif!");

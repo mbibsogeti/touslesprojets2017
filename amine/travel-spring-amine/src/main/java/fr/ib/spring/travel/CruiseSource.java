@@ -14,9 +14,10 @@ public class CruiseSource {
 	public void setCalculator(CruiseCalculator calculator) {
 		this.calculator = calculator;
 	}
-	public String getHelsinkiBergen(){
+
+	public String getHelsinkiBergen() {
 		calculator.setOrigin(CruiseCalculator.Location.HELSINKI);
 		calculator.setDestination(CruiseCalculator.Location.BERGEN);
-		return "Helsinki - Bergen seulement "+calculator.getPrice()+" €";
+		return "Helsinki - Bergen seulement " + calculator.getPrice() + " €";
 	}
 }
