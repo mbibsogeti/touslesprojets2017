@@ -5,4 +5,26 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>Travel/Spring</name>
   <description>Mon projet travel avec spring</description>
+  <dependencies>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId><!-- permet de faire du spring -->
+        <version>4.3.7.RELEASE</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId><!-- permet de faire du aspect oriented programming -->
+        <version>4.3.7.RELEASE</version>
+    </dependency>
+     <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjrt</artifactId><!-- permet de faire du aspect oriented programming -->
+        <version>1.8.10</version>
+    </dependency>
+     <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId><!-- permet de faire du aspect oriented programming -->
+        <version>1.8.10</version>
+    </dependency>
+</dependencies>
 </project>

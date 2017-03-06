@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/aop
+			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">		
+	<bean id="cruiseSource" class="fr.belto.travel.scandinaves.CruiseSource">
+<!-- Calculator est injecté dans le bean de CruiseSource, une propriété de cruiseSource -->
+	<property name="calculator" ref="cruiseCalculator"/>
+	
+	</bean>
+	
+	<bean id="cruiseCalculator" class="fr.belto.travel.scandinaves.CruiseCalculator">
+<!-- on initialise déjà  les variables depuis spring-->
+<!-- ces variables seront utilisés dans la class cruisecalculator -->
+	<property name="Prix1" value="340"/>
+	<property name="Prix2" value="220.90"/>
+	</bean>
+	<bean id="timerAspect" class="fr.belto.travel.aop.TimerAspect"/>
+	  <aop:config>
+	<aop:aspect ref="timerAspect">
+	<aop:around method="showTime" pointcut="execution(* getPrice())"/>
+	</aop:aspect>
+	</aop:config>
+</beans>
+
