@@ -9,7 +9,7 @@ import data.HibernateUtil;
 import data.Monument;
 
 // On va utiliser cette action pour afficher un monument dans la jsp.
-public class ByIdAction {
+public class ByIdAction extends ActionSupport {
 
 	private Monument monument;
 	private int id;
@@ -38,7 +38,7 @@ public class ByIdAction {
 		// d'url. Attention : ce genre de page est dangereux et représenterait
 		// une faille de sécurité. A l'usage, on protégerait cette page avec un
 		// pswd.
-		s.delete(monument);
+//		s.delete(monument);
 		tx.commit();
 		s.close();
 		return ActionSupport.SUCCESS;

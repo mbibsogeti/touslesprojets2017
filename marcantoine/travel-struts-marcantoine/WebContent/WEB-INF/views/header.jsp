@@ -5,7 +5,9 @@
 		<li><a href="/travel-struts-marcantoine/index">Welcome</a></li>
 		<li><a href="/travel-struts-marcantoine/ireland/index">Ireland</a></li>
 		<li><a href="/travel-struts-marcantoine/england/index">England</a></li>
-		<li><a href="/travel-struts-marcantoine/spain/index">Spain</a></li>
+		<li><a href="/travel-struts-marcantoine/spain/list">Spain</a></li>
+		<li><a href="/travel-struts-marcantoine/italy/index">Italy</a></li>
+		<li><a href="/travel-struts-marcantoine/croatia/index">Croatia</a></li>
 	</ul>
 </nav>
 
