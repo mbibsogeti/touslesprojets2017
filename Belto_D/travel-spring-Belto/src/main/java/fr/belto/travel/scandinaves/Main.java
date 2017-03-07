@@ -3,6 +3,8 @@ package fr.belto.travel.scandinaves;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+import fr.belto.travel.springdata.LakeSource;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -27,6 +29,13 @@ for (String n: ctx.getBeanDefinitionNames()){
 			if (cs.getActive())
 				System.out.println("Actif!");
 			System.out.println(cs.getHelsinkiBergen());
+	}
+	
+// si le bean existe, alors
+	if (ctx.containsBean("lakeSource")){
+		LakeSource ls = (LakeSource)ctx.getBean("lakeSource");
+		System.out.println(ls.getInfos());
+		
 	}
 	}
 
