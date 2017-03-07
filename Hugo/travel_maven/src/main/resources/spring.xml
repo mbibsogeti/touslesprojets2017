@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/aop
+			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<!-- scope="prototype"->crée une nouvelle instance à chaque fois qu'il est 
+		appelé, contrairement à scope="singletone" (par défaut) qui crée une seule 
+		instance, la garde en mémoire, et la renvoie à chaque fois que le constructeur 
+		est appelé -->
+	<bean id="cruiseSource" class="fr.ib.hugo.travel.scandinavia.CruiseSource"
+		scope="prototype">
+		<property name="calculator" ref="cruiseCalculator" />
+	</bean>
+
+	<!-- <bean class="java.util.Calendar"/> les classes qui ne peuvent pas être 
+		instanciables, car pas de constructeur par défaut par ex, ne peuvent pas 
+		être déclarées ici -->
+	<bean id="cruiseCalculator" class="fr.ib.hugo.travel.scandinavia.CruiseCalculator">
+		<property name="prix1" value="340" />
+		<property name="prix2" value="220.90" />
+	</bean>
+
+	<bean id="timerAspect" class="fr.ib.hugo.travel.scandinavia.TimerAspect" />
+
+<!-- 	<aop:config> -->
+<!-- 		<aop:aspect ref="timerAspect"> -->
+<!-- 			<aop:around method="showTime" pointcut="execution(* fr.ib..*.*(..))" /> -->
+<!-- 		</aop:aspect> -->
+<!-- 	</aop:config> -->
+
+</beans>

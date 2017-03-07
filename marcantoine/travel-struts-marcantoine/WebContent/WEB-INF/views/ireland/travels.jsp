@@ -33,7 +33,7 @@
 				<th style="text-align: center">status from the iterator</th>
 			</tr>
 			<!-- attribut additionnel : status. Il produit une variable dans le stack que l'on pourra lire ensuite.
-			on y trouve plein de choses : index, count, even, odd, first, last, modulus -->
+			on y trouve plein de choses : index, count, even, odd, first,		 last, modulus -->
 			<s:iterator value="travels" status="st">
 				<tr>
 					<td><s:property value="location" /></td>
