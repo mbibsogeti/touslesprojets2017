@@ -33,7 +33,10 @@ for (String n: ctx.getBeanDefinitionNames()){
 	
 // si le bean existe, alors
 	if (ctx.containsBean("lakeSource")){
+// On stock Le bean dans ls
 		LakeSource ls = (LakeSource)ctx.getBean("lakeSource");
+// on rajoute les données provenant de fillInfos(LakeSource)
+		ls.fillInfos();
 		System.out.println(ls.getInfos());
 		
 	}
