@@ -26,21 +26,24 @@
 	<bean id="timerAspect" class="fr.belto.travel.aop.TimerAspect"/>
 	  <aop:config>
 	<aop:aspect ref="timerAspect">
-	<!--  <aop:around method="showTime" pointcut="execution(* getPrice())"/>-->
+	<aop:around method="showTime" pointcut="execution(* getPrice())"/>
 	</aop:aspect>
 	</aop:config>
-	<bean id="lakeSource" class="fr.belto.travel.springdata.LakeSource" autowire="byType"/>
+<!-- Spring Data, gemfire configuration -->
+	<bean id="lakeSource" class="fr.belto.travel.springdata.LakeSource" autowire="byType"/><!-- configuration du repository -->
+	<context:component-scan base-package="fr.belto.travel.springdata"/>
 	<bean class="org.springframework.data.gemfire.CacheFactoryBean"
    id="gemfireCache">
    <property name="properties">
      <props>
      <prop key="log-level">info</prop>
+     <prop key="mcast-port">0</prop><!-- Permet d'accelerer la vitesse d'execution -->
      </props>
    </property>
    </bean>
    <bean class="org.springframework.data.gemfire.LocalRegionFactoryBean"
    id="lakeRegion" p:cache-ref="gemfireCache">
    <property name="name" value="lakeRegion"/>
-   </bean>
+   </bean><!-- fin de configuration du repository -->
 </beans>
 

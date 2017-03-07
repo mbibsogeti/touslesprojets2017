@@ -9,7 +9,7 @@ import org.springframework.data.gemfire.mapping.Region;
 @Entity	
 @Region("lakeRegion")
 public class Lake {
-	long id;
+	Long id;
 	String name;
 	String country;
 	float size;
@@ -24,7 +24,7 @@ public String toString() {
 	return "Lake [id=" + id + ", name=" + name + ", country=" + country + ", size=" + size + "]";
 }
 
-public Lake(long id, String name, String country, float size) {
+public Lake(Long id, String name, String country, float size) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -32,10 +32,10 @@ public Lake(long id, String name, String country, float size) {
 		this.size = size;
 	}
 @Id
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 @Column
