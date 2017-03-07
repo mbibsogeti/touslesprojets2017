@@ -1,12 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>fr.ib.travel.spring.elodie</groupId>
-	<artifactId>travel-spring-elodie</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
-	<name>Travel/Spring</name>
-	<description>apprentissage de spring et maven</description>
+	<groupId>travel.marcantoine</groupId>
+	<artifactId>travel-spring-marcantoine</artifactId>
+	<version>0.1-SNAPSHOT</version>
+	<name>travel-spring-marcantoine</name>
 
 	<dependencies>
 		<dependency>
@@ -14,6 +12,7 @@
 			<artifactId>spring-context</artifactId>
 			<version>4.3.7.RELEASE</version>
 		</dependency>
+		<!-- dependencies spéciales pour travailler avec AOP (Progra Orientée Aspect) -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
@@ -29,6 +28,7 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.8.10</version>
 		</dependency>
+		<!-- dependencies spéciales pour utiliser Spring Data. -->
 		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>persistence-api</artifactId>
@@ -49,6 +49,8 @@
 			<artifactId>slf4j-simple</artifactId>
 			<version>1.7.24</version>
 		</dependency>
+
+
 	</dependencies>
 
 </project>
