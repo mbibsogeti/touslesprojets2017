@@ -18,10 +18,19 @@ public class Main {
 		if (ctx.containsBean("cruiseSource")) {
 			System.out.println("true");
 		}
-		// id de spring. xml
+		// id de spring.xml
 		CruiseSource cs = (CruiseSource) ctx.getBean("cruiseSource");
 		if (cs.getActive())
 			System.out.println("Actif!");
 		System.out.println(cs.getHelsinkiBergen());
+		// appel de fillInfos
+		LakeSource ls = (LakeSource) ctx.getBean("infos");
+		ls.fillInfos();
+		System.out.println(ls.getInfos());
+
+		// infos sur les lacs
+		// LakeSource ls = (LakeSource) ctx.getBean("infos");
+		//if (ls.getInfos() != null)
+			//System.out.println(ls.getInfos());
 	}
 }
