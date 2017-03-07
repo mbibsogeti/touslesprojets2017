@@ -1,11 +1,7 @@
 package fr.ib.spring.travel;
 
-import org.aspectj.weaver.tools.cache.CacheBacking;
-import org.aspectj.weaver.tools.cache.CacheFactory;
-import org.aspectj.weaver.tools.cache.CacheKeyResolver;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
-import org.springframework.data.gemfire.CacheFactoryBean;
 
 public class Main {
 
@@ -27,9 +23,14 @@ public class Main {
 		if (cs.getActive())
 			System.out.println("Actif!");
 		System.out.println(cs.getHelsinkiBergen());
-		// infos sur les lacs
+		// appel de fillInfos
 		LakeSource ls = (LakeSource) ctx.getBean("infos");
-		if (ls.getInfos() != null)
-			System.out.println(ls.getInfos());
+		ls.fillInfos();
+		System.out.println(ls.getInfos());
+
+		// infos sur les lacs
+		// LakeSource ls = (LakeSource) ctx.getBean("infos");
+		//if (ls.getInfos() != null)
+			//System.out.println(ls.getInfos());
 	}
 }
