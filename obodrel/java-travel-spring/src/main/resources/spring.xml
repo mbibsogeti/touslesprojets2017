@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/aop
+			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+			
+	<bean id="cruiseSource" class="fr.obodrel.travel.beans.CruiseSource"><!-- add scope="prototype" to make in not singleton -->
+		<property name="calculator" ref="cruiseCalculator"/>
+	</bean>
+	<bean id="cruiseCalculator" class="fr.obodrel.travel.beans.CruiseCalculator">
+		<property name="bergenToMalmoPrice" value="340"/>
+		<property name="helsinkiToMalmoPrice" value="220.90"/>
+	</bean>
+	<bean id="timerAspect" class="fr.obodrel.travel.beans.TimerAspect"/>
+	<bean id="lakeSource" class="fr.obodrel.travel.beans.LakeSource" autowire="byType" init-method="fillInfos"/>
+	<bean id="gemfireCache" class="org.springframework.data.gemfire.CacheFactoryBean">
+		<property name="properties">
+			<props>
+				<prop key="log-level">error</prop>
+				<prop key="mcast-port">0</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="lakeRegion" class="org.springframework.data.gemfire.LocalRegionFactoryBean" p:cache-ref="gemfireCache">
+		<property name="name" value="lakeRegion"/>
+	</bean>
+	<aop:config>
+		<aop:aspect ref="timerAspect">
+			<aop:around method="showTime" pointcut="execution(* fr.obodrel..*.*(..))"/>
+		</aop:aspect>
+	</aop:config>
+	<context:component-scan base-package="fr.obodrel.travel.interfaces"></context:component-scan>
+	<!-- use constructor-arg to define bean which have no default constructor and factory for those which need factories -->
+</beans>
+
