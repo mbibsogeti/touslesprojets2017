@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
 <link rel='stylesheet' href='../css/bootstrap.min.css'>
@@ -13,21 +13,28 @@
 </head>
 <body>
 	<nav class="subnav1">
-	<ul class='nav nav-pills nav-justified'>
-		<li><a href='../index'><span class='glyphicon glyphicon-home'></span>
-				Inicio</a>
-		<li><a href='index'><span class='glyphicon glyphicon-king'></span>
-				Ireland</a>
-	</ul>
+		<ul class='nav nav-pills nav-justified'>
+			<li><a href='../index'><span
+					class='glyphicon glyphicon-home'></span> Inicio</a>
+			<li><a href='index'><span class='glyphicon glyphicon-king'></span>
+					Ireland</a>
+			<li><a href='../England/index'><span
+					class='glyphicon glyphicon-plane'></span> England</a>
+			<li><a href='../Spain/proposal'><span
+					class='glyphicon glyphicon-certificate'></span> Spain</a>
+			<li><a href="../Italy/index"><span
+					class='glyphicon glyphicon-glass'></span> Italy</a>
+		</ul>
 	</nav>
 
 	<nav class="subnav2">
-	<ul class='nav nav-pills nav-justified'>
-		<li class='active'><a href='#'><span
-				class='glyphicon glyphicon-tree-deciduous'></span> Informacion practica</a>
-		<li><a href='viajes'><span
-				class='glyphicon glyphicon-send'></span> Viajes</a>
-	</ul>
+		<ul class='nav nav-pills nav-justified'>
+			<li class='active'><a href='#'><span
+					class='glyphicon glyphicon-tree-deciduous'></span> Informacion
+					practica</a>
+			<li><a href='viajes'><span class='glyphicon glyphicon-send'></span>
+					Viajes</a>
+		</ul>
 	</nav>
 
 	<div class='container'>
@@ -37,10 +44,12 @@
 
 		<div class='row'>
 			<section class='col-sm-6'>
-			<h2>Como llegar</h2>
+				<h2>Como llegar</h2>
 			</section>
 
-			<section class='col-sm-6'> <!-- 			<h2></h2> --> </section>
+			<section class='col-sm-6'>
+				<!-- 			<h2></h2> -->
+			</section>
 		</div>
 	</div>
 

@@ -10,8 +10,13 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>S2</filter-name>
-		<!--  signifie que tout le projet est couvert par Struts2-->
+		<!-- signifie que tout le projet est couvert par Struts2 -->
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+
+	<!-- configuration de Spring -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
 </web-app>
