@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/aop
+			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<!-- On définit ici les différents beans que l'on va utilier -->
+	<bean id="cruiseSource" class="cruise.CruiseSource">
+		<!-- On fait de l'injection d'un bean dans un autre, ici on injecte CruiseCalculator 
+			dans CruiseSource. la value de "name" est vue par le compilateur comme setValue 
+			et getValue. La ref doit contenir l'id du bean injecté. -->
+		<property name="calculator" ref="cruiseCalculator" />
+	</bean>
+	<!-- On utilise la classe calendar pour un test : -->
+	<!-- <bean id="calendar" class="java.util.Calendar"></bean> -->
+
+	<!-- On peut aussi injecter des valeurs. Ici, on initialise les variables 
+		P1 et P2. -->
+	<bean id="cruiseCalculator" class="cruise.CruiseCalculator">
+		<property name="P1" value="200" />
+		<property name="P2" value="220.9" />
+	</bean>
+	<bean id="timerAspect" class="aspect.TimerAspect" />
+	<aop:config>
+		<aop:aspect ref="timerAspect">
+			<aop:around method="showTime" pointcut="execution(* *.*.*())" /> <!-- * getPrice() = n'importe quelle méthode qiuii s'appele getPrice() -->
+		</aop:aspect>
+	</aop:config>
+	<!-- on ajoute un paramètre dans notre nouveau bean-->
+	<bean class="lake.LakeSource" id="lakeSource" autowire="byType"/>
+
+	<!-- beans pour utiliser gemfire (avec Spring Data) en créant le repository 
+		1er : config de gemfire, 2nd : config des régions -->
+	<bean class="org.springframework.data.gemfire.CacheFactoryBean"
+		id="gemfireCache">
+		<property name="properties">
+			<props>
+				<!-- ces balises correspondent à la classe java.util.properties -->
+				<prop key="log-level">info</prop>
+				<prop key="mcast-port">0</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- paramètre "p" sert à dire que c'est gemfireCache qui fournit des infos -->
+	<bean class="org.springframework.data.gemfire.LocalRegionFactoryBean"
+		id="lakeRegion" p:cache-ref="gemfireCache">
+		<property name="name" value="lakeRegion" />
+	</bean>
+	<!-- balise pour permettre la lecture des annotations. On lui dit de fouiller là où se trouvent les annotations. -->
+	<context:component-scan base-package="lake"/>
+</beans>
+

@@ -10,11 +10,19 @@
 	content="width=device-width, initial-scale=1, minimal-scale=0.5">
 <title>Spain-proposal</title>
 <link rel="stylesheet" href="/travel-struts-Belto/CSS/bootstrap.min.css">
+<style type="text/css">
+.label{
+color:blue}
+</style>
 </head>
 <body>
 <nav >
 <ul class="nav nav-pills nav-tabs nav-justified">
-<li class="active"><a href="../index"><spam class="glyphicon glyphicon-heart"></spam>Acceuil générale sur l'europe</a></li>
+<li class="active"><a href="../index"><spam class="glyphicon glyphicon-home"></spam>Acceuil générale sur l'europe</a></li>
+<li class="active"><a href="../croatia/index">Acceuil sur la Croatie</a></li>
+<li class="active"><a href="../england/index">Acceuil sur l'angleterre</a></li>
+<li class="active"><a href="../italy/index">Acceuil sur l'Italie</a></li>
+<li class="active"><a href="../irelande/index">Acceuil sur l'Irelande</a></li>
 </ul>
 </nav>
 <div class="container">
