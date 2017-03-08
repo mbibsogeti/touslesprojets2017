@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<title>Voyage Maroc</title>
+<style>
+#img {
+	text-align: center
+}
+
+h1 {
+	text-align: center
+}
+</style>
+</head>
+<body>
+	<div ng-app="">
+		<h1>Destination Maroc</h1>
+		<p id="img">
+			<img src="img/maroc.jpg">
+		</p>
+		<h2>Demande</h2>
+		<form>
+			<p>
+				<label>Votre Nom: <input ng-model="name" type="text"
+					name="nom"></label>
+			</p>
+			<p>
+				<label>Votre Email: <input ng-model="email" type="email"
+					name="email"></label>
+			</p>
+			<p>
+				Envoyer une demande pour <span ng-bind="name"></span>{{email}}<br /> <label><input
+					type="button" name="btn" value="Envoi"></label>
+			</p>
+		</form>
+		<p>
+			<a href="index.html">Retour à l'Acceuil</a>
+		</p>
+	</div>
+</body>
+</html>
