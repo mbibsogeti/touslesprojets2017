@@ -17,8 +17,11 @@ public class Main {
 			
 			CruiseSource cs = (CruiseSource) ctx.getBean("cruiseSource");
 			if(cs.getActive()) System.out.println("Actif!");
-
 			System.out.println(cs.getHelsinkiBergen());
+			
+			LakeSource ls = (LakeSource) ctx.getBean("lakeSource");
+			ls.fillInfos();
+			System.out.println(ls.getInfos());
 	}
 
 }

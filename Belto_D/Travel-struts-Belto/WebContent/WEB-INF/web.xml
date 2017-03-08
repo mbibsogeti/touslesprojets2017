@@ -3,7 +3,21 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
         version="3.1">
-        
+    <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/applicationContext.xml,/WEB-INF/applicationContext-security.xml </param-value>
+    </context-param>
+    
+    <filter>
+    <filter-name>sFilter</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter> 
+      
+    <filter-mapping>
+    <filter-name>sFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping> 
+   
          <filter>
     <filter-name>S2</filter-name>
     <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
