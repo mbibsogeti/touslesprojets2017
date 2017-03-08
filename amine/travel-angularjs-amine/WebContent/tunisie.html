@@ -25,6 +25,14 @@ table, th, td {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.even>td, th {
+	background: #eeb;
+}
+
+.odd>td {
+	background: #FFF8DC
+}
 </style>
 </head>
 <body>
@@ -38,15 +46,16 @@ table, th, td {
 		</p>
 		<table>
 			<tr>
-				<th>index</th>			
+				<th>index</th>
 				<th>Lieu</th>
 				<th>Jours</th>
 			</tr>
 			<tr
-				ng-repeat="step in [{l:'Tunis',d:2},{l:'Constantine',d:3},{l:'Jerba',d:6},{l:'Zouwarah',d:2}]">
+				ng-repeat="step in [{l:'Tunis',d:2.5},{l:'Constantine',d:3},{l:'Jerba',d:6},{l:'Zouwarah',d:2}]"
+				ng-class-even="'even'" ng-class-odd="'odd'">
 				<td>{{$index+1}}</td>
-				<td>{{step.l}}</td>
-				<td>{{step["d"]}}</td>
+				<td>{{step.l|uppercase}}</td>
+				<td>{{step["d"]|number:0}}</td>
 			</tr>
 		</table>
 
