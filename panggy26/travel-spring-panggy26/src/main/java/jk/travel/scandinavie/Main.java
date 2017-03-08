@@ -28,6 +28,13 @@ public class Main {
 				// System.out.println(context.getBean("cruiseSource") == context.getBean("cruiseSource"));
 			} // end if
 		} // end if
+		if (context.containsBean("lakeSource")) {
+			LakeSource ls = (LakeSource) context.getBean("lakeSource");
+			System.out.println(ls.getInfos());
+			ls.fillInfos();
+			// Ajout implicite de .toString() grâce à l'intelligence de System.out.println
+			System.out.println(ls.getInfos());
+		} // end if
 		context.close();
 	} // end main method
 } // enc Main class
