@@ -1,35 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xsi:schemaLocation="
-			http://www.springframework.org/schema/beans
-			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-			http://www.springframework.org/schema/context
-			http://www.springframework.org/schema/context/spring-context-3.0.xsd
-			http://www.springframework.org/schema/aop
-			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
-	<!-- Bean pour la classe CruiseSource -->
-	<bean id="cruiseSource" class="jk.travel.scandinavie.CruiseSource">
-		<!-- ref pointe vers l'id d'un autre bean (ici, celui du dessous) -->
-		<property name="calculator" ref="cruiseCalculator" />
-	</bean>
-	<!-- Bean pour la classe CruiseCalculator -->
-	<bean id="cruiseCalculator" class="jk.travel.scandinavie.CruiseCalculator">
-		<!-- On peut alors utiliser ces valeurs sans les initialiser après les 
-			avoir déclarées dans CruiseCalculator -->
-		<property name="priceMalmoBergen" value="340" />
-		<property name="priceMalmoHelsinki" value="220.9" />
-	</bean>
-	<!-- Bean pour la classe TimerAspect -->
-	<bean id="timerAspect" class="jk.travel.scandinavie.TimerAspect" />
-	<aop:config>
-		<aop:aspect ref="timerAspect">
-			<!-- N'importe quelle method getPrice qui renvoie n'importe quel type de retour -->
-			<aop:around method="showTime" pointcut="execution(* getPrice())"/>
-			<!-- Pour toutes les fonctions du package jk.travel.scandinavie référencées dans les Beans -->
-<!-- 			<aop:around method="showTime" pointcut="execution(* jk.travel.scandinavie..*.*(..))"/> -->
-		</aop:aspect>
-	</aop:config>
-</beans>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Maroc</title>
+<script src="js/angular.min.js"></script>
+</head>
+<body>
+	<h1>Le Maroc</h1>
+	<!-- FORMULAIRE -->
+	<div data-ng-app="">
+		<!-- Pas besoin de balise form, car pas d'envoi -->
+		<p>Demande</p>
+		<p>
+			<label>Votre nom : <input type="text" data-ng-model="name"></label>
+		</p>
+		<p>
+			<label>Votre email : <input type="text"></label>
+		</p>
+		<p>
+			<input type="button" value="Envoi">
+		</p>
+		<p>
+			<a href="./index.html">Retour à l'index africain</a>
+		</p>
+	</div>
+</body>
+</html>

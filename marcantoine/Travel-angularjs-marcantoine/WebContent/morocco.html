@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- balise pour utiliser AngularJS. -->
+<script src="js/angular.min.js"></script>
+<title>African trips: Morocco</title>
+</head>
+<body>
+	<div ng-app="" ng-init="name='?';email='?';img='http://www.destination360.com/africa/morocco/images/s/beaches.jpg'" >
+		<h1>Welcome on our Morocco trips.</h1>
+		<h2>Where would you like to travel?</h2>
+		<img ng-src="{{img}}" ng-if="img!=''">
+		<p>Your request:</p>
+		<p>
+			<label>Your name: <input ng-model="name" type="text"></label>
+		</p>
+		<p>
+			<label>Your email: <input ng-model="email" type="email"></label>
+		</p>
+		<p>
+			<textarea
+				placeholder="Please, give us some details about your request. "></textarea>
+		</p>
+		<p ng-if="name!='?'&& email!='?' && email!='' && email.includes('@')">Send a request to <span ng-bind="name">for</span> at {{email}}</p>
+		<p ng-show="name=='?'|| email=='?'">* Please, check what you wrote, it contains '?'.</p>
+			
+		<p>
+			<input type="button" value="send">
+		</p>
+
+	</div>
+</body>
+</html>
