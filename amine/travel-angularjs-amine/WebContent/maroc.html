@@ -6,16 +6,23 @@
 <title>Voyage Maroc</title>
 <style>
 #img {
-	text-align: center
+	text-align: center;
 }
 
 h1 {
 	text-align: center
 }
+
+img {
+	width: 50%;
+	height: auto;
+}
 </style>
 </head>
 <body>
-	<div ng-app="">
+	<div ng-app=""
+		ng-init="name='?';email='?';img='http://fotomelia.com/wp-content/uploads/edd/2015/05/maroc-paysage-atlas-route-d%C3%A9serte-images-photos-gratuites-libres-de-droits-1560x1170.jpg'"
+		ng-cloak>
 		<h1>Destination Maroc</h1>
 		<p id="img">
 			<img src="img/maroc.jpg">
@@ -30,11 +37,22 @@ h1 {
 				<label>Votre Email: <input ng-model="email" type="email"
 					name="email"></label>
 			</p>
+			<p ng-show="name=='?'">Nom?</p>
+			<p ng-hide="email!='?'">Email?</p>
+			<p ng-show="name!='?' && email!='?' && name!='' && email!=''">
+				Demande pour <span ng-bind="name"> </span>({{email}})
+			</p>
 			<p>
-				Envoyer une demande pour <span ng-bind="name"></span>{{email}}<br /> <label><input
-					type="button" name="btn" value="Envoi"></label>
+				<!-- <span ng-if="name!='?' || email!='?'">Demande pour <span
+					ng-bind="name"> </span>({{email}})
+				</span><br /> <span ng-if="name=='?' || email=='?'">ERREUR!</span><br /> -->
+				<label><input type="button" name="btn" value="Envoi"></label>
 			</p>
 		</form>
+
+		<p>
+			<img ng-src="{{img}}" ng-if="img!=''">
+		</p>
 		<p>
 			<a href="index.html">Retour à l'Acceuil</a>
 		</p>
