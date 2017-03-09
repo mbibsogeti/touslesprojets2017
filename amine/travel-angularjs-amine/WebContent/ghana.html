@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<script defer>
+	angular.module("appGhana", []).controller("CtlGhana", function() {
+		this.init = function() {
+			this.message = "Entrez votre texte..."
+			this.name = ""
+			this.tel = ""
+		}
+		this.askClick = function() {
+			this.result = "Demande envoyée"
+			this.init()
+		}
+		this.registerClick = function() {
+			this.result = "Inscription de " + this.name + " enregistrée"
+			this.init()
+		}
+		this.init()
+	})
+</script>
+<title>Voyage au Ghana</title>
+</head>
+<body>
+	<div ng-app="appGhana" ng-controller="CtlGhana as c">
+		<h1 style="text-align: center">Ghana</h1>
+		<p style="text-align: center">
+			<img src="img/ghana.jpg">
+		</p>
+		<form>
+			<p>
+				Nom: <input ng-model="c.name" type="text" name="name">
+			</p>
+			<p>
+				Tel:<input ng-model="c.tel" type="tel" name="tel">
+			</p>
+			<p>
+				Message:<br />
+				<textarea name="message" ng-model="c.message"></textarea>
+			</p>
+			<p>
+				<input ng-disabled="c.name==''" type="button" name="btn1"
+					value="Demande d'information" ng-click="c.askClick()">
+			</p>
+			<p>
+				<!-- tant que le name=="" les bouttons ne peuvent pas être validé voir la fonction -->
+				<input ng-disabled="c.name==''" type="button" name="btn2"
+					value="Pré-inscription" ng-click="c.registerClick()">
+			</p>
+			<p>{{c.result}}</p>
+		</form>
+		<p>
+			<a href="index.html">Retour à l'Acceuil</a>
+		</p>
+	</div>
+
+</body>
+</html>
