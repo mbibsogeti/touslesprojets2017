@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<script defer>
+	//création d'un module
+	var appS = angular.module("appSenegal", [])
+	//pas encore disponible dans la version stable
+	//remplir un module
+	//appS.info({author:"moi"})
+	// ou:
+	//angular.module("appSenegal").info({author:"moi"})
+	// lire l'information
+	//console.log(angular.module("appSenegal").info())
+	//définir une canstante dans une module. augmentation de module par une autre constante
+	//appS.constant("avion", 945).constant("hotel", 38.29)
+	// ou value
+	appS.constant("avion", 945).value("hotel", 38.29).controller("ctlSenegal",
+			function($scope, avion, hotel) {
+				//$scope.price=9*38.29+945
+				$scope.price = 9 * hotel + avion
+			})
+	//ou: angular.module("appSenegal",[]).constant("avion",945)
+	angular.module("appSenegal").filter("mlt", function() {
+		return function(x, y) {
+			return x * y;
+		}
+	})
+	angular.module("appSenegal").filter("curr", function() {
+		return function(p, i, j) {
+			if(j==undefined) j=1
+			return (p / j).toFixed(2) + " " + i;
+		}
+	})
+</script>
+<title>Voyage au Sénégal</title>
+</head>
+<body>
+	<div ng-app="appSenegal" ng-controller="ctlSenegal">
+		<h1 style="text-align: center">Sénégal</h1>
+		<p style="text-align: center">
+			<img src="img/senegal.jpg">
+		</p>
+		<!--  <p>Notre Voyage: {{price|number:2}}€</p>-->
+		<p>Notre Voyage: {{price|curr:"euros"}}
+			({{price|curr:"cfa":0.0015}})</p>
+		{{5|mlt:3}}
+		<p>
+			<a href="index.html">Retour à l'Acceuil</a>
+		</p>
+	</div>
+
+</body>
+</html>

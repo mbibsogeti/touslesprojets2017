@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<title>Voyage en Tunisie</title>
+<!-- coloriage dans Angular comme Boostrap -->
+<!-- even=impair, Les td contenu dans tr -->
+<style>
+.even>td{background:#eeb}
+</style>
+</head>
+<body>
+<div ng-app="" ng-init="">
+	<h1>Bienvenue à Tunisie</h1>
+Quel beau pays
+<!-- Une liste de voyageurs dans AngularJS -->
+<!-- on aurait pu rajouter track by index dans (<p ng-repeat..[..]"*) et ensuite ajouter dans <td>{{index}}</td> -->
+	<p ng-repeat="n in [1,2,3,4]">{{n}}voyageur<span ng-if="n>1">s</span></p>
+	<!-- Un tableau de ville et le nombre de jours de voyage -->
+
+	<table>
+	<tr>
+	<th>Lieu</th>
+	<th>Jours</th>
+	</tr>
+<!-- un tableau, dictionnaire avec clé(lieu) et valeur(jour) -->	
+	<tr ng-repeat="step in [{l:'Tunis',d:2},{l:'Constantine',d:3},{l:'Jerba',d:6},{l:'Zouwara',d:2}]" ng-class-even="'even'">
+<!-- <td>{{idex}}</td> -->
+	<td>{{step.l}}</td>
+	<td>{{step["d"]}}</td>
+	</tr>
+	
+	</table>
+	</div>
+</body>
+</html>

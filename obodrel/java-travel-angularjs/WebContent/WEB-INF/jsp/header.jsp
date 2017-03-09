@@ -6,5 +6,8 @@
 				<li class='${param.pageName=="morocco"?"active":""}'><a href="./morocco/">Morocco</a></li>
 				<li class='${param.pageName=="tunisia"?"active":""}'><a href="./tunisia/">Tunisia</a></li>
 				<li class='${param.pageName=="egypte"?"active":""}'><a href="./egypte/">Egypte</a></li>
+				<li class='${param.pageName=="senegal"?"active":""}'><a href="./senegal/">Senegal</a></li>
+				<li class='${param.pageName=="ghana"?"active":""}'><a href="./ghana/">Ghana</a></li>
+				<li class='${param.pageName=="nigeria"?"active":""}'><a href="./nigeria/">Nigeria</a></li>
 			</ul>
 		</nav>
