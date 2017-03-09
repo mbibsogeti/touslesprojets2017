@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<title>Voyage au Maroc</title>
+</head>
+<body>
+<div ng-app="" ng-init="name='?'; email='?' ; img='http://www.tourismeetgastronomie.ma/wp-content/uploads/2016/07/ancien-medina-casablanca.jpg'"><!-- pour dire que l'application utilise AngularJs -->
+	<h1>Bienvenue au Maroc</h1>
+Quel beau pays
+	<p>
+<!-- mg-model=name, sera traité par angular -->
+<!-- id=name ou name=name par le serveur/navigateur -->
+	<label>Nom:<input id="name"
+		type="text" name=name ng-model="name"></label>
+	</p>
+	<p>
+	<label>email:<input  id="name"
+		type="email" name=name ng-model="email"></label>
+	</p>
+	<p>
+<!-- ng-model modifie quand on change, quand on rentre des données et ng blind lit et affiche ce qu'envoie ng-model -->
+<!-- Demande le nom, si la case reste initialiser(ng-init) à ? -->
+	<p ng-if="name =='?'">Nom?</p>
+<!-- Demande l'email, si la case email reste initialiser(ng-init) à ?    -->
+	<p ng-if="email=='?'">email?</p>
+<!-- Demande l'email, et le nom si les deux cases restent initialiser(ng-init) à ?    -->
+	<p ng-if="name!='?'&& email!='?'">Demande envoyer pour<span ng-bind="name"></span>({{email}}):</p><!-- affiche ce qu'on écrit dans nom -->
+<!-- Nouveau synthaxe propre à angularJs sans span {{email}} -->	
+	<label><input id="button" type="button" value= "Envoi" ></label>
+	</p>
+<!-- <img src="{{img}}"> Le navigateur fait deux chose à la fois, il va chercher le lien et affiche -->
+<!-- 	<img src="{{img}}"> utiliser pour le test-->
+<!-- Tandis que <img ng-src="{{img}}", il attend le telechargement de la page html et envoie un message a angularJS pour ajouter l'image -->
+    <img ng-src="{{img}}" ng-if="img!=''"><!-- ng-if="img!=''" afficher l'image que s'il n'est pas vide -->
+	</div>
+</body>
+</html>
