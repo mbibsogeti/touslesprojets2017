@@ -2,11 +2,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, minimal-scale=0.5">
+<link rel="stylesheet" href="CSS/bootstrap.min.css">
 <script src="js/angular.min.js"></script>
 <title>Voyage au Maroc</title>
 </head>
 <body>
-<div ng-app="" ng-init="name='?'; email='?' ; img='http://www.tourismeetgastronomie.ma/wp-content/uploads/2016/07/ancien-medina-casablanca.jpg'"><!-- pour dire que l'application utilise AngularJs -->
+<nav >
+<ul class="nav nav-pills nav-tabs nav-justified">
+<li ><a href="index.html">Accueil-Afrique</a></li>
+<li class="active"><a href="nigeria.html"> Vers le Maroc?</a></li>
+<li><a href="senegal.html">Vers le sénégal?</a></li>
+<li class="active"><a href="egypte.html">Vers l'Ègypte?</a></li>
+<li ><a href="tunisie.html">Vers la tunisie?</a></li>
+<li class="active"><a href="#"><span class="glyphicon glyphicon-asterisk"></span>Acceuil</a></li>
+<li ><a href="ghana.html">Vers le Ghana?</a></li>
+</ul>
+</nav>
+<div class="container" ng-app="" ng-init="name='?'; email='?' ; img='http://www.tourismeetgastronomie.ma/wp-content/uploads/2016/07/ancien-medina-casablanca.jpg'"><!-- pour dire que l'application utilise AngularJs -->
 	<h1>Bienvenue au Maroc</h1>
 Quel beau pays
 	<p>
