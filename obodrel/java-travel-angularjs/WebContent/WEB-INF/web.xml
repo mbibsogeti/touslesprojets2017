@@ -44,6 +44,36 @@
 	<servlet-mapping>
 		<servlet-name>Egypte</servlet-name>
 		<url-pattern>/egypte/</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Senegal</servlet-name>
+		<servlet-class>fr.obodrel.travel.servlets.SenegalServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Senegal</servlet-name>
+		<url-pattern>/senegal/</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>Ghana</servlet-name>
+		<servlet-class>fr.obodrel.travel.servlets.GhanaServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Ghana</servlet-name>
+		<url-pattern>/ghana/</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Nigeria</servlet-name>
+		<servlet-class>fr.obodrel.travel.servlets.NigeriaServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Nigeria</servlet-name>
+		<url-pattern>/nigeria/</url-pattern>
 	</servlet-mapping>	
 	
 	<context-param>
