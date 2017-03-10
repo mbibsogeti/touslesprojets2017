@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mafia K1Fry : Morocco</title>
+<script src="js/angular.min.js"></script>
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container" data-ng-app=""
+		data-ng-init="name='';email='';img1='http://www.tourinvest.ma/wp-content/uploads/2016/07/c4b746b1c6e8f37fcd57e5483d870d.jpg'">
+		<div data-ng-include="'./header.html'"></div>
+		<h1 style="position-text: center">Morocco !!</h1>
+		<br> <img data-ng-src="{{img1}}" data-ng-if="img!=''"> <br>
+		<form action="">
+			<label for="name"> Votre nom : </label> 
+			<input id="name" type="text" data-ng-model="name"></input> <span data-ng-hide="name.trim()==''">
+				Veuillez renseigner ce champ correctement svp !
+				</span><br> 
+			<label for="email">Votre mail : </label>
+			<input id="email" type="email" data-ng-model="email"></input> <span data-ng-if="!email.include('@')"> Veuillez renseigner ce champ correctement svp !</span><br>
+			<p data-ng-show="(name.trim()=='?')&&(email=='')&&!email.include('@')">La demande de {{name}} est
+				validé, le résumé sera envoyé à l'adresse {{email}} !</p>
+			<input type="button" value="Envoi">
+		</form>
+		<div data-ng-include="'./footer.html'"></div>
+	</div>
+</body>
+</html>

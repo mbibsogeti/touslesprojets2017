@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mafia K1Fry : Ghana</title>
+<script src="js/angular.min.js"></script>
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container" data-ng-app="appGhana"
+		data-ng-init="img1='http://www.ou-et-quand.net/partir/images/illustration/thumb/745/430/ghana.jpg.pagespeed.ce.7oHuIk9SvN.jpg'">
+		<div data-ng-include="'./header.html'"></div>
+		<h1>Ghana !!</h1><br>
+		<img data-ng-src="{{img1}}" data-ng-if="img!=''"> <br>
+		
+		<!-- Définition de la zone affectée par notre controleur et de l'alias de ce dernier :"c" -->
+		<section data-ng-controller="CtlGhn as c" class="col-md-8">
+			<h2>Notre Voyage</h2>
+			<form action="" class="form-group">
+				<label for="name">Nom</label>
+					<input type="text" id="name" data-ng-model="c.name" class="form-control"><br>
+				<label for="tel">Tel</label>
+					<input type="tel" id="tel" data-ng-model="c.tel" class="form-control"><br>
+				<label for="message">Message</label>
+					<textarea rows="0" cols="6" data-ng-model="c.message" class="form-control"></textarea><br>
+				<input type="button" id="di" value="Demande d'information" data-ng-disabled="c.name==''&&c.tel==''" data-ng-click="c.askClick($event)" class="btn btn-default"><br>
+				<input type="button" id="pi" value="Pré-inscription" data-ng-disabled="c.name==''&&c.tel==''" data-ng-click="c.askClick($event)" class="btn btn-default"><br>
+			</form>
+			<h3 data-ng-hide="c.result==''">{{c.result}}</h3>
+		</section>
+		<div data-ng-include="'./footer.html'"></div>
+	</div>
+
+</body>
+<script defer="defer">
+angular.module("appGhana",[]).controller("CtlGhn",function(){
+	this.message="..."; //le "this" est obligatoire 
+	this.name="";
+	this.tel="";
+	this.result="";
+	this.askClick=function($event){
+		console.log($event.target.id)
+		if($event.target.id=="di"){
+			this.result="Demande envoyée !!"+this.name+", tu recevras ta brochure, par message, au numéro "+this.tel
+			
+		}else{
+			if($event.target.id=="pi"){
+				this.result=this.name+", bienvenue dans notre monde plein de paysage africain"
+			}
+		}
+		this.name=this.tel="";
+		this.message="..."
+	}
+})
+
+</script>
+</html>
