@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<title>La millénaire Égypte</title>
+</head>
+<body>
+	<div data-ng-app data-ng-init="show=false">
+		<h1>Egipto</h1>
+		<p>Tu viaje</p>
+		<form>
+			<p>
+				Dias <input type="number" data-ng-model="days">
+			<p>
+				<input type="checkbox" data-ng-model="visits" data-ng-mouseover="visits=true"> Visitas
+			</p>
+			<p>
+				<input type="button" value="Pedir" data-ng-click="show=true">
+			</p>
+			<p data-ng-show="show">ok</p>
+		</form>
+		<div data-ng-include="'./footer.html'"></div>
+	</div>
+	<p>
+		<a href="./index.html">Retour à l'index africain</a>
+	</p>
+</body>
+</html>

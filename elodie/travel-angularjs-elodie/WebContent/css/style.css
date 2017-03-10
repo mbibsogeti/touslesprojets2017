@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 10px 25% 10px 25%;
+}
+
+h1 {
+	color: #ff8000;
+}
+
+#lien {
+	color: #000000;
+}
+
+#marocTitle {
+	color: #ff0000;
+}
+
+#tunisieTitle {
+	color: #ff0000;
+}
+
+#egypteTitle {
+	background: #ffffe1;
+	color: #ff8040;
+}
+fieldset {
+	border: 1px #000000 solid;
+	margin: 0px 0px 25px 0px;
+}
+
+legend {
+	color: #000000;
+}
+
+#container {
+	padding: 1% 1% 1% 1%;
+	background: #eeeeff;
+}
+
+table, th, td {
+	border-collapse: collapse;
+	padding: 5px 5px 5px 5px;
+}
+
+.even>td {
+	text-align: center;
+	background: #dfffdf;
+}
+
+.odd>td {
+	text-align: center;
+	background: #eaffff;
+}

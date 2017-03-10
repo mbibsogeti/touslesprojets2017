@@ -34,6 +34,7 @@
 	</package>
 
 	<package name="ireland" namespace="/ireland" extends="struts-default">
+	<!-- la page vers laquelle on est rebvoyé par défaut -->
 		<default-action-ref name="index">/WEB-INF/views/ireland/index.jsp</default-action-ref>
 		<action name="index">
 			<result>/WEB-INF/views/ireland/index.jsp</result>
