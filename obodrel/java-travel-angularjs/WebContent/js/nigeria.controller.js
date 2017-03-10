@@ -1,7 +1,7 @@
 angular.module("application", [])
-	.controller('NigeriaController', GhanaController);
+	.controller('NigeriaController', NigeriaController);
 
-function GhanaController() {
+function NigeriaController() {
 	var vm = this;
 	vm.registerMessage = "";
 	vm.displayInformations = false;
