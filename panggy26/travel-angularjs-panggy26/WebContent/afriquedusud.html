@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Afrique du Sud</title>
+<style>
+	.view {position : relative; width : 80%; background : #CFC; transition : 1s;}
+ 	/* Classe pour le début de la transition */
+ 	.view.ng-enter{opacity : 0;} 
+ 	/* Classe pour la fin de la transition (après 1 seconde) */
+	.view.ng-enter-active{opacity : 1;}
+ 	.view.ng-leave{opacity : 1;}
+ 	.view.ng-leave-active{opacity : 0;}
+</style>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script defer>
+	// Il est possible d'imbriquer les modules
+	angular.module("appAfriqueDuSud", ["ngRoute", "ngAnimate"])
+		.config(function($routeProvider) {
+			// Quand je suis sur cette URL, j'appelle tel contrôleur et telle template
+			$routeProvider
+				// Utilisation d'une fonction retournant du HTML
+				.when("/index", {controller : "CtrlAfriqueDuSud", template : function() {
+					return "<p>Nous proposons des voyages vers ces <a href='#!/dest'>destinations</a></p>";
+				}})
+				// Utilisation d'une template URL redirigeant vers un autre fichier html
+				.when("/dest", {controller : "CtrlAfriqueDuSud", templateUrl : "afriquedusud/destinations.html", controllerAs : "c"
+				})
+				// Les : indiquent à Angular quelque chose de variable
+				.when("/dest/:id", {controller : "CtrlAfriqueDuSud", templateUrl : "afriquedusud/detail.html", controllerAs : "c"
+				})
+				// Cas par défaut : on redirige vers /index et donc le when
+				.otherwise({redirectTo : "/index"
+				})
+		})
+		.constant("dicoDestinations", [
+			{nom : "Le Cap", description : "Neigbourgoods market", id : 1},
+			{nom : "Hermanus", description : "Observation des baleines", id : 2},
+			{nom : "Grahamstown", description : "Ancienne ville coloniale", id : 3}
+		])
+		// $routeParams : pour savoir sur quoi l'utilisateur a cliqué (paramètres en entrée)
+		.controller("CtrlAfriqueDuSud", function($routeParams, dicoDestinations) {
+			this.destinations = dicoDestinations;
+			// À noter que cette boucle est exécutée à chaque fois que l'on arrive sur le site, ce qui n'est pas top mais pas dramatique
+			for(i in this.destinations) {
+				if(this.destinations[i].id == $routeParams.id) {
+					this.desti = this.destinations[i];
+				} // end if
+			} // end for
+		})
+</script>
+</head>
+<body data-ng-app="appAfriqueDuSud">
+	<h1>Afrique du Sud, nation arc-en-ciel</h1>
+	<div data-ng-controller="CtrlAfriqueDuSud as c" data-ng-view class="view">
+	</div>
+<a href="./index.html">Retour à l'index africain</a>
+<a href="./afriquedusud.html#!/index">Accueil</a>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<title>Viaje a Marruecos</title>
+</head>
+<body>
+	<h1>Viaje a Marruecos</h1>
+	<h2>Inscripcion</h2>
+	<div ng-app=""
+		ng-init="name='?';email='?';img='https://www.sientemarruecos.viajes/wp-content/uploads/2015/12/Todas-las-fechas-importantes-a-tu-alcance.-festivales-en-Marruecos-competiciones-en-Marruecos-fiestas-en-Marruecos-festivos-en-Marruecos-etc.jpg'"
+		ng-cloak>
+		<img ng-src="{{img}}" ng-if="img!=''">
+		<form>
+			<p>
+				Nombre <input type="text" ng-model="name"> <input
+					type="text" ng-model="name">
+			</p>
+			<p>
+				E-mail <input type="email" ng-model="email">
+			</p>
+<!-- 		possible d'utiliser ng-show/ng-hide à la place de ng-if. Conséquence: la balise ne disparaisse pas, mais est cachée/affichée -->
+			<p ng-if="name=='?'">Entrar nombre</p>
+
+			<p ng-if="email=='?'">Entrar e-mail</p>
+
+			<p ng-if="name!='?' && email!='?'">Enviar un pedido para {{name}}
+				a la direccion {{email}}</p>
+			<!-- 				<span ng-bind-html="name"></span> -->
+
+			<p>
+				<input type="button" value='Enviar'>
+			</p>
+		</form>
+		<div>
+			<a href="index.html">Inicio</a>
+			<a href="tunez.html">Tunez</a>
+			<a href="egipto.html">Egipto</a>
+			<a href="senegal.html">Senegal</a>
+			<a href="ghana.html">Ghana</a>
+			<a href="nigeria.html">Nigeria</a>
+		</div>
+	</div>
+
+</body>
+</html>
