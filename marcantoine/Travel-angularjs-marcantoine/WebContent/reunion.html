@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Cette balise d'encodage 'meta charset' doit être dans les 1024 premiers octets du fichier -->
+<meta charset="utf-8">
+<title>African trips: La Reunion</title>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script defer>
+	angular.module("appReunion", [])
+	/* on crée un controller devant recevoir $http */
+	.controller("CtlLR", function($http) {
+		this.info = "";
+		this.init = function() {
+			this.name = "";
+			this.email = "";
+			this.info= "";
+		}
+		this.send = function() {
+			var c = this;
+			this.info = "Processing...";
+			console.log(this.info);
+			/* appel d'une servlet */
+			$http.post("reunion",
+				"name="+this.name+"&email="+this.email,
+				{headers:{"Content-Type":"application/x-www-form-urlencoded"}})
+					.then(function() {
+						c.info="OK";
+			})
+		}
+		this.init()
+	})
+</script>
+</head>
+<body style="background: #def" data-ng-app="appReunion">
+	<div data-ng-controller="CtlLR as c" class="view" data-ng-view>
+		<h1>Welcome on our Reunionan trips.</h1>
+		<p>
+			<label>Your name: <input data-ng-model="c.name" type="text"></label>
+		</p>
+		<p>
+			<label>Your email: <input data-ng-model="c.email" type="email"></label>
+		</p>
+		<p>
+			<input type="button" value="send" data-ng-click="c.send()">
+		</p>
+		<p>{{c.info}}</p>
+	</div>
+	<div data-ng-include="'footer.html'"></div>
+</body>
+</html>
