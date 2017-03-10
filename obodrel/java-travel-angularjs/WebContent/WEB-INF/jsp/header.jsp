@@ -9,5 +9,15 @@
 				<li class='${param.pageName=="senegal"?"active":""}'><a href="./senegal/">Senegal</a></li>
 				<li class='${param.pageName=="ghana"?"active":""}'><a href="./ghana/">Ghana</a></li>
 				<li class='${param.pageName=="nigeria"?"active":""}'><a href="./nigeria/">Nigeria</a></li>
+				<li class='dropdown ${param.pageName=="southafrica"?"active":""}'>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">South Africa<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="./southafrica/">Home</a></li>
+						<li><a href="./southafrica/#!/index">Index</a></li>
+						<li><a href="./southafrica/#!/destinations">Destinations</a></li>
+					</ul>
+				</li>
+				<li class='${param.pageName=="madagascar"?"active":""}'><a href="./madagascar/">Madagascar</a></li>
+				<li class='${param.pageName=="lareunion"?"active":""}'><a href="./lareunion/">La Reunion</a></li>
 			</ul>
 		</nav>
