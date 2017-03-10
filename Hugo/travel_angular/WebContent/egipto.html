@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<title>Viaje a Egipto</title>
+</head>
+<body>
+	<div ng-app ng-init="show=false">
+		<h1>Egipto</h1>
+		<p>Tu viaje</p>
+		<form>
+			<p>
+				Dias <input type="number" ng-model="days">
+			<p>
+				<input type="checkbox" ng-model="visits" ng-mouseover="visits=true">
+				Visitas
+			</p>
+			<p>
+				<input type="button" value="Pedir" ng-click="show=true">
+			</p>
+			<p ng-show="show">ok</p>
+		</form>
+
+		<div ng-include="'./footer.html'"></div>
+
+	</div>
+
+	<div>
+		<a href="index.html">Inicio</a> <a href="marruecos.html">Marruecos</a>
+		<a href="tunez.html">Tunez</a> <a href="ghana.html">Ghana</a> <a href="nigeria.html">Nigeria</a>
+	</div>
+</body>
+</html>
