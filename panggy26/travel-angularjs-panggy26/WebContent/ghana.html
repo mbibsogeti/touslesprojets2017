@@ -6,22 +6,22 @@
 <script src="js/angular.min.js"></script>
 <script defer>
 	// Maintenant, on n'écrit plus d'argument $scope dans la fonction
-	angular.module("appGhana", []).controller("CtrlGhana", function() {	
-		this.init = function() {
-			this.name = this.tel = this.message = "";
-		} // end init fonction
-		this.askClick = function() {
-			this.result = "Demande d'informations supplémentaires envoyée"
+	angular.module("appGhana", [])
+		.controller("CtrlGhana", function() {	
+			this.init = function() {
+				this.name = this.tel = this.message = "";
+			} // end init fonction
+			this.askClick = function() {
+				this.result = "Demande d'informations supplémentaires envoyée"
+				this.init();
+			} // end askClick function
+			this.registerClick = function() {
+				this.result = "Pré-inscription de " + this.name + " enregistrée";
+			} // end askClick function	
+			this.result = "";
+			// Appel d'init
 			this.init();
-		} // end askClick function
-		this.registerClick = function() {
-			this.result = "Pré-inscription de " + this.name + " enregistrée";
-		} // end askClick function
-		
-		this.result = "";
-		// Appel d'init
-		this.init();
-	})
+		})
 </script>
 </head>
 <body>
