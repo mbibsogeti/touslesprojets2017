@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<style>
+h1{text-align: center}
+even>td{background:#eeb}
+odd>td{background:#FFF8dc}
+table td{border: inset black 1px;
+		border-collapst:collaps;
+		text-align: center;
+		width: 50%;
+		}
+</style>
+<title>egypte</title>
+</head>
+<body>
+	<h1>Egypte</h1>
+	<p>
+		<a href="index.html">accueil</a>
+	</p>
+	<!-- les cfonctionnalité ng-truc ne fonctionne que entre les balise contenan ng-(app -->
+	<!--  le ng-cloak masque le contenu tant que la page n'est pas charger-->
+	<div ng-app="" ng-init="name=''; jr='@gmail.com';show=false; visitok=false">
+		<form>
+			<p>
+				Votre voyage:
+			</p>
+			<p>
+				Jour:<input type="number" ng-model="nbjour">
+			</p>
+<p><label><input type="checkbox" ng-mouseover="visitok=true" ng-model="visitok">visite</label></p>
+			<!-- show est un boolean et donc on di pas si = vrai en fr dc ici on met juste show et pas de comparaison -->
+			
+			<p >
+				<input type="button" ng-click="show=true" value="envoi" ng-show="name!='nico' || email!='nico@gmail.com'">
+			</p>
+			<p ng-show="show"> ok </p>
+		</form>
+		
+		
+		<div ng-include="'./footer.html'"></div>
+		
+	</div> 
+</body>
+</html>

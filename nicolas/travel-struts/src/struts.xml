@@ -36,10 +36,43 @@
     	<action name="index" class="fr.ib.travel.england.EnglandAction"><result>
     	/WEB-INF/views/england/Index.jsp
     	</result></action>
-    	
-    	
+    	<action name="registration" class="fr.ib.travel.england.EnglandRegistrationAction"><result>
+    	/WEB-INF/views/england/registration.jsp
+    	</result></action>
+    	<action name="send" class="fr.ib.travel.england.SendAction"><result name="success">
+    	/WEB-INF/views/england/sent.jsp
+    	</result>
+    	<result name="input">
+    	/WEB-INF/views/england/registration.jsp
+    	</result></action>
     </package>
-           
+    <package name="spain" namespace="/spain" extends="struts-default">
+    <default-action-ref name="proposal"/>     <!-- pas nécessaire car par défaut il le fait  -->
+    	<action name="proposal" class="fr.ib.travel.spain.ProposalAction"><result>
+    	/WEB-INF/views/spain/proposal.jsp
+    	</result></action>
+    	<action name="byid" class="fr.ib.travel.spain.ByIdAction"><result>
+    	/WEB-INF/views/spain/byid.jsp
+    	</result></action>
+    		<action name="list" class="fr.ib.travel.spain.ListAction"><result>
+    	/WEB-INF/views/spain/list.jsp
+    	</result></action>
+    </package>
+            <package name="italie" namespace="/italie" extends="struts-default">
+       
+    	<action name="index" class="fr.ib.travel.italie.IndexAction"><result>
+    	/WEB-INF/views/italie/index.jsp
+    	</result></action>
+  
+    </package>
+     
+            <package name="croatia" namespace="/croatia" extends="struts-default">
+       
+    	<action name="index" class="fr.ib.travel.croatia.IndexAction"><result>
+    	/WEB-INF/views/croatia/index.jsp
+    	</result></action>
+  
+    </package>
 </struts>
 
 <!-- END SNIPPET: xworkSample -->

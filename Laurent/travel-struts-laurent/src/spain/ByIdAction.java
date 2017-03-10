@@ -38,7 +38,7 @@ public class ByIdAction extends ActionSupport{
 		//demarrage d'une transaction
 		Transaction tx = s.beginTransaction();
 		//Suppression de l'élément demandé
-		if(monument!=null)s.delete(monument);
+		//if(monument!=null)s.delete(monument);
 		//application du changement
 		tx.commit();
 		//fermeture de la session

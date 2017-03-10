@@ -23,7 +23,7 @@
 			<p>Où ? ${mo.location}</p>
 		</section>
 		<section class="row col-sm-12">
-			<a href="proposal">Back to Spain</a>
+			<a href="list">Back to Spain</a>
 		</section>
 	</div>
 </body>

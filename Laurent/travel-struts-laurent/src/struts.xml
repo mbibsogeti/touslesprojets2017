@@ -52,12 +52,29 @@
     </package>
  
     <package name="spain" namespace="/spain" extends="struts-default">
-    	<default-action-ref name="proposal"/>
+    	<default-action-ref name="list"/>
         <action name="proposal" class="spain.ProposalAction">
             <result>/WEB-INF/views/spain/proposal.jsp</result>
         </action>
         <action name="byid" class="spain.ByIdAction">
             <result>/WEB-INF/views/spain/byid.jsp</result>
+        </action>
+        <action name="list" class="spain.ListAction">
+            <result>/WEB-INF/views/spain/list.jsp</result>
+        </action>
+    </package>
+    <package name="italia" namespace="/italia" extends="struts-default">
+    
+		<default-action-ref name="index"/>
+        <action name="index" class="italia.ListAction">
+            <result>/WEB-INF/views/italia/index.jsp</result>
+        </action>
+    </package>
+    <package name="croatia" namespace="/croatia" extends="struts-default">
+    
+		<default-action-ref name="index"/>
+        <action name="index" class="croatia.IndexAction">
+            <result>/WEB-INF/views/croatia/index.jsp</result>
         </action>
     </package>
     

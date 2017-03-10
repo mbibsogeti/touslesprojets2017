@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Maroc</title>
+<script src="js/angular.min.js"></script>
+</head>
+<body>
+	<h1>Le Maroc</h1>
+	<!-- FORMULAIRE -->
+	<div data-ng-app="">
+		<!-- Pas besoin de balise form, car pas d'envoi -->
+		<p>Demande</p>
+		<p>
+			<label>Votre nom : <input type="text" data-ng-model="name"></label>
+		</p>
+		<p>
+			<label>Votre email : <input type="text"></label>
+		</p>
+		<p>
+			<input type="button" value="Envoi">
+		</p>
+		<p>
+			<a href="./index.html">Retour à l'index africain</a>
+		</p>
+	</div>
+</body>
+</html>

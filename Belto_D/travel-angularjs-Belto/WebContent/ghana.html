@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, minimal-scale=0.5">
+<link rel="stylesheet" href="CSS/bootstrap.min.css">
+<script src="js/angular.min.js"></script>
+<!-- On va faire les formulaires -->
+<script defer>
+<!--nouvelle synthaxe et affectation--><!--plus utiliser actuellement que scope et function-->
+angular.module("appGhana",[]).controller("CtlGhana",function(){
+<!--pour dire message dans le controller(faut toujours mettre le this!!!)-->
+<!--fonction d'initialisation, a chaque fois on envoie une donnée on réinitialise-->	
+	this.init=function(){
+	this.message="Votre message"
+	this.name="?"
+	this.tel="?"
+			}
+	this.result=""
+<!--ce qu'il faut faire quand on click-->
+	this.askClick=function(){
+		this.result="Demande envoyée"
+		this.init()
+	}
+<!--ce qu'il faut faire en cas d'enregistrement -->	
+	this.registerClick=function(){
+		this.result="Inscription de  "+this.name+"  enregistrée"
+		this.init()
+	}
+	this.init()
+})
+
+</script>
+<title>Voyage au Ghana</title>
+</head>
+<body>
+<!-- Du Bootstrap -->
+<nav >
+<ul class="nav nav-pills nav-tabs nav-justified">
+<li ><a href="index.html">Acueil-Afrique</a></li>
+<li class="active"><a href="maroc.html"> Vers le Maroc?</a></li>
+<li><a href="senegal.html">Vers le Sénégal?</a></li>
+<li class="active" color="red"><a href="egypte.html">Vers l'Ègypte?</a></li>
+<li ><a href="tunisie.html">Vers la Tunisie?</a></li>
+<li ><a href="nigeria.html">Vers le Nigéria</a></li>
+<li class="active"><a href="#"><span class="glyphicon glyphicon-asterisk"></span>Acceuil</a></li>
+</ul>
+</nav>
+<!-- on apelle le controller c -->
+<div class="container" ng-app="appGhana" ng-init="" ng-controller="CtlGhana as c">
+	<h1>Bienvenue au Ghana</h1>
+Quel beau pays, le Ghana
+		<p>
+	<!-- Du coup on préfixe le mg model avec c. -->
+	<label>Nom:<input id="name"
+		type="text" name=name ng-model="c.name"></label>
+		</p>
+		<p>
+		<!-- Du coup on préfixe le mg model avec c. -->
+	<label>Telephone<input id="Telephone"
+		type="tel" name=name ng-model="c.tel"></label>
+		</p>
+		<p>
+	<!-- Du coup on préfixe le mg model avec c. -->
+	<label>Message<textarea name="textarea" ng-model="c.message"></textarea></label>
+		</p>
+		<p>
+		<!--(ng-click, recuperer l'évenement quand on clique -->
+	<label><input  id="button" type="button" value= "Demande d'information" ng-disabled="c.name==''" ng-click="c.askClick()"></label>
+		</p>
+		<p>
+	<label><input  id="button" type="button" value= "Pré-inscription" ng-disabled="c.name==''" ng-click="c.registerClick()" ></label>
+		</p>
+<p>
+{{c.result}}
+</p>
+	</div>
+</body>
+</html>

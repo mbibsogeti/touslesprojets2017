@@ -24,8 +24,8 @@ public class ByIdAction {
 		Session s=HibernateUtil.openSession();
 		Transaction tx = s.beginTransaction();
 		mo=s.get(Monument.class, id);
-		if(mo!=null) s.delete(mo);
-		tx.commit();
+		//if(mo!=null) s.delete(mo);
+		//tx.commit();
 		s.close();
 		return ActionSupport.SUCCESS;
 	}

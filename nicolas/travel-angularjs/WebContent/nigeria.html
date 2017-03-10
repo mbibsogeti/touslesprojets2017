@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+
+<script defer>angular.module("appNigeria",[]).controller("ctlNigeria",function(){
+		this.offers=[{n:1,l:"janvier",s:"saison sèche"},
+			{n:1,l:"janvier",s:"saison sèche"},
+			{n:2,l:"fevrier",s:"saison sèche"},
+			{n:3,l:"mars",s:"saison sèche"},
+			{n:4,l:"avril",s:"saison pluie"},
+			{n:5,l:"mai",s:"saison pluie"},
+			{n:6,l:"juin",s:"saison pluie"},
+			{n:7,l:"juillet",s:"saison pluie"},
+			{n:8,l:"aout",s:"saison sèche"},
+			{n:9,l:"septembre",s:"saison pluie"},
+			{n:10,l:"octobre",s:"saison pluie"},
+			{n:11,l:"novebre",s:"saison sèche"},
+			{n:12,l:"decembre",s:"saison sèche"}
+			]
+		
+		this.askClick=function(){if(this.askForm.$valid){ this.result="Demande envoyée dépare entre le 1/"+this.mois.n+"et le 7/"+this.mois.n+"."} else {if(this.askForm.name.$invalid){this.result="nom invalid"}} }})
+		//a la place de v alid il existe $invalid $dirty $pristine
+		//autre validation this.askClick=function(){this.result="Demande envoyée dépare entre le 1/"+this.mois.n+"et le 7/"+this.mois.n+"."}})	
+		</script>
+<style>
+.ng-invalid{background: red}
+h1{text-align: center}
+even>td{background:#eeb}
+odd>td{background:#FFF8dc}
+table td{border: inset black 1px;
+		border-collapst:collaps;
+		text-align: center;
+		width: 50%;
+		}
+</style>
+<title>Nigeria</title>
+</head>
+<body>
+	<h1>Nigeria</h1>
+	<p>
+		<a href="index.html">accueil</a>
+	</p>
+	<div ng-app="appNigeria" ng-controller="ctlNigeria as c" >
+		<form name="c.askForm">
+		<!--  required pattern entour en rouge si pas les condition rempli ici maj et min  -->
+			<p>
+				Nom:<input type="text" name= "name" ng-model="c.name" required pattern="[A-Z][a-z]+">
+			</p>
+			<p>
+				Email:<input type="text" ng-model="c.email" required >
+			</p>
+			
+			<p>
+				<input type="button" value="inscription " ng-disabled="c.name==''" required ng-click="c.askClick()"  >
+			</p>
+			<p>
+				Offer :<select required ng-model="c.mois" ng-options="offer.l  group by offer.s for offer in c.offers" ></select>
+			</p>
+
+		</form>
+			<p> {{c.result}}</p>
+	
+		
+	</div> 
+</body>
+</html >

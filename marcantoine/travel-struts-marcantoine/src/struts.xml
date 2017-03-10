@@ -34,6 +34,7 @@
 	</package>
 
 	<package name="ireland" namespace="/ireland" extends="struts-default">
+	<!-- la page vers laquelle on est rebvoyé par défaut -->
 		<default-action-ref name="index">/WEB-INF/views/ireland/index.jsp</default-action-ref>
 		<action name="index">
 			<result>/WEB-INF/views/ireland/index.jsp</result>
@@ -72,6 +73,21 @@
 		</action>
 		<action name="byId" class="spain.ByIdAction">
 			<result>/WEB-INF/views/spain/byId.jsp</result>
+		</action>
+		<action name="list" class="spain.ListAction">
+			<result>/WEB-INF/views/spain/list.jsp</result>
+		</action>
+	</package>
+
+	<package name="italy" namespace="/italy" extends="struts-default">
+		<action name="index" class="italy.IndexAction">
+			<result>/WEB-INF/views/italy/index.jsp</result>
+		</action>
+	</package>
+	
+	<package name="croatia" namespace="/croatia" extends="struts-default">
+		<action name="index" class="croatia.IndexAction">
+			<result>/WEB-INF/views/croatia/index.jsp</result>
 		</action>
 	</package>
 

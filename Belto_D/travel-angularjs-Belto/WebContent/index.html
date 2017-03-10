@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html><!-- on aurait pu mettre ng-app="" pour dire que toute la page utilise Angular -->
+<head>
+<script>
+.active a{
+color:red!important;}
+</script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, minimal-scale=0.5">
+<link rel="stylesheet" href="CSS/bootstrap.min.css">
+<script src="js/angular.min.js"></script>
+<title>Voyage en afrique</title>
+</head>
+<body>
+<nav >
+<ul class="nav nav-pills nav-tabs nav-justified">
+<li class="active"><a href="maroc.html"><span class="glyphicon glyphicon-grain"></span>Maroc</a></li>
+<li><a href="senegal.html">Sénégal</a></li>
+<li class="active" color="red"><a href="egypte.html">Ègypte</a></li>
+<li ><a href="tunisie.html">Tunisie</a></li>
+<li class="active"><a href="#"><span class="glyphicon glyphicon-asterisk"></span>Acceuil</a></li>
+<li ><a href="ghana.html">Ghana</a></li>
+<li ><a href="nigeria.html">Nigeria</a></li>
+</ul>
+</nav>
+<div class="container" ng-app="appAfrique" ng-init="img='http://www.photodenature.fr/wp-content/uploads/2014/11/photo-photo-dafrique-paysages-3.jpg">
+	<h1>Voyages vers l'afrique</h1>
+
+	<header>
+		<h2>Vive les vacances, la jumgle, les grands espaces, le safari</h2>
+	</header>
+	Les différents voyages, il y en a pour tous les goûts
+	<table border="15" border-style="solid" >
+		<tr>
+		     <th></th>
+			<th>Pays</th>
+			<th>Ville</th>
+			<th>Position</th>
+			<th>La mer, le sable fin</th>
+			<th>Le safari_Zoo, reserve naturel</th>
+			<th>Montagne, nature, randonnée</th>
+		</tr>
+		<tr>
+			<th>Avion/Bateau de croisière</th>
+			<td>Sénegal</td>
+			<td><a href="https://fr.wikipedia.org/wiki/Dakar">Dakar</a></td>
+			<td>afrique de l'ouest</td>
+			<td>Oui</td>
+			<td>Non</td>
+			<td>Oui</td>
+		</tr>
+		<tr>
+		<th>Avion/Bateau de croisière</th>
+			<td>Maroc</td>
+			<td><a href="https://fr.wikipedia.org/wiki/Casablanca">Cassablanca</a></td>
+			<td>Afrique du nord</td>
+			<td>Oui</td>
+			<td>Non</td>
+			<td>Oui</td>
+		</tr>
+		<tr>
+		<th>Avion</th>
+			<td>Maroc</td>
+			<td><a href="https://fr.wikipedia.org/wiki/Marrakech">Marrakech</a></td>
+			<td>Afrique du nord</td>
+			<td>non</td>
+			<td>Non</td>
+			<td>Oui</td>	
+		</tr>
+		<tr>
+		<th>Avion/Bateau de croisière</th>
+			<td>Sénégal</td>
+			<td><a href="https://fr.wikipedia.org/wiki/Ngaparou">Ngaparou</a></td>
+			<td>Afrique de l'ouest</td>
+			<td>oui</td>
+			<td>Non</td>
+			<td>Non</td>	
+		</tr>
+		<tr>
+		<th>Avion/Bateau de croisière</th>
+			<td>Tunisie</td>
+			<td><a href="https://fr.wikipedia.org/wiki/Tunis">Tunis</a></td>
+			<td>Afrique du nord</td>
+			<td>non</td>
+			<td>Non</td>
+			<td>Oui</td>	
+		</tr>
+		<tr>
+		<th>Avion/Bateau de croisière</th>
+			<td>Egypte</td>
+			<td><a href="https://fr.wikipedia.org/wiki/Le_Caire">Le Caire</a></td>
+			<td>Afrique du nord-est</td>
+			<td>non</td>
+			<td>Non</td>
+			<td>Oui</td>	
+		</tr>
+	</table>
+<img ng-src="{{img}}" ng-if="img!=''">
+	</div>
+</body>
+</html>
