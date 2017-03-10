@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<title>Voyage en Afrique du Sud</title>
+<script defer>
+	angular
+			.module("appSA", [ "ngRoute", "ngAnimate" ])
+			.config(
+					function($routeProvider) {
+						$routeProvider
+								.when(
+										"/index",
+										{
+											controller : "CtlSA",
+											template : function() {
+												return "<p> Nous proposons de voyages à des prix très atractifs pour nos <a href='#!/dests'>destinations</a></p>"
+											}
+										}).when("/dests", {
+									controller : "CtlSA",
+									templateUrl : "southafrica/dests.html",
+									controllerAs : "c"
+								}).when("/dests/:id", {
+									controller : "CtlSA",
+									templateUrl : "southafrica/detail.html",
+									controllerAs : "c"
+								}).otherwise({
+									redirectTo : "/index"
+								})
+					}).controller("CtlSA", function($routeParams) {
+				//afficher des destinations 
+				this.dests = [ {
+					n : "Le Cap",
+					d : "Ville du Sud",
+					id : 1
+				}, {
+					n : "Durban",
+					d : "Ville du ?",
+					id : 2
+				}, {
+					n : "Soweto",
+					d : "ville ?",
+					id : 3
+				} ]
+				//this.dest = this.dests[0]
+				console.log($routeParams.id)
+				//this.dest2=this.dests[1]
+				for (i in this.dests) {
+					console.log("for")
+					if (this.dests[i].id == $routeParams.id) {
+						console.log("if")
+						this.dest2 = this.dests[i]
+						console.log(this.dest2)
+					}
+					console.log(this.dest2)
+				}
+				console.log(this.dest2)
+				//this.dest = this.dests[1]
+				console.log(this.dest)
+			})
+</script>
+<style>
+.view {
+	position: absolute;
+	width: 40%;
+	transition: 1s;
+	background: #cfc;
+}
+
+.view.ng-enter {
+	opacity: 0;
+}
+
+.view.ng-enter-active {
+	opacity: 1;
+}
+
+.view.ng-leave {
+	opacity: 1;
+}
+
+.view.ng-leave-active {
+	opacity: 0;
+}
+</style>
+</head>
+<body ng-app="appSA">
+	<h1 style="text-align: center">Afrique du Sud</h1>
+	<p style="text-align: center">
+		<img src="img/sa.jpg"><br /> <a href="index.html">Retour à
+			l'Acceuil</a>
+	</p>
+	<p>{{destinations}}</p>
+	<div ng-controller="CtlSA as c" ng-view class="view"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+//defer signifie démarre quand la page est prète
+
+<script defer> angular.module("appSA",["ngRoute","ngAnimate"]).controller("ctlSA",function(){}).config(function($routeProvider)
+		{$routeProvider
+	.when("/index",{controller:"ctlSA",template:function(){return "<p> Nous proposons des voyages</p><a href='#!/dest'>dest</a>" }})		
+		
+	.when("/dest",{controller:"ctlSA",template:function(){return "<p> Nous proposons aussi des vacances </p>" }})		
+		
+//.filter("mlt",function(){return function(x,y,,z){return x*y*z;}})
+    .otherwise({redirectTo:"/index"})
+    })
+</script>
+<style>
+h1{text-align: center}
+even>td{background:#eeb}
+odd>td{background:#FFF8dc}
+table td{border: inset black 1px;
+		border-collapst:collaps;
+		text-align: center;
+		width: 50%;
+		}
+</style>
+<title>Nos voyages africain: southafrica</title>
+</head>
+<body ng-app="appSA">
+<h1>afrique du sud : </h1>
+<div  ng-controller="ctlSA as c" ng-view></div>
+
+
+<p>
+			<a href="index.html">Accueil</a>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" >
+</p>
+		
+</body>
+
+</html>
