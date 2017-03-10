@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="js/angular.min.js"></script>
+<title>African trips: Ghana</title>
+<script defer>
+	/* On crée un module pour envoyer le formulaire */
+	angular
+			.module("appGhana", [])
+			.controller(
+					"CtlGhana",
+					function() {
+						/* fonction d'initialisation de nos paramètres */
+						this.init = function() {
+							this.message = "Your comments";
+							this.name = "";
+							this.tel = "";
+						}
+						/*  */
+						this.result = "";
+						/* fonction d'envoi du formulaire. UNE fonction par EVENEMENT !!! */
+						this.askClick = function() {
+							this.result = "Request sent for: " + this.name
+									+ " with the tel number: " + this.tel;
+							/* réinitialisation des paramètres */
+							this.init();
+						}
+						/* fonction de pré-inscription */
+						this.registerClick = function() {
+							this.result = "Request sent for: "
+									+ this.name
+									+ " with the tel number: "
+									+ this.tel
+									+ " but just as a register thing, cause we know you're not THAT into it, no offense.";
+							this.init();
+						}
+						this.init()
+					})
+</script>
+</head>
+<body>
+	<div ng-app="appGhana" ng-controller="CtlGhana as c"
+		ng-init="img='http://www.prixdesvoyages.com/photos/sejours/2/2/0/senegal_22041_1_1.jpg'">
+		<h1>Welcome on our Ghanaan trips.</h1>
+		<img ng-src="{{img}}">
+		<h2>Where would you like to travel?</h2>
+
+		<p>
+			<label for="name">Name: </label><input type="text" ng-model="c.name">
+		</p>
+		<p>
+			<label for="name">Tel: </label><input type="tel" ng-model="c.tel">
+		</p>
+		<p>
+			<textarea ng-model="c.message"></textarea>
+		</p>
+		<p>
+			<input type="button" value="Information request"
+				ng-disabled="c.name =='' || c.tel==''" ng-click="c.askClick()">
+		</p>
+		<p>
+			<input type="button" value="Pre-subscribe"
+				ng-disabled="c.name =='' || c.tel==''"
+				ng-click="c.register
+				Click()">
+		</p>
+		<p>{{c.result}}</p>
+
+		<div ng-include="'footer.html'"></div>
+	</div>
+
+</body>
+</html>
