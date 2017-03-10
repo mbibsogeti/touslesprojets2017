@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/aop
+			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<bean id="cruiseSource" class="travel.CruiseSource" scope = "singleton"> 
+		<property name="calculator" ref="cruiseCalculator" />
+	</bean>
+	<bean id="cruiseCalculator" class="travel.CruiseCalculator"><property name="prixmh" value="220.9"/><property name="prixbm" value="340"/></bean>
+<bean id="timerAspect" class="travel.TimerAspect"/>
+<aop:config><aop:aspect ref="timerAspect"><aop:around method="showTime" pointcut="execution(* getPrice())"/></aop:aspect></aop:config>
+<bean id="lakesource" class="travel.LakeSource" autowire="byType"/> <!-- autowire veu dire avec ce qui c'est créé -->
+<bean id="gemfireCache" class="org.springframework.data.gemfire.CacheFactoryBean">
+<property name="properties">
+<props><prop key="log-level">error</prop></props>
+</property>
+</bean>
+<bean id="lakeRegion" class="org.springframework.data.gemfire.LocalRegionFactoryBean" p:cache-ref="gemfireCache">
+<property name="name" value="lakeRegion">
+</property>
+</bean>
+<context:component-scan base-package="travel"/>
+</beans>
+
