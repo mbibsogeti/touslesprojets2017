@@ -1,0 +1,15 @@
+<p>
+les destinations:
+</p>
+<table>
+<tr>
+	<th>Nom</th>
+	<th>Description</th>
+	</tr>
+<!-- affiche les elements du tablaux en forme de lien -->
+<!-- Permettra d'acceder aux details -->	
+<tr ng-repeat="d in c.dests">
+	<td><a href= "#!/destination/{{d.id}}">{{d.name}}</a></td>
+	<td>{{d.desc}}</td>
+	</tr>
+</table>
