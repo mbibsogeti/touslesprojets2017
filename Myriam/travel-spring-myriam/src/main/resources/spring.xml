@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/aop
+			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<bean id="cruiseSource" class="fr.ib.travel.CruiseSource">
+		<property name="calculator" ref="cruiseCalculator" />
+	</bean>
+	<bean id="cruiseCalculator" class="fr.ib.travel.CruiseCalculator">
+		<property name="p1" value="340" />
+		<property name="p2" value="220.90" />
+	</bean>
+	
+	<bean id="lakeSource" class="fr.ib.travel.LakeSource" autowire="byType" />
+	<context:component-scan base-package="fr.ib.travel" />
+	
+	<bean id="timerAspect" class="fr.ib.travel.TimerAspect" />
+	<bean id="gemfireCache" class="org.springframework.data.gemfire.CacheFactoryBean">
+		<property name="properties">
+			<props>
+				<prop key="log-level">error</prop>
+				<prop key="mcast-port">0</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="lakeRegion" class="org.springframework.data.gemfire.LocalRegionFactoryBean"
+		p:cache-ref="gemfireCache">
+		<property name="name" value="lakeRegion" />
+	</bean>
+
+	<aop:config>
+		<aop:aspect ref="timerAspect">
+			<aop:around method="showTime" pointcut="execution(* fr.ib.travel..*.*(..))" /> <!-- * fr.ib.travel..*.*(..) : Toutes les fonctions de tous les fichiers 
+				contenus dans travel, quelque soit leurs paramètres -->
+		</aop:aspect>
+	</aop:config>
+	<bean id="a" class="java.lang.Integer" scope="prototype">
+		<constructor-arg value="17" />
+	</bean>
+	<!-- <bean id="calendar" class="java.util.Calendar"/> classe que l'on ne 
+		peut pas instancier avec un new : on ne peut pas l'instancier ainsi -->
+	<!-- <bean id="integer" class="java.util.integer"/> classe qui n'a pas de 
+		constructeur par défault : on ne peut pes l'intancier ainsi -->
+
+</beans>
+
