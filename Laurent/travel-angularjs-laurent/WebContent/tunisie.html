@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mafia K1Fry : Tunisie</title>
+<script src="js/angular.min.js"></script>
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container" data-ng-app data-ng-init="voyage={1:['Tunis',2],2:['Constantine',3],3:['Jerba',6],4:['Tunis',2.56]}">
+		<div data-ng-include="'./header.html'"></div>
+		<h1 >Morocco !!</h1>
+		<table>
+			<thead>
+				<tr>
+					<td>
+					<th>Lieu
+					<th>Jours
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-ng-repeat="lieu in voyage" data-ng-class-even="'even'">
+					<td>{{$index+1}}
+					<th>{{lieu[0]|uppercase}}
+					<td>{{lieu[1]|number:2}}
+				</tr>
+			</tbody>
+		</table>
+		<div data-ng-include="'./footer.html'"></div>
+	</div>
+</body>
+</html>

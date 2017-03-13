@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nigéria</title>
+<style>
+	input.ng-invalid {
+		background: red
+	}
+</style>
+<script src="js/angular.min.js"></script>
+<script defer>
+	angular.module("appNigeria", [])
+		.controller("CtrlNigeria", function() {
+			this.askClick = function() {
+				// Si le formulaire dans son ensemble est valide
+				if(this.askForm.$valid) {
+					// Autres valeurs possibles :
+					// $invalid : non valide
+					// $dirty : a été modifié
+					// $pristine : n'a pas été modifié
+					// month est défini dans la balise <select> plus bas
+					this.result = "Demande d'inscription envoyée. Départ entre le 1/" + this.month.num + " et le 7/" + this.month.num;
+				} // end if
+				else {
+					this.result = "Vous êtes une andouille. Le formulaire n'est pas valide : "
+					if(this.askForm.name.$invalid) {
+						this.result += " * Nom invalide * ";
+					} // end if
+					if(this.askForm.mail.$invalid) {
+						this.result += " * Mail invalide * ";
+					} // end if
+					if(this.askForm.month.$pristine) {
+						this.result += " * Veuillez choisir un mois * ";
+					} // end if
+				} // end else
+			} // end askClick function
+			this.result = "";
+			this.offers = [
+				{num : 1, label : "janvier", season : "saison sèche"},
+				{num : 2, label : "février", season : "saison sèche"},
+				{num : 3, label : "mars", season : "saison sèche"},
+				{num : 4, label : "avril", season : "saison des pluies"},
+				{num : 5, label : "mai", season : "saison des pluies"},
+				{num : 6, label : "juin", season : "saison des pluies"},
+				{num : 7, label : "juillet", season : "saison des pluies"},
+				{num : 8, label : "août", season : "saison sèche"},
+				{num : 9, label : "septembre", season : "saison des pluies"},
+				{num : 10, label : "octobre", season : "saison des pluies"},
+				{num : 11, label : "novembre", season : "saison sèche"},
+				{num : 12, label : "décembre", season : "saison sèche"}]
+		})
+</script>
+</head>
+<body>
+	<div data-ng-app="appNigeria" data-ng-controller="CtrlNigeria as c">
+		<h1>Le bourdonnant Nigéria</h1>
+		
+		<!-- askForm est rajouté au contrôleur pour la validation de l'envoi -->
+		<form name="c.askForm">
+			<p>
+				<!-- required : encadré en rouge tant qu'on n'a rien écrit -->
+				<!-- pattern="[A-Z][a-z]+" : encadré en rouge tant qu'on n'a pas adopté un format 1 maj + X min -->
+				Nom : <input type="text" data-ng-model="c.name" name="name" pattern="[A-Z][a-z]+" required>
+			<p>
+				Email : <input type="email" data-ng-model="c.mail" name="mail" required>
+			</p>
+			<p>
+				<!-- Affiche le label des saisons regroupées par type -->
+				<select data-ng-model="c.month" name="month" data-ng-options="i.label group by i.season for i in c.offers" required>
+					<!-- Valeur par défaut du menu déroulant -->
+					<option value="">Choisir votre mois de départ</option>
+				</select>
+			</p>
+			<p>
+				<input type="button" value="Inscription" data-ng-disabled="c.name==''" data-ng-click="c.askClick()">
+			</p>
+			<p>
+				{{c.result}}
+			</p>
+		</form>
+	</div>
+	<p>
+		<a href="./index.html">Retour à l'index africain</a>
+	</p>
+</body>
+</html>

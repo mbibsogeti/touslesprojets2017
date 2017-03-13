@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 10px 25% 10px 25%;
+}
+
+h1 {
+	color: #ff8000;
+}
+
+#lien {
+	color: #000000;
+}
+
+#titre {
+	color: #ff0000;
+}
+
+#egypteTitle {
+	background: #ffffe1;
+	color: #ff8040;
+}
+fieldset {
+	border: 1px #000000 solid;
+	margin: 0px 0px 25px 0px;
+}
+
+legend {
+	color: #000000;
+	Font-size: 16pt;
+	font-weight:bold;
+}
+
+#container {
+	padding: 1% 1% 1% 1%;
+	background: #eeeeff;
+}
+table{
+	margin: 20px 20px 20px 20px;
+}
+
+th, td {
+	border:1px #000000 solid;
+	padding: 5px 10px 5px 10px;
+}
+
+.even>td {
+	text-align: center;
+	background: #f4fff4;
+}
+
+.odd>td {
+	text-align: center;
+	background: #d0ffd0;
+}
+input.ng-invalid{
+	background:#ff8080;
+}
+.view{
+	position:absolute;
+	width:80%;
+	transition:0.5s;
+	background:#cfc;
+}
+.view.ng-enter{
+	opacity:0;
+}
+.view.ng-enter-active{
+	opacity:1;
+}
+.view.ng-leave{
+	opacity:1;
+}
+.view.ng-enter-active{
+	opacity:0;
+}

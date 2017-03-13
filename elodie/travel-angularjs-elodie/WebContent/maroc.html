@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/angular.min.js"></script>
+<title>Maroc</title>
+</head>
+<body>
+	<div ng-app="" ng-init="name='?' ; email='?' ; img='https://i1.wp.com/www.gaiaitalia.com/wp-content/uploads/2016/03/Marocco-Flag-Map.jpg'">
+		<p>
+			<img src="img/maroc.jpg" alt="photo-Afrique" />
+		</p>
+		<section>
+			<h1 id="marocTitle">Maroc</h1>
+			<p><img ng-src="{{img}}" ng-if="img!=''"/></p>
+		</section>
+		<fieldset>
+			<legend>DEMANDE</legend>
+			<p>Votre nom <input type="text" ng-model="name"/> <span ng-if="name == '?' || name == ''">Inscrire votre nom</span></p>
+			<p>Votre email <input type="email" ng-model="email"/> <span ng-hide="email !='?' && email != ''">Inscrire votre email</span></p>
+			<p>Envoyer une demande pour <span ng-bind="name"></span> avec un mail: {{email}}</p>
+			<p><input type="button" value="Envoi" /></p>
+		</fieldset>
+		<section id="lien">
+			<a href="Index.html">Home</a>
+		</section>
+	</div>
+</body>
+</html>

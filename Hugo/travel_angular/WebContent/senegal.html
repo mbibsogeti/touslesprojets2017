@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+
+<script defer="defer">
+	// créer un module angular js. Pas forcément besoin de créer la variable appS.
+	var appS = angular.module("appSenegal", [])
+	// 	lire un module et ajouter de l'information. Deux syntaxes équivalentes
+	// 	appS.info({
+	// 		author : "moi"
+	// 	})
+	// 	angular.module("appSenegal").info({
+	// 		author : "moi"
+	// 	})
+	// ajouter des constantes à un module. Deux syntaxes équivalentes également
+	appS.constant("plane", 945)
+	angular.module("appSenegal").constant("plane", 945)
+	angular.module("appSenegal").constant("hotel", 38.29)
+	// 	lecture de l'information contenue dans un module: rien dans les parenthèses info()
+	// 	console.log(angular.module("appSenegal").info())
+	//value a quasiment la même fonction que constant:
+	//value("hotel",38.29)
+	// un controller est une fonction:
+	angular.module("appSenegal").controller("ctlSenegal",
+			function($scope, plane, hotel) {
+				$scope.price = 9 * hotel + plane;
+			})
+	// les filtes peuvent être appelés dans les {} pour modifier les valeurs affichées
+	// 	angular.module("appSenegal").filter("mlt", function() {
+	// 		return function(x, y, z) {
+	// 			return x*y+z;
+	// 		}
+	// 	})
+	// pour appeler le filtre:
+	// {{5|mlt:3:6}}
+	angular.module("appSenegal").filter("curr",function(){
+		return function(price,currency,conv){
+			if(conv==undefined) r=1;
+			return "El precio es "+(price/conv).toFixed(2)+" "+currency;
+		}
+	})
+</script>
+<title>Viaje a Senegal</title>
+</head>
+<body>
+
+	<div ng-app="appSenegal" ng-controller="ctlSenegal">
+		<h1>Senegal</h1>
+		<p>Precio del viaje a Senegal: {{price|number:1}} . {{price|curr:"cfa":0.0015}}</p>
+	</div>
+
+	<div>
+		<a href="index.html">Inicio</a>
+		<a href=" marruecos.html">Marruecos</a>
+		<a href="tunez.html">Tunez</a>
+		<a href=" egipto.html">Egipto</a>
+		<a href="ghana.html">Ghana</a>
+		<a href="nigeria.html">Nigeria</a>
+	</div>
+
+</body>
+</html>

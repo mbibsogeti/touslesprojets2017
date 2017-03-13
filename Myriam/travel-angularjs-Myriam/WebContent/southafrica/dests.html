@@ -1,0 +1,12 @@
+<p>Nous proposons de superbes voyages avec rencontres avec les
+	requins :)</p>
+<table>
+	<tr>
+		<th>Destination</th>
+		<th>Description</th>
+	</tr>
+	<tr ng-repeat="d in c.dests">
+		<td><a href="#!/dests/{{d.id}}">{{d.n}}</a></td>
+		<td>{{d.d}}</td>
+	</tr>
+</table>

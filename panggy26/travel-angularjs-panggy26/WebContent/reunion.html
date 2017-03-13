@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Réunion</title>
+<script src="js/angular.min.js"></script>
+<script defer>
+	angular.module("appReunion", [])
+		.controller("CtrlReunion", function($http) {
+			var a = this;
+			this.send = function() {
+				this.info = "Demande en cours... Veuillez patienter.";
+				$http.post("reunion", 
+					"name=" + this.name + "&email=" + this.email, 
+					{headers : {"Content-Type" : "application/x-www-form-urlencoded"}})
+				.then(function() {
+					a.info = "Yeah baby !"
+				}); // end then
+			} // end send function
+			this.info = "";		
+		}) // end controller
+</script>
+</head>
+<body data-ng-app="appReunion" data-ng-controller="CtrlReunion as c">
+	<h1>La Réunion, l'Île Intense</h1>
+	<div>
+		<form>
+			<p>
+				Nom : <input type="text" data-ng-model="c.name">
+			<p>
+				Email : <input type="email" data-ng-model="c.email">
+			</p>
+			<p>
+				<!-- Appel de la fonction send() lorsqu'on clique sur le bouton -->
+				<input type="button" value="Envoyer" data-ng-click="c.send()">
+			</p>
+			<p>{{c.info}}</p>
+		</form>
+	</div>
+	<p>
+		<a href="./index.html">Retour à l'index africain</a>
+	</p>
+</body>
+</html>

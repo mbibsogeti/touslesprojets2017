@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.even>td {
+	background: #eeb
+}
+</style>
+<script src="js/angular.min.js"></script>
+<title>Tunisie, la Verte</title>
+</head>
+<body>
+	<div data-ng-app data-ng-init="">
+		<p data-ng-repeat="n in [1,2,3,1] track by $index">
+			{{n}} viajero<span data-ng-show="n>1">s</span>
+		</p>
+		<!-- 		<p ng-repeat="n in [1,2,3,4]" ng-if="n!=1">{{n}} viajeros</p> -->
+
+		<table>
+			<tr>
+				<th>Indice</th>
+				<th>Lugar</th>
+				<th>Dias</th>
+			</tr>
+			<tr data-ng-repeat="step in [{l:'Tunez',d:2},{l:'Constantine',d:3},{l:'Jerba',d:6},{l:'Zorwarah',d:2}]" data-ng-class-even="'even'">
+				<td>{{$index+1}}</td>
+				<td>{{step.l|uppercase}}</td>
+				<td>{{step.d|number:0}}</td>
+			</tr>
+		</table>
+		<p>
+			<a href="./index.html">Retour à l'index africain</a>
+		</p>
+	</div>
+</body>
+</html>
