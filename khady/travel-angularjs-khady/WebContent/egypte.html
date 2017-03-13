@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background: #F7F8E0">
+<div data-ng-app="" data-ng-init="show=false; img='http://media.routard.com/image/46/0/pt94703.1303460.w630.jpg'" ng-cloak>
+<h1>Nos Voyages en Egypte</h1>
+<center>
+			<img ng-src="{{img}}" ng-if="img != '' ">
+		</center>
+
+<fieldset>
+			<legend><strong>Votre Voyage</strong></legend>
+			<form>
+				<p>
+					<label>Jours <input ng-model="days" type="number" size="10"  ></label> 
+				</p>
+				
+				<p>
+					<label ng-mouseover="visits=true">Visites <input ng-model="visits" type="checkbox" ></label></p>						 
+				
+				
+				<p>
+					<label><input type="button" value="Demander" ng-click ="show=true"></label>
+				</p>
+				<p ng-show="show"></p>
+				
+				
+			</form>
+		</fieldset>
+
+
+<a href="index.html">Page d'accueil</a>
+<div ng-include = "'footer.html'"></div>
+
+</div>
+</body>
+</html>

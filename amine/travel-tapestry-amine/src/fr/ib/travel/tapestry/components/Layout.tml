@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html xmlnq:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+	<head></head>
+	<body>
+		<div class="container">	<t:body/> </div>
+	</body>
+</html>

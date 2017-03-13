@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input.ng-invalid{background:red}
+</style>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
+<script defer>
+angular.module("appNigeria", []).controller("CtrlNigeria", function() {
+
+	  this.askClick = function() {
+		  if(this.askForm.$valid){ 
+			  this.result = "Demande enregistrée ! Départ entre le 1/"+this.offer.n+ " et le 7/"
+			  
+		            if(this.askForm.name.$valid){
+		            	this.result = "Demande enregistrée ! Départ entre le 1/"+this.offer.n+ " et le 7/"
+		            }else
+				        if(this.askForm.name.$invalid){
+    	                this.result = "Nom invalide ! Merci de bien remplir le formulaire" 
+		            }
+    	
+		  }
+	  }
+	        this.offers = [	        
+	        	{n:1, l:"Janvier", s:"saison sèche"},
+	        	{n:2, l:"Février", s:"saison sèche"},
+	        	{n:3, l:"Mars", s:"saison sèche"},
+	        	{n:4, l:"Avril", s:"saison pluie"},
+	        	{n:5, l:"Mai", s:"saison pluie"},
+	        	{n:6, l:"Juin", s:"saison pluie"},	        		        	
+	        ]
+	               
+	       
+})
+</script>
+</head>
+<body>
+<div data-ng-app="appNigeria" 
+	     data-ng-controller="CtrlNigeria as c"
+		 data-ng-init=" img='https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS4lLV9AHfqLTO8msBMr63d2dTNU5EIje5UDtuwRuR03giAIOiaNQ'"
+		 data-ng-cloak>
+<h1>Nos voyages au Nigeria</h1>
+
+<center>
+			<img data-ng-src="{{img}}" data-ng-if="img != '' ">
+		</center>
+
+<fieldset>
+			<legend>
+				<strong>Votre Voyage</strong>
+			</legend>
+			<form name = "c.askForm">
+				
+					<p><label>Nom <input data-ng-model="c.name" type="text"
+						size="20" required pattern = "[A-Z][a-z]+" name = "name"></label></p>				
+				
+					<p><label>Email <input data-ng-model="c.email" type="email"
+						size="20" required></label></p>
+								
+					<p><label>Offre <select data-ng-model="c.offer" data-ng-options = "offer.l group by offer.s for offer in c.offers" required><option value = "">Choisir</option></select></label></p>				
+							
+					<p><label><input type="button" value="Inscription"
+						data-ng-disabled="c.name == ''" data-ng-click="c.askClick()"></label></p>
+			
+			<p>{{c.result}}</p>
+</form>
+</fieldset>
+<a href="index.html">Page d'accueil</a>
+</div>
+</body>
+</html>
