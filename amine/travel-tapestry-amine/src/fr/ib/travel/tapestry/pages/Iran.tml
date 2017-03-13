@@ -1,0 +1,32 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	t:type="layout" title="Voyages en Asie">
+	<h1> Voyages en Iran</h1>
+	<div class="row" id="img">
+		<img src="${context:img/iran.jpg}" alt="iran" class="img-rounded" />
+	</div>
+	<div class="row">
+		<p id="price">N'attendez pas: ${discount.name} pour seulement
+			${discount.price}€</p>
+		<p>${travels.size()} voyages</p>
+		<table class="table table-condensed">
+			<tr class="active">
+				<th>Nom</th>
+				<th>Description</th>
+				<th>Prix en €</th>
+				<th>Prix en Rial</th>
+				<th>#</th>
+			</tr>
+
+			<t:loop source="travels" value="travel" index="i">
+				<tr class="info">
+					<td>${travel.name}</td>
+					<td>${travel.description}</td>
+					<td>${travel.price}</td>
+					<td>${rialPrice}</td>
+					<td>${iPlusOne}</td>
+				</tr>
+			</t:loop>
+		</table>
+	</div>
+
+</html>

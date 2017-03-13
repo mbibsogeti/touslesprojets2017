@@ -1,7 +1,26 @@
 <!DOCTYPE html>
-<html xmlnq:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
-	<head></head>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+	<head>
+		<link rel="icon" type="image/png" href="img/favasie.png" />
+		<title>${title}</title>
+	</head>
 	<body>
-		<div class="container">	<t:body/> </div>
+		<div class="container">
+			<nav>
+				<ul class="nav nav-pills">
+					<li>
+						<a href="index">
+							<span class="glyphicon glyphicon-home"> Acceuil</span>
+						</a>
+					</li>
+					<li>
+						<a href="iran">
+							<span class="glyphicon glyphicon-plane"> Iran</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<t:body />
+		</div>
 	</body>
 </html>
