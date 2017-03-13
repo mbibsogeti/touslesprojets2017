@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script defer>
+angular
+	.module("appSA", ["ngRoute", "ngAnimate"])
+	.config(function($routeProvider){$routeProvider
+	.when("/index",{controller:"CtrlSA", template:function(){
+		return "<p>Nous proposons les offres ci-dessous" + "<a href ='#!/dests'>dests</a></p>'"
+		
+		}})
+	
+		.when("/dests", {controller:"CtrlSA", templateUrl:"southafrica/dests.html", controllerAs:"c"})
+		.when("/dests/:id", {controller:"CtrlSA", templateUrl:"southafrica/details.html", controllerAs:"c"})
+		
+	.otherwise({redirectTo:"/index"})	
+	})
+
+	.constant("destinations",[{n: "Le Cap", d: "Safari, vin", id:1},
+		          {n: "Johannesburg", d: "Safari, musée", id:2},
+	          	  {n: "Parc Kruger", d: "Camping, Chasse", id:3},
+		          {n: "Durban", d: "Plage, surf", id:4}])
+	
+	<!--.controller("CtrlSA",["$routeParams" ,"destinations",function($routeParams, destinations){		
+	this.dests = destinations}]) équivalent de la ligne 32 mais la ligne 32 est préférée à la ligne 28 par rapport au minimiseur js-->
+	
+		          
+	.controller("CtrlSA", function($routeParams, destinations)){
+	this.dests = destinations	
+		
+	}
+	
+	for(i in this.dests)
+		if(this.dests[i].id == $routeParams.id)
+			this.dest = this.dests[i]
+	})
+</script>
+<style>
+
+.view{position: absolute;
+      width: 50%;
+      transition:1s;
+      background: #cfc;
+}
+
+.view.ng-enter{opacity:0;}
+.view.ng-enter-active{opacity:1;}
+.view.ng-leave{opacity:1;}
+.view.ng-leave-active{opacity:0;}
+
+</style>
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-ng-app="appSA">
+	<h1>Afrique du Sud</h1>
+	<p data-ng-init=" img ='http://e-sushi.fr/imagearticle/2016/03/afrique-du-sud.jpg'"></p>
+	<center>
+		<img data-ng-src="{{img}}" data-ng-if="img != '' ">
+	</center>
+	
+	<fieldset>
+			<legend>
+				<strong>Votre Voyage</strong>
+			</legend>
+			</fieldset>
+	<a href="southafrica.html#!/dests">Page destinations</a>
+
+	<div data-ng-controller="CtrlSA as c" data-ng-view class = "view" data-ng-cloak>
+	</div>
+	
+</body>
+</html>
