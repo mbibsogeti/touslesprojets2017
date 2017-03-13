@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/angular.min.js"></script>
+
+
+<script type="text/javascript" defer>
+	angular.module("appNigeria", []).controller("CtlNigeria", function() {
+		this.init = function() {
+			this.name = "";
+			this.email = "";
+		}
+		this.result = "";
+		
+		this.offers=[
+					{n:1,l:"Janvier",s:"saison sèche"},
+					{n:2,l:"Février",s:"saison sèche"},
+					{n:3,l:"Mars",s:"saison sèche"},
+					{n:4,l:"Avril",s:"saison des pluies"},
+					{n:5,l:"Mai",s:"saison des pluies"}
+					];
+
+		this.askClick = function() {
+			if(this.askForm.$valid){
+				this.result = "Demande enregistrée ";
+				this.result += "- Départ entre le 1/"+this.offer.n+" et 7/"+this.offer.n;
+			}
+			else {
+				this.result ="Formulaire non validé - Remplir correctement: "
+				
+				if(this.askForm.name.$invalid && this.askForm.email.$invalid && this.askForm.select.$invalid)
+					this.result += "Nom, email et offre";
+				else if (this.askForm.name.$invalid && this.askForm.email.$invalid)
+					this.result += "Nom et email";
+				else if (this.askForm.name.$invalid && this.askForm.select.$invalid)
+					this.result += "Nom et offre";
+				else if (this.askForm.email.$invalid && this.askForm.select.$invalid)
+					this.result += "Email et offre";
+				else if (this.askForm.name.$invalid)
+					this.result += "Nom";
+				else if (this.askForm.email.$invalid)
+					this.result += "Email";
+				else
+					this.result += "Offre";
+			}
+			
+		}
+		
+		this.init();
+	});
+</script>
+
+
+<title>Nigéria</title>
+</head>
+<body>
+	<div ng-app="appNigeria" ng-init="" ng-controller="CtlNigeria as c">
+
+		<p><img src="img/nigeria.jpg" alt="photo-Afrique" /></p>
+		<section>
+			<h1 id="titre">Nigéria</h1>
+			<p><img ng-src="{{img}}" ng-if="img!=''" /></p>
+		</section>
+
+		<fieldset>
+			<legend>Contact</legend>
+			<form name="c.askForm">
+				<p>Nom <input type="text" ng-model="c.name" required pattern="[A-Z][a-z]+" name="name"/></p>
+				<p>Email <input type="email" ng-model="c.email" required/ name="email"></p>
+				<p>Offre <select ng-model="c.offer" ng-options="offer.l group by offer.s for offer in c.offers" required name="select">
+					<option value="">Choisir</option>
+				</select></p>
+				<p><input type="button" value="Inscription" ng-disabled="c.name==''" ng-click="c.askClick()" /></p>
+				<p>{{c.result}}</p>
+				<p>{{c.result2}}</p>
+			
+			</form>
+			
+
+		</fieldset>
+
+		<section id="lien">
+			<a href="Index.html">Home</a>
+		</section>
+
+	</div>
+</body>
+</html>

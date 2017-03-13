@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+
+
+<script type="text/javascript" defer>
+angular
+	.module("appMadagascar", [])
+	.directive("year",function(){
+		return {
+			restrict:"EA", 
+			template:new Date().getFullYear()
+		}
+	})
+
+</script>
+
+
+<title>Madagascar</title>
+</head>
+<body ng-app="appMadagascar">
+
+	<p><img src="img/madagascar.jpeg" alt="photo-Afrique" /></p>
+	
+	<section>
+		<h1 id="titre">Madagascar</h1>
+	</section>
+	
+	<fieldset>
+		<legend>Voyage</legend>
+		<year></year>
+	</fieldset>
+	<section id="lien">
+		<a href="Index.html">Home</a>
+	</section>
+</body>
+</html>
