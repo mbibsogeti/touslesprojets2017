@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
+<script defer>
+	var appS = angular.module("appSenegal", [])<!-- crée le module qui s'appelle appSénégal --> 
+	<!--appS.constant("plane", 945).value("hotel", 38.29).controller("ctrlSenegal", function($scope, plane, hotel) {$scope.price = 9*hotel+plane}) équivaut à la ligne 11-13--> 
+	angular.module("appSenegal")
+	.constant("plane", 945)<!--lit le module appSénégal et y ajoute les données--> 
+	.value("hotel", 38.29)
+	.controller("ctrlSenegal", function($scope, plane, hotel) {$scope.price = 9*hotel+plane})
+	
+	angular.module("appSenegal").filter("multip", function(){<!--fonction définissant la fonction du filtre -->
+		return function(x,y){ 
+		return x*y;
+		}
+	})
+	
+	angular.module("appSenegal").filter("curr", function(){
+		return function(p, c, r){
+			if(r==undefined) r=1 <!--utile si on ne met pas le ":1" de la ligne 46 et sert à éviter le message d'erreur dans la console du navigateur -->
+			return (p/r).toFixed(2)+ " "+c;<!--le c représente les devises: "euros" et "cfa" -->
+		}
+		
+	})
+		
+</script>
+</head>
+<body>
+	<div data-ng-app="appSenegal" data-ng-controller="ctrlSenegal" data-ng-filter="multip" data-ng-filter="curr"
+		data-ng-init=" img='http://www.linternaute.com/voyage/Photo/2006/senegal/images/10.jpg'"
+		data-ng-cloak>
+		<h1>Nos Voyages au Sénégal</h1>
+		<center>
+			<img data-ng-src="{{img}}" data-ng-if="img != '' ">
+		</center>
+
+		<fieldset>
+			<legend>
+				<strong>Votre voyage au Sénégal - Coût  {{price|curr:"euros":1}} soit {{price|curr:"cfa":0.0015}} </strong><br>
+				<em>{{5|multip:3}}</em>
+			</legend>
+
+		</fieldset>
+
+<a href="index.html">Page d'accueil</a>
+	</div>
+</body>
+</html>
