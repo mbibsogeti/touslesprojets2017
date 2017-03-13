@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<script>
+	//autre syntaxe pour controllers.Controlle <-> classe java. 1er lettre du nom en MAJ
+	angular.module("appGhana", []).controller("CtrlGhana", function() {
+		this.init = function() {
+			this.mess = "hola tio"
+			this.name = ""
+			this.tel = ""
+		}
+		this.askClick = function() {
+			this.result = "Formulario enviado"
+			this.init()
+		}
+		this.askClick2 = function() {
+			this.result = "Inscripcion de " + this.name + " enviada."
+			this.init()
+		}
+
+		this.init()
+		this.result = ""
+	})
+</script>
+<title>Viaje a Ghana</title>
+</head>
+<body>
+
+	<div data-ng-app="appGhana" data-ng-controller="CtrlGhana as c">
+
+		<form>
+			<p>
+				Nombre <input type="text" data-ng-model="c.name">
+			</p>
+			<p>
+				Teléfono <input type="tel" data-ng-model="c.tel">
+			</p>
+			<p>
+				Mensaje ​
+				<textarea id="txtArea" rows="5" cols="20" data-ng-model="c.mess"></textarea>
+			</p>
+			<p>
+				<input type="button" value="Pedido de informacion"
+					data-ng-disabled="c.name==''" data-ng-click="c.askClick()" /> <input
+					type="button" value="Preinscripcion" data-ng-disabled="c.name==''"
+					data-ng-click="c.askClick2()" />
+			</p>
+			<p>{{c.result}}</p>
+		</form>
+
+	</div>
+
+	<div>
+		<a href="index.html">Inicio</a> <a href="marruecos.html">Marruecos</a>
+		<a href="tunez.html">Tunez</a> <a href="egipto.html">Egipto</a> <a
+			href="senegal.html">Senegal</a> <a href="nigeria.html">Nigeria</a>
+	</div>
+</body>
+</html>

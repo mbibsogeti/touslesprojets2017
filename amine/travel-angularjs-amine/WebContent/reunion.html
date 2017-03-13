@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<title>Voyage à La Réunion</title>
+<script defer>
+	angular
+			.module("appReunion", [])
+			.controller(
+					"CtlReunion",
+					function($http) {
+						var c=this
+						this.send = function() {
+							this.info = "En cours...."
+							$http
+									.post(
+											"reunion",
+											"name=" + this.name + "&email="
+													+ this.email,
+											{
+												headers : {
+													"Content-Type" : "application/x-www-form-urlencoded"
+												}
+											}).then(function() {
+										c.info = "OK"
+											console.log(this.info)
+									})
+						}
+					})
+</script>
+</head>
+<body>
+	<div ng-app="appReunion" ng-controller="CtlReunion as c">
+		<h1 style="text-align: center">La Réunion</h1>
+		<div style="text-align: center">
+			<img src="./img/reunion.jpg">
+		</div>
+		<form>
+			<p>
+				Nom: <input ng-model="c.name" type="text" name="name">
+			</p>
+			<p>
+				Email: <input ng-model="c.email" type="email" name="email">
+			</p>
+			<p>
+				<input ng-click="c.send()" type="button" name="send" value="Envoyer">
+			</p>
+		</form>
+		<p>{{c.info}}</p>
+		<p>
+			<a href="index.html">Retour à l'Acceuil</a>
+		</p>
+	</div>
+</body>
+</html>
