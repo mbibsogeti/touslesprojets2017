@@ -1,0 +1,32 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" t:type="AsiaLayout" title="Iran" pageName="iran">
+		<div class="col-xs-12">
+			<h3>Welcome to Iran</h3>
+			<p>Buy now our travel to ${discount.name}, for only ${discount.price}€ or it will be too late!</p>
+			<p>${discount.name} - Have a look :<br/>${discount.description}</p>
+			<p>There are currently ${travels.size()} travels availables, check out below : </p>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Loop Index</th>
+						<th>City Name</th>
+						<th>Travel Cost</th>
+						<th>Travel Corst (Rihal)</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+		        	<t:loop source="travels" value="currTravel" index="idx">
+		        	<!-- empty is displayed when there are nothing in the thing we iterate on e.g : " no travel "  here, it uses literal namespace
+		        	 which allow to display the text we put in, we can change it to ue a real properti -->
+		            	<tr>
+							<td>${idx}</td><!-- ${prop:idx} prop is the default namespace in which all iran's properties belong -->
+							<td>${currTravel.name}</td>
+							<td>${currTravel.price}€</td>
+							<td>${rihalPrice} Rihals</td>
+							<td>${currTravel.description}</td>
+			            </tr>
+			        </t:loop>
+				</tbody>
+			</table>
+		</div>
+</html>

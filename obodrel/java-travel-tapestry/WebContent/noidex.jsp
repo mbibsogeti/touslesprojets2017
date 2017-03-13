@@ -8,7 +8,7 @@
 <script src="./js/jquery.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
 <script src="./js/angular.min.js"></script>
-<title>Obodrel's Travel African Division</title>
+<title>Obodrel's Travel Asian Division</title>
 </head>
 <body id="body">
 	<div class="container-fluid">
