@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+<base href="/tapestry-travel-obodrel/"></base>
+<title>${title}</title>
+</head>
+<body id="body">
+	<div class="container-fluid">
+		<h1 class="col-xs-8 col-xs-offset-4">Obodrel's Travel, Asian Division</h1>
+		<nav class="col-xs-12">
+			<ul class="nav nav-pills nav-justified">
+				<li class='${getActive(home)}'><a href="./">Home</a></li>
+				<li class='${getActive(iran)}'><a href="./iran/">Iran</a></li>
+			</ul>
+		</nav>
+		<t:body/>
+	</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script defer>
+angular
+    .module("appREU",[])
+    .controller("CtrlREU", function($http){
+    	var ct = this
+	    this.sendClick = function(){
+		this.info = "En cours d'envoi..."
+		
+$http
+   .post ("reunion","name="+this.name +"&email ="+this.email,{headers:{"Content-Type":"application/x-www-form-urlencoded"}})
+   .then(function(){
+	    ct.info = "OK"	
+		
+		})
+	
+	}
+})
+</script>
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-ng-app="appREU">
+	<h1>Réunion</h1>
+	<p data-ng-init=" img ='https://s-media-cache-ak0.pinimg.com/originals/32/e5/74/32e57465f3770360c3d626b1ac6b7f9b.jpg'"></p>
+	<center>
+		<img data-ng-src="{{img}}" data-ng-if="img != '' ">
+	</center>
+	
+	<fieldset data-ng-controller="CtrlREU as c">
+			
+				<legend><strong>Votre voyage </strong></legend>
+				<form>
+				
+					<p><label>Nom <input data-ng-model="c.name" type="text"
+						size="20" required name = "name"></label></p>				
+				
+					<p><label>Email <input data-ng-model="c.email" type="email"
+						size="20" required></label></p>												
+							
+					<p><label><input type="button" value="Envoyer"
+						data-ng-disabled="c.name == ''" data-ng-click="c.sendClick()"></label></p>
+				
+				<p>{{c.info}}</p>
+			</form>
+			</fieldset>
+
+</body>
+</html>
