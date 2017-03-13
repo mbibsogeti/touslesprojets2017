@@ -1,0 +1,6 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" t:type="AsiaLayout" title="Obodrel's Travel Asian Division" pageName="home">
+		<div class="col-xs-12">
+			<h3>Welcome to Obodrel's Travel for Asia</h3>
+			<img src="${context:img/meme1.jpg}"/>
+		</div>
+</html>
