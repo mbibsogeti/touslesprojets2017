@@ -9,8 +9,11 @@
 		<h1 class="col-xs-8 col-xs-offset-4">Obodrel's Travel, Asian Division</h1>
 		<nav class="col-xs-12">
 			<ul class="nav nav-pills nav-justified">
-				<li class='${getActive(home)}'><a href="./">Home</a></li>
-				<li class='${getActive(iran)}'><a href="./iran/">Iran</a></li>
+				<li class='${getActive(home)}'><t:eventLink t:event="toHome" >Home</t:eventLink></li>
+				<li class='${getActive(iran)}'><t:eventLink t:event="toIran" >Iran</t:eventLink></li>
+				<li class='${getActive(india)}'><t:eventLink t:event="toIndia" >India</t:eventLink></li>
+				<li class='${getActive(cambodia)}'><t:eventLink t:event="toCambodia" >Cambodia</t:eventLink></li>
+				<li class='${getActive(birmania)}'><t:eventLink t:event="toBirmania" >Birmania</t:eventLink></li>
 			</ul>
 		</nav>
 		<t:body/>

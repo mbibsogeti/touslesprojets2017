@@ -1,9 +1,17 @@
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" t:type="AsiaLayout" title="Iran" pageName="iran">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter" t:type="AsiaLayout" title="Iran" pageName="iran">
 		<div class="col-xs-12">
 			<h3>Welcome to Iran</h3>
 			<p>Buy now our travel to ${discount.name}, for only ${discount.price}€ or it will be too late!</p>
 			<p>${discount.name} - Have a look :<br/>${discount.description}</p>
 			<p>There are currently ${travels.size()} travels availables, check out below : </p>
+			<t:beandisplay object="discount" reorder="name,price,economical,description">
+				<p:description>
+					${discount.description.substring(1,5)}
+				</p:description>	
+				<p:name>
+					${discount.name.toUpperCase()}
+				</p:name>	
+			</t:beandisplay>
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -11,6 +19,7 @@
 						<th>City Name</th>
 						<th>Travel Cost</th>
 						<th>Travel Corst (Rihal)</th>
+						<th>Economical Travel</th>
 						<th>Description</th>
 					</tr>
 				</thead>
@@ -23,6 +32,12 @@
 							<td>${currTravel.name}</td>
 							<td>${currTravel.price}€</td>
 							<td>${rihalPrice} Rihals</td>
+							<td>
+								<t:if test="currTravel.economical">
+									Yes
+									<p:else>No</p:else>
+								</t:if>
+							</td>
 							<td>${currTravel.description}</td>
 			            </tr>
 			        </t:loop>

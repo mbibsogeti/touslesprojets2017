@@ -1,0 +1,12 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter" t:type="AsiaLayout" title="India" pageName="india">
+		<div class="col-xs-12">
+			<h3>${message:welcome_message}</h3>
+			<t:beandisplay object="travel" reorder="name,price,description">
+			</t:beandisplay>
+			<t:beandisplay object="this">
+			</t:beandisplay>
+			<p>${mention}</p>
+			<a href="#" t:type="eventlink" t:event="switchLocale" t:context='literal:en'>British</a>
+			<a href="#" t:type="eventlink" t:event="switchLocale" t:context='literal:fr'>French</a>
+		</div>
+</html>

@@ -46,4 +46,8 @@ public class Travel implements Serializable{
 	public String getDescription() {
 		return _description;
 	}
+	
+	public boolean isEconomical() {
+		return _price < 750;
+	}
 }
