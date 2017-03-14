@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<title>GHANA</title>
+<link rel="stylesheet" href="css/style.css">
+<script defer>
+	angular.module("appGhana", []).controller("CtrlGhana", function() {
+		this.init = function() {
+			this.message = ""
+			this.name = ""
+			this.tel = ""
+			this.result = ""
+		}
+						 
+		 this.askClick = function() {
+			this.result = "Demande envoyée !"
+			this.init()
+		}
+
+		 this.registerClick = function() {
+			this.result = "Inscription de " + this.name + " enregistrée !"
+			this.init()
+		}
+		this.init()
+	})
+</script>
+</head>
+<body>
+	<div data-ng-app="appGhana" 
+	     data-ng-controller="CtrlGhana as c"
+		 data-ng-init=" img='http://media.routard.com/image/52/3/pt13267.1225523.w630.jpg'"
+		 data-ng-cloak>
+		<h1>Nos voyages au Ghana</h1>
+
+		<center>
+			<img data-ng-src="{{img}}" data-ng-if="img != '' ">
+		</center>
+
+		<fieldset>
+			<legend>
+				<strong>Votre Voyage</strong>
+			</legend>
+			<form>
+				<p>
+					<label>Nom <input data-ng-model="c.name" type="text"
+						size="20"></label>
+				</p>
+
+				<p>
+					<label>Tel <input data-ng-model="c.tel" type="text"
+						size="20"></label>
+				</p>
+
+				<p>
+					<label> Message <textarea data-ng-model="c.message"
+							type="text" size="20"></textarea></label>
+				</p>
+
+
+				<p>
+					<label><input type="button" value="Demande d'information"
+						data-ng-disabled="c.name == ''" data-ng-click="c.askClick()"></label>
+				</p>
+
+				<p>
+					<label><input type="button" value="Pré-inscription"
+						data-ng-disabled="c.name == ''" data-ng-click="c.registerClick()"></label>
+				</p>
+
+				<p>{{c.result}}</p>
+			</form>
+		</fieldset>
+
+<a href="index.html">Page d'accueil</a>
+	</div>
+</body>
+</html>

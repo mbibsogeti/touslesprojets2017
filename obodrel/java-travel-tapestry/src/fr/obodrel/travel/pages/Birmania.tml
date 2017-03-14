@@ -1,0 +1,16 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter" t:type="AsiaLayout" title="Birmania" pageName="birmania">
+		<div class="col-xs-12">
+			<h3>${message:welcome_message}</h3>
+			<t:beandisplay object="travel" reorder="name,price,description">
+			</t:beandisplay>
+			<t:actionlink t:id="btn1" class="btn btn-primary">I am interested in</t:actionlink>
+			<t:eventlink t:event="hesitation" class="btn btn-primary">I hesitate</t:eventlink>
+			<t:eventlink t:event="click" class="btn btn-primary">Nop mate</t:eventlink>
+			<t:eventlink t:event="travelCambodia" class="btn btn-primary">Go to Cambodia</t:eventlink>
+			<br/>
+			<br/>
+			<br/>
+			<a href="#" t:type="eventlink" t:event="switchLocale" t:context='literal:en' class="btn btn-primary">British</a>
+			<a href="#" t:type="eventlink" t:event="switchLocale" t:context='literal:fr' class="btn btn-primary">French</a>
+		</div>
+</html>

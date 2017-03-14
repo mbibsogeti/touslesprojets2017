@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>Los destinos</p>
+	<table border="1">
+		<tr>
+			<th>Ciudad</th>
+			<th>Descripcion</th>
+		</tr>
+		<tr data-ng-repeat="i in c.dests">
+			<td><a href="#!/dests/{{i.id}}">{{i.nombre}}</a></td>
+			<td>{{i.descripcion}}</td>
+		</tr>
+	</table>
+</body>
+</html>

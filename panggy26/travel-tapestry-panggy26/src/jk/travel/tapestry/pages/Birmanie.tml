@@ -1,0 +1,29 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter" t:type="layout" title="Birmanie">
+<h1>Birmanie, enfin ouverte au monde</h1>
+<img src="${context:img/birmanie.jpg}"></img>
+<p>
+	<!-- <t:eventlink> permet d'indiquer une action au choix. La méthode onNomEvent() renseigne l'action. -->
+	<t:eventlink t:event="interested" class="btn btn-default">
+		Je suis intéressé(e)
+	</t:eventlink>
+	<!-- <t:actionlink> réalise un lien <a>. La méthode onAction() reçoit l'événement. -->
+	<t:actionlink t:id="hesitation" class="btn">
+		Hum... j'hésite...
+	</t:actionlink>
+	<!-- Remarque : fonctionne aussi avec un eventlink -->
+	<!-- Correspond à la méthode 1 du fichier Java : avec Class -->
+	<t:actionlink t:id="goCambodge" class="btn btn-default">
+		Je préfère aller au Cambodge !
+	</t:actionlink>
+	<!-- Correspond à la méthode 2 du fichier Java : avec String -->
+	<!-- <t:actionlink t:id="go" class="btn">
+		Je m'en tape. Emmenez-moi plutôt au Cambodge !
+	</t:actionlink> -->
+	<t:eventlink t:event="chargeLocale" t:context="'fr'">
+		Français
+	</t:eventlink>
+	<t:eventlink t:event="chargeLocale" t:context="'en'">
+		English
+	</t:eventlink>
+</p>
+</html>

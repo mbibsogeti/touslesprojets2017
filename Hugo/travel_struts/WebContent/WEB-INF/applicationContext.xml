@@ -10,3 +10,4 @@
 	<bean id="croatiaMessenger" class="fr.ib.hugo.travel.croatia.CroatiaMessenger" />
 
 </beans>
+

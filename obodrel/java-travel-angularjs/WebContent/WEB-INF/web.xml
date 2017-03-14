@@ -74,12 +74,57 @@
 	<servlet-mapping>
 		<servlet-name>Nigeria</servlet-name>
 		<url-pattern>/nigeria/</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SouthAfrica</servlet-name>
+		<servlet-class>fr.obodrel.travel.servlets.SouthAfricaServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SouthAfrica</servlet-name>
+		<url-pattern>/southafrica/</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>Madagascar</servlet-name>
+		<servlet-class>fr.obodrel.travel.servlets.MadagascarServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Madagascar</servlet-name>
+		<url-pattern>/madagascar/</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>LaReunion</servlet-name>
+		<servlet-class>fr.obodrel.travel.servlets.LaReunionServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LaReunion</servlet-name>
+		<url-pattern>/lareunion/</url-pattern>
 	</servlet-mapping>	
 	
 	<context-param>
         <param-name>BASE_URL</param-name>  
         <param-value>/angularjs-travel-obodrel/</param-value>  
 	</context-param>
+	<servlet>
+		<servlet-name>LaReunionRes</servlet-name>
+		<servlet-class>fr.obodrel.travel.servlets.LaReunionResServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LaReunionRes</servlet-name>
+		<url-pattern>/lareunionres/</url-pattern>
+	</servlet-mapping>	
+	
+	<context-param>
+        <param-name>BASE_URL</param-name>  
+        <param-value>/angularjs-travel-obodrel/</param-value>  
+	</context-param>
+	
 	
 	<filter>
 		<filter-name>AddDefaultCharsetFilter</filter-name>

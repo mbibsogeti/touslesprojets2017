@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+
+<script defer> angular.module("appMadagascar",[]).controller("ctlMadagascar",function(){}).directive("year",function(){return{restrict:"EA",template: new Date().getFullYear()}})
+//directive angular façon dont on utilise alldirective , lettre E <year ></year>   lettre A <span year></span>   lettre c<span class="year"></year>
+</script>
+
+<title>Nos voyages africain: madagascar</title>
+</head>
+<body>
+<div ng-app="appMadagascar" ng-controller="ctlMadagascar as c">
+<h1>madagascar</h1>
+<p>
+			<a href="index.html">Accueil</a>
+	<img src="http://www.afrik.com/local/cache-gd2/bc7ad2a330da5d5b85a0e98c87f5f633.jpg" >
+		</p>
+		
+<year> </year>
+</div>
+
+</body>
+
+</html>

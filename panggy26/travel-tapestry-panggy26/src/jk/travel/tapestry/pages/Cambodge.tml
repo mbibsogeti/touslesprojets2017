@@ -1,0 +1,6 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter" t:type="layout" title="Cambodge">
+<h1>Cambodge, pays renaissant</h1>
+<img src="${context:img/cambodge.jpg}"></img>
+<!-- Relié à la méthode getTravel de la classe Cambodge -->
+<t:beandisplay object="travel"/>
+</html>
