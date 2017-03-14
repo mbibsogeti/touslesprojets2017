@@ -1,5 +1,5 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
-	t:type="layout" title="Voyages en Asie">
+	xmlns:p="tapestry:parameter" t:type="layout" title="Voyages en Asie">
 	<h1> Voyages en Iran</h1>
 	<div class="row" id="img">
 		<img src="${context:img/iran.jpg}" alt="iran" class="img-rounded" />
@@ -16,17 +16,31 @@
 				<th>Prix en Rial</th>
 				<th>#</th>
 			</tr>
-
 			<t:loop source="travels" value="travel" index="i">
 				<tr class="info">
 					<td>${travel.name}</td>
 					<td>${travel.description}</td>
-					<td>${travel.price}</td>
+					<td>
+						${travel.price}
+						<t:if test="cheap">!</t:if>
+					</td>
 					<td>${rialPrice}</td>
 					<td>${iPlusOne}</td>
 				</tr>
 			</t:loop>
 		</table>
+		<p>
+			<t:beandisplay object="discount" reorder="name,price,description" />
+		</p>
+		<p>
+			<t:beandisplay object="discount" reorder="name,price,description">
+				<p:description>
+					${discount.description.substring(0,5)}
+				</p:description>
+				<p:name>
+					${discount.name.toUpperCase()}
+				</p:name>
+			</t:beandisplay>
+		</p>
 	</div>
-
 </html>

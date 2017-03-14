@@ -21,9 +21,9 @@ public class Iran {
 	public List<Travel> getTravels() {
 		List<Travel> listToRet = new ArrayList<Travel>();
 		listToRet.add(new Travel("Teharan",150,"Head City"));
-		listToRet.add(new Travel("Persepolis",150,"City"));
-		listToRet.add(new Travel("Shiraz",150,"City"));
-		listToRet.add(new Travel("Ispahan",150,"City"));
+		listToRet.add(new Travel("Persepolis",1500,"City"));
+		listToRet.add(new Travel("Shiraz",500,"City"));
+		listToRet.add(new Travel("Ispahan",900,"City"));
 		
 		return listToRet;
 	}
@@ -35,4 +35,5 @@ public class Iran {
 	public int getIdx() {
 		return idx +1;
 	}
+	
 }
