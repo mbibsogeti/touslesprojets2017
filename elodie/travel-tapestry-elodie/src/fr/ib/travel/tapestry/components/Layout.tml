@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+	<head>
+		<title>${title}</title>
+	</head>
+	<body>
+		<div class="container">
+			<nav>
+				<ul class="nav nav-tabs nav-justified">
+					<li class="active"><a href="Index">Index</a></li>
+					<li class="active"><a href="Iran">Iran</a></li>
+				</ul>
+			</nav>
+			
+			<t:body />
+		</div>
+
+	</body>
+</html>
