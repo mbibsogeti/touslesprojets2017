@@ -23,6 +23,16 @@
 							<span class="glyphicon glyphicon-plane"> Inde</span>
 						</a>
 					</li>
+					<li>
+						<a href="cambodge">
+							<span class="glyphicon glyphicon-plane"> Cambodge</span>
+						</a>
+					</li>
+					<li>
+						<a href="burma">
+							<span class="glyphicon glyphicon-plane"> Birmanie</span>
+						</a>
+					</li>
 				</ul>
 			</nav>
 			<t:body />
