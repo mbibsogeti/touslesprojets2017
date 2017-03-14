@@ -1,0 +1,4 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" t:type="layout" title="Our trips in Singapore">
+<h1>Our trips in Singapore</h1>
+<img src="${context:img/singapore.jpg}" class="img-circle"/>
+</html>
