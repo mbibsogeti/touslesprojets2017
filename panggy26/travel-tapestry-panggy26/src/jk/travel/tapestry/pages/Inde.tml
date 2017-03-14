@@ -1,0 +1,8 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter" t:type="layout" title="Inde">
+<h1>${message:title}</h1>
+<img src="${context:img/inde.jpg}"></img>
+<t:beandisplay object="travel"/>
+<p>${mention}</p>
+<!-- Affiche l'état actuel de la page, uniquement les types simples -->
+<t:beandisplay object="this"/>
+</html>
