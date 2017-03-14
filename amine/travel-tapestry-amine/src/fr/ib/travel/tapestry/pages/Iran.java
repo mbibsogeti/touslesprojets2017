@@ -34,4 +34,8 @@ public class Iran {
 	public int getIPlusOne() {
 		return i + 1;
 	}
+
+	public boolean isCheap() {
+		return travel.getPrice() < 1300;
+	}
 }
