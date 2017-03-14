@@ -8,4 +8,5 @@
 		<t:beandisplay object="travel" reorder="name,price,description" />
 	</p>
 	<p>${mention}</p>
+	<p><t:beandisplay object="this"/></p>
 </html>
