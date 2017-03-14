@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+	<meta charset="UTF-8"></meta>
+	<!-- On peut utiliser la syntaxe ${title} car @Property daas Index -->
+	<title>${title}</title>
+</head>
+<body>
+	<nav>
+		<ul class='nav nav-pills nav-justified'>
+			<li class="active">
+				<a href="Index"><span class="glyphicon glyphicon-home"></span> Accueil</a>
+			</li>
+			<li>
+				<a href="Iran"><span class="glyphicon glyphicon-eye-open"></span> Iran, perle persique</a>
+			</li>
+			<li>
+				<a href="Inde"><span class="glyphicon glyphicon-fire"></span> Inde, joyau éternel</a>
+			</li>
+			<li>
+				<a href="Cambodge"><span class="glyphicon glyphicon-star-empty"></span> Cambodge, pays renaissant</a>
+			</li>
+			<li>
+				<a href="Birmanie"><span class="glyphicon glyphicon-leaf"></span> Birmanie, enfin ouverte au monde</a>
+			</li>
+			<li>
+				<a href="#"><span class="glyphicon glyphicon-heart-empty"></span> Le Vietnam</a>
+			</li>
+		</ul>
+	</nav>
+	<!-- Le lien à bootstrap est implicite -->
+	<div class="container"> 
+		<t:body/>
+	</div>
+</body>
+</html>
