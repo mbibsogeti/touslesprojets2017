@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Paramétrage du language Tapestry -->
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p = "tapestry:parameter">
+<head>
+<meta charset = "utf-8"/>
+<title>${title}</title>
+</head>
+<body>
+<div class="container">
+<nav>
+		<ul class="nav nav-tabs nav-justified ">
+			<li><a
+				href="Index">HOME</a></li>
+			
+			<li><a
+				href="Iran">IRAN</a></li>
+				
+				<li><a
+				href="India">INDIA</a></li>
+	
+	<li><a
+				href="Cambodia">CAMBODIA</a></li>
+	
+	
+		<li><a
+				href="Burma">BURMA</a></li>
+				
+				<li><a
+				href="China">CHINA</a></li>
+				
+					<li><a
+				href="Japan">JAPAN</a></li>
+				
+				
+					<li><a
+				href="Korea">KOREA</a></li>
+		</ul>
+	</nav>
+
+<t:body/></div>
+</body>
+</html>
