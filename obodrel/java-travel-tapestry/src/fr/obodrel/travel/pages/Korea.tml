@@ -35,4 +35,5 @@
 			<a href="#" t:type="eventlink" t:event="switchLocale" t:context='literal:en' class="btn btn-primary">British</a>
 			<a href="#" t:type="eventlink" t:event="switchLocale" t:context='literal:fr' class="btn btn-primary">French</a>
 		</div>
+		<p t:type="Footer"></p>
 </html>
