@@ -1,0 +1,7 @@
+<!-- Cette page utilisera le layout 'layout'. 
+On pourra en utiliser plusieurs en les nommant différemment les uns des autres.
+NB : on peut donner le nom en MAJ ou min. -->
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" t:type="layout" title="Our trips in Asia">
+<h1>Our trips in Asia</h1>
+<img src="${context:img/asia1.jpg}" class="img-circle"/>
+</html>

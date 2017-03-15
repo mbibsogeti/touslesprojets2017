@@ -1,0 +1,39 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter" t:type="AsiaLayout" title="Korea" pageName="korea">
+		<div class="col-xs-12">
+			<h3>${message:welcome_message}</h3>
+			<t:beandisplay object="travelHead" reorder="name,price,description">
+			</t:beandisplay>
+		</div>
+		<br/>
+		<t:zone t:id="zoneRefreshed" class="col-xs-12">
+			<div class="row">
+	        	<t:loop source="allTextsHeaders" value="currText" index="idx">
+					<t:eventlink t:zone="zoneRefreshed" t:event="refreshZone" t:context="${idx}" class="btn ${getPrimary(currText)}">${getTextByNumber(idx)}</t:eventlink>
+				</t:loop>
+			</div>
+			<br/>
+			<div class="row">
+				<h3>${zoneText}</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci neque, consectetur eget tortor eu, 
+				volutpat vulputate dui. Quisque eget erat quis mi aliquet dapibus et vitae ex. Phasellus lobortis diam vel 
+				auctor tempus. Donec finibus hendrerit massa et ultrices. Vestibulum ornare ac leo sit amet euismod. Aenean 
+				quis leo quis massa interdum sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per 
+				inceptos himenaeos. In molestie arcu id metus cursus egestas. Aenean felis risus, pretium id ipsum vel, rutrum 
+				placerat est. Aliquam semper, mi ac gravida accumsan, lacus dolor ornare eros, in venenatis turpis nisi ut arcu. 
+				Quisque ac est quis arcu mollis volutpat ut non magna. Duis neque nibh, pulvinar ac rutrum ut, consequat a nibh. 
+				Praesent quis facilisis nulla. Proin rutrum arcu lectus, in scelerisque nibh molestie ac. Phasellus quis sem 
+				cursus, consectetur mauris sed, dapibus augue. Aenean non quam ante. Nunc sed sem sodales, sodales augue nec, 
+				egestas augue. Praesent iaculis turpis ante, in venenatis elit mollis at. Duis fermentum, elit dapibus imperdiet 
+				ultrices, ex nunc interdum dolor, et elementum augue neque eget erat. Aliquam interdum elementum imperdiet. Fusce 
+				et augue velit. Proin sed rhoncus mi, ut feugiat massa. Proin lacinia nunc et diam ullamcorper, eget pulvinar 
+				elit condimentum. Suspendisse ac fermentum ipsum. Morbi nunc felis, condimentum eget interdum eu, gravida congue 
+				mauris. Praesent gravida ut augue ut faucibus. Sed ornare lacinia blandit.</p>
+			</div>		
+		</t:zone>
+		<br/>
+		<div class="col-xs-12">
+			<a href="#" t:type="eventlink" t:event="switchLocale" t:context='literal:en' class="btn btn-primary">British</a>
+			<a href="#" t:type="eventlink" t:event="switchLocale" t:context='literal:fr' class="btn btn-primary">French</a>
+		</div>
+		<p t:type="Footer"></p>
+</html>

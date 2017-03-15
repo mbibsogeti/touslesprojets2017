@@ -1,0 +1,12 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	t:type="Layout" title="Burma" xmlns:p="tapestry:parameter">
+	
+<!-- ATTENTION A D2CLARER  LES PR2FIXE P ouT ..;  P: est toujour a l intérieu d'une balise T: car c des parametrtre-->
+	<h1>burma</h1>
+
+	<t:eventlink t:event="sayInterested" class="btn btn-default">je suis interesshey</t:actionlink>
+	<t:actionlink  class="btn " t:id="link1">je suis sur le deuxième bouton</t:actionlink>
+	<t:eventlink t:event="changeLocale" t:context="fr">Français</t:eventlink>
+	<t:eventlink t:event="changeLocale" t:context="En">English</t:eventlink>
+	
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+	<head>
+		<!-- <link rel='stylesheet' href='css/bonito.css'></link> -->
+		<title>${title}</title>
+	</head>
+	<body>
+		<!-- Le lien à bootstrap est implicite -->
+		<nav>
+			<ul class='nav nav-pills nav-justified'>
+				<li>
+					<a href='Index'>
+						<span class='glyphicon glyphicon-home'></span>
+						Inicio
+					</a>
+				</li>
+				<li>
+					<a href='Iran'>
+						<span class='glyphicon glyphicon-scissors'></span>
+						Iran
+					</a>
+				</li>
+				<li>
+					<a href='India'>
+						<span class='glyphicon glyphicon-signal'></span>
+						India
+					</a>
+				</li>
+				<li>
+					<a href='Cambodia'>
+						<span class='glyphicon glyphicon-time'></span>
+						Camboya
+					</a>
+				</li>
+				<li>
+					<a href='Burma'>
+						<span class='glyphicon glyphicon-tint'></span>
+						Birmania
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="container">
+			<t:body />
+		</div>
+	</body>
+</html>

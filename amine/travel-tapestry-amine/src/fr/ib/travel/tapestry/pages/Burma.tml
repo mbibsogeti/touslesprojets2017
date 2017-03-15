@@ -1,0 +1,22 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" title="Voyages en Birmanie">
+	<h1>Birmanie</h1>
+	<div class="row" id="img">
+		<img src="${context:img/birmanie.jpg}" alt="birmanie" class="img-rounded" />
+		<br />
+		<t:eventlink t:event="sayInterested" class="btn btn-success">
+			Je suis
+			interessé
+		</t:eventlink>
+		<t:actionlink class="btn btn-danger" t:id="link"> J'hésite
+		</t:actionlink>
+		<t:actionlink t:id="notNow" class="btn btn-info">Aller au Cambodge
+		</t:actionlink>
+	</div>
+	<div class="row">
+		<footer>
+			<t:eventlink t:event="changeLocale" t:context="'fr'">Français</t:eventlink>
+			<t:eventlink t:event="changeLocale" t:context="'en'">English</t:eventlink>
+		</footer>
+	</div>
+</html>
