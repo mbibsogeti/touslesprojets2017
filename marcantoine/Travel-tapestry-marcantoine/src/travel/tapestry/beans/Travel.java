@@ -1,15 +1,15 @@
-package beans;
+package travel.tapestry.beans;
 
 public class Travel {
 
 	private String name, desc;
-	private float price;
+	private double price;
 	
 	
 	public Travel() {
 		super();
 	}
-	public Travel(String name, String desc, float price) {
+	public Travel(String name, String desc, double price) {
 		super();
 		this.name = name;
 		this.desc = desc;
@@ -27,10 +27,10 @@ public class Travel {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	public float getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(float price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 

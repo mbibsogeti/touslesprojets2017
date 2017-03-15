@@ -1,0 +1,28 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" t:title="Chine">
+	<img src="${context:img/chine.jpg}" alt="photo_asie"
+		class="img-rounded img-responsive" />
+	<h1>Chine</h1>
+	<t:form>
+		<div class="form-group">
+			<t:label for="inputNom">Nom</t:label>
+			<t:textfield type="text" class="form-control" t:id="inputNom" validate="required, minLength=3" t:label="Nom"/>
+		</div>
+		<div class="form-group">
+			<t:label for="inputTel">Tel</t:label>
+			<t:textfield type="text" class="form-control" t:id="inputTel" validate="required, minLength=10, regexp=^[0-9]+$" t:label="Tel"/>
+		</div>
+		<div class="form-group">
+			<t:label for="inputNbV">Voyageurs</t:label>
+			<t:textfield type="number" class="form-control" t:id="inputNbV" min="1" max="30" validate="required" t:label="Voyageurs"/>
+		</div>
+		<div class="form-group">
+			<t:label for="inputVisa">Visa</t:label>
+			<t:upload  t:id="inputVisa"/>
+		</div>
+		<div class="form-group">
+			<t:submit class="btn btn-primary" t:id="send" value="Envoi"/>
+		</div>
+		
+	</t:form>
+</html>

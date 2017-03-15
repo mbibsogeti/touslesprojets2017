@@ -1,0 +1,16 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	t:type="layout" title="Viaje a Asia">
+
+	<h1>Viaje al continente asiatico</h1>
+
+	<div class='row'>
+		<section class='col-sm-6'>
+			<h2>Asia</h2>
+			<img src="${context:img/chinaX.jpg}" class="img-responsive"></img>
+		</section>
+
+		<section class='col-sm-6'>
+		</section>
+	</div>
+
+</html>

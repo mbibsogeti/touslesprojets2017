@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.apache.tapestry5.annotations.Property;
 
-import beans.Travel;
+import travel.tapestry.beans.Travel;
 
 public class Iran {
 
@@ -18,7 +18,7 @@ public class Iran {
 
 	public Travel getDiscount() {
 		return new Travel("Persepolis",
-				"A great place to experience the country, you do not have the slightest idea where you could run on unexpected tourists wandering around. Well, just let us sow you how much we like this place",
+				"A great place to experience the country, you do not have the slightest idea where you could run on unexpected tourists wandering around. Well, just let us show you how much we like this place",
 				1234);
 	}
 
@@ -42,7 +42,14 @@ public class Iran {
 	public double getRialPrice() {
 		return 34585 * travel.getPrice();
 	}
+
+	// Fonction pour obtenir l'index incrémenté de (pas prévu par Tapestry avec les tags) 
 	public int getIPlusOne() {
-		return i+1;
+		return i + 1;
+	}
+
+	// Fonction retournant un booléen commence toujours par "is"
+	public boolean isPromo() {
+		return travel.getPrice() < 5000;
 	}
 }

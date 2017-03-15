@@ -1,0 +1,12 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter"
+	t:type="layout" t:title="Inde">
+	<img src="${context:img/inde.jpg}" alt="photo_asie" class="img-rounded img-responsive" />
+	<h1>${message:title}</h1>
+	
+	<t:beandisplay object="travel"/>
+	
+	<p>${mention}</p>
+	
+	<t:beandisplay object="this"/>
+
+</html>

@@ -12,4 +12,19 @@ public class SEAsiaPriceServiceImpl implements SEAsiaPriceService {
 		return 1299.90;
 	}
 
+	@Override
+	public double getChinaPrice() {
+		return 1299.90;
+	}
+
+	@Override
+	public double getJapanPrice() {
+		return 1299.90;
+	}
+
+	@Override
+	public double getKoreaPrice() {
+		return 1299.90;
+	}
+
 }

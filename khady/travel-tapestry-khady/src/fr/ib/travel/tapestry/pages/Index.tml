@@ -1,0 +1,13 @@
+
+<!-- Paramétrage du language Tapestry -->
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      t:type ="layout" 
+      t:title = "ASIE">
+
+
+<center><img src="${context:img/asie2_opt.jpg}"/></center>
+<h1>Nos voyages en Asie</h1>
+
+</html>
+
+

@@ -1,0 +1,46 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" title="message:title">
+	<section class="row" style="padding:15px">
+		<t:eventlink t:event="changeLocale" t:context="'it'"
+			class="btn btn-warning">Italiano
+		</t:eventlink>
+		<t:eventlink t:event="changeLocale" t:context="'en'"
+			class="btn btn-warning">English
+		</t:eventlink>
+		<t:eventlink t:event="changeLocale" t:context="'fr'"
+			class="btn btn-primary">Français
+		</t:eventlink>
+	</section>
+	<h1>${message:title}</h1>
+	<section class="row" style="padding:15px">
+		<section class="col-xs-6">
+			<img src="${context:img/burma.jpg}" class="img-circle" />
+		</section>
+		<section class="col-xs-6 form-group">
+			<h2>Some details about this destination...</h2>
+			<p>
+				<t:actionlink class="btn btn-primary">Action interested?</t:actionlink>
+			</p>
+			<p>
+				<t:eventlink t:event="click" class="btn btn-danger">Event interested?
+				</t:eventlink>
+			</p>
+			<p>
+				<t:actionlink class="btn btn-default" t:id="hesitation">Action so
+					so?
+				</t:actionlink>
+			</p>
+			<p>
+				<t:actionlink class="btn btn-default" t:id="cambodia">Go to our
+					Cambodia webpage
+				</t:actionlink>
+			</p>
+		</section>
+	</section>
+	<section class="row">
+		<section class="col-xs-6">
+		</section>
+		<section class="col-xs-6">
+		</section>
+	</section>
+</html>
