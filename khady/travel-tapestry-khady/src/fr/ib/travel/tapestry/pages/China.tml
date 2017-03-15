@@ -1,0 +1,33 @@
+
+<!-- Paramétrage du language Tapestry -->
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p = "tapestry:parameter"
+      t:type ="layout" 
+      t:title = "CHINA">
+      
+<body>
+      
+<center><h1>Nos voyages en Chine</h1></center>
+<center><img src="${context:img/china1_opt.jpg}"/></center><br/>
+
+<fieldset>
+<legend><strong>Saisie des informations voyageurs</strong></legend>
+<t:form>
+<t:textfield value="name" t:id="nom" t:label="Nom" t:mixins="formgroup" validate="required, minLength=3"/>
+<t:textfield value="tel" t:id="tel" t:label="Tel" t:mixins="formgroup" validate="required, minLength=10"/>
+<t:textfield value="travelers" type ="number" t:id="voyageurs" t:label="Voyageurs" t:mixins="formgroup" validate="required"/>
+<t:upload  value="visa" t:id="visa" t:mixins="formgroup"/>
+<t:submit value="Envoyer" class="btn btn-success"/>
+<t:errors/>
+</t:form>
+</fieldset>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- Paramétrage du language Tapestry -->
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p = "tapestry:parameter"
+      t:type ="layout" 
+      t:title = "IRAN">
+      
+<center><h1>Nos voyages en Iran</h1></center>
+<center><img src="${context:img/iran.jpg}"/></center>
+<table class = "table table-bordered table-striped">
+<tr>
+<th>N° Voyage</th>
+<th>Nom</th>
+<th>Prix en Euros</th>
+<th>Prix en Rials</th>
+<th>Description</th>
+</tr>
+<t:loop source="travels" value="travel" index="i">
+<tr>
+<td>${i}</td><!-- on peut écrire aussi ${prop:i} à la place de ${i} -->
+<td>${travel.name}</td>
+<td>${travel.price}<t:if test="cheap ">!</t:if></td>
+<td>${rialprice}</td>
+<td>${travel.description}</td></tr>
+</t:loop>
+</table>
+
+<t:beandisplay object = "discount" reorder ="name, price, description">
+<p:description>
+${discount.description.substring(0,7)}
+</p:description>
+<p:name>
+${discount.name.toUppercase()}
+</p:name>
+</t:beandisplay>
+
+
+</html>
