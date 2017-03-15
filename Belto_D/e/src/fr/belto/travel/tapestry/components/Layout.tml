@@ -9,7 +9,10 @@
 	<li><a href="Iran">l'Iran</a></li>
 	<li class= "active"><a href="india">l'Inde</a></li>
 	<li><a href="Cambodia">Le Cambodge</a></li>
-	<li class= "active"><a href="Burma">La Birmanie</a></li>	
+	<li class= "active"><a href="Burma">La Birmanie</a></li>
+	<li><a href="China">La Chine</a></li>
+	<li class= "active"><a href="Japan">Le Japon</a></li>
+	<li><a href="Corea">La Corée</a></li>	
 </ul>
 </nav>
 <t:body/>
