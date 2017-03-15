@@ -1,0 +1,19 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" title="Viaje a la India">
+
+	<h1>Viaje a la India</h1>
+	<div class="row">
+		<section class="col-xs-6">
+			<h2>${message:title}</h2>
+			<t:beandisplay object="travel" reorder="name,price,description">
+				<!--<p:name>
+					 <t:label> permet de choisir le texte qui s'affiche dans le label
+					 <t:label>${message:travel.name}</t:label>
+				</p:name> -->
+			</t:beandisplay>
+			<p>${mention}</p>
+			<t:beandisplay object="this"/>
+		</section>
+	</div>
+
+</html>
