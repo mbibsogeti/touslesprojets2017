@@ -8,7 +8,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.PersistentLocale;
 import org.slf4j.Logger;
 
-public class Myanmar {
+public class Burma {
 
 	@Inject
 	private Logger logger;
