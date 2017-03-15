@@ -1,4 +1,4 @@
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter"
 	t:type="layout" title="Our trips in Iran">
 	<h1>Our trips in Iran</h1>
 	<section class="row" style="padding:15px">
@@ -16,7 +16,8 @@
 	<section class="row">
 		<section class="col-xs-6">
 			<h2>${travels.size()} trips are currently available: </h2>
-			<table>
+			<t:beandisplay object="discount" reorder="name,price,desc"><p:name>${discount.name.toUpperCase()}</p:name><p:desc>${discount.desc.substring(0,10)}</p:desc></t:beandisplay>
+			<table class="table table-striped">
 				<tr>
 					<th>Index</th>
 					<th>Name</th>
@@ -29,8 +30,8 @@
 						<td>${iPlusOne}</td>
 						<td>${travel.name}</td>
 						<td>${travel.desc}</td>
-						<td>${travel.price}<div t:type="if test='${travel.price<5000}'">!</div></td>
-						<td>${RialPrice}</td>
+						<td>${travel.price}<div t:type="if" test="${promo}">!</div></td>
+						<td>${RialPrice}<t:if test="${promo}"><span class="glyphicon glyphicon-euro"></span></t:if></td>
 					</tr>
 				</t:loop>
 			</table>

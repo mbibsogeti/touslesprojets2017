@@ -14,6 +14,9 @@
 				<li class='${getActive(india)}'><t:eventLink t:event="toIndia" >India</t:eventLink></li>
 				<li class='${getActive(cambodia)}'><t:eventLink t:event="toCambodia" >Cambodia</t:eventLink></li>
 				<li class='${getActive(birmania)}'><t:eventLink t:event="toBirmania" >Birmania</t:eventLink></li>
+				<li class='${getActive(china)}'><t:eventLink t:event="toChina" >China</t:eventLink></li>
+				<li class='${getActive(japan)}'><t:eventLink t:event="toJapan" >Japan</t:eventLink></li>
+				<li class='${getActive(korea)}'><t:eventLink t:event="toKorea" >Korea</t:eventLink></li>
 			</ul>
 		</nav>
 		<t:body/>

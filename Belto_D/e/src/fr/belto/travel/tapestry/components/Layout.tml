@@ -7,9 +7,9 @@
 <ul class="nav nav-pills nav-tabs nav-justified">
 	<li class= "active"><a href="Index">Acceuil</a></li>
 	<li><a href="Iran">l'Iran</a></li>
-	<li class= "active"><a href="china">La Chine</a></li>
-	<li><a href="Japan">Le Japon</a></li>
 	<li class= "active"><a href="india">l'Inde</a></li>
+	<li><a href="Cambodia">Le Cambodge</a></li>
+	<li class= "active"><a href="Burma">La Birmanie</a></li>	
 </ul>
 </nav>
 <t:body/>

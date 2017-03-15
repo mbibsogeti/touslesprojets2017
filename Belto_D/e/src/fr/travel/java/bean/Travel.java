@@ -1,4 +1,4 @@
-package fr.travel.java.bin;
+package fr.travel.java.bean;
 public class Travel {
 	String name;
 	double price;

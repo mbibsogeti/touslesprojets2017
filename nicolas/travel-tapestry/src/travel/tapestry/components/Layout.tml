@@ -13,6 +13,11 @@
 			
 			<li><a href="Iran"><span class="glyphicon glyphicon-home">Iran</span></a></li>
 			<li><a href="Inde"><span class="glyphicon glyphicon-home">Inde</span></a></li>
+				<li><a href="Cambodje"><span class="glyphicon glyphicon-home">Cambodje</span></a></li>
+				<li><a href="Burma"><span class="glyphicon glyphicon-home">Burma</span></a></li>
+				<li><a href="Chine"><span class="glyphicon glyphicon-home">Chine</span></a></li>
+				<li><a href="Japon"><span class="glyphicon glyphicon-home">Japon</span></a></li>
+				<li><a href="Korea"><span class="glyphicon glyphicon-home">Korea</span></a></li>
 		</ul>
 	</nav>
 

@@ -5,12 +5,16 @@ import java.util.List;
 
 import org.apache.tapestry5.annotations.Property;
 
-import fr.travel.java.bin.Travel;
+import fr.travel.java.bean.Travel;
 
 public class Iran {
 	public Travel getDiscount(){
 	 	return new Travel("Téhéran",400,"Capitale");	 	
 	};
+// une fonction retournant un boolean
+	public boolean isCheap(){
+		return travel.getPrice()<600;
+	}
 
 public List<Travel> getTravels(){
  		List<Travel> l= new ArrayList<>();

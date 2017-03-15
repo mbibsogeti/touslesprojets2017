@@ -2,19 +2,37 @@
 <!-- Fichier générique à remplir -->
 <!-- On indique que l'on utilisera le 'namespace de xml (xmlns)' de tapestry -->
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
-<head><title>${title}</title></head>
-<body>
-<div class="container">
-<nav>
-	<ul class="nav nav-pills nav-tabs nav-justified">
-		<li><a href="index">Index</a></li>
-		<li><a href="singapore">Singapore</a></li>
-		<li><a href="iran">Iran</a></li>
-	</ul>
-</nav>
-<!-- pas besoin de lien vers 'bootstrap.min.css', celui-ci est déjà contenu dans tapestry. -->
-<!-- cette balise 't:body' sera remplacée par le contenu des pages html -->
-<t:body/>
-</div>
-</body>
+	<head>
+		<title>${title}</title>
+	</head>
+	<body>
+		<div class="container">
+			<nav>
+				<ul class="nav nav-pills nav-tabs nav-justified">
+					<li>
+						<a href="index">Index</a>
+					</li>
+					<li>
+						<a href="singapore">Singapore</a>
+					</li>
+					<li>
+						<a href="iran">Iran</a>
+					</li>
+					<li>
+						<a href="india">India</a>
+					</li>
+					<li>
+						<a href="cambodia">Cambodia</a>
+					</li>
+					<li>
+						<a href="myanmar">Myanmar</a>
+					</li>
+				</ul>
+			</nav>
+			<!-- pas besoin de lien vers 'bootstrap.min.css', celui-ci est déjà contenu 
+				dans tapestry. -->
+			<!-- cette balise 't:body' sera remplacée par le contenu des pages html -->
+			<t:body />
+		</div>
+	</body>
 </html>
