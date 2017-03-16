@@ -1,0 +1,14 @@
+<p>Les destinations suivantes: </p>
+<table>
+<tr>
+<th>Destination</th>
+<th>Types Activités</th>
+<th>Id</th>
+</tr>
+<tr data-ng-repeat ="d in c.dests">	
+<td><a href = "#!dests/{{d.id}}">{{d.n}}</a></td>
+<td>{{d.d}}</td>
+<td>{{d.id}}</td>
+</tr>
+</table>
+
