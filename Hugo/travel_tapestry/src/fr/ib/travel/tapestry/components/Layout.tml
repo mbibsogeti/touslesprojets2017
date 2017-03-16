@@ -38,6 +38,24 @@
 						Birmania
 					</a>
 				</li>
+				<li>
+					<a href='China'>
+						<span class='glyphicon glyphicon-briefcase'></span>
+						China
+					</a>
+				</li>
+				<li>
+					<a href='Japan'>
+						<span class='glyphicon glyphicon-flag'></span>
+						Japon
+					</a>
+				</li>
+				<li>
+					<a href='Korea'>
+						<span class='glyphicon glyphicon-cog'></span>
+						Corea del Sur
+					</a>
+				</li>
 			</ul>
 		</nav>
 
