@@ -1,7 +1,14 @@
 package fr.ib.khady.travel;
 
+ /**
+  * A travel destination for the USA
+  * @author khady
+  * @since 2017-01-31
+  *
+  */
+
 public class Destination {
-	public static final int DAYS = 21;// Constante
+	public static final int DAYS = 21;
 	private String name, state;
 	private int days;
 
@@ -10,6 +17,14 @@ public class Destination {
 								// ci-dessous
 	}
 
+/**
+ * Ctor with<u> all fields</u>
+ * @param n  Name of the new Destination. With uppercases.
+ * @param s
+ * @param d
+ */
+	
+	
 	public Destination(String n, String s, int d) { 
 		days = d;
 		name = n;

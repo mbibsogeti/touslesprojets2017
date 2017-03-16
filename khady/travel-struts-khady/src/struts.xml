@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+
+    <!-- Some or all of these can be flipped to true for debugging -->
+    <constant name="struts.i18n.reload" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.configuration.xml.reload" value="true" /> 
+    <constant name="struts.custom.i18n.resources" value="global" /> 
+         
+    <package name="welcome" namespace="/" extends="struts-default">
+    <default-action-ref name="index"/>
+        <action name="index">
+            <result>/WEB-INF/views/index.jsp</result>
+        </action>    
+    </package>
+
+ 
+<package name="irlande" namespace="/irlande" extends="struts-default">
+<default-action-ref name="index"/>
+        <action name="index">
+            <result>/WEB-INF/views/irlande/index.jsp</result>
+        </action>    
+        
+        <action name="infos">
+            <result>/WEB-INF/views/irlande/infos.jsp</result>
+        </action>  
+        
+         <action name="travels" class="fr.ib.travel.ireland.TravelsAction">
+            <result>/WEB-INF/views/irlande/travels.jsp</result>
+        </action> 
+    </package>
+
+
+<package name="england" namespace="/england" extends="struts-default">
+<default-action-ref name="index"/>
+
+        <action name="index" class="fr.ib.travel.england.TravelsAction">
+            <result>/WEB-INF/views/england/index.jsp</result>
+        </action>  
+           
+        <action name="price">
+            <result>/WEB-INF/views/england/index.jsp</result>
+        </action>    
+        
+        <action name="departure">
+            <result>/WEB-INF/views/england/index.jsp</result>
+        </action> 
+        
+        <action name="registration" class="fr.ib.travel.england.RegistrationAction">
+            <result>/WEB-INF/views/england/registration.jsp</result>
+        </action> 
+                     
+         <action name="send" class="fr.ib.travel.england.SendAction">
+            <result name="success">/WEB-INF/views/england/sent.jsp</result>
+            <result name="input">/WEB-INF/views/england/registration.jsp</result>
+        </action> 
+        
+                                             
+    </package>
+
+
+
+<package name="spain" namespace="/spain" extends="struts-default">
+<default-action-ref name="index"/>   
+                     
+         <action name="proposals" class="fr.ib.travel.beans.ProposalsAction">
+            <result name="success">/WEB-INF/views/spain/index.jsp</result>         
+        </action> 
+        
+        <action name="byid" class="fr.ib.travel.beans.ByIdAction">
+            <result name="success">/WEB-INF/views/spain/byid.jsp</result>  
+             <result name="input">/WEB-INF/views/spain/index.jsp</result>       
+        </action> 
+            
+         <action name="list" class="fr.ib.travel.beans.ListAction">
+            <result name="success">/WEB-INF/views/spain/list.jsp</result>          
+        </action>    
+                                           
+    </package>
+
+
+<package name="italy" namespace="/italy" extends="struts-default">
+<default-action-ref name="index"/>   
+                     
+         <action name="index" class="fr.ib.travel.beans.IndexAction">
+            <result name="success">/WEB-INF/views/italy/index.jsp</result>         
+        </action> 
+         
+                                           
+    </package>
+    
+    
+    <package name="croatia" namespace="/croatia" extends="struts-default">
+<default-action-ref name="index"/>   
+                     
+         <action name="index" class="fr.ib.travel.beans.CroatiaAction">
+            <result name="success">/WEB-INF/views/croatia/index.jsp</result>         
+        </action> 
+         
+                                           
+    </package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

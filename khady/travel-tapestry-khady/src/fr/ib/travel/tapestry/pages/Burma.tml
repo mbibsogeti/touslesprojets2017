@@ -1,0 +1,23 @@
+
+<!-- Paramétrage du language Tapestry -->
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p = "tapestry:parameter"
+      t:type ="layout" 
+      t:title = "BIRMANIE">
+ 
+    
+<body>
+      
+<center><h1>Nos voyages en Birmanie</h1></center>
+<center><img src="${context:img/birmanie1.jpg}"/></center><br/>
+
+<t:eventlink t:event="sayInterested" class="btn btn-success">I'm interested</t:eventlink>
+
+<t:actionlink t:id ="hesitation" class="btn btn-danger">I'm hesitating</t:actionlink>
+
+<t:actionlink t:id ="notNow" class="btn btn-info">Let's go to Cambodia</t:actionlink>
+
+<t:eventlink t:event ="changeLocale" t:context="'fr'" class="btn btn-default">Francais</t:eventlink>
+<t:eventlink t:event ="changeLocale" t:context="'en'" class="btn btn-default">English</t:eventlink>
+</body>
+</html>
