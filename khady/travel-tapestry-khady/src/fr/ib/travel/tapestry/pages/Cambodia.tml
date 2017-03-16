@@ -1,0 +1,22 @@
+
+<!-- Paramétrage du language Tapestry -->
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p = "tapestry:parameter"
+      t:type ="layout" 
+      t:title = "CAMBODGE">
+      
+<body>
+      
+<center><h1>Nos voyages au Cambogde</h1></center>
+<center><img src="${context:img/cambodge.jpg}"/></center><br/>
+
+
+
+
+<t:beandisplay object = "travel"/>
+
+
+
+
+</body>
+</html>

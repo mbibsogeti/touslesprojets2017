@@ -1,6 +1,8 @@
 package fr.ib.travel.rest;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.Reader;
 import java.io.Writer;
 import java.util.ArrayList;
 
@@ -35,7 +37,7 @@ public class CruiseServlet extends HttpServlet {
 		}
 
 	}
-
+	
 	@Override
 	public void init() throws ServletException {
 		super.init();
@@ -47,4 +49,23 @@ public class CruiseServlet extends HttpServlet {
 		cruises.add("Santaren,12");
 	}
 
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		int n = 0;
+		cruises.remove(n);
+		
+	}
+
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+		BufferedReader in = req.getReader();		
+		cruises.add(in.readLine());
+		
+		
+		
+		
+	}
+	
 }

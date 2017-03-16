@@ -14,9 +14,9 @@ public class CartagenaServlet extends HttpServlet {
 
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+				
 		res.setContentType("text/html");
-		res.setCharacterEncoding("utf-8");		
-		
+		res.setCharacterEncoding("utf-8");
 		
 		TreeMap<String,String> descs= new TreeMap<>();
 		
@@ -24,9 +24,7 @@ public class CartagenaServlet extends HttpServlet {
 		descs.put("Bogota", "Train de 5 jours...");
 		descs.put("Cali", "Car de 8 jours...");
 		descs.put("San Andrès", "Croisière de 10 jours...");
-		
-		res.setCharacterEncoding("utf-8");	
-		res.setContentType("text/html");
+	
 			
 		Writer out = res.getWriter();
 		out.write("<!DOCTYPE html>");
@@ -43,20 +41,10 @@ public class CartagenaServlet extends HttpServlet {
 				
 		for(String k : descs.keySet())
 			out.write("<p><a href='cartagena?city="+k+"'>"+k+"</a></p>");
+		if(req.getParameter("city")!=null && ! descs.containsKey(req.getParameter("city"))){
+			throw new ServletException("Destination inconnue !");
+		}					
 		if(req.getParameter("city")!=null)
 			out.write(descs.get(req.getParameter("city")));
-		
-		
-		
-		
-		
-		
-		
-		
-
-	}
-
-	
-	
-	
+	}	
 }

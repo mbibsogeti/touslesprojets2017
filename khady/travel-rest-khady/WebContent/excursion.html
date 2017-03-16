@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Excursions</h1>
+	<table id="exTable">
+	</table>
+
+	<script>
+	
+	function received(){
+	console.log("Received")
+	if(xhr.readyState==4){
+	var excs = JSON.parse(xhr.responseText)	
+	for(var i in excs){
+		document.getElementById("exTable").innerHTML+="<tr><td>"+excs[i].location+" "+excs[i].dangerosity+"</td></tr>"
+	}
+	
+	}	
+	}
+var url = "jersey/excursions/list"
+var xhr = new XMLHttpRequest()
+xhr.onreadystatechange = received <!-- quand il y a du changement tu appelles la fonction -->
+xhr.open("GET", url, true)<!-- open ouvre la connexion -->
+xhr.send(null)<!-- envoie les données -->
+
+
+
+</script>
+</body>
+</html>
