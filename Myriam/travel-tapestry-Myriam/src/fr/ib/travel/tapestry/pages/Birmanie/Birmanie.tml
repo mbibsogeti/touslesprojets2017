@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" title="Birmanie">
+
+	<div class="row">
+		<div>
+			<h1>Bienvenue en Birmanie !</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+
+			<p>
+				<t:eventlink t:event="changeLocale" t:context="'fr'" class="btn btn-default">Français</t:eventlink>
+				<t:eventlink t:event="changeLocale" t:context="'en'" class="btn btn-default">Anglais</t:eventlink>
+			</p>
+
+			<t:eventlink t:event="sayInterested" class="btn btn-success">Je suis
+				intéressé</t:eventlink>
+
+			<t:eventlink t:event="sayHesitated" class="btn btn-warning">J'hésite</t:eventlink>
+
+			<t:actionlink class="btn btn-primary">Aller au Cambodge</t:actionlink>
+
+		</div>
+		<img src="${context:img/bir.jpg}" class="col-xs-6" />
+
+	</div>
+
+</html>

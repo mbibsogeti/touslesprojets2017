@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" title="Japon">
+
+	<div class="row">
+		<div>
+			<h1>Bienvenue au Japon</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+
+			<h2>Que voulez-vous visiter</h2>
+			<section>
+				<a class="btn btn-default">Mont Fuji</a>
+			</section>
+			<section>
+				<a class="btn btn-default">Palais Impérial</a>
+			</section>
+			<section>
+				<a class="btn btn-default">Chateau Nijo</a>
+			</section>
+
+
+
+		</div>
+
+		<div class="col-xs-2"></div>
+		<img src="${context:img/jap.jpg}" class="col-xs-6" />
+
+	</div>
+
+</html>
