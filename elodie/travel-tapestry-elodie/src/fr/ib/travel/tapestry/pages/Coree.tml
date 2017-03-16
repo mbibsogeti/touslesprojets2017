@@ -1,0 +1,15 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" t:title="Corée">
+	<img src="${context:img/coree.jpg}" alt="photo_asie"
+		class="img-rounded img-responsive" />
+	<h1>Corée</h1>
+	<t:actionlink class="btn btn-warning" context="0" zone="textZone">Le Pays</t:actionlink>
+	<t:actionlink class="btn btn-warning" context="1" zone="textZone">Sites</t:actionlink>
+	<t:actionlink class="btn btn-warning" context="2" zone="textZone">Votre voyage</t:actionlink>
+
+	<t:zone t:id="textZone">
+		<p>${text}</p>
+	</t:zone>
+	
+	<p t:type="Footer"></p>
+</html>

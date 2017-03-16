@@ -1,0 +1,12 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" t:type="layout" title="Cambodia" xmlns:p="tapestry:parameter">
+<!-- message est un nouveau synthaxe qui lui dit d'aller chercher le titre correspondant en fonction de la langue du navigateur -->
+<h1 style="background-color: lightgreen;">Votre voyage au Cambodge</h1>
+<img class="col-sm-6 img-circle" alt="" src="img/Cambodge.jpg"/>
+
+<section class="col-sm-6" style="background-color: lightblue"><h1> Bienvenue au Cambodge</h1></section>
+
+<section class="col-sm-6">
+<t:beandisplay object="travel"/>
+</section>
+	
+</html>

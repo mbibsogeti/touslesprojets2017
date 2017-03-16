@@ -1,5 +1,5 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
-	xmlns:p="tapestry:parameter" t:type="layout" title="Viaje a Camboya">
+	xmlns:p="tapestry:parameter" t:type="layout" title="Viaje a Birmania">
 
 	<h1>Viaje a Birmania</h1>
 	<div class="row">

@@ -1,0 +1,25 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter" t:type="layout" title="Vietnam">
+<h1>Vietnam, NUMBEROUANE !</h1>
+<img src="${context:img/vietnam.jpg}"></img>
+<p>
+	<!-- zone="textZone" : dit au navigateur de conserver cette partie lorsqu'on recharge la zone d'id textZone -->
+	<t:actionlink context="0" zone="textZone" class="btn btn-warning">
+		Le pays
+	</t:actionlink>
+</p>
+<p>
+	<t:actionlink context="1" zone="textZone" class="btn btn-success">
+		Sites touristiques
+	</t:actionlink>
+</p>
+<p>
+	<t:actionlink context="2" zone="textZone" class="btn btn-info">
+		Votre voyage
+	</t:actionlink>
+</p>
+<!-- <t:zone> : pour délimiter des zones en Tapestry. Permet par exemple de ne recharger que des parties de la page -->
+<t:zone t:id="textZone">
+	<p>${text}</p>
+</t:zone>
+<p t:type="Footer"></p>
+</html>

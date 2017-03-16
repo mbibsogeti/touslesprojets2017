@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter"
+	t:type="layout" title="Inde">
+
+	<div class="row">
+		<div>
+			<h1>${message:title}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			
+			<t:beandisplay object="travel"/>
+			<p>${mention}</p>
+			
+			<t:beandisplay object="this"/>
+			<p>${this}</p>
+			
+		</div>
+		<img src="${context:img/inde2.jpg}" class="col-xs-6" />
+
+	</div>
+
+</html>

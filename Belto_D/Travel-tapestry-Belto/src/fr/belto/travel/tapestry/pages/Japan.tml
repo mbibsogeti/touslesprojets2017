@@ -1,0 +1,37 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" t:type="layout" title="Japan" xmlns:p="tapestry:parameter">
+<!-- message est un nouveau synthaxe qui lui dit d'aller chercher le titre correspondant en fonction de la langue du navigateur -->
+<body>
+<h1>Votre voyage au Japon</h1>
+<img class="col-sm-6" alt="" src="img/Japon.jpg"/>
+
+<section class="col-sm-6" style="background-color: lightblue"><h1> Bienvenue au Japon</h1></section>
+
+<section class="col-sm-6" style="background-color:pink">
+Le Japon, en forme longue l’État du Japon, en japonais Nihon ou Nippon (日本?) 
+et Nihon-koku ou Nippon-koku (日本国?) respectivement, est un pays insulaire de l’Asie de l’Est.
+Situé entre l’océan Pacifique et la mer du Japon, à l’est de la Chine,
+de la Corée et de la Russie, et au nord de Taïwan. Étymologiquement, 
+les kanjis (caractères chinois) qui composent le nom du Japon signifient « pays (国, kuni)
+d’origine (本, hon) du Soleil (日, hi) » ; c’est ainsi que le Japon est désigné comme le 
+« pays du soleil levant ».
+</section>
+
+<section class="col-sm-12 clearfix"  >
+<h1>Que voulez-vous visiter?</h1>
+</section>
+
+<section class="col-sm-2 ">
+<a class="btn btn-warning">Mont Fuji</a>
+</section>
+
+<section class="col-sm-2 clearfix">
+<a class="btn btn-success">Palais impérial</a>
+</section>
+
+<section class="col-sm-2 clearfix">
+<a class="btn btn-info">Château Nijo</a>
+</section>
+
+
+</body>
+</html>
