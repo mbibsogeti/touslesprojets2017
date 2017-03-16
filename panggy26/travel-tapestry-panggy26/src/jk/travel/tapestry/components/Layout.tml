@@ -12,19 +12,25 @@
 				<a href="Index"><span class="glyphicon glyphicon-home"></span> Accueil</a>
 			</li>
 			<li>
-				<a href="Iran"><span class="glyphicon glyphicon-eye-open"></span> Iran, perle persique</a>
+				<a href="Iran"><span class="glyphicon glyphicon-eye-open"></span> Iran, Perle Persique</a>
 			</li>
 			<li>
-				<a href="Inde"><span class="glyphicon glyphicon-fire"></span> Inde, joyau éternel</a>
+				<a href="Inde"><span class="glyphicon glyphicon-fire"></span> Inde, Joyau Éternel</a>
 			</li>
 			<li>
 				<a href="Cambodge"><span class="glyphicon glyphicon-star-empty"></span> Cambodge, pays renaissant</a>
 			</li>
 			<li>
-				<a href="Birmanie"><span class="glyphicon glyphicon-leaf"></span> Birmanie, enfin ouverte au monde</a>
+				<a href="Birmanie"><span class="glyphicon glyphicon-leaf"></span> Birmanie, ouverte au monde</a>
 			</li>
 			<li>
-				<a href="#"><span class="glyphicon glyphicon-heart-empty"></span> Le Vietnam</a>
+				<a href="Chine"><span class="glyphicon glyphicon-trash"></span> Chine, Empire Céleste</a>
+			</li>
+			<li>
+				<a href="Japon"><span class="glyphicon glyphicon-globe"></span> Japon, Empire du Soleil Levant</a>
+			</li>
+			<li>
+				<a href="Vietnam"><span class="glyphicon glyphicon-heart-empty"></span> Vietnam, #1!</a>
 			</li>
 		</ul>
 	</nav>
