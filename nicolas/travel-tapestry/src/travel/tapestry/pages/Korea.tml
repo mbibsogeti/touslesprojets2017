@@ -5,12 +5,13 @@
 	<h1>Korea</h1>
 	
 	
-<t:actionlink context="0">Le pays</t:actionlink>
-<t:actionlink context="1">site</t:actionlink>
-<t:actionlink context="2">Le pays</t:actionlink>
+<t:actionlink zone="textZone" context="0">Le pays</t:actionlink>
+<t:actionlink zone="textZone" context="1">site</t:actionlink>
+<t:actionlink zone="textZone" context="2">Le pays</t:actionlink>
 
 <t:zone t:id="textZone">
 <p>${text}</p>
 </t:zone>
-	
+	<p t:type="Footer"></p>
+	<t:Footer></t:Footer>
 </html>
