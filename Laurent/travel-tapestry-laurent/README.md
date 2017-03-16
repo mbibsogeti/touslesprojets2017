@@ -7,6 +7,4 @@ It is build to use every major tools of tapestry in order to learn by practicing
 If you happen to read this, i thank you for the interest investing in my doing.
 
 ANTOINETTE Laurent
-Or ABADIE Marc-Antoine??? Who knows!!
-
-I know !!! Wannabe Hacker !
+El maestro del informatica !!
