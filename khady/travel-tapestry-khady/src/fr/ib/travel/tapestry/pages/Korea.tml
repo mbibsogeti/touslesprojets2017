@@ -1,0 +1,32 @@
+
+<!-- Paramétrage du language Tapestry -->
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p = "tapestry:parameter"
+      t:type ="layout" 
+      t:title = "KOREA">
+ 
+    
+<body>
+      
+<center><h1>Your trip in Korea</h1></center>
+<center><img src="${context:img/coree_opt.jpg}"/></center><br/>
+
+<section>
+<t:actionlink zone="textZone" context="0" >Le Pays</t:actionlink>
+</section><br/>
+
+<section>
+<t:actionlink zone="textZone" context="1">Les sites touristiques</t:actionlink>
+</section><br/>
+
+<section>
+<t:actionlink zone="textZone" context="2">Votre voyage</t:actionlink>
+</section><br/>
+
+<t:zone t:id = "textZone"><!-- la balise t:zone permet à tapestry de repérer les zones qui changent au chargement -->
+<p>${text}</p>
+</t:zone>
+
+<p t:type="Footer"></p>
+</body>
+</html>
