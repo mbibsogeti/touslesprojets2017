@@ -8,6 +8,7 @@ public class Burma {
 
 	//Logger
 	@Inject private Logger logger;
+	@Persist
 	private int hesitationCount=0;
 	
 	//METHODES
