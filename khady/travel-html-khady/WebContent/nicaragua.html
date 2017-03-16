@@ -26,38 +26,57 @@
 	<p>
 		<strong>Inscription</strong>
 	</p>
-	<form id = "register" action="nicaragua.html">
+	<form id="register" action="nicaragua.html">
 
 		<p>
-			<label>Nom:<input type="text"></label>
+			<label>Nom:<input id = "name" type="text" ></label>
 		</p>
 		<p>
-			<label>Email:<input type="text"></label>
+			<label>Email:<input id = "email" type="text"></label>
 		</p>
 		<p>
-	<label>Voyageurs:<input id="nbTravellers" type="number" ></label>
-		</p>
-		<p>
-		<input type="submit">
+			<label>Voyageurs:<input id="nbTravellers" type="number"> </label>
 		</p>
 
-		</form>
+		<p>
+			<input type="submit">
+		</p>
+
+		<p>
+			<output id="message"></output>
+		</p>
+
+	</form>
 	<script>
 		console.log('début')
 		function startup() {
 			console.log('loaded')
 		}
-		
+
 		function nbTravellersClicked() {
 			console.log('nbTravellersClicked')
 		}
-		document.getElementById("nbTravellers").addEventListener("click", nbTravellersClicked)
-		
-			function registered(e) {
-			console.log("Registered !")
-			e.preventDefault()
+		document.getElementById("nbTravellers").addEventListener("click",
+				nbTravellersClicked)
+
+		function registered(e) {
+			console.log("Registered")
+			var m = document.getElementById("message")
+			var name = document.getElementById("name")
+			var email = document.getElementById("email")
+		    m.value = "Inscription envoyée pour "+ name.value +" dont l'adresse email est "+ email.value
+				
+		   var t = document.getElementById("nbTravellers")
+		   t.value = "0"
+		   e.preventDefault()   /* e.preventDefault() empêche l'envoi du formulaire */
 		}
-		document.getElementById("register").addEventListener("submit", registered)
+		document.getElementById("register").addEventListener("submit",
+				registered)
+
+			
+		 
+		
+		
 		
 		
 	</script>

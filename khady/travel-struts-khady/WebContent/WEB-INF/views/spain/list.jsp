@@ -23,19 +23,11 @@
 <td><s:url action="byid" var="u">
 <s:param name="id" value="id"/>
 </s:url><a href="${u}"><s:property value="name"/></a></td>
-
 <td><s:property value="location"/></td>
 <td><s:property value="nbVisitors"/></td>
 </tr>
 </s:iterator>
 </table>
-
-
-
-
-
-
-
 </body>
 </html>
 
