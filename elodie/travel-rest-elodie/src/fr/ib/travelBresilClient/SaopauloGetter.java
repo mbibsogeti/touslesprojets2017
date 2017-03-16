@@ -20,7 +20,7 @@ public class SaopauloGetter {
 			WebTarget t = c.target(adresse); //Cible l'adresse
 			Invocation.Builder ib = t.request(MediaType.APPLICATION_JSON);//Indication de ce qu'on accepte de recevoir
 			Response res = ib.get();//Cet appel est demandé en mode get
-			System.out.println(res.readEntity(String.class)); //Afichage de la réponse
+			System.out.println(res.readEntity(String.class)); //Affichage de la réponse
 		
 		}catch(Exception e){
 			e.printStackTrace();
