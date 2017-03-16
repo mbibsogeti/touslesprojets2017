@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+	<!-- Utilisation de la propriété "title" -->
+	<title>${title}</title>
+</head>
+<body>
+	<!-- Indique qu'on souhaite appliquer bootstrap sur nos pages -->
+	<div class="container">
+		<!-- Elaboration du menu -->
+		<div>
+			<nav class="navbar navbar-inverse">
+				<div class="navbar-header">
+		      		<a class="navbar-brand" href="Index">Paradise on ice : ASIA !!</a>
+		    	</div>
+				<ul class="nav navbar-nav">
+						<li><a href="Iran">IRAN</a> </li>
+						<li><a href="India">INDIA</a> </li>
+						<li><a href="Cambodia">CAMBODIA</a></li>
+						<li><a href="Burma">BIRMANIE</a></li>
+						<li><a href="China">CHINA</a></li>
+						<li><a href="Japan">JAPAN</a></li>
+						<li><a href="Korea">KOREA</a></li>
+				</ul>
+			</nav>
+		</div>
+		<!-- Représente l'emplacement où on mettra le corps de nos pages -->
+		<t:body/>
+	</div>
+</body>
+</html>

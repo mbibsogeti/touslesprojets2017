@@ -1,0 +1,17 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	t:type="Layout" title="Cambodje" xmlns:p="tapestry:parameter">
+	
+<!-- ATTENTION A D2CLARER  LES PR2FIXE P ouT ..;  P: est toujour a l intérieu d'une balise T: car c des parametrtre-->
+	<h1>canbodje</h1>
+
+	
+	<p>n'attendez pas :${travel.name} pour seulement ${travel.price}
+		mais ${travel.description}</p>
+		<!-- permet d'avoir un affichage jolie , il récupère les noms des propriétés disponible dans la classe en cherchan les get et public ..-->
+			<t:beandisplay object="travel" reorder="name,price,description"/>
+			
+			<!-- description affiche les 10 premier : le caractère 0 au 10 em exclu -->
+			<t:beandisplay object="travel"/>
+			
+			<!--  <t:beandisplay object="this"/>-->
+</html>

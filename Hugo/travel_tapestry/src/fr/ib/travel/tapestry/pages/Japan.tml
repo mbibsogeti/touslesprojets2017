@@ -1,0 +1,26 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" title="Viaje a Japon">
+
+	<h1>Viaje a Japon</h1>
+	<div class="row">
+		<section class="col-xs-6">
+		<h2>Destinos</h2>
+			<p>Qué lugares quieres visitar?</p>
+			<div>
+				<p><a class="btn btn-primary">Monte Fuji</a></p>
+			</div>
+			<div>
+				<p><a class="btn btn-success">Palacio Imperial</a></p>
+			</div>
+			<div>
+				<p><a class="btn btn-warning">Castillo Nijo</a></p>
+			</div>
+		</section>
+		
+		<section class="col-xs-6">
+		<h2>Los japos</h2>
+			<img src="${context:img/japoneses.jpg}" class="img-responsive"></img>
+		</section>
+	</div>
+
+</html>

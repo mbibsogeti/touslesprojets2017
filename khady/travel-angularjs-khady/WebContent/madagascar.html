@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script defer>
+angular
+.module("appMG",[])
+.directive("year", function(){
+	return {
+		restrict: "E",<!--E pour la forme Element qui est <year></year>, A pour la forme Attribute qui est <span year></span>, C pour la forme Class qui est <span class = "year"></span> -->
+		template: new Date().getFullYear()
+	}
+	
+})
+
+</script>
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-ng-app="appMG">
+	<h1>Madagascar</h1>
+	<p data-ng-init=" img ='http://media.routard.com/image/74/2/pt34933.1245742.w630.jpg'"></p>
+	<center>
+		<img data-ng-src="{{img}}" data-ng-if="img != '' ">
+	</center>
+	
+	
+	
+	<fieldset>
+			<legend>
+				<strong>Votre voyage pour <year></year></strong>
+				
+				
+			</legend>
+			</fieldset>
+			
+			
+	<div data-ng-controller="CtrlMG as c" data-ng-view class = "view" data-ng-cloak ></div>
+	
+	
+	</body>
+</html>

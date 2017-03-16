@@ -1,0 +1,13 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" title="Viaje a Camboya">
+
+	<h1>Viaje a la Camboya</h1>
+	<div class="row">
+		<section class="col-xs-6">
+			<h2>Camboya</h2>
+			<p>Tu viaje:</p>
+			<t:beandisplay object="travel" reorder="name,price,description"/>
+		</section>
+	</div>
+
+</html>

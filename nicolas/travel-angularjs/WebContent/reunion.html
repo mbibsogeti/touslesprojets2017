@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+
+<script defer> angular.module("appReunion",[]).controller("ctlReunion",function($http){
+	this.result=""
+	this.askClick=function(){this.result="Demande envoyée"}
+	this.send=function(){
+		this.info="encour"
+		$http.post("reunion","name="+this.nom+"&email="+this.email,{headers:{"Content-Type":"application/x-www-form-urlencoded"}})
+		.then(function(){this.info="ok"; console.log(this.info)})
+	}	
+	
+	})
+
+</script>
+
+<title>Nos voyages africain: la réunion</title>
+</head>
+<body>
+
+<script>console.log("ok")</script>
+<div ng-app="appReunion" ng-controller="ctlReunion as c">
+<h1>la réunion</h1>
+<form>
+			<p>
+				Nom:<input type="text" ng-model="c.nom">
+			</p>
+			<p>
+				Email:<input type="email" ng-model="c.email">
+			</p>
+				<input type="button" ng-click="c.send()" value="envoi" >
+			</p>
+			<p>{{c.info}} </p>
+</form>
+</div>
+</body>
+
+</html>

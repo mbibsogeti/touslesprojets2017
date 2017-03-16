@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+h1 {
+	text-align: center;
+	color: #383;
+}
+
+img {
+	width: 60%;
+}
+
+#img,#price {
+	text-align: center;
+}

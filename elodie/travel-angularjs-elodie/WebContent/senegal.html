@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/angular.min.js"></script>
+
+
+<script type="text/javascript" defer>
+	var appS=angular.module("appSenegal",[]);	
+	//appS.info({author:"Elodie"}) ou angular.module("appSenegal").info({author:Elodie})
+	
+	appS.constant("avion", 945).value("hotel",38.29).controller("ctlSenegal", function($scope, avion, hotel){
+		
+		$scope.price=9*hotel+945;
+	}).filter("curr", function(){
+		return function(price,str,nb){
+			if(nb==undefined) nb=1;
+			return (price/nb).toFixed(2)+" "+str;
+		}
+	});
+	
+	
+</script>
+
+
+<title>Sénégal</title>
+</head>
+<body>
+	<div ng-app="appSenegal" ng-init="" ng-controller="ctlSenegal" ng-filter="curr">
+	
+		<p><img src="img/senegal.jpg" alt="photo-Afrique" /></p>
+				<section>
+			<h1 id="titre">Sénégal</h1>
+			<p><img ng-src="{{img}}" ng-if="img!=''" /></p>
+		</section>
+		
+		<fieldset>
+			<legend>Notre voyage : {{price | curr : "euros"}} ({{price | curr : "cfa" : 0.0015 }})</legend>
+			<!--  <p>{{5 | mlt:3}}</p> -->
+		</fieldset>
+		
+		<section id="lien">
+			<a href="Index.html">Home</a>
+		</section>
+		
+	</div>
+</body>
+</html>
