@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
 	<head>
-		<link rel="icon" type="image/png" href="img/favasie.png" />
+		<link rel="icon" type="image/png"
+			href="/travel-tapestry-amine/img/favasie.png" />
 		<title>${title}</title>
 	</head>
 	<body>
@@ -21,6 +22,31 @@
 					<li>
 						<a href="india">
 							<span class="glyphicon glyphicon-plane"> Inde</span>
+						</a>
+					</li>
+					<li>
+						<a href="cambodge">
+							<span class="glyphicon glyphicon-plane"> Cambodge</span>
+						</a>
+					</li>
+					<li>
+						<a href="burma">
+							<span class="glyphicon glyphicon-plane"> Birmanie</span>
+						</a>
+					</li>
+					<li>
+						<a href="china">
+							<span class="glyphicon glyphicon-plane"> Chine </span>
+						</a>
+					</li>
+					<li>
+						<a href="japan">
+							<span class="glyphicon glyphicon-plane"> Japon </span>
+						</a>
+					</li>
+					<li>
+						<a href="korea">
+							<span class="glyphicon glyphicon-plane"> Corée </span>
 						</a>
 					</li>
 				</ul>

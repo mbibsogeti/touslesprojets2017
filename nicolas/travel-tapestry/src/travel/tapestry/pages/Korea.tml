@@ -1,0 +1,16 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	t:type="Layout" title="Korea" xmlns:p="tapestry:parameter">
+	
+<!-- ATTENTION A D2CLARER  LES PR2FIXE P ouT ..;  P: est toujour a l intérieu d'une balise T: car c des parametrtre-->
+	<h1>Korea</h1>
+	
+	
+<t:actionlink context="0">Le pays</t:actionlink>
+<t:actionlink context="1">site</t:actionlink>
+<t:actionlink context="2">Le pays</t:actionlink>
+
+<t:zone t:id="textZone">
+<p>${text}</p>
+</t:zone>
+	
+</html>

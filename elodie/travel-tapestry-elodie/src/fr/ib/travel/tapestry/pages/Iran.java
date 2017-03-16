@@ -13,6 +13,10 @@ public class Iran {
 	
 	private int i=1;
 	
+	public boolean isComparaison(){
+		return travel.getPrice()<300;
+	}
+	
 	public int getCompter(){
 		return i++;
 	}

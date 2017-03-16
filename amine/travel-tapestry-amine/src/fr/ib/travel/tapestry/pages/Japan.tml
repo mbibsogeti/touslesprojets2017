@@ -1,0 +1,21 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter" t:type="layout" title="Voyages au Japon">
+	<h1>Voyage au Japon</h1>
+	<div class="row">
+		<div class="col-xs-6">
+			<p>Que voulez-vous visiter?</p>
+			<section>
+				<a class="btn btn-default">Mont Fuji</a>
+			</section>
+			<section>
+				<a class="btn btn-default">Palais Impérial</a>
+			</section>
+			<section>
+				<a class="btn btn-default">Château de Nijō</a>
+			</section>
+		</div>
+		<div >
+			<img src="${context:img/japon.jpg}" alt="japon" class="img-rounded col-xs-6" />
+		</div>
+	</div>
+</html>

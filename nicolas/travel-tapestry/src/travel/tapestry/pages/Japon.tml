@@ -1,0 +1,35 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	t:type="Layout" title="Japon" xmlns:p="tapestry:parameter">
+	
+<!-- ATTENTION A D2CLARER  LES PR2FIXE P ouT ..;  P: est toujour a l intérieu d'une balise T: car c des parametrtre-->
+	<h1>Japon</h1>
+	
+	
+<p>que voulez vous visiter 
+</p>
+
+<!--  t:mixins="formgroup" peu remplacé le label et mix en fait ce qu'il y a dans id comme texte les id doivent correspondre au variable déclaré dans la classe -->
+
+
+<section>
+
+<a class="btn btn-default" >Montenjy</a>
+
+</section>
+<section>
+
+<a class="btn btn-default" >Palais imperial</a>
+
+</section>
+<section>
+
+<a class="btn btn-default" >chateua nijo</a>
+
+</section>
+
+
+
+ 
+ 
+	
+</html>

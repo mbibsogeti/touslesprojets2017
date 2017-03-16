@@ -7,9 +7,12 @@ import org.apache.tapestry5.annotations.Parameter;
 
 import fr.obodrel.travel.pages.Birmania;
 import fr.obodrel.travel.pages.Cambodia;
+import fr.obodrel.travel.pages.China;
 import fr.obodrel.travel.pages.Index;
 import fr.obodrel.travel.pages.India;
 import fr.obodrel.travel.pages.Iran;
+import fr.obodrel.travel.pages.Japan;
+import fr.obodrel.travel.pages.Korea;
 
 @Import(stylesheet="css/extends.css")
 public class AsiaLayout {
@@ -30,6 +33,12 @@ public class AsiaLayout {
     private Cambodia cambodiaPage;
     @InjectPage
     private Birmania birmaniaPage;
+    @InjectPage
+    private China chinaPage;
+    @InjectPage
+    private Japan japanPage;
+    @InjectPage
+    private Korea koreaPage;
 
 	public String getTitle() {
 		return _title;
@@ -80,6 +89,27 @@ public class AsiaLayout {
 	}
     public Object onToBirmania() {
     	return birmaniaPage;
+    }
+    
+	public String getChina() {
+		return "china";
+	}
+    public Object onToChina() {
+    	return chinaPage;
+    }
+    
+	public String getJapan() {
+		return "japan";
+	}
+    public Object onToJapan() {
+    	return japanPage;
+    }
+    
+	public String getKorea() {
+		return "korea";
+	}
+    public Object onToKorea() {
+    	return koreaPage;
     }
 
 	public String getActive(String menuName) {
