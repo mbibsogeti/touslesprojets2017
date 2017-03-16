@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+
+	<head>
+		<title>${title}</title>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<nav>
+				<ul class="nav nav-pills">
+					<li>
+						<a href="/travel-tapestry-Myriam/Index">Accueil</a>
+					</li>
+					<li>
+						<a href="/travel-tapestry-Myriam/Iran/Iran">Iran</a>
+					</li>
+					<li>
+						<a href="/travel-tapestry-Myriam/India/India">Inde</a>
+					</li>
+					<li>
+						<a href="/travel-tapestry-Myriam/Cambodia/Cambodia">Cambodge</a>
+					</li>
+					<li>
+						<a href="/travel-tapestry-Myriam/Birmanie/Birmanie">Birmanie</a>
+					</li>
+					<li>
+						<a href="/travel-tapestry-Myriam/China">Chine</a>
+					</li>
+					<li>
+						<a href="/travel-tapestry-Myriam/Japon">Japon</a>
+					</li>
+										<li>
+						<a href="/travel-tapestry-Myriam/Coree">Corée</a>
+					</li>
+				</ul>
+			</nav>
+			<t:body />
+		</div>
+
+
+
+	</body>
+
+</html>
