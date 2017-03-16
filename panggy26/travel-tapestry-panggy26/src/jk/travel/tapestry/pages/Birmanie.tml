@@ -19,10 +19,12 @@
 	<!-- <t:actionlink t:id="go" class="btn">
 		Je m'en tape. Emmenez-moi plutôt au Cambodge !
 	</t:actionlink> -->
-	<t:eventlink t:event="chargeLocale" t:context="'fr'">
+</p>
+<p>
+	<t:eventlink t:event="changeLocale" t:context="'fr'">
 		Français
 	</t:eventlink>
-	<t:eventlink t:event="chargeLocale" t:context="'en'">
+	<t:eventlink t:event="changeLocale" t:context="'en'">
 		English
 	</t:eventlink>
 </p>

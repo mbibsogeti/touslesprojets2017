@@ -1,0 +1,19 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	t:type="layout" title="Paradise on ice : India">
+
+	<section class="row">
+		<h1 class="text-center display-1 col-md-5">JAPAN</h1>
+		<img src="${context:img/japan1.jpg}" class="img-responsive img-rounded col-md-4"></img>
+	</section>
+	<section class="row">
+		<h2><u>Que voulez-vous visiter ?</u></h2>
+		<div class="btn-group btn-group-lg btn-group-vertical">
+			<a class="btn btn-info" id="btn1">Mont Fuji</a>
+			<a class="btn btn-info" id="btn2">Roppongi</a>
+			<a class="btn btn-info" id="btn3">Senso-ji</a>
+			<a class="btn btn-info" id="btn4">Kokyo</a>
+			<a class="btn btn-info" id="btn5">Lac Ashi</a>
+			<a class="btn btn-info" id="btn6">Fujigoko</a>
+		</div>
+	</section>
+</html>

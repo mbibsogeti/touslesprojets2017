@@ -1,0 +1,30 @@
+<!DOCTYPE web-app
+      PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+      "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<display-name>My Tapestry Application</display-name>
+	<context-param>
+		<param-name>tapestry.app-package</param-name>
+		<param-value>fr.ib.travel.tapestry</param-value>
+	</context-param>
+	<context-param>
+		<param-name>tapestry.production-mode</param-name><!-- Le site web est en mode débug, par défault = true -->
+		<param-value>false</param-value>
+	</context-param>
+		<context-param>
+		<param-name>tapestry.compress-whitespace</param-name>
+		<param-value>false</param-value>
+	</context-param>
+		<context-param>
+		<param-name>tapestry.production-mode</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<filter>
+		<filter-name>app</filter-name>
+		<filter-class>org.apache.tapestry5.TapestryFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>app</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>

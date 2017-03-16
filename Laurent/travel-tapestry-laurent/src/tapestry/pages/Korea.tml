@@ -1,0 +1,35 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	t:type="layout" title="Paradise on ice : India">
+
+	<section class="row">
+		<h1 class="text-center display-1 col-md-5">KOREA</h1>
+		<img src="${context:img/japan1.jpg}" class="img-responsive img-rounded col-md-4"></img>
+	</section>
+	<section class="row">
+		<t:actionlink context="0" zone="textZone0">
+			<h2><u>Le pays</u></h2>
+			<t:zone t:id="textZone0">
+				<p>${text}</p>
+			</t:zone>
+		</t:actionlink>
+	</section>
+	<section class="row">
+		<t:actionlink context="1"  zone="textZone1">
+			<h2><u>Sites</u></h2>
+			<t:zone t:id="textZone1">
+				<p>${text}</p>
+			</t:zone>
+		</t:actionlink>
+	</section>
+	<section class="row">
+		<t:actionlink context="2" zone="textZone2">
+			<h2><u>Votre voyage</u></h2>
+			<!-- Zone d'action du actionlink -->
+			<t:zone t:id="textZone2">
+				<p>${text}</p>
+			</t:zone>
+		</t:actionlink>
+	</section>
+	
+	<t:footer/>
+</html>
