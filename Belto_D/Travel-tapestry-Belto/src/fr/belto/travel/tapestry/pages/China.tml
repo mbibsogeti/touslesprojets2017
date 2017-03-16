@@ -1,0 +1,42 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" t:type="layout" title="China" xmlns:p="tapestry:parameter">
+<!-- message est un nouveau synthaxe qui lui dit d'aller chercher le titre correspondant en fonction de la langue du navigateur -->
+<body>
+<h1>Votre voyage en Chine</h1>
+<img class="col-sm-6" alt="" src="img/china.jpg"/>
+
+
+<section class="col-sm-6" style="background-color: lightblue"><h1> Bienvenue en Chine</h1></section>
+
+<section class="col-sm-6" style="background-color:pink">
+La République populaire de Chine (RPC, chinois simplifié : 中华人民共和国 ; chinois traditionnel : 
+中華人民共和國 ; pinyin : Zhōnghuá Rénmín Gònghéguó, prononcé 
+[tʂʊŋ˥xua˧˥ɻən˧˥mɪn˧˥kʊŋ˥˩xə˧˥kuɔ˧˥]Prononciation du titre dans sa version originale Écouter)
+, couramment appelée Chinee et parfois Chine populaire, est un pays d'Asie de l'Est.
+ Avec plus d'un milliard trois-cent millions d'habitants, soit environ un sixième
+ de la population mondiale, elle est le pays le plus peuplé du monde3. 
+Elle compte huit agglomérations de plus de dix millions d'habitants, 
+dont la capitale Pékin, Shanghai, Canton, Shenzhen et Chongqing, 
+ainsi que plus de trente villes d'au moins deux millions d'habitants. 
+Avec 9 596 961 km2 selon les chiffres de l'ONU4, 
+la Chine est également le plus grand pays d'Asie orientale
+ et le troisième ou quatrième plus grand pays du monde par superficie5.
+La Chine s'étend des côtes de l'océan Pacifique au Pamir et aux Tian Shan,
+et du désert de Gobi à l'Himalaya et aux confins de la péninsule indochinoise.
+</section>
+<t:form class="col-sm-6" style="background-color: yellow">
+<h1> Formulaire à remplir pour votre voyage</h1>
+<!-- Il ne faut pas oublier de déclarer les id dans la classe China.java -->
+<t:textfield t:label="Nom" type="text" t:id="name" t:mixins="formgroup"/>
+<!-- validate="required, minlength=X regexp=^[...] lui dire que c'est obligatoire, qui'il faut mettre que des chiffres et respecter 10 chiffre minimum  -->
+<t:textfield t:label="Telephone"  type="tel" t:id="tel" t:mixins="formgroup" validate="required, minLength=10, regexp=^[0-9]+$"/>
+<!-- une autre façon de faire pour afficher voyageur -->
+<t:label for="travelers">Voyageurs</t:label>
+<t:textfield type="number" t:id="travelers"/>
+
+<t:upload t:id="visa" t:mixins="formgroup"/>
+<t:submit type="submit" value="Envoi" style="background-color: olive"/>
+<t:errors/>
+</t:form>
+<img class="col-sm-6 img-circle" alt="" src="img/china1.jpg"/>
+</body>
+</html>
