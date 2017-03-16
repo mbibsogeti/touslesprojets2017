@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 
+  <!-- VERSION MAVEN --> 
+  <modelVersion>4.0.0</modelVersion>
+  
+  <!-- DEBUT PARAMETRAGE PROJET --> 
+  <groupId>fr.ib.travel.spring</groupId>
+  <artifactId>travel-spring-khady</artifactId>
+  <version>0.0.2-SNAPSHOT</version>
+  <name>Travel/Spring</name>
+  <description>Mon projet Maven</description>
+  <!-- FIN PARAMETRAGE PROJET --> 
+  
+  <dependencies>
+  
+  <!-- DEBUT SPRING FRAMEWORK -->  
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>4.3.7.RELEASE</version>
+         </dependency>
+         
+        <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>4.3.7.RELEASE</version>   
+    </dependency>
+    <!-- FIN SPRING FRAMEWORK --> 
+    
+    <!-- DEBUT SPRING ASPECT --> 
+    <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjrt</artifactId>
+        <version>1.8.10</version>   
+    </dependency>
+    
+    <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>1.8.10</version>   
+    </dependency> 
+    <!-- FIN SPRING ASPECT -->  
+     
+   
+<!--  DEBUT SPRING DATA -->    
+     <dependency>
+        <groupId>javax.persistence</groupId>
+        <artifactId>persistence-api</artifactId>
+        <version>1.0.2</version>   
+    </dependency>
+    
+      <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-commons</artifactId>
+        <version>1.13.1.RELEASE</version>   
+    </dependency>
+    
+     <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-gemfire</artifactId>
+        <version>1.9.1.RELEASE</version>   
+    </dependency>   
+    <!-- FIN SPRING DATA --> 
+    
+    <!-- DEBUT CONFIG DU LOG --> 
+     <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.24</version>   
+    </dependency> 
+      <!-- FIN CONFIG DU LOG --> 
+    
+    
+    
+</dependencies>
+  <build>
+  	<pluginManagement>
+  		<plugins>
+  			<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+  			<plugin>
+  				<groupId>org.eclipse.m2e</groupId>
+  				<artifactId>lifecycle-mapping</artifactId>
+  				<version>1.0.0</version>
+  				<configuration>
+  					<lifecycleMappingMetadata>
+  						<pluginExecutions>
+  							<pluginExecution>
+  								<pluginExecutionFilter>
+  									<groupId>
+  										org.apache.maven.plugins
+  									</groupId>
+  									<artifactId>
+  										maven-compiler-plugin
+  									</artifactId>
+  									<versionRange>
+  										[3.1,)
+  									</versionRange>
+  									<goals>
+  										<goal>compile</goal>
+  									</goals>
+  								</pluginExecutionFilter>
+  								<action>
+  									<ignore></ignore>
+  								</action>
+  							</pluginExecution>
+  						</pluginExecutions>
+  					</lifecycleMappingMetadata>
+  				</configuration>
+  			</plugin>
+  		</plugins>
+  	</pluginManagement>
+  </build>
+</project>
