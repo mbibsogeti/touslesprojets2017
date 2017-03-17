@@ -7,12 +7,12 @@ public class TimerAspect {
 		long timeBefore = System.nanoTime();
 		long timeAfter;
 		Object toRet;
-		
+
 		toRet = proceedingJoinPoint.proceed();
-		
+
 		timeAfter = System.nanoTime();
 		//System.out.println(proceedingJoinPoint.getSignature().toString() + " : " + (timeAfter-timeBefore) + " ns");
-		
+
 		return toRet;
 	}
 }

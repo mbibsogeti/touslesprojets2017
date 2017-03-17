@@ -65,7 +65,7 @@ public class Lake {
 	}
 
 	public String toString() {
-		return id + ": " + name + "se trouve au " + country + "avec une supérficie de: " + size + "km²";
+		return id + ": " + name + " se trouve au " + country + " avec une supérficie de: " + size + "km²";
 
 	}
 
