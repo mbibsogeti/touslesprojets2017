@@ -48,5 +48,10 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		    <artifactId>slf4j-simple</artifactId>
 			<version>1.7.24</version>
 		</dependency>
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
 	</dependencies>
 </project>
