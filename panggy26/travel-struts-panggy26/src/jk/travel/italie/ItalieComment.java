@@ -1,18 +1,15 @@
 package jk.travel.italie;
 
+import com.opensymphony.xwork2.ActionSupport;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.hibernate.Session;
-
-import com.opensymphony.xwork2.ActionSupport;
-
 import jk.travel.data.HibernateUtil;
 import jk.travel.data.Monument;
+import org.hibernate.Session;
 
 @Entity
 @Table
@@ -69,7 +66,7 @@ public class ItalieComment {
 	}
 	
 	// @ManyToOne(cascade={}) : On a plusieurs commentaires pour un monument. Lorsqu'on efface un commentaire, on laisse le monument (cas par défaut).
-	@ManyToOne(cascade={})
+	@ManyToOne(cascade = {})
 	public Monument getMonument() {
 		return _monument;
 	}
