@@ -5,21 +5,18 @@ import org.springframework.data.gemfire.repository.config.EnableGemfireRepositor
 @EnableGemfireRepositories
 public class LakeSource {
 	private LakeRepository repository;
-	
 	public String getInfos(){
-		
-		
 		String str = "";
-		for(Lake l:repository.findAll()){
+		for (Lake l:repository.findAll()) {
 			str += l.toString() + "\n";
 		}
 		 str+="Grands lacs:\n";
-		 for (Lake l:repository.findBySizeGreaterThan(1000)){
+		 for (Lake l:repository.findBySizeGreaterThan(1000)) {
 			 str+=l.toString() + "\n";
 		 }
 		 str+="Le plus petit lac est :\n";
-		 for (Lake l:repository.findFirstBySizeGreaterThanOrderBySizeAsc(0)){
-			 str+=l.toString() + "\n";
+		 for (Lake l:repository.findFirstBySizeGreaterThanOrderBySizeAsc(0)) {
+			 str += l.toString() + "\n";
 			 break;
 		 }
 		return str;
@@ -30,10 +27,9 @@ public class LakeSource {
 	public void setRepository(LakeRepository repository) {
 		this.repository = repository;
 	}
-	
 	public void fillInfos(){
-		repository.save(new Lake(1l, "Lac Vanern", "Suède", 5648f));
-		repository.save(new Lake(2l, "Lac Malär", "Suède", 1140f));
-		repository.save(new Lake(3l, "Lac Siljan", "Suède", 354f));
+		repository.save(new Lake(1L, "Lac Vanern", "Suède", 5648f));
+		repository.save(new Lake(2L, "Lac Malär", "Suède", 1140f));
+		repository.save(new Lake(3L, "Lac Siljan", "Suède", 354f));
 	}
 }
