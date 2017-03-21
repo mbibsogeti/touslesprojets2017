@@ -34,17 +34,17 @@ public class Main {
 		if (ctx.containsBean("cruiseSource")) {
 			System.out.println("ctx contains cruiseSource");
 		}
-		// La fonction getBeanDefinitionNames renvoie le nom du bean. 
+		//La fonction getBeanDefinitionNames renvoie le nom du bean.
 		for (String n : ctx.getBeanDefinitionNames()) {
 			System.out.println(n);
 		}
 		System.out.println(cs.getHelsinkiBergen());
 		// L'exemple suivant crée une erreur de spring : même si on a défini le
-		// bean, 
-		// cette classe "calendar" ne possède pas de constructeur pas défaut ! 
-		// CruiseSource cs2 = (CruiseSource) ctx.getBean("calendar");  
+		// bean,
+		// cette classe "calendar" ne possède pas de constructeur pas défaut !
+		// CruiseSource cs2 = (CruiseSource) ctx.getBean("calendar");
 		// if (ctx.containsBean("calendar")) {   
-		// System.out.println("ctx contains calendar");  
+		// System.out.println("ctx contains calendar");
 		// }
 		LakeSource ls = (LakeSource) ctx.getBean("lakeSource");
 		ls.fillInfo();
