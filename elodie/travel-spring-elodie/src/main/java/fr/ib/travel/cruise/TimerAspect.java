@@ -7,7 +7,7 @@ public class TimerAspect {
 		long t1=System.nanoTime();
 		Object o = pjp.proceed();
 		long t2=System.nanoTime();
-		System.out.println((t2-t1)+"ns");
+		System.out.println((t2 - t1)+"ns");
 		return o;
 	}
 }
