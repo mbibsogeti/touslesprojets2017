@@ -55,8 +55,11 @@ public class SubmapsActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (data.getLongExtra("t",0)>2000) {
-            Toast.makeText(this, "Merci d'avoir contemplé notre avion si longtemps !", Toast.LENGTH_LONG).show();
+        if (data.getLongExtra("t",0)>100) {
+            int temps = (int) data.getLongExtra("t",0)/1000;
+            Toast.makeText(this, getString(
+                    R.string.backfromplane_name,temps,getResources().getQuantityString(R.plurals.second,temps)
+            ), Toast.LENGTH_LONG).show();
         }
     }
 }

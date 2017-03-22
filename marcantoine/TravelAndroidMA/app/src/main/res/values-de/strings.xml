@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Australia travel</string>
+    <string name="home_name">Home</string>
+    <string name="map_name">Our destinations in Australia</string>
+    <string name="submaps_name">Our destinations in Australia: details</string>
+    <string name="plane_name">Your plane</string>
+    <string name="welcome_name">Willkommen mein Schatz!</string>
+    <string name="backfromplane_name">Hüten Sie sich vor dem Datum ändern (%1$d %2$s)</string>
+    <plurals name="second">
+        <item quantity="one">Sekunde</item>
+        <item quantity="other">Sekunden</item>
+    </plurals>
+</resources>
