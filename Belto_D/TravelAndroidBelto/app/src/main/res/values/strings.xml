@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Travel Android Belto</string>
+    <string name="map">La carte complète</string>
+    <string name="submaps">Une partie de la Carte </string>
+    <string name="plane">l\'avion pour votre voyage</string>
+    <string name="day_warning">Attention au changement de date(%1$d %2$s)</string>
+    <string name="home_information">Vous etes sur la meilleure application qui puisse exister concernant les voyages en Océanie.
+    Pour plus d\'information, veuillez contacter Mr Dieudonné au numéro : 0634 07 00 00 </string>
+    <plurals name="second">
+       <item quantity="one" >seconde</item>
+        <item quantity="other">Secondes</item>
+    </plurals>
 </resources>
