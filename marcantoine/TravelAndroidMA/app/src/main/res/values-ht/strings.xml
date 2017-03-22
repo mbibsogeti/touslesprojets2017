@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Ostrali vwayaj</string>
+    <string name="home_name">Home</string>
+    <string name="map_name">Destinasyon nou nan Ostrali</string>
+    <string name="submaps_name">Destinasyon nou ki nan Ostrali: detay</string>
+    <string name="plane_name">Avyon ou</string>
+    <string name="welcome_name">Byenveni zanmi m \'!</string>
+    <string name="backfromplane_name">Pran prekosyon nou ak chanjman nan dat (%1$d %2$s)</string>
+    <plurals name="second">
+        <item quantity="other">segonn</item>
+    </plurals>
+</resources>
