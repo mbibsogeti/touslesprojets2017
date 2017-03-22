@@ -12,7 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * Created by ib on 21/03/2017.
+ * Created by Julian on 21/03/2017.
  */
 
 public class PlaneActivity extends Activity {

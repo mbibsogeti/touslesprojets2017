@@ -1,3 +1,22 @@
 <resources>
+    <!-- Le nom de la première activité se substitue à celui de l'application dans la HOME. À noter
+    que le bon nom d'application apparaît dans la liste des applications à désinstaller. -->
     <string name="app_name">Travel Android</string>
+    <string name="map_activity">Map Activity</string>
+    <string name="submaps_activity">Submaps Activity</string>
+    <string name="plane_activity">Plane Activity</string>
+    <string name="message">Welcome in this app !</string>
+    <!-- % : caractère spécial, 1 : premier paramètre, $ : séparateur, d : digit -->
+    <!-- %2$s : 2ème argument de type string -->
+    <string name="days_warning">Attention au changement de date (%1$d %2$s)</string>
+    <!-- Gestion des pluriels -->
+    <!--Gestion du pluriel du nom secondes -->
+    <plurals name="second">
+        <!-- Chaîne à écrire pour une quantité valant 1 -->
+        <item quantity="one">seconde</item>
+        <item quantity="other">secondes</item>
+    </plurals>
+    <string name="home_infos">Allez viens !!! On est bienbienbien en Océanie. Viens souffler dans
+        un didgeridoo ! Ici, on a des DJ ripoux, dédi j'ai ri d'où ? Plus d'infos : 06 78 58 74 10.
+    </string>
 </resources>
