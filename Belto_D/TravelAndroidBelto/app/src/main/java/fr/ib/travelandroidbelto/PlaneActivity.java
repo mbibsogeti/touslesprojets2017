@@ -23,6 +23,8 @@ public class PlaneActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(new PlaneView(this));
         start=System.currentTimeMillis();
+        // affichage d'une icone pour une activité (déjà declaré dans (activity android icon) du fichier XML)
+        getActionBar().setDisplayShowHomeEnabled(true);
     }
 
     @Override
