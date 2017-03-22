@@ -17,7 +17,7 @@ public class LakeSource {
 			s += (l.toString() + "\n");
 		}
 		s += "Lakes bigger than 1000sm: \n";
-		for (Lake l1 : repository.findBySizeBetween(4000, 6000)) {
+		for (Lake l1 : repository.findBySizeGreaterThan(4000)) {
 			s += l1 + "\n";
 		}
 		return s;
