@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Android Travel</string>
+    <string name="home_description">This application will allow to take a decision about of your oceanie destination
+    - More information: 0623895142</string>
+    <string name="name_summary">Global map</string>
+    <string name="submaps_name">Maps</string>
+    <string name="plane_name">Transport</string>
+
+    <string name="welcome_text">Welcome !!</string>
+
+    <string name="day_warming">
+        Warning! The date change (%1$d %2$s)
+    </string>
+    <plurals name="second">
+        <item quantity="one">second</item>
+        <item quantity="other">seconds</item>
+    </plurals>
+</resources>

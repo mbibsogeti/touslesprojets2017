@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+
+	// Version du SDK utilisée pour la compilation de l'application
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+	
+    defaultConfig {
+		// Identifiant de l'application. En spécifier un unique au monde !
+        applicationId "travel.jk.travelandroid"
+		// Version minimale pour la rétrocompatibilité
+        minSdkVersion 21
+		// Version ce sur quoi on a testé l'application. Un appareil récent est capable de se comporter comme à l'époque de cette version.
+        targetSdkVersion 25
+		// Les utilisateurs de Google Play sont automatiquement avertis lors d'une augmentation de 1 (mise à jour)
+        versionCode 1
+		// Arbitraire. Seulement affiché.
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+	
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+	// appcompat-v7 : bibliothèque additionnelle apportant la compatibilité jusqu'à la version 7 (jusqu'à mettre un  minSdkVersion 7)
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    testCompile 'junit:junit:4.12'
+}

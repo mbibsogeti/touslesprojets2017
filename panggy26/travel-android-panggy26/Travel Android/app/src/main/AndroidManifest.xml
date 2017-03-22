@@ -1,0 +1,24 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="travel.jk.travelandroid">
+    <application
+        android:allowBackup="true"
+        android:label="TravelAndroid"
+        android:icon="@drawable/ic_launcher"
+        android:supportsRtl="true">
+        <!-- Déclaration de l'activité de la classe MapActivity -->
+        <activity android:name=".MapActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <!-- Déclaration de l'activité de la classe SubmapsActivity -->
+        <!-- En supprimant l'intent filter, cette activité n'est plus une activité de démarrage -->
+        <activity android:name=".SubmapsActivity">
+        </activity>
+        <!-- Déclaration de l'activité de la classe PlaneActivity -->
+        <activity android:name=".PlaneActivity">
+        </activity>
+    </application>
+</manifest>

@@ -12,16 +12,18 @@ public class Main {
 		// ferme automatiquement quand la JVM s'arrête ;)
 		ctx.registerShutdownHook();
 		// afficher les beans disponible
-		for (String n : ctx.getBeanDefinitionNames())
+		for (String n : ctx.getBeanDefinitionNames()) {
 			System.out.println(n);
+		}
 		// tester si le bean existe
 		if (ctx.containsBean("cruiseSource")) {
 			System.out.println("true");
 		}
 		// id de spring.xml
 		CruiseSource cs = (CruiseSource) ctx.getBean("cruiseSource");
-		if (cs.getActive())
+		if (cs.getActive()) {
 			System.out.println("Actif!");
+		}
 		System.out.println(cs.getHelsinkiBergen());
 		// appel de fillInfos
 		LakeSource ls = (LakeSource) ctx.getBean("infos");
@@ -30,7 +32,7 @@ public class Main {
 
 		// infos sur les lacs
 		// LakeSource ls = (LakeSource) ctx.getBean("infos");
-		//if (ls.getInfos() != null)
-			//System.out.println(ls.getInfos());
+		// if (ls.getInfos() != null)
+		// System.out.println(ls.getInfos());
 	}
 }
