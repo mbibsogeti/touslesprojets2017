@@ -22,6 +22,7 @@ public class SubmapsActivity extends Activity{
     protected void onCreate(Bundle s) {
         super.onCreate(s);
         setContentView(new SubmapsActivity.MapView(this));
+        getActionBar().setDisplayShowHomeEnabled(true);
     }
 
     //Etape 3: Se servir du résultat de l'activité di onTouchEvent
@@ -29,7 +30,8 @@ public class SubmapsActivity extends Activity{
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         //Si on reste plus de 2secondes et que l'on revient en arrière le TOAST apparait
-        if(data.getLongExtra("t",0)>2000) Toast.makeText(SubmapsActivity.this,"quelques secondes plus tard ...",Toast.LENGTH_LONG).show();
+        long temps = data.getLongExtra("t",0)/1000;
+        if(temps> 500) Toast.makeText(SubmapsActivity.this,getString(R.string.day_warming,temps,getResources().getQuantityString(R.plurals.second,(int)temps)),Toast.LENGTH_LONG).show();
         super.onActivityResult(requestCode, resultCode, data);
     }
 

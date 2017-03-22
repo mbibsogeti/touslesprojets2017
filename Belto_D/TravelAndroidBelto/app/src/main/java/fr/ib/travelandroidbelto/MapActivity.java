@@ -28,6 +28,8 @@ public class MapActivity extends Activity {
         // le premier(MapActivity= la classe, Le second(Oncreate)= le message avec des infos)
         Log.i("MapActivity","onCreatehahahaha");
         Toast.makeText(this,"Bienvenue sur mon application, je suis Belto", Toast.LENGTH_LONG).show();
+        // nouvelle Toast en prenant le texte du string correspondant(nouvelle façon d'afficher un texte)
+        Toast.makeText(this,getText(R.string.map), Toast.LENGTH_LONG).show();
         setContentView(new MapView(this));
     }
     // la class MapView hérite de view et redefinie la mère
