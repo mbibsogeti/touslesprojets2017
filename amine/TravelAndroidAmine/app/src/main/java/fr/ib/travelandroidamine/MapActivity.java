@@ -24,7 +24,7 @@ public class MapActivity extends Activity {
         //log debug: je viens de passé par le onCreate
         Log.i("MapActivity","onCreate");
         //Toast affichage particulier d'un message de bienvenue à l'ouverture de l'application
-        Toast.makeText(this,"Bienvenue",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,getString(R.string.welcome),Toast.LENGTH_LONG).show();
         //indiquer la vue principale de notre activité
         setContentView(new MapView(this));
     }
@@ -38,6 +38,7 @@ public class MapActivity extends Activity {
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
             Bitmap b=BitmapFactory.decodeResource(getResources(),R.drawable.carte);
+            //il y a des drawBitmap plus complexe pour adapter les images à l'écran
             canvas.drawBitmap(b,0,0,null);
         }
         public boolean onTouchEvent(MotionEvent e){
