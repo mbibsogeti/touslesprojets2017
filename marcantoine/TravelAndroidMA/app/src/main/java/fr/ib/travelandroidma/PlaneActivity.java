@@ -25,6 +25,8 @@ public class PlaneActivity extends Activity {
         super.onCreate(s);
         start=System.currentTimeMillis();
         setContentView(new PlaneView(this));
+        // On fait un ajout pour montrer une icône sur cette activité spécifique
+        getActionBar().setDisplayShowHomeEnabled(true);
     }
 
     @Override
