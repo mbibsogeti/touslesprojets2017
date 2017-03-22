@@ -20,13 +20,16 @@ public class SubmapsActivity extends Activity {
         super.onCreate(s);
         //Toast.makeText(this,"Ceci est un pseudo Zoom",Toast.LENGTH_LONG).show();
         setContentView(new SubmapsActivity.MapView(this));
+        //forcer l'affichage de l'icon sur l'activité
+        getActionBar().setDisplayShowHomeEnabled(true);
     }
     //afficher un toast quand on met plus de deux secondes dans Plane pour revenir en arrière
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(data.getLongExtra("t",0)>2000)
-            Toast.makeText(SubmapsActivity.this,"data",Toast.LENGTH_LONG).show();
+        long ms=data.getLongExtra("t",0);
+        if(ms>500)
+            Toast.makeText(SubmapsActivity.this,getString(R.string.day_warning,ms/1000,getResources().getQuantityString(R.plurals.second, (int) (ms/1000))),Toast.LENGTH_LONG).show();
     }
 
     private class MapView extends View {

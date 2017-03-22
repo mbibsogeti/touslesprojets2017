@@ -30,6 +30,7 @@ public class PlaneActivity extends Activity {
         long end=System.currentTimeMillis();
         long t=end-start;
         Intent i=new Intent();
+
         i.putExtra("t",t);
         setResult(0,i);
         super.onBackPressed();
