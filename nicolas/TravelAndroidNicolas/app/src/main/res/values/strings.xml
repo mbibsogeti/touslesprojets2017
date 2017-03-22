@@ -1,0 +1,18 @@
+<resources>
+    <string name="HomeActivity">accueil</string>
+    <string name="app_name">Travel Android Nicolas</string>
+    <string name="carteoceanie"> voici la carte de locéanie</string>
+    <string name="carteaccueil"> voici laccueil</string>
+    <string name="carteavion"> voici la carte de lavion</string>
+    <string name="toast">le toast te dis bienvenu</string>
+    <string name="daywarning">Attention au changement de date (%1$d%2$s)</string>
+        <plurals name="second">
+        <item quantity="one">seconde</item>
+            <item quantity="other">secondes</item>
+
+        </plurals>
+
+
+</resources>
+
+

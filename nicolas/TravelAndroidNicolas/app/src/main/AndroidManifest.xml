@@ -1,0 +1,29 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          
+    package="fr.ib.travelandroidnicolas"
+    >
+
+    <application android:allowBackup="true" android:icon="@drawable/mush"
+        android:label="@string/app_name">
+
+
+        <activity  android:name=".HomeActivity" android:label="@string/HomeActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity  android:name=".MapActivity" android:label="@string/carteaccueil">
+
+        </activity>
+        <activity android:label="@string/carteoceanie" android:name=".Submaps"  android:icon="@drawable/avion">
+
+        </activity>
+        <activity  android:label="@string/carteavion" android:name=".Planeactivity">
+
+        </activity>
+
+    </application>
+
+</manifest>
+
