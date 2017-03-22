@@ -10,6 +10,6 @@ public interface LakeRepository extends CrudRepository <Lake, Long>{
 	List<Lake> findBySizeGreaterThanOrderBySize(float s);
 	List<Lake> findBySizeGreaterThanOrderByName(float s);
 	List<Lake> findBySizeGreaterThanOrderByCountry(float s);
-	List<Lake> findBySizeBetween(float min, float max);
+//	List<Lake> findBySizeBetween(float min, float max);
 
 }
