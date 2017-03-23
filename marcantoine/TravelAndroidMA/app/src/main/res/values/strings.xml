@@ -1,17 +1,27 @@
 <resources>
+    // Noms des activités :
     <string name="app_name">Australia travel</string>
     <string name="home_name">Home</string>
     <string name="map_name">Our destinations in Australia</string>
     <string name="submaps_name">Our destinations in Australia: details</string>
     <string name="plane_name">Your plane</string>
+    <string name="register_name">Registration</string>
+    <string name="title">Welcome</string>
+
+
+    // Autres valeurs :
     <string name="welcome_name">Welcome my dear!</string>
     <string name="backfromplane_name">Beware of the date change (%1$d %2$s)</string>
-    <string name="title">Welcome on our app homepage</string>
-    <string name="desc">Dear customer, we welcome you on our very realistic and exceptional offer.
-        Do not forget to tell all your good friends about us. Please call us soon: +3386846846</string>
+    <string name="desc"><u>Dear customer</u>, \nWe <b>welcome</b> you on our very <b>realistic and exceptional offer</b>.
+        \nDo not forget to tell all your <i>good</i> friends about us.
+        \nWe can provide chemicals too, like Ca<sup>2+</sup>CO<sub>3</sub><sup>2-</sup>.
+        \nPlease call us soon: +33668468465 or mail us at: Joe@Doe.com.
+        \nWe also recommend you to learn more about this region: https://en.wikipedia.org/wiki/Australia.</string>
+    <string name="form_sent"> registered</string>
     <plurals name="second">
         <item quantity="zero">second</item>
         <item quantity="one">second</item>
         <item quantity="other">seconds</item>
     </plurals>
+    <string name="stub">***</string>
 </resources>
