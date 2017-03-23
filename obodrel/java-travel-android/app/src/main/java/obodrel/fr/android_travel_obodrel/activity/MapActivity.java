@@ -21,6 +21,7 @@ public class MapActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(new MapView(this));
         Log.i("MapActivity", "onCreate, end of fct");
+        Toast.makeText(MapActivity.this,getString(R.string.welcome_txt),Toast.LENGTH_SHORT).show();
     }
     private class MapView extends View {
 
