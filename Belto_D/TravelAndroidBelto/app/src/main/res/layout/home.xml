@@ -2,23 +2,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:background="#6dafbc"
+    android:layout_gravity="center">
+<!--ajout de text en dure dans la textView-->
     <TextView
         android:id="@+id/textview1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"/>
+        android:text="@string/app_name"
+        android:textSize="24sp"
+        android:layout_gravity="center"/>
+    <!--Une strategie qui consiste a afficher et faire du graphisme et traitement de texe-->
+    <!--Dans le code Java (HomeActivity), on lui dit que c'est le layout qui s'occupe de l'affichage-->
     <TextView
         android:id="@+id/textview2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/home_information"/>
+        android:text="@string/home_information"
+        android:autoLink="all"/>
+    <!--Nouvelle strategie en utilisant l'outil stub-->
+    <!--Grace à l'id (info.txt) qu'on a déclaré ci-dessous -->
+    <!--Dans le java(HomeActivity), les instructions doivent etre faites après le setContentViews-->
     <TextView
-        android:id="@+id/textview3"
+        android:id="@+id/info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Textview"/>
+        android:text="@string/stub"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:id="@+id/home_btn_map"
+            android:textColor="#f3eef5"
+            android:background="#1ea9ff"
+            android:layout_margin="20sp"
+            android:layout_gravity="center"/>
+
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:id="@+id/register_btn_map"
+            android:textColor="#0e0e0e"
+            android:background="#6b516e"
+            android:layout_gravity="center"
+            android:layout_margin="20sp"/>
+    </LinearLayout>
 
 </LinearLayout>

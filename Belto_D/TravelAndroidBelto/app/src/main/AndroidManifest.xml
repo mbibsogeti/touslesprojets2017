@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".PlaneActivity" android:icon="@drawable/icone_plane"  android:label="@string/plane">
         </activity>
+        <activity android:name=".RegisterActivity" android:icon="@drawable/icone_plane"  android:label="@string/register">
+        </activity>
     </application>
 
 </manifest>
