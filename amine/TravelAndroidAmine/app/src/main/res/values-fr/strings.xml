@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Travel Android Amine</string>
+    <string name="oceanie">Carte de l\'Océanie</string>
+    <string name="details">Détails</string>
+    <string name="plane">Notre classe Business</string>
+    <string name="welcome">Bienvenue</string>
+    <string name="day_warning">Attention au changement de date(%1$d%2$s)</string>
+    <plurals name="second">
+        <item quantity="zero">seconde</item>
+        <item quantity="one">seconde</item>
+        <item quantity="other">secondes</item>
+    </plurals>
+    <!--Les interfaces-->
+    <string name="home">Voyage en Océanie</string>
+    <string name="home_info">Préparez votre voyage en Australie avec les experts de La Maison de
+        l\'Océanie,\n et découvrez l\'Océanie grâce à des circuits, séjours, et voyages sur mesure.
+        Pour + d\'infos au: 0342511232</string>
+    <string name="html3"><b>Ceci est un <u>texte</u> en gras</b></string>
+    <string name="stub">***</string>
+    <string name="map_title">océanique</string>
+    <string name="register_title">Enregistrement</string>
+</resources>
