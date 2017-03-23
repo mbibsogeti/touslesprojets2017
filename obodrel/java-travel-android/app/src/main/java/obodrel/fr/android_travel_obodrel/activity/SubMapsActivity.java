@@ -27,9 +27,16 @@ public class SubMapsActivity extends Activity {
 
         if(requestCode == resultCode) {
             long timeElapsed = data.getLongExtra("timeElapsed", -1);
-            if(timeElapsed != -1 && timeElapsed > 2000) {
-                Toast.makeText(SubMapsActivity.this, "Time elapsed = " + timeElapsed/1000f + "s",
-                        Toast.LENGTH_SHORT).show();
+            if(timeElapsed != -1 && timeElapsed > 500) {
+                float timeSec = timeElapsed / 1000f;
+                String second = getResources().getQuantityString(R.plurals.second, (int) timeSec);
+                String textToDisplay =  getString(R.string.time_elapsed_plane,timeSec,second);
+                if(timeSec < 10) {
+                    String [] numberInLetters = getResources().getStringArray(R.array.number);
+                    textToDisplay =  getString(
+                            R.string.time_elapsed_plane_letter,numberInLetters[(int)timeSec],second);
+                }
+                Toast.makeText(SubMapsActivity.this,textToDisplay,Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -65,6 +72,7 @@ public class SubMapsActivity extends Activity {
                 } else {
                     imgBmp = BitmapFactory.decodeResource(getResources(),
                             R.drawable.obodrel_img_ocaenia_east_map);
+                    setTitle(R.string.activity_east);
                     //Toast.makeText(SubMapsActivity.this, "Open Sub Map East",
                             //Toast.LENGTH_SHORT).show();
                 }

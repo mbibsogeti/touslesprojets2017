@@ -1,3 +1,46 @@
 <resources>
-    <string name="app_name">Obodrel Travel, Oceanian agency</string>
+    <string name="app_name">Obodrel\'s Travel, Oceania agency</string>
+    <string name="activity_home">Home</string>
+    <string name="activity_register">Register</string>
+    <string name="activity_main">Oceania - Whole Map</string>
+    <string name="activity_west">Oceania - West Map</string>
+    <string name="activity_east">Oceania - East Map</string>
+    <string name="activity_plane">Oceania Plane</string>
+    <string name="welcome_txt">Welcome</string>
+    <string name="time_elapsed_plane">Time elapsed = %1$d %2$s</string>
+    <string name="time_elapsed_plane_letter">Time elapsed = %1$s %2$s</string>
+    <string name="more_infos_home"><u>Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem.</u>
+        Lorem ipsum quidem si ac amet. <b>Se sequeiantet um delores lorem.</b> Lorem ipsum quidem si ac
+        amet. Se sequeiantet um delores lorem. <i>Lorem ipsum quidem si ac amet.</i> Se sequeiantet um
+        delores lorem. Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem. Lorem ipsum
+        quidem si ac amet. Se sequeiantet um delores lorem. Lorem<sup>2</sup> ipsum quidem si ac amet. Se
+        sequeiantet um delores lorem. reynald.pereira@gmail.com. Se sequeiantet um delores lorem.
+        \nMore informations : +33685459632  <sub>2</sub>
+    </string>
+    <string name="title_home">Home</string>
+    <string name="stub">****</string>
+    <string name="name_register">Name :</string>
+    <string name="tel_register">Telephone :</string>
+    <string name="location_register">Location :</string>
+    <string name="infos_register">Informations :</string>
+    <string name="hurry_register">Hurry ?</string>
+    <string name="register_btn_register">Register</string>
+
+    <plurals name="second">
+        <item quantity="one">second</item>
+        <item quantity="other">seconds</item>
+    </plurals>
+
+    <string-array name="number">
+        <item>zero</item>
+        <item>one</item>
+        <item>two</item>
+        <item>three</item>
+        <item>four</item>
+        <item>five</item>
+        <item>six</item>
+        <item>seven</item>
+        <item>eight</item>
+        <item>nine</item>
+    </string-array>
 </resources>
