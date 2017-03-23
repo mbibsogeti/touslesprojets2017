@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">Viaje Android</string>
+    <string name="map_activity">Actividad mapa</string>
+    <string name="submaps_activity">Actividad submapa</string>
+    <string name="plane_activity">Actividad avión</string>
+</resources>
