@@ -21,6 +21,7 @@ public class PlaneActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(new PlaneView(this));
         _startTime = System.currentTimeMillis();
+        getActionBar().setDisplayShowHomeEnabled(true);
     }
 
     @Override

@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Toast;
 
 /**
- * Created by ib on 21/03/2017.
+ * Created by Julian on 21/03/2017.
  */
 
 public class SubmapsActivity extends Activity {
@@ -29,12 +29,21 @@ public class SubmapsActivity extends Activity {
         Toast.makeText(this, "ZOOM !", Toast.LENGTH_LONG).show();
         // Ma vue est une instance de la classe MapView (voir ci-dessous)
         setContentView(new SubmapsActivity.MapView(this));
+        // Pour forcer l'affichage de l'icône définie dans la balise <activity> du .xml
+        getActionBar().setDisplayShowHomeEnabled(true);
     } // end onCreate method
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(data.getLongExtra("temps", 0) > 2000) {
-            Toast.makeText(this, "Avez-vous pensé à la ligne de changement d'heure ?", Toast.LENGTH_LONG).show();
+        long duree = data.getLongExtra("temps", 0);
+        // Si duree est plus grand que 500 ms
+        if(duree > 500) {
+            // Récupération du pluriel "second" dans <plurals> de strings.xml
+            String sec = getResources().getQuantityString(R.plurals.second, (int)duree / 1000);
+            // Récupération du message d'avertissement de strings.xml
+            // Pour récupérer un tableau : String[] tab = getResources().getStringArray(R.arrays.);
+            int daysWarning = R.string.days_warning;
+            Toast.makeText(this, getString(daysWarning, duree / 1000, sec), Toast.LENGTH_LONG).show();
         }
     }
 
