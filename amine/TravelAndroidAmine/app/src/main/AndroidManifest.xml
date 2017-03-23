@@ -4,19 +4,22 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true">
-        <activity android:name=".MapActivity">
+        <activity android:name=".HomeActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
-        <activity android:name=".SubmapsActivity">
+        <activity android:name=".MapActivity" android:label="@string/oceanie"></activity>
+        <activity android:name=".SubmapsActivity" android:icon="@drawable/icon" android:label="@string/details">
         </activity>
-        <activity android:name=".PlaneActivity">
+        <activity android:name=".PlaneActivity" android:label="@string/plane">
         </activity>
+        <activity android:name=".RegisterActivity" android:label="@string/register_title"></activity>
 
 
     </application>

@@ -12,6 +12,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
+/**
+ * Created by Julian on 21/03/2017.
+ */
+
 public class MapActivity extends Activity {
 
     protected void onCreate(Bundle bundle) {
@@ -22,7 +26,8 @@ public class MapActivity extends Activity {
         Log.i("Tag : MapActivity", "Message : je suis dans la méthode onCreate");
         // Affiche un texte éphémère au moment du lancement de l'application.
         // Cette affichage se fait dans l'objet en cours : le téléphone.
-        Toast.makeText(this, "Bienvenue", Toast.LENGTH_LONG).show();
+        // On récupère le string message précisé dans le fichier strings.xml
+        Toast.makeText(this, getText(R.string.message), Toast.LENGTH_LONG).show();
         // Ma vue est une instance de la classe MapView (voir ci-dessous)
         setContentView(new MapView(this));
     } // end onCreate method
@@ -46,7 +51,7 @@ public class MapActivity extends Activity {
             // Création d'une nouvelle intention Intent(objet en cours, destination)
             // MapActivity.this : objet en cours ;
             Intent intention = new Intent(MapActivity.this, SubmapsActivity.class);
-            // Ne lancer l'activité que lors de l'appui de la souris
+            // POUR NICO : le if dessous ne lance l'activité que lors de l'appui de la souris
             // Sans ça, l'application considère 2 ouvertures : une à l'appui, l'autre au relâchement
             if(event.getActionMasked() == MotionEvent.ACTION_DOWN) {
                 // Zone de l'image : ouest ou est

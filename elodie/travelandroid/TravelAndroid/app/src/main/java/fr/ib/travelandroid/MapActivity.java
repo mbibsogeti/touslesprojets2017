@@ -30,8 +30,9 @@ public class MapActivity extends Activity{
     protected void onCreate(Bundle s) {
         super.onCreate(s);
         Log.i("MapActivity","onCreate");
-        Toast.makeText(this,"Bienvenue",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,getText(R.string.welcome_text),Toast.LENGTH_LONG).show();
         setContentView(new MapView(this));
+
     }
 
 
