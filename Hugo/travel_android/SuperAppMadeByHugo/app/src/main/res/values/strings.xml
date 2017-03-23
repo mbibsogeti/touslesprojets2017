@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">SuperCoolAppMadeByHugo</string>
+    <string name="app_surname">SuperCool</string>
+    <string name="app_lastname">SuperCoolAppMadeByHugo</string>
+    <string name="app_nickname">ByHugo</string>
+    <string name="text_app_name">Oceania</string>
+    <!--afficher un nombre entier. $ est le séparateur du nombre de paramètres (1) et le type (d)-->
+    <string name="day_warning">Pay attention to day change (%1$d %2$s)</string>
+    <plurals name="second">
+        <item quantity="one">second</item>
+        <item quantity="other">seconds</item>
+    </plurals>
+    <!--pour définir un tableau de strings-->
+    <!--pour les appeler en java: String[] t=getRes...().getStringArray(R.arrays. ...)-->
+    <string-array name="array_ex">
+        <item></item>
+        <item></item>
+    </string-array>
+    <string name="home_infos">0652487120</string>
+</resources>

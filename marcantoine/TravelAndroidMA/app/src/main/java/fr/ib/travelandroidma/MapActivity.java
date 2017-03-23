@@ -26,7 +26,7 @@ public class MapActivity extends Activity {
         // ***Faire un log ("tag","message") :
         Log.i("MapActivity*#*","onCreate*#*");
         // ***Faire un 'toast' : façon la plus rapide d'afficher du texte
-        Toast.makeText(this,"Bienvenue mon cher !",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,getText(R.string.welcome_name),Toast.LENGTH_LONG).show();
         setContentView(new MapView(this));
     }
 

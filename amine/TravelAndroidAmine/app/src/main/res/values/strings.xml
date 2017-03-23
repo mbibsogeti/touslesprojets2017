@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Travel Android Amine</string>
+    <string name="oceanie">Oceanic Maps</string>
+    <string name="details">Details</string>
+    <string name="plane">Business Class</string>
+    <string name="welcome">Welcome</string>
 </resources>

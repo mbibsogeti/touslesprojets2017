@@ -28,8 +28,13 @@ public class SubmapsActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (data.getLongExtra("timehaha",0)>2000)
+        if (data.getLongExtra("timehaha",0)>500)
             Toast.makeText(this,"Super Avion", Toast.LENGTH_LONG).show();
+        //Une façon de plus pour l'internationalisation et l'affichage de texte, nombre en seconde(c'etait en miniseconde au départ)
+        // on ajoute un second paramètre(getString(R...,data.get..../1000,....)  {avec data.get.../1000 comme premier paramètre et getResources.... comme second paramètre)
+        Toast.makeText(this,getString(R.string.day_warning,data.getLongExtra("timehaha",0)/1000,getResources()
+                .getQuantityString(R.plurals.second,(int)data
+                        .getLongExtra("timehaha",0))), Toast.LENGTH_LONG).show();
         super.onActivityResult(requestCode, resultCode, data);
     }
     private class SubmapsView extends View {
