@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    // version d'android SDK utilisée pour compiler
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        // nom de l'app
+        applicationId "raynorraiders.supercoolappmadebyhugo"
+        // version de SDK minimale supportéé
+        minSdkVersion 21
+        // version de SDK qui a été testée et dans laquelle le correct fonctionnement de l'app est assuré
+        targetSdkVersion 25
+        // si il y a un changement dans versionCode, les utilisateurs reçoivent une notification de maj.
+        // A modificer pour advertir des maj.
+        versionCode 1
+        // affiché à l'utilisateur
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    // bibliotèque qui sert à la rétrocompatibilité, ici potentiellement jusqu'à la version 7:25.3.0.
+    // Apporte des jar supplémentaires aux systèmes Android qui seraient en-dessous de minSdkVersion
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    testCompile 'junit:junit:4.12'
+}

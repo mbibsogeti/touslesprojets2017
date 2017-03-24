@@ -3,11 +3,14 @@ package obodrel.fr.android_travel_obodrel.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -27,12 +30,48 @@ public class SubMapsActivity extends Activity {
 
         if(requestCode == resultCode) {
             long timeElapsed = data.getLongExtra("timeElapsed", -1);
-            if(timeElapsed != -1 && timeElapsed > 2000) {
-                Toast.makeText(SubMapsActivity.this, "Time elapsed = " + timeElapsed/1000f + "s",
-                        Toast.LENGTH_SHORT).show();
+            if(timeElapsed != -1 && timeElapsed > 500) {
+                float timeSec = timeElapsed / 1000f;
+                String second = getResources().getQuantityString(R.plurals.second, (int) timeSec);
+                String textToDisplay =  getString(R.string.time_elapsed_plane,timeSec,second);
+                if(timeSec < 10) {
+                    String [] numberInLetters = getResources().getStringArray(R.array.number);
+                    textToDisplay =  getString(
+                            R.string.time_elapsed_plane_letter,numberInLetters[(int)timeSec],second);
+                }
+                Toast.makeText(SubMapsActivity.this,textToDisplay,Toast.LENGTH_SHORT).show();
             }
         }
 
+    }
+
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.mapMenuOption :
+                Intent openMapIntent = new Intent(SubMapsActivity.this,MapActivity.class);
+                openMapIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(openMapIntent);
+                return true;
+            case R.id.registerOptionMenuOption :
+                item.setChecked(!item.isChecked());
+                SharedPreferences myPreferences = getSharedPreferences("optionsPreferences",MODE_PRIVATE);
+                SharedPreferences.Editor preferencesEditor = myPreferences.edit();
+                preferencesEditor.putBoolean("isRegisterChecked",item.isChecked());
+                preferencesEditor.commit();
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home_menu,menu);
+        SharedPreferences myPreferences = getSharedPreferences("optionsPreferences",MODE_PRIVATE);
+        boolean isRegisterChecked = myPreferences.getBoolean("isRegisterChecked",false);
+        menu.findItem(R.id.registerOptionMenuOption).setChecked(isRegisterChecked);
+        return true;
     }
 
     private class SubMapsView extends View {
@@ -65,6 +104,7 @@ public class SubMapsActivity extends Activity {
                 } else {
                     imgBmp = BitmapFactory.decodeResource(getResources(),
                             R.drawable.obodrel_img_ocaenia_east_map);
+                    setTitle(R.string.activity_east);
                     //Toast.makeText(SubMapsActivity.this, "Open Sub Map East",
                             //Toast.LENGTH_SHORT).show();
                 }

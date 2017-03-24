@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="yellowText">
+        <item name="android:textColor">#ffff00</item>
+    </style>
+
+    <style name="bigYellowText">
+        <item name="android:textSize">40sp</item>
+    </style>
+
 </resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="yellowText">
+        <item name="android:textColor">#FFFF00</item>
+    </style>
+    <style name="bigYellowText" parent="@style/yellowText">
+        <item name="android:textSize">80sp</item>
+    </style>
+</resources>

@@ -4,11 +4,14 @@ import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -21,6 +24,7 @@ public class PlaneActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(new PlaneView(this));
         _startTime = System.currentTimeMillis();
+        getActionBar().setDisplayShowHomeEnabled(true);
     }
 
     @Override
@@ -36,6 +40,35 @@ public class PlaneActivity extends Activity {
         setResult(0,retIntention);
 
         super.onBackPressed();
+    }
+
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.mapMenuOption :
+                Intent openMapIntent = new Intent(PlaneActivity.this,MapActivity.class);
+                openMapIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(openMapIntent);
+                return true;
+            case R.id.registerOptionMenuOption :
+                item.setChecked(!item.isChecked());
+                SharedPreferences myPreferences = getSharedPreferences("optionsPreferences",MODE_PRIVATE);
+                SharedPreferences.Editor preferencesEditor = myPreferences.edit();
+                preferencesEditor.putBoolean("isRegisterChecked",item.isChecked());
+                preferencesEditor.commit();
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home_menu,menu);
+        SharedPreferences myPreferences = getSharedPreferences("optionsPreferences",MODE_PRIVATE);
+        boolean isRegisterChecked = myPreferences.getBoolean("isRegisterChecked",false);
+        menu.findItem(R.id.registerOptionMenuOption).setChecked(isRegisterChecked);
+        return true;
     }
 
     private class PlaneView extends View {
