@@ -83,5 +83,5 @@
         android:id="@+id/tvFormSent"
         android:text="@string/stub"
         android:textSize="25sp"
-        style="@style/textSetter"/>
+        style="@style/bigOrangeText"/>
 </LinearLayout>
