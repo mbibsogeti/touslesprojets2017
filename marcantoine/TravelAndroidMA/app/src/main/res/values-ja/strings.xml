@@ -5,7 +5,10 @@
     <string name="submaps_name">オーストラリアの私たちの目的地：詳細</string>
     <string name="plane_name">あなたの飛行機</string>
     <string name="welcome_name">ようこそ私の親愛なる!</string>
+    <string name="register_name">登録</string>
     <string name="backfromplane_name">日付変更に注意してください (%1$d %2$s)</string>
+    <string name="form_sent">登録された</string>
+
     <plurals name="second">
         <item quantity="one">二番</item>
         <item quantity="other">秒</item>

@@ -1,10 +1,21 @@
 <resources>
     <string name="app_name">Android Travel</string>
+    <string name="name_home"><b>Voyages</b></string>
     <string name="home_description">This application will allow to take a decision about of your oceanie destination
-    - More information: 0623895142</string>
+    - More information: 0623895142 \n</string>
+    <string name="stub">***</string>
     <string name="name_summary">Global map</string>
     <string name="submaps_name">Maps</string>
     <string name="plane_name">Transport</string>
+    <string name="name_register"><b>Register</b></string>
+
+    <string name="register_name">Name</string>
+    <string name="register_phone">Phone</string>
+    <string name="register_location">Location</string>
+    <string name="register_information">Information</string>
+    <string name="register_urgence">Urgence</string>
+    <string name="register_register">Register</string>
+    <string name="register_response">Register</string>
 
     <string name="welcome_text">Welcome !!</string>
 
