@@ -13,9 +13,34 @@
         Lorem ipsum quidem si ac amet. <b>Se sequeiantet um delores lorem.</b> Lorem ipsum quidem si ac
         amet. Se sequeiantet um delores lorem. <i>Lorem ipsum quidem si ac amet.</i> Se sequeiantet um
         delores lorem. Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem. Lorem ipsum
+        quidem si ac amet. Se sequeiantet um delores lorem.<u>Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem.</u>
+        Lorem ipsum quidem si ac amet. <b>Se sequeiantet um delores lorem.</b> Lorem ipsum quidem si ac
+        amet. Se sequeiantet um delores lorem. <i>Lorem ipsum quidem si ac amet.</i> Se sequeiantet um
+        delores lorem. Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem. Lorem ipsum
+        quidem si ac amet. Se sequeiantet um delores lorem.<u>Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem.</u>
+        Lorem ipsum quidem si ac amet. <b>Se sequeiantet um delores lorem.</b> Lorem ipsum quidem si ac
+        amet. Se sequeiantet um delores lorem. <i>Lorem ipsum quidem si ac amet.</i> Se sequeiantet um
+        delores lorem. Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem. Lorem ipsum
+        quidem si ac amet. Se sequeiantet um delores lorem.<u>Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem.</u>
+        Lorem ipsum quidem si ac amet. <b>Se sequeiantet um delores lorem.</b> Lorem ipsum quidem si ac
+        amet. Se sequeiantet um delores lorem. <i>Lorem ipsum quidem si ac amet.</i> Se sequeiantet um
+        delores lorem. Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem. Lorem ipsum
+        quidem si ac amet. Se sequeiantet um delores lorem.<u>Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem.</u>
+        Lorem ipsum quidem si ac amet. <b>Se sequeiantet um delores lorem.</b> Lorem ipsum quidem si ac
+        amet. Se sequeiantet um delores lorem. <i>Lorem ipsum quidem si ac amet.</i> Se sequeiantet um
+        delores lorem. Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem. Lorem ipsum
+        quidem si ac amet. Se sequeiantet um delores lorem.<u>Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem.</u>
+        <u>Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem.</u>
+        Lorem ipsum quidem si ac amet. <b>Se sequeiantet um delores lorem.</b> Lorem ipsum quidem si ac
+        amet. Se sequeiantet um delores lorem. <i>Lorem ipsum quidem si ac amet.</i> Se sequeiantet um
+        delores lorem. Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem. Lorem ipsum
+        quidem si ac amet. Se sequeiantet um delores lorem.
+        Lorem ipsum quidem si ac amet. <b>Se sequeiantet um delores lorem.</b> Lorem ipsum quidem si ac
+        amet. Se sequeiantet um delores lorem. <i>Lorem ipsum quidem si ac amet.</i> Se sequeiantet um
+        delores lorem. Lorem ipsum quidem si ac amet. Se sequeiantet um delores lorem. Lorem ipsum
         quidem si ac amet. Se sequeiantet um delores lorem. Lorem<sup>2</sup> ipsum quidem si ac amet. Se
-        sequeiantet um delores lorem. reynald.pereira@gmail.com . Se sequeiantet um delores lorem.
-        \nPlus d\'informations : +33685459632  <sub>2</sub></string>
+        sequeiantet um delores lorem. reynald.pereira@gmail.com. Se sequeiantet um delores lorem.
+        \n\nPlus d\'informations : +33685459632  <sub>2</sub></string>
     <string name="title_home">Accueil</string>
     <string name="stub">****</string>
     <string name="name_register">Nom :</string>
@@ -24,6 +49,7 @@
     <string name="infos_register">Informations :</string>
     <string name="hurry_register">Urgent ?</string>
     <string name="register_btn_register">Inscription</string>
+    <string name="option_menu">Options</string>
 
     <plurals name="second">
         <item quantity="one">seconde</item>
