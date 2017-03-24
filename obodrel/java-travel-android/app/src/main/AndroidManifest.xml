@@ -32,5 +32,6 @@
             android:label="@string/activity_plane">
         </activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

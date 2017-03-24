@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f9f9bd"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/reg_title"
+            style="@style/blueTextTitles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/reg_title"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/reg_name"
+            style="@style/blueTextParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reg_name" />
+
+        <EditText
+            android:id="@+id/reg_name_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:background="#ffffff"
+            android:inputType="text"
+            android:padding="6sp" />
+
+        <TextView
+            android:id="@+id/reg_tel"
+            style="@style/blueTextParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reg_tel" />
+
+        <EditText
+            android:id="@+id/reg_tel_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:background="#ffffff"
+            android:inputType="number"
+            android:padding="6sp" />
+
+        <TextView
+            android:id="@+id/reg_place"
+            style="@style/blueTextParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reg_place" />
+
+        <AutoCompleteTextView
+            android:id="@+id/reg_place_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:background="#ffffff"
+            android:inputType="text"
+            android:padding="6sp" />
+
+        <TextView
+            android:id="@+id/reg_info"
+            style="@style/blueTextParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reg_info" />
+
+        <EditText
+            android:id="@+id/reg_info_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:padding="6sp" />
+
+        <CheckBox
+            android:id="@+id/reg_info_checkbox"
+            style="@style/blueTextParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="#ffffff"
+            android:text="@string/reg_info_checkbox" />
+
+        <Button
+            android:id="@+id/reg_button_reg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="register"
+            android:padding="30sp"
+            android:text="@string/reg_button_reg" />
+
+        <TextView
+            android:id="@+id/reg_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stub" />
+    </LinearLayout>
+</ScrollView>

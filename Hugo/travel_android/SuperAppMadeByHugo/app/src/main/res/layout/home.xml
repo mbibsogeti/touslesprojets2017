@@ -1,24 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="#f9f9bd">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:orientation="vertical">
+        <!--android:weightSum="1"-->
+        <TextView
+            android:id="@+id/textView"
+            style="@style/blueTextTitles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="For additional info please call Julian's number:"/>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_infos"
+            android:textSize="20sp" />
+        <!--android:layout_weight="1"-->
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="all"
+            android:text="@string/home_number"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/home_infos" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="26dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/stub"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/home_button_map"
+                android:layout_width="192dp"
+                android:layout_height="110dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="44dp"
+                android:background="@drawable/eve_ship"
+                android:gravity="bottom|end"
+                android:text="@string/map_title"
+                android:textColor="@android:color/holo_blue_bright"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
+            <!-- 1px=1dip si écran 160dpi -> 2px=1dip pour 320 dpi -->
+            <!-- 1sp=1dip si polices normales -->
+
+            <Button
+                android:id="@+id/reg_button_home"
+                android:layout_width="192dp"
+                android:layout_height="110dp"
+                android:layout_alignTop="@+id/home_button_map"
+                android:layout_toEndOf="@+id/home_button_map"
+                android:background="@drawable/eve_ship_cor"
+                android:gravity="top|start"
+                android:text="@string/reg_button_reg"
+                android:textColor="@android:color/holo_green_dark"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

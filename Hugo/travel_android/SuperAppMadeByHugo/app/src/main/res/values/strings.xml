@@ -4,6 +4,16 @@
     <string name="app_lastname">SuperCoolAppMadeByHugo</string>
     <string name="app_nickname">ByHugo</string>
     <string name="text_app_name">Oceania</string>
+    <string name="reg_title">Registration</string>
+    <string name="reg_name">Name</string>
+    <string name="reg_tel">Phone</string>
+    <string name="reg_place">Place</string>
+    <string name="reg_info">Informations</string>
+    <string name="reg_info_checkbox">Urgent</string>
+    <string name="reg_button_reg">Register</string>
+    <string name="menu_mapActivity">Map</string>
+    <string name="menu_reg">Registration</string>
+    <string name="menu_opt">Registration</string>
     <!--afficher un nombre entier. $ est le séparateur du nombre de paramètres (1) et le type (d)-->
     <string name="day_warning">Pay attention to day change (%1$d %2$s)</string>
     <plurals name="second">
@@ -16,5 +26,9 @@
         <item></item>
         <item></item>
     </string-array>
-    <string name="home_infos">0652487120</string>
+    <string name="home_number">Phone: 0687592349\nE-mail: mail.mail@mail.mail</string>
+    <string name="home_infos">For additional info please contact <b>Julian</b><sup>*</sup></string>
+    .
+    <string name="stub"></string>
+    <string name="map_title">Oceania in Caracal</string>
 </resources>

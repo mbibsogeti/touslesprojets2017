@@ -10,7 +10,27 @@
         <item quantity="one">seconde</item>
         <item quantity="other">secondes</item>
     </plurals>
+    <!--Les interfaces-->
     <string name="home">Voyage en Océanie</string>
-    <string name="home_info">Préparez votre voyage en Australie avec les experts de La Maison de l\'Océanie, et découvrez l\'Océanie grâce à des circuits, séjours, et voyages sur mesure.</string>
-    <string name="info">+ d\'infos au: 0342511232</string>
+    <string name="home_info">Préparez votre voyage en Australie avec les experts de La Maison de
+        l\'Océanie, et découvrez l\'Océanie grâce à des circuits, séjours, et voyages sur mesure.
+        L\'Australie comprend l\'essentiel de sa surface et de sa population, et, alors que le reste
+        de l\'Océanie est un ensemble d\'îles, la terre principale d\'Australie est parfois considérée
+        comme une masse continentale à elle seule. La Nouvelle-Zélande et la Papouasie-Nouvelle-Guinée
+        sont les deux autres principaux États d\'Océanie. Les territoires composant le reste du continent
+        sont des États insulaires indépendants (Fidji, Îles Salomon, Samoa, Tonga...) ou des régions rattachées à
+        d\'anciennes puissances coloniales, comme la France (Polynésie française, Nouvelle-Calédonie,
+        Wallis-et-Futuna) ou les États-Unis (Hawaï, Guam, Îles Mariannes du Nord, Samoa américaines).
+        Le continent océanien est peuplé depuis des millénaires par différents groupes ethniques,
+        dont les Aborigènes d\'Australie et les Papous. Outre l\'anglais et le français, langues
+        dominantes en Océanie depuis la colonisation, les deux principaux groupes linguistiques
+        parlés sont les langues papoues et les langues austronésiennes. Huit des dix plus grandes
+        villes d\'Océanie se trouvent en Australie, dont Sydney et Melbourne qui concentrent à elles
+        seules près d\'un quart de la population du continent. Cinq autres villes comptent plus
+        d\'un million d\'habitants : Brisbane, Perth, Auckland, Adélaïde et Honolulu.
+        Pour + d\'infos au: 0342511232</string>
+    <string name="html3"><b>Ceci est un <u>texte</u> en gras</b></string>
+    <string name="stub">***</string>
+    <string name="map_title">océanique</string>
+    <string name="register_title">Enregistrement</string>
 </resources>

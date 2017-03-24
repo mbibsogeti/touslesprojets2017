@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Travel Android Khady</string>
+    <string name="gen_map">Travel Android</string>
+    <string name="specif_map">Specific Maps</string>
+    <string name="plane">Plane</string>
+    <string name="home"><b><u>Travel Android</u></b></string>
+    <string name="home_title"><b><u>Home</u></b>\n</string>
+    <string name="home_info">For more information, please contact us at <b>0185752367</b> \nOr by writing to us to our email address at <b>gran@gmail.com</b>.\nWe will be pleased to welcome you.\n</string>
+    <string name="stub"><b>***</b></string>
+    <string name="wait">Please wait a moment... please</string>
+    <string name="day_warning">Be careful about dates changes(%1$d%2$s)</string>
+    <string name="register"><b><u>Registration</u></b></string>
+    <string name="register_nom"><b><u>Name</u></b>\n</string>
+    <string name="register_tel"><b><u>Tel</u></b>\n</string>
+    <string name="register_lieu"><b><u>Location</u></b>\n</string>
+    <string name="register_info"><b><u>Information</u></b>\n</string>
+    <string name="register_urg"><b><u>Emergency</u></b>\n</string>
+    <string name="register_reg"><b><u>Registrer</u></b>\n</string>
+    <plurals name="second">
+        <item quantity ="one">second</item>
+        <item quantity ="other">seconds</item>
+    </plurals>
+</resources>
