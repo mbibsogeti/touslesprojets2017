@@ -1,0 +1,8 @@
+<resources>
+    <string name="reg_name">Name</string>
+    <string name="reg_tel">Tel</string>
+    <string name="reg_place">Place</string>
+    <string name="reg_info">Information</string>
+    <string name="reg_urgent">ASAP</string>
+    <string name="reg_send">Send</string>
+</resources>
