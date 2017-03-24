@@ -2,8 +2,11 @@ package fr.ib.travelandroidma;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -70,5 +73,40 @@ public class HomeActivity extends Activity implements View.OnClickListener{
         startActivity(i);
         // ***On peut le faire en une ligne :
         // startActivity(new Intent(HomeActivity.this, MapActivity.class))
+    }
+
+    // Création d'un menu (voir menu 'home.xml' dans res/menu) :
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home,menu);
+        // On affiche la valeur de 'préférence' stockée. 'false' est la
+        // valeur que l'on stockera par défaut.
+        SharedPreferences p =getSharedPreferences("main",MODE_PRIVATE);
+        menu.findItem(R.id.menuReg).setChecked(p.getBoolean("register",false));
+        return true;
+    }
+
+    // Création d'intentions / checkbox à partir de l'activité
+    public boolean onMenuItemSelected (int e,MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menuMap:
+                // ***lien sur l'une des options du menu
+                startActivity(new Intent(this, MapActivity.class));
+                return true;
+            case R.id.menuReg:
+                // ***checkbox :
+                item.setChecked(!item.isChecked());
+                // ***Stockage d'une préférence :
+                // Attention : chaque activité aura SES préférences.
+                // On utilisera 'getSharedPreferences' qui permet
+                // de faire des préférences communes à ttes les activités
+                SharedPreferences p = getSharedPreferences("main",MODE_PRIVATE);
+                SharedPreferences.Editor ed = p.edit();
+                    ed.putBoolean("register", item.isChecked());
+                    ed.commit();
+                return true;
+            default:
+                return false;
+        }
     }
 }
