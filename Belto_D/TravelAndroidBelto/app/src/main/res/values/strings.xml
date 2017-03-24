@@ -4,7 +4,13 @@
     <string name="submaps">Une partie de la Carte </string>
     <string name="plane">l\'avion pour votre voyage</string>
     <string name="register"><b>Formulaire d\'Enregistrement</b></string>
+    <!--String pour le menu (afficher un menu dans la bar) avec la classe Home activity-->
+    <string name="carte">Carte</string>
+    <string name="options">Options</string>
+    <!--String pour le menu avec la classe Home activity-->
+
     <!--String pour le formulaire-->
+    <string name="Titre"><i>Enregistrement</i></string>
     <string name="name"><b>Nom</b></string>
     <string name="tel"><b>Tel</b></string>
     <string name="lieu"><b>Lieu</b></string>

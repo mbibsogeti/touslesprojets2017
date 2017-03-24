@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/carte"
+          android:id="@+id/menu_map"
+          android:icon="@android:drawable/ic_menu_mapmode"
+          android:showAsAction="ifRoom"></item>
+    <item android:title="Option"
+          android:icon="@android:drawable/ic_menu_view"><menu>
+        <item android:title="Enregistrer"
+              android:id="@+id/menu_register"
+              android:icon="@android:drawable/ic_menu_save"
+              android:showAsAction="ifRoom"
+              android:checkable="true"></item>
+    </menu></item>
+</menu>

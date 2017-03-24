@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 
     package="fr.ib.travelandroidbelto">
+    <uses-permission android:name="android.permission.INTERNET"/>
 <!--le fichier à modifier, on cree une balise activity pour chaque classe activity crée-->
     <application
         android:allowBackup="true"
