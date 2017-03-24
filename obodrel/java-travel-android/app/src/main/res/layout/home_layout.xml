@@ -1,53 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:text="@string/title_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:id="@+id/topTextView"
-        android:textSize="36sp"
-        android:textStyle="normal|bold" />
-
-    <TextView
-        android:text="@string/more_infos_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/midTextView"
-        android:autoLink="all" />
-
-    <TextView
-        android:text="@string/stub"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/botNewsTextView"/>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <Button
-            android:text="@string/activity_main"
+        <TextView
+            android:text="@string/title_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/openMapBtn"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:onClick="onClick"
-            android:layout_weight="1" />
+            android:gravity="center_horizontal"
+            android:id="@+id/topTextView"
+            android:textSize="36sp"
+            android:textStyle="normal|bold" />
 
-        <Button
-            android:text="@string/activity_register"
+        <TextView
+            android:text="@string/more_infos_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/openRegisterBtn"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:onClick="goToRegister"
-            android:layout_weight="1" />
+            android:id="@+id/midTextView"
+            android:autoLink="all" />
+
+        <TextView
+            android:text="@string/stub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/botNewsTextView"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="@string/activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/openMapBtn"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:onClick="onClick"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="@string/activity_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/openRegisterBtn"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:onClick="goToRegister"
+                android:layout_weight="1" />
+        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
+</ScrollView>
