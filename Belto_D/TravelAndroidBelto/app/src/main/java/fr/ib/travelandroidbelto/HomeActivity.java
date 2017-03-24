@@ -2,8 +2,11 @@ package fr.ib.travelandroidbelto;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -61,4 +64,32 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         startActivity(i);
 
     }
+    // fonction pour afficher le menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.home,menu);
+        //stockage préferences
+        SharedPreferences p=getSharedPreferences("main",MODE_PRIVATE);
+        menu.findItem(R.id.Enregistrer).setChecked(p.getBoolean("register",false));
+        return true;
+    }
+    // une fonction pour relier la carte affichée dans le menu à la carte quand on click dessus
+    @Override
+    public boolean onMenuItemSelected(int f, MenuItem item){
+        switch(item.getItemId()){
+        case R.id.Carte:startActivity(new Intent(HomeActivity.this,MapActivity.class));
+            return true;
+        // permet de pouvoir crocher une case dans option et restera crocher après!
+        case R.id.Enregistrer:item.setChecked(!item.isChecked());
+            SharedPreferences p = getSharedPreferences("main",MODE_PRIVATE);
+            SharedPreferences.Editor ed= p.edit();
+            ed.putBoolean("register",item.isChecked());
+            ed.commit();
+            return true;
+        default:
+            return false;
+        }
+
+    }
+
 }

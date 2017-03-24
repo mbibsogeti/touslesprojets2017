@@ -6,12 +6,23 @@
     android:background="@drawable/acceuil"
     android:padding="15sp">
 
+    <TextView
+        android:id="@+id/textView"
+        style="@style/yellowText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Titre"
 
+        android:textSize="30sp"
+        android:layout_gravity="center"/>
+    <!--Une autre façon de faire du graphisme, de la decoloration avec des balises styles-->
+    <!--Un fichier .xml est crée dans values à coté de strings-->
+    <!--en cas de doublon, les balises android sont prioritaires-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/name"
-        android:textColor="#121111"
+        android:textColor="#090909"
         android:textSize="24sp"/>
 
     <EditText
