@@ -1,0 +1,15 @@
+<resources>
+    <style name="blueText">
+        <item name="android:textColor">#0090ff</item>
+    </style>
+    <style name="bigblueText" parent="@style/blueText">
+        <item name="android:textSize">40sp</item>
+    </style>
+    <style name="centerbigblueText" parent="@style/bigblueText">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="titleSize" parent="@style/blueText">
+        <item name="android:textSize">20sp</item>
+    </style>
+</resources>

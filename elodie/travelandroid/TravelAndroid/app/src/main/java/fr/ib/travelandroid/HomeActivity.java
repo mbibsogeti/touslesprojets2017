@@ -2,10 +2,13 @@ package fr.ib.travelandroid;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -54,4 +57,30 @@ public class HomeActivity extends Activity implements OnClickListener{
     public void onClick(View v){
         startActivity(new Intent(this, MapActivity.class));
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home,menu);
+        SharedPreferences p = getSharedPreferences("main",MODE_PRIVATE);
+        menu.findItem(R.id.save).setChecked(p.getBoolean("register",false));
+        return true;
+    }
+
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.map:
+                startActivity(new Intent(this,MapActivity.class));
+                return true;
+            case R.id.save:
+                item.setChecked(!item.isChecked());
+                SharedPreferences p = getSharedPreferences("main",MODE_PRIVATE);
+                SharedPreferences.Editor ed = p.edit();
+                ed.putBoolean("register",item.isChecked());
+                ed.commit();
+                return true;
+            default:
+                return false;
+    }
+}
 }

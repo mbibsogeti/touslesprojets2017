@@ -8,6 +8,7 @@
     <string name="submaps_name">Maps</string>
     <string name="plane_name">Transport</string>
     <string name="name_register"><b>Register</b></string>
+    <string name="title">Description</string>
 
     <string name="register_name">Name</string>
     <string name="register_phone">Phone</string>

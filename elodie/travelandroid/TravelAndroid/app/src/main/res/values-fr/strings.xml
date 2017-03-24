@@ -1,11 +1,14 @@
 <resources>
 <string name="app_name">Voyage Android</string>
 <string name="name_home"><b>Voyages</b></string>
+    <string name="voyage">Océanie</string>
 <string name="home_description">L\'application vous permettra de prendre une décision dans le choix de destination en Océnanie
         \n <b>+ d\'infos </b>: 0623895142 \n</string>
 <string name="name_summary">Carte globale</string>
 <string name="submaps_name">Carte</string>
 <string name="plane_name">Transport</string>
+
+    <string name="title">Description</string>
 
 
     <string name="name_register">Enregistrement</string>
@@ -17,7 +20,7 @@
     <string name="register_register">Enregistrer</string>
     <string name="register_response">Enregistré</string>
 
-    <string name ="register_errorname">Veuillez saisir un nom</string>
+    <string name ="register_errorname">Veuillez saisir un nom et/ou cochez la case "Enregistrer"</string>
 
 <string name="welcome_text">Bienvenue !!</string>
 <string name="day_warming">
