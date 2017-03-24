@@ -2,9 +2,12 @@ package fr.ib.travelandroidamine;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -64,4 +67,33 @@ public class HomeActivity extends Activity  implements OnClickListener{
         startActivity(new Intent(HomeActivity.this,MapActivity.class));
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home,menu);
+        //lire notre préférence
+        SharedPreferences p = getSharedPreferences("main",MODE_PRIVATE);
+        //écrire la préférence dans le menu
+        menu.findItem(R.id.menu_register).setChecked(p.getBoolean("register",false));
+        return true;
+    }
+
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu_map:
+                startActivity(new Intent(HomeActivity.this,MapActivity.class));
+                return true;
+            case R.id.menu_register:
+                //item l'appui, checked coché ou pas(si c'est coché je ne coche pas si c'est pas coché je coche)
+                item.setChecked(!item.isChecked());
+                //stocker voir la partie préférences
+                SharedPreferences p = getSharedPreferences("main",MODE_PRIVATE);
+                SharedPreferences.Editor ed = p.edit();
+                ed.putBoolean("register",item.isChecked());
+                ed.commit();
+                return true;
+            default:
+                return false;
+        }
+    }
 }
