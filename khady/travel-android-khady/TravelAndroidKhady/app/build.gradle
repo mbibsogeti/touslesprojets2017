@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"/*lignes 4 et 5: outils utilisés pour lancer la construction de l'appli*/
+    defaultConfig {
+        applicationId "fr.ib.travelandroidkhady"/*différentes infos sur l'appli: ce qui la différencie de ttes les autres appli ds le monde*/
+        minSdkVersion 21
+        targetSdkVersion 25/*lignes 8 et 9: vérifient la compatibilité de notre appli(il faut une version minimum compatible*/
+        versionCode 1
+        versionName "1.0"/*linges 10 et 11: versionCode c à cet endroit que l'on chge les n° de version(choisi librement le n°, versionName est affiché aux utilisateurs*/
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'/*bibliothèque additionnelle qui apporte de la compatibilité jusqu'à la version 7*/
+    testCompile 'junit:junit:4.12'
+}
