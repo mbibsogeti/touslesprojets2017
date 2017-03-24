@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/from">
+
+    <TextView
+        android:id="@+id/register_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nom" />
+
+    <EditText
+        android:id="@+id/form_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/register_tel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tel" />
+
+    <EditText
+        android:id="@+id/form_tel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/register_lieu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lieu" />
+
+    <AutoCompleteTextView
+        android:id="@+id/form_lieu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/register_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informations" />
+
+    <EditText
+        android:id="@+id/form_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text=""
+        android:layout_weight="1"
+        android:gravity="top"/>
+
+    <CheckBox
+        android:id="@+id/form_urgent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Urgent" />
+
+    <Button
+        android:id="@+id/register_btn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Enregistrer"
+        android:onClick="register"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/register_response"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+</LinearLayout>
