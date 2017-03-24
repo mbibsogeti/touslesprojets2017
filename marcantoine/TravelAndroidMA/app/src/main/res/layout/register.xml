@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    android:textSize="40sp"
+    android:padding="20sp">
+    <TextView
+        android:id="@+id/etRegTitle"
+        android:text="@string/register_name"
+        style="@style/bigOrangeText"
+        android:textSize="30sp"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/tvName"
+        android:text="@string/reg_name"
+        style="@style/bigOrangeText"/>
+
+    <EditText
+        android:id="@+id/etName"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:background="#63ffffff"
+        style="@style/textSetter"/>
+
+    <TextView
+        android:id="@+id/tvTel"
+        android:text="@string/reg_tel"
+        style="@style/bigOrangeText"/>
+
+    <EditText
+        android:id="@+id/etTel"
+        android:ems="10"
+        android:inputType="phone"
+        android:background="#63ffffff"
+        style="@style/textSetter"/>
+
+    <TextView
+        android:id="@+id/tvPlace"
+        android:text="@string/reg_place"
+        style="@style/bigOrangeText"/>
+
+    <AutoCompleteTextView
+        android:id="@+id/actvPlace"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:background="#63ffffff"
+        style="@style/textSetter"/>
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:text="@string/reg_info"
+        style="@style/bigOrangeText"
+        />
+
+    <EditText
+        android:id="@+id/etInfo"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text=""
+        android:background="#63ffffff"
+        android:layout_weight="1"
+        android:gravity="top"
+        style="@style/textSetter"
+        />
+
+    <CheckBox
+        android:id="@+id/cb"
+        android:text="@string/reg_urgent"
+        style="@style/bigOrangeText"/>
+
+    <Button
+        android:id="@+id/register_btn_send"
+        android:text="@string/reg_send"
+        android:onClick="register"
+        android:textSize="20sp"
+        style="@style/textSetter"/>
+
+    <TextView
+        android:id="@+id/tvFormSent"
+        android:text="@string/stub"
+        android:textSize="25sp"
+        style="@style/textSetter"/>
+</LinearLayout>

@@ -28,6 +28,9 @@
             android:name=".PlaneActivity"
             android:icon="@drawable/icontarget"
             android:label="@string/plane_name"/>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/register_name"/>
     </application>
 
 </manifest>
