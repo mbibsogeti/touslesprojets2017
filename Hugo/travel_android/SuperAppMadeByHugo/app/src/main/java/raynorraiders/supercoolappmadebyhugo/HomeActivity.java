@@ -2,10 +2,14 @@ package raynorraiders.supercoolappmadebyhugo;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -60,6 +64,43 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         Intent i = new Intent(HomeActivity.this, MapActivity.class);
         startActivity(i);
     }
+
+    //pour créer un menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.home,menu);
+        //Partie 1 pour stocker les valeurs rentrées lorsqu'on redemarre l'app.
+        //dans ce l'état de la checkbox
+        SharedPreferences preferences=getSharedPreferences("main",MODE_PRIVATE);
+        menu.findItem(R.id.menu_reg).setChecked(preferences.getBoolean("register",false));
+        return true;
+    }
+
+    //actions lorsqu'on tape sur un menu
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.menu_map:
+                startActivity(new Intent(HomeActivity.this,MapActivity.class));
+                return true;
+            case R.id.menu_reg:
+                menuItem.setChecked(! menuItem.isChecked());
+                //Patie 2 pour stocker les valeurs rentrées lorsqu'on redemarre l'app.
+                SharedPreferences preferences=getSharedPreferences("main",MODE_PRIVATE);
+                SharedPreferences.Editor editor=preferences.edit();
+                editor.putBoolean("register",menuItem.isChecked());
+                //le commit sauvegarde les préférences dans le disque local
+                editor.commit();
+                return true;
+            default:
+                return false;
+        }
+    }
+
+//    ...=ENviroment.getExternalStorageState()
+//    if(...==true)
+//    ...=getExternalFileDir();
+//    ...=Enviroment.getExternalStoragePublicDirectory("nom_constante",Music);
 
 }
 

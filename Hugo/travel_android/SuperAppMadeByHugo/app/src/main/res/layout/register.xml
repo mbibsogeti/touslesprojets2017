@@ -1,108 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:baselineAligned="false"
-    android:orientation="vertical"
-    android:weightSum="1"
-    android:background="#568eff">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/reg_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/reg_title"
-        android:textAlignment="center"
-        android:textColor="#f04343"
-        android:textSize="30sp"
-        android:textStyle="bold|italic" />
-
-    <TextView
-        android:id="@+id/reg_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reg_name"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/reg_name_textbox"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        android:background="#ffffff"
-        android:layout_margin="10sp"
-        android:padding="6sp"/>
+        android:background="#f9f9bd"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:weightSum="1">
 
-    <TextView
-        android:id="@+id/reg_tel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reg_tel"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/reg_title"
+            style="@style/blueTextTitles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/reg_title"
+            android:textAlignment="center" />
 
-    <EditText
-        android:id="@+id/reg_tel_textbox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:background="#ffffff"
-        android:layout_margin="10sp"
-        android:padding="6sp" />
+        <TextView
+            android:id="@+id/reg_name"
+            style="@style/blueTextParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reg_name" />
 
-    <TextView
-        android:id="@+id/reg_place"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reg_place"
-        android:textSize="20sp" />
+        <EditText
+            android:id="@+id/reg_name_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:background="#ffffff"
+            android:inputType="text"
+            android:padding="6sp" />
 
-    <AutoCompleteTextView
-        android:id="@+id/reg_place_textbox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:background="#ffffff"
-        android:layout_margin="10sp"
-        android:padding="6sp" />
+        <TextView
+            android:id="@+id/reg_tel"
+            style="@style/blueTextParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reg_tel" />
 
-    <TextView
-        android:id="@+id/reg_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reg_info"
-        android:textSize="20sp" />
+        <EditText
+            android:id="@+id/reg_tel_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:background="#ffffff"
+            android:inputType="number"
+            android:padding="6sp" />
 
-    <EditText
-        android:id="@+id/reg_info_textbox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:layout_weight="1"
-        android:gravity="top"
-        android:background="#ffffff"
-        android:layout_margin="10sp"
-        android:padding="6sp" />
+        <TextView
+            android:id="@+id/reg_place"
+            style="@style/blueTextParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reg_place" />
 
-    <CheckBox
-        android:id="@+id/reg_info_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reg_info_checkbox"
-        android:background="#ffffff" />
+        <AutoCompleteTextView
+            android:id="@+id/reg_place_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:background="#ffffff"
+            android:inputType="text"
+            android:padding="6sp" />
 
-    <Button
-        android:id="@+id/reg_button_reg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:onClick="register"
-        android:text="@string/reg_button_reg"
-        android:padding="30sp" />
+        <TextView
+            android:id="@+id/reg_info"
+            style="@style/blueTextParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reg_info" />
 
-    <TextView
-        android:id="@+id/reg_end"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/stub" />
-</LinearLayout>
+        <EditText
+            android:id="@+id/reg_info_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10sp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:padding="6sp" />
+
+        <CheckBox
+            android:id="@+id/reg_info_checkbox"
+            style="@style/blueTextParagraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="#ffffff"
+            android:text="@string/reg_info_checkbox" />
+
+        <Button
+            android:id="@+id/reg_button_reg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="register"
+            android:padding="30sp"
+            android:text="@string/reg_button_reg" />
+
+        <TextView
+            android:id="@+id/reg_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stub" />
+    </LinearLayout>
+</ScrollView>
