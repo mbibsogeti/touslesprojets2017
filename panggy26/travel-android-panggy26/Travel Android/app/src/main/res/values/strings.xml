@@ -16,7 +16,53 @@
         <item quantity="one">seconde</item>
         <item quantity="other">secondes</item>
     </plurals>
-    <string name="home_infos">Allez viens !!! On est bienbienbien en Océanie. Viens souffler dans
-        un didgeridoo ! Ici, on a des DJ ripoux, dédi j'ai ri d'où ? Plus d'infos : 06 78 58 74 10.
+    <string name="home_infos">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae metus convallis, tempor
+        diam non, feugiat quam. Etiam dapibus risus at justo efficitur auctor. Sed pellentesque nibh
+        eu elementum auctor. Ut vel turpis libero. Mauris vel magna eget justo tristique lacinia
+        quis consequat felis. Vivamus nec arcu vitae diam mattis imperdiet. In ultrices felis ac
+        fringilla facilisis. Proin bibendum, nisl a maximus sagittis, leo tellus scelerisque purus,
+        ut posuere lacus nunc sed arcu. Mauris mattis ultricies semper. Nunc pretium pulvinar magna
+        in hendrerit. Curabitur et eleifend est. Donec volutpat tellus magna, eu pretium lectus
+        vulputate fringilla. Quisque ullamcorper orci eget lorem scelerisque dictum nec a sapien.
+        Ut tincidunt, mi vitae dignissim interdum, ipsum ante laoreet felis, eget dignissim lacus
+        felis quis purus. Aenean vitae vestibulum odio, id vehicula neque. Quisque interdum quam
+        eget lacus porttitor, ac feugiat lectus dictum. Nam auctor a elit at dictum. Donec malesuada
+        laoreet nibh ut facilisis. Nam malesuada odio sapien, in bibendum quam hendrerit vestibulum.
+        In vestibulum eros ultrices arcu vulputate auctor. Vivamus pretium, sapien eget ultricies
+        accumsan, dolor orci tincidunt odio, sed maximus ante quam quis risus. Nulla pharetra vel
+        erat vitae efficitur. Donec vel risus elit. Sed non ligula non nulla pretium venenatis eu eu
+        mauris. Aliquam euismod turpis molestie lacus maximus, et cursus nulla bibendum. Quisque
+        dignissim interdum turpis, quis condimentum felis sagittis sed. Vivamus mattis bibendum
+        elit, id dapibus sem auctor ac. Maecenas neque eros, rhoncus at sollicitudin ac, blandit
+        eget mauris.
+        Aliquam a sapien ac risus congue volutpat semper non erat. Curabitur nisi tellus, auctor sit
+        amet justo ut, tempus ullamcorper arcu. Maecenas quis pharetra neque, eget pretium eros.
+        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        Nulla imperdiet rhoncus est id bibendum. Nam augue dui, rhoncus id massa at, ultrices
+        tincidunt libero. Donec at interdum lacus, nec aliquet augue. Nullam tempor mattis odio, vel
+        dignissim tellus vehicula id. Class aptent taciti sociosqu ad litora torquent per conubia
+        nostra, per inceptos himenaeos. Vivamus in felis blandit, posuere lorem et, elementum erat.
+        Vestibulum posuere leo at mi viverra, a fringilla tortor efficitur. Donec in sapien non
+        magna facilisis tincidunt vitae vitae ex. Cras efficitur faucibus quam, vel elementum est
+        vestibulum vitae. Sed non blandit felis, vitae fermentum elit. Maecenas vulputate dictum
+        nulla, eu dapibus ante auctor nec. Vivamus eros nibh, maximus in facilisis in, convallis
+        vitae urna. Donec viverra condimentum enim, non placerat mauris. Vivamus vel ligula ac leo
+        auctor ullamcorper vel sit amet nibh. Maecenas gravida tristique felis, fermentum volutpat
+        purus dignissim id. Sed in felis quis mauris ultricies cursus eget id sem. Praesent vel urna
+        ligula. Sed laoreet massa lacinia nibh vehicula sodales. Sed ac dolor at nisi pulvinar
+        volutpat. Allez viens !!! \n On est <b>bienbienbien</b> en Océanie. Viens souffler dans un
+        <i>didgeridoo</i> ! Ici, <sub>là</sub>, et <sup>là-bas</sup>, il y a des DJ ripoux, dés dits
+        \"j\'ai ri d\'où ?\" Plus d\'informations au 06 78 58 74 10 et à aab@free.fr
     </string>
+    <!-- stub est un mot générique mais massivement utilisé par les développeurs pour ce rôle -->
+    <string name="stub">***</string>
+    <string name="map_title">Océanie</string>
+    <string name="name_register">Nom :</string>
+    <string name="tel_register">Téléphone :</string>
+    <string name="location_register">Lieu :</string>
+    <string name="infos_register">Informations :</string>
+    <string name="hurry_register">Urgent ?</string>
+    <string name="register_btn_register">Inscription</string>
+    <string name="options_menu">Options</string>
 </resources>
