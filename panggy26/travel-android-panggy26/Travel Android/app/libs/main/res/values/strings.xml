@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Travel Android</string>
-    <string name="map_activity">Map Activity</string>
-    <string name="submaps_activity">Submaps Activity</string>
-    <string name="plane_activity">Plane Activity</string>
-</resources>

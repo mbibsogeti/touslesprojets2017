@@ -1,1 +1,0 @@
-This whole git is about the 2017 formation, it is a test project and only for learning matter.

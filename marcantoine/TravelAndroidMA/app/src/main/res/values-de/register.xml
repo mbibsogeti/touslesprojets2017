@@ -1,8 +1,0 @@
-<resources>
-    <string name="reg_name">Name</string>
-    <string name="reg_tel">Tel</string>
-    <string name="reg_place">Ort</string>
-    <string name="reg_info">Information</string>
-    <string name="reg_urgent">schnellstmöglich</string>
-    <string name="reg_send">Senden</string>
-</resources>

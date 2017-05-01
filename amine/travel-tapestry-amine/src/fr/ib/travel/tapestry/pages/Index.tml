@@ -1,7 +1,0 @@
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
-	t:type="layout" title="Voyages en Asie">
-	<h1> Nos voyages en Asie</h1>
-	<div class="row" id="img">
-		<img src="${context:img/asie.jpg}" alt="asie" class="img-rounded" />
-	</div>
-</html>

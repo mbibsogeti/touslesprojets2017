@@ -1,8 +1,0 @@
-<resources>
-    <string name="reg_name">名</string>
-    <string name="reg_tel">電話番号</string>
-    <string name="reg_place">場所</string>
-    <string name="reg_info">情報</string>
-    <string name="reg_urgent">できるだけ速くに</string>
-    <string name="reg_send">送信</string>
-</resources>
